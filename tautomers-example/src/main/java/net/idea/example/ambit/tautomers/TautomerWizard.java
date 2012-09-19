@@ -29,6 +29,13 @@ public class TautomerWizard {
 	private final static Logger LOGGER = Logger.getLogger(TautomerWizard.class.getName());
 	protected File file;
 	protected File resultFile;
+	public File getResultFile() {
+		return resultFile;
+	}
+	public void setResultFile(File resultFile) {
+		this.resultFile = resultFile;
+	}
+
 	protected TautomerManager tautomerManager = new TautomerManager();
 	
 	public TautomerWizard() {
@@ -60,6 +67,12 @@ public class TautomerWizard {
 		case file: {
 			if ((argument==null) || "".equals(argument.trim())) return;
 			setFile(new File(argument));
+			break;
+		}
+		case output: {
+			if ((argument==null) || "".equals(argument.trim())) return;
+			setResultFile(new File(argument));
+			break;			
 		}
 		default: 
 		}
@@ -84,9 +97,8 @@ public class TautomerWizard {
 		 */
 		IteratingMDLReader reader = null;
 		
-		
 		SDFWriter writer = new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
-
+		
 		try {
 			/**
 			 * cdk-slient module
@@ -118,14 +130,15 @@ public class TautomerWizard {
 					/**
 					 * Write the original structure
 					 */
-
-//					writer.write(molecule);
+					molecule.setProperty("MOLECULE_NO", records_read);
+					writer.write(molecule);
 					
 					/**
 					 * Write results
 					 */
 					
 					for (IAtomContainer tautomer: resultTautomers) {
+						tautomer.setProperty("TAUTOMER_OF_MOLECULE_NO", records_read);
 						writer.write(tautomer);
 					}
 					

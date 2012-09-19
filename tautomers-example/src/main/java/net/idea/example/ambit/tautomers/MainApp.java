@@ -100,7 +100,23 @@ public class MainApp {
 				return "f";
 			}
 	
-		},			
+		},		
+		
+		output {
+			@Override
+			public String getArgName() {
+				return "output";
+			}
+			@Override
+			public String getDescription() {
+				return "Output file (SDF)";
+			}
+			@Override
+			public String getShortName() {
+				return "o";
+			}
+	
+		},				
 	
 		help {
 			@Override
