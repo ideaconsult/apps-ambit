@@ -36,6 +36,32 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+    <plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-2</version>
+				<executions>
+					<execution>
+						<id>create-executable-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>
+								jar-with-dependencies
+								</descriptorRef>
+							</descriptorRefs>
+							<archive>
+								<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+  	</plugins>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -69,46 +95,40 @@
             </nonFilteredFileExtensions>
           </configuration>
         </plugin>
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <configuration>
-            <descriptorRefs>
-              <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.2</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <!--
+	<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+		        <configuration>
+		          <archive>
+		            <manifest>
+		            	<!--
 		              <mainClass>${mainclass}</mainClass>
 		              <packageName>${project.artifactId}</packageName>
 		              -->
-                <addClasspath>true</addClasspath>
-                <!-- 
+		              <addClasspath>true</addClasspath>
+		              <!-- 
 		              <addExtensions />
 		              <classpathPrefix />
 		              -->
-              </manifest>
-              <manifestEntries>
-                <mode>development</mode>
-                <url>${project.url}</url>
-              </manifestEntries>
-              <manifestFile>target/classes/META-INF/MANIFEST.MF</manifestFile>
-            </archive>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>test-jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
+		            </manifest>				          	
+		            <manifestEntries>
+		              <mode>development</mode>
+		              <url>${project.url}</url>
+		            </manifestEntries>
+		            <manifestFile>target/classes/META-INF/MANIFEST.MF</manifestFile>
+		          </archive>
+		        </configuration>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>test-jar</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+			</plugin>
+	
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>

@@ -1,9 +1,12 @@
 Manifest-version: 1.0
-Package-Title: net.idea.example.ambit.tautomers
+Package: net.idea.example.ambit.tautomers
 Main-Class: net.idea.example.ambit.tautomers.MainApp
+
+Name: net/idea/example/ambit/tautomers
 Specification-Title: Example of Ambit tautomers generation
 Specification-Vendor: IdeaConsult Ltd.
 Specification-Version: 2012
+Package-Title: net.idea.example.ambit.tautomers
 Package-Version: ${project.version}
 Package-Vendor: IdeaConsult Ltd.
 Implementation-Title: ambit2-tautomers ${ambit.version}

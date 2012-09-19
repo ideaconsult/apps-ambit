@@ -93,7 +93,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Input file";
+				return "Input file (SDF)";
 			}
 			@Override
 			public String getShortName() {
@@ -151,7 +151,7 @@ public class MainApp {
 	protected static String example1() {
 		return String.format(
 		"Read file : \tjava -jar %s\t-f filename\n",
-		"example-ambit-tautomers-0.0.1-SNAPSHOT.jar"
+		"example-ambit-tautomers-jar-with-dependencies.jar"
 		);
 
 	}	
