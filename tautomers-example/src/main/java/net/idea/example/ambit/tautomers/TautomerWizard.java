@@ -29,6 +29,11 @@ public class TautomerWizard {
 	private final static Logger LOGGER = Logger.getLogger(TautomerWizard.class.getName());
 	protected File file;
 	protected File resultFile;
+	protected boolean all = true;
+	
+	public void setAll(boolean all) {
+		this.all = all;
+	}
 	public File getResultFile() {
 		return resultFile;
 	}
@@ -74,6 +79,11 @@ public class TautomerWizard {
 			setResultFile(new File(argument));
 			break;			
 		}
+		case tautomers: {
+			setAll(true);
+			if ((argument!=null) && "best".equals(argument.trim().toLowerCase())) setAll(false);
+			break;			
+		}
 		default: 
 		}
 	}
@@ -106,6 +116,7 @@ public class TautomerWizard {
 			 */			
 			reader = new IteratingMDLReader(in, SilentChemObjectBuilder.getInstance());
 			LOGGER.log(Level.INFO, String.format("Reading %s",file.getAbsoluteFile()));
+			LOGGER.log(Level.INFO, String.format("Writing %s tautomer(s)",all?"all":"best"));
 			while (reader.hasNext()) {
 				/**
 				 * Note recent versions allow 
@@ -136,11 +147,31 @@ public class TautomerWizard {
 					/**
 					 * Write results
 					 */
-					
+					IAtomContainer best = null;
+					double bestRank = 0;
 					for (IAtomContainer tautomer: resultTautomers) {
+						try {
+							Object rank_property = tautomer.getProperty("TAUTOMER_RANK");
+							if (rank_property == null) 
+								LOGGER.log(Level.INFO, String.format("No tautomer rank, probably this is the original structure"));
+							else {
+								double rank = Double.parseDouble(rank_property.toString());
+								/**
+								 * The rank is energy based, lower rank is better
+								 */
+								if ((best==null) || (bestRank>rank)) {
+									bestRank = rank;
+									best = tautomer;
+								}
+							}
+						} catch (Exception x) {
+							LOGGER.log(Level.WARNING, x.getMessage());
+						}
 						tautomer.setProperty("TAUTOMER_OF_MOLECULE_NO", records_read);
-						writer.write(tautomer);
+						if (all) writer.write(tautomer);
 					}
+					
+					if (!all && (best!=null)) writer.write(best);
 					
 					records_processed++;;
 				} catch (Exception x) {

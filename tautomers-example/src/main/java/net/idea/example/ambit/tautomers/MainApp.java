@@ -63,6 +63,7 @@ public class MainApp {
 	    formatter.printHelp( MainApp.class.getName(), options );
 	    System.out.println("Examples:");
 	    System.out.println(example1());
+	    System.out.println(example2());
 	    Runtime.getRuntime().runFinalization();						 
 		Runtime.getRuntime().exit(0);	
 	}
@@ -118,6 +119,22 @@ public class MainApp {
 	
 		},				
 	
+		tautomers {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "all: Write all tautomers; best: Write only the best tautomer";
+			}
+			@Override
+			public String getShortName() {
+				return "t";
+			}
+	
+		},	
+		
 		help {
 			@Override
 			public String getArgName() {
@@ -166,7 +183,19 @@ public class MainApp {
 	 */
 	protected static String example1() {
 		return String.format(
-		"Read file : \tjava -jar %s\t-f filename\n",
+		"Read file and write all tautomers to the standard out : \njava -jar %s\t-f filename.sdf\n",
+		"example-ambit-tautomers-jar-with-dependencies.jar"
+		);
+
+	}	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	protected static String example2() {
+		return String.format(
+		"Read file and write only the best tautomers to an SDF file : \njava -jar %s\t-f filename.sdf -o tautomers.sdf -t best\n",
 		"example-ambit-tautomers-jar-with-dependencies.jar"
 		);
 

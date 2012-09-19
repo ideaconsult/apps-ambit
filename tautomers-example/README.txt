@@ -1,3 +1,4 @@
+Build
 
 >mvn clean package
 [INFO] Scanning for projects...
@@ -42,11 +43,20 @@
 
 Run
 
->java -jar target/example-ambit-tautomers-jar-with-dependencies.jar
-File not assigned! Use -f command line option.
+>java -jar target/example-ambit-tautomers-jar-with-dependencies.jar -h
 Tautomer generation by ambit-tautomers package
 usage: net.idea.example.ambit.tautomers.MainApp
- -f,--file <file>   Input file
- -h,--help          Tautomer generation by ambit-tautomers package
+ -f,--file <file>        Input file (SDF)
+ -h,--help               Tautomer generation by ambit-tautomers package
+ -o,--output <output>    Output file (SDF)
+ -t,--tautomers <file>   all: Write all tautomers; best: Write only the
+                         best tautomer
 Examples:
-Read file :     java -jar example-ambit-tautomers-0.0.1-SNAPSHOT.jar    -f filename
+Read file and write all tautomers to the standard out :
+java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
+
+Read file and write only the best tautomer (the lowest rank) to an SDF file :
+java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
+
+
+
