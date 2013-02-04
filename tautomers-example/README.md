@@ -1,4 +1,27 @@
+AMBIT-TAUTOMER
+==============
+
+[Ambit-Tautomer](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html) is a new open source software tool for automatic generation of all the tautomeric forms of a given
+organic compound. Tautomerization is important in a number of chemoinformatics routines such as structure
+representation, chemical database searching, molecular descriptor calculation, estimation of physicochemical
+properties, QSAR modelling, virtual screening and more. Ambit-Tautomer is part of the [Ambit2](http://ambit.sf.net),
+built on top of the [Chemistry Development Kit library](http://cdk.sf.net). Ambit-Tautomer utilizes a depth-first search algorithm, combined with a
+set of rules for tautomeric transformation. Each rule represents two possible states of the molecule part, which
+undergoes tautomerization.
+
+The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
+extra feature, there are rules, which use chlorine atom as a mobile group and a few ring-chain tautomerism rules.
+Some typical supported tautomerism rules are keto-enol, amin-imin, nitroso-oxime, azo-hydrazone,
+thioketo-thioenol, thionitroso-thiooxime, amidine-imidine, diazoamino-diazoamino, thioamide-iminothiol and
+nitrosamine-diazohydroxide. Ambit-Tautomer uses a simple energy based system for tautomer ranking
+implemented by a set of empirically derived rules. Additionally, the user may apply a set of post-generation
+filters, allowing more fine-grained output control.
+
+This project contains examples how to use ambit2-tautomer package. The package code itself is hosted at [sourceforge.net](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html)
+artifacts are available at the [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomer).
+
 Build
+-----
 
     >mvn clean package
     [INFO] Scanning for projects...
@@ -42,6 +65,7 @@ Build
 
 
 Run
+---
 
     >java -jar target/example-ambit-tautomers-jar-with-dependencies.jar -h
     Tautomer generation by ambit-tautomers package
@@ -52,6 +76,7 @@ Run
      -t,--tautomers <file>   all: Write all tautomers; best: Write only the
                              best tautomer
 Examples:
+---------
 Read file and write all tautomers to the standard out :
     
     java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
