@@ -7,7 +7,7 @@ representation, chemical database searching, molecular descriptor calculation, e
 properties, QSAR modelling, virtual screening and more. Ambit-Tautomer is part of the [Ambit2](http://ambit.sf.net),
 built on top of the [Chemistry Development Kit library](http://cdk.sf.net). Ambit-Tautomer utilizes a depth-first search algorithm, combined with a
 set of rules for tautomeric transformation. Each rule represents two possible states of the molecule part, which
-undergoes tautomerization.
+undergoes tautomerization. Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
 
 The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
 extra feature, there are rules, which use chlorine atom as a mobile group and a few ring-chain tautomerism rules.
@@ -16,6 +16,7 @@ thioketo-thioenol, thionitroso-thiooxime, amidine-imidine, diazoamino-diazoamino
 nitrosamine-diazohydroxide. Ambit-Tautomer uses a simple energy based system for tautomer ranking
 implemented by a set of empirically derived rules. Additionally, the user may apply a set of post-generation
 filters, allowing more fine-grained output control.
+
 
 This project contains examples how to use ambit2-tautomer package. The package code itself is hosted at [sourceforge.net](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html)
 and the artifacts are available at the [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomer).
