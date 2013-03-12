@@ -7,7 +7,12 @@ representation, chemical database searching, molecular descriptor calculation, e
 properties, QSAR modelling, virtual screening and more. Ambit-Tautomer is part of the [Ambit2](http://ambit.sf.net),
 built on top of the [Chemistry Development Kit library](http://cdk.sf.net). Ambit-Tautomer utilizes a depth-first search algorithm, combined with a
 set of rules for tautomeric transformation. Each rule represents two possible states of the molecule part, which
-undergoes tautomerization. Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
+undergoes tautomerization. 
+
+Publications:
+
+* Nikolay T. Kochev, Vesselina H. Paskaleva and Nina Jeliazkova, Ambit-Tautomer: An open source tool for tautomer generation, Molecular Informatics, in print, 2013
+* Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
 
 The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
 extra feature, there are rules, which use chlorine atom as a mobile group and a few ring-chain tautomerism rules.
