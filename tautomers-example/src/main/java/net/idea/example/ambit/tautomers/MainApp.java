@@ -20,15 +20,20 @@ public class MainApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-    	Options options = createOptions();
+		MainApp app = new MainApp();
+    	int records = app.run(args);
+    	System.err.println("Records processed "+ records);
+	}
+	
+	public int run(String[] args) {
+		Options options = createOptions();
     	TautomerWizard worker = new TautomerWizard();
     	final CommandLineParser parser = new PosixParser();
 		try {
 		    CommandLine line = parser.parse( options, args,false );
 		    if (line.hasOption(_option.help.name())) {
 		    	printHelp(options, null);
-		    	return;
+		    	return -1;
 		    }
 		    	
 	    	for (_option o: _option.values()) 
@@ -36,13 +41,14 @@ public class MainApp {
 	    			worker.setOption(o,line.getOptionValue(o.getShortName()));
 	    		} catch (Exception x) {
 	    			printHelp(options,x.getMessage());
-	    			return;
+	    			return -1;
 	    		}
 	    		
-	    	worker.process();	
+	    	return worker.process();	
 
 		} catch (Exception x ) {
 			printHelp(options,x.getMessage());
+			return -1;
 		} finally {
 			try { 
 				//run whatever cleanup is needed
@@ -86,7 +92,6 @@ public class MainApp {
 	 */
 	enum _option {
 
-	
 		file {
 			@Override
 			public String getArgName() {

@@ -12,12 +12,14 @@ import java.util.logging.Logger;
 
 import net.idea.example.ambit.tautomers.MainApp._option;
 
+import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.SDFWriter;
-import org.openscience.cdk.io.iterator.IteratingMDLReader;
-import org.openscience.cdk.silent.SilentChemObjectBuilder;
+import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
+import ambit2.base.exceptions.AmbitIOException;
+import ambit2.core.io.FileInputState;
 import ambit2.tautomers.TautomerManager;
 
 /**
@@ -88,6 +90,11 @@ public class TautomerWizard {
 		}
 	}
 
+	protected IIteratingChemObjectReader<IAtomContainer> getReader(InputStream in, String extension) throws CDKException, AmbitIOException {
+		FileInputState instate = new FileInputState();
+		//return new IteratingMDLReader(in, SilentChemObjectBuilder.getInstance());
+		return instate.getReader(in,extension);
+	}
 	/**
 	 * 
 	 * @return
@@ -100,12 +107,13 @@ public class TautomerWizard {
 		int records_processed = 0;
 		int records_error = 0;
 		
+
 		InputStream in = new FileInputStream(file);
 		/**
 		 * cdk-io module
 		 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;classname~IteratingMDLReader
 		 */
-		IteratingMDLReader reader = null;
+		IIteratingChemObjectReader<IAtomContainer> reader = null;
 		
 		SDFWriter writer = new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
 		
@@ -114,7 +122,7 @@ public class TautomerWizard {
 			 * cdk-slient module
 			 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;classname~SilentChemObjectBuilder
 			 */			
-			reader = new IteratingMDLReader(in, SilentChemObjectBuilder.getInstance());
+			reader = getReader(in,file.getName());
 			LOGGER.log(Level.INFO, String.format("Reading %s",file.getAbsoluteFile()));
 			LOGGER.log(Level.INFO, String.format("Writing %s tautomer(s)",all?"all":"best"));
 			while (reader.hasNext()) {
