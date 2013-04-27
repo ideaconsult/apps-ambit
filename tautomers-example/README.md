@@ -80,8 +80,7 @@ Run
      -f,--file <file>        Input file name ( .sdf | .txt  | .csv | .cml ) -  recognised by extension!
      -h,--help               Tautomer generation by ambit-tautomers package
      -o,--output <output>    Output file name ( .sdf | .txt  | .csv | .cml | .n3 ) - recognised by extension!
-     -t,--tautomers <file>   all: Write all tautomers; best: Write only the
-                             best tautomer
+     -t,--tautomers <file>   all: Write all tautomers; best: Write only the  best tautomer (lowest rank, as ranking is energy based)
                              
 Examples:
 ---------
