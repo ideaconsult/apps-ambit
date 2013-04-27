@@ -77,11 +77,12 @@ Run
     >java -jar target/example-ambit-tautomers-jar-with-dependencies.jar -h
     Tautomer generation by ambit-tautomers package
     usage: net.idea.example.ambit.tautomers.MainApp
-     -f,--file <file>        Input file (SDF)
+     -f,--file <file>        Input file name ( .sdf | .txt  | .csv | .cml ) -  recognised by extension!
      -h,--help               Tautomer generation by ambit-tautomers package
-     -o,--output <output>    Output file (SDF)
+     -o,--output <output>    Output file name ( .sdf | .txt  | .csv | .cml | .n3 ) - recognised by extension!
      -t,--tautomers <file>   all: Write all tautomers; best: Write only the
                              best tautomer
+                             
 Examples:
 ---------
 Read file and write all tautomers to the standard out :
@@ -92,5 +93,9 @@ Read file and write only the best tautomer (the lowest rank) to an SDF file :
     
     java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
 
+Read text file with InChIs (tab delimited with header InChI, as in https://github.com/ideaconsult/examples-ambit/blob/master/tautomers-example/src/test/resources/net/idea/example/ambit/tautomers/inchi.txt).
+Write only the best tautomer (the lowest rank) to an N3 file (linked to http://rdf.open.molecules.net):
+    
+    java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.txt -o tautomers.n3 -t best
 
-
+  
