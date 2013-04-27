@@ -70,22 +70,6 @@ Build
     [INFO] Final Memory: 34M/497M
     [INFO] ------------------------------------------------------------------------
 
-Download
----
-
-###Command line application
-
-    
-Download ambit-tautomers-example-VERSION-jar-with-dependencies.jar from http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~ 
-
-###Maven artifact
-
-    <dependency>
-        <groupId>net.idea.examples.ambit</groupId>
-        <artifactId>ambit-tautomers-example</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-
 Run
 ---
 
@@ -98,6 +82,23 @@ Run
      -t,--tautomers <file>   all: Write all tautomers; 
                              best: Write only the  best tautomer (lowest rank, as ranking is energy based)
                              
+Download
+---
+
+###Command line application
+
+    
+Download [ambit-tautomers-example-VERSION-jar-with-dependencies.jar] (http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~) 
+
+###Maven artifact
+
+    <dependency>
+        <groupId>net.idea.examples.ambit</groupId>
+        <artifactId>ambit-tautomers-example</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
+
 Examples:
 ---------
 Read file and write all tautomers to the standard out :
