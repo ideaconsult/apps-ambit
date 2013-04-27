@@ -73,13 +73,12 @@ Build
 Download
 ---
 
-Command line application
-===
+###Command line application
+
     
 Download ambit-tautomers-example-VERSION-jar-with-dependencies.jar from http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~ 
 
-Maven artifact
-===
+###Maven artifact
 
     <dependency>
         <groupId>net.idea.examples.ambit</groupId>
