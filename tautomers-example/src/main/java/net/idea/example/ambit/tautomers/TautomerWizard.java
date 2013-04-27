@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.util.Vector;
@@ -14,8 +15,8 @@ import net.idea.example.ambit.tautomers.MainApp._option;
 
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.io.IChemObjectWriter;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -117,7 +118,7 @@ public class TautomerWizard {
 		 */
 		IIteratingChemObjectReader<IAtomContainer> reader = null;
 		
-		SDFWriter writer = new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
+		IChemObjectWriter writer = createWriter();
 		
 		try {
 			/**
@@ -181,10 +182,10 @@ public class TautomerWizard {
 							LOGGER.log(Level.WARNING, x.getMessage());
 						}
 						tautomer.setProperty("TAUTOMER_OF_MOLECULE_NO", records_read);
-						if (all) writer.write(tautomer);
+						if (all) writeResult(writer,tautomer);
 					}
 					
-					if (!all && (best!=null)) writer.write(best);
+					if (!all && (best!=null))  writeResult(writer,best);
 					
 					records_processed++;;
 				} catch (Exception x) {
@@ -206,4 +207,10 @@ public class TautomerWizard {
 		return records_read;
 	}
 
+	protected IChemObjectWriter createWriter() throws IOException {
+		return new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
+	}
+	protected void writeResult(IChemObjectWriter writer, IAtomContainer molecule) throws Exception {
+		writer.write(molecule);
+	}
 }
