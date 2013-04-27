@@ -11,8 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.idea.example.ambit.tautomers.MainApp._option;
+import net.idea.example.ambit.writers.RDFTautomersWriter;
 
-import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.inchi.InChIGenerator;
@@ -22,9 +22,8 @@ import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
-import ambit2.base.data.Property;
 import ambit2.base.exceptions.AmbitIOException;
-import ambit2.core.config.AmbitCONSTANTS;
+import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.processors.structure.InchiProcessor;
@@ -166,7 +165,7 @@ public class TautomerWizard {
 					molecule.setProperty("InChIKey","");
 					molecule.setProperty("InChI.status","");
 					molecule.setProperty("InChI.msg","");
-					writer.write(molecule);
+					writeResult(writer,null,molecule);
 					
 					/**
 					 * Write results
@@ -192,10 +191,10 @@ public class TautomerWizard {
 							LOGGER.log(Level.WARNING, x.getMessage());
 						}
 						tautomer.setProperty("TAUTOMER_OF_MOLECULE_NO", records_read);
-						if (all) writeResult(writer,tautomer);
+						if (all) writeResult(writer,molecule,tautomer);
 					}
 					
-					if (!all && (best!=null))  writeResult(writer,best);
+					if (!all && (best!=null))  writeResult(writer,molecule,best);
 					
 					records_processed++;;
 				} catch (Exception x) {
@@ -220,17 +219,23 @@ public class TautomerWizard {
 	protected IChemObjectWriter createWriter() throws Exception {
 		if ((resultFile==null) || resultFile.getName().endsWith(FileOutputState.extensions[FileOutputState.SDF_INDEX]))
 			return new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
-		else
+		else if (resultFile.getName().endsWith(".n3")) { 
+			return new RDFTautomersWriter(new OutputStreamWriter(new FileOutputStream(resultFile)),new DelimitedFileFormat());
+		} else
 			return FileOutputState.getWriter(new FileOutputStream(resultFile),resultFile.getName());
 	}
-	protected void writeResult(IChemObjectWriter writer, IAtomContainer molecule) throws Exception {
-		if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
-		InChIGenerator generator = inchiProcessor.process(molecule);
-		molecule.setProperty("InChI",generator.getInchi());
-		molecule.setProperty("InChIKey",generator.getInchiKey());
-		molecule.setProperty("InChI.status",generator.getReturnStatus().name());
-		molecule.setProperty("InChI.msg",generator.getMessage());
+	protected void writeResult(IChemObjectWriter writer, IAtomContainer parent,IAtomContainer tautomer) throws Exception {
+		if (parent!=null) {
+			//don't generate InChI for the original molecule
+			if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
+			InChIGenerator generator = inchiProcessor.process(tautomer);
+			tautomer.setProperty("InChI",generator.getInchi());
+			tautomer.setProperty("InChIKey",generator.getInchiKey());
+			tautomer.setProperty("InChI.status",generator.getReturnStatus().name());
+			tautomer.setProperty("InChI.msg",generator.getMessage());
+			tautomer.setProperty("tautomerOf",parent.getProperty("InChI"));
+		}
 		//if (writer instanceof SDFWriter) ((SDFWriter)writer).
-		writer.write(molecule);
+		writer.write(tautomer);
 	}
 }

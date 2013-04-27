@@ -14,7 +14,7 @@ public class TautomersTest {
 		org.junit.Assert.assertNotNull(url.getFile());
 		String[] args = new String[] {
 				"-"+MainApp._option.file.getShortName(),url.getFile(),
-				"-"+MainApp._option.output.getShortName(),url.getFile().replace(".txt", "_result.sdf")};
+				"-"+MainApp._option.output.getShortName(),url.getFile().replace(".txt", "_result.n3")};
 		for (String arg:args) System.out.println(arg);
 		app.run(args);
 	}
