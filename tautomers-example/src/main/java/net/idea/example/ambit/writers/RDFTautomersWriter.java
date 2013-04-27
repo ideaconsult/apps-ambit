@@ -50,6 +50,7 @@ public class RDFTautomersWriter extends DelimitedFileWriter {
 			writer.write(parent==null?"":parent.toString());
 			writer.write(">.");
 			writer.write("\n");
+			writer.flush();
 		} catch (Exception x) {
 			logger.severe(x.getMessage());
 		}
