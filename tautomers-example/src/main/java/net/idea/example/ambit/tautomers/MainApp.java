@@ -99,7 +99,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Input file ( .sdf | .txt  | .csv | .cml)";
+				return "Input file name ( .sdf | .txt  | .csv | .cml ) - recognised by extension!";
 			}
 			@Override
 			public String getShortName() {
@@ -115,7 +115,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Output file (SDF)";
+				return "Output file name ( .sdf | .txt  | .csv | .cml | .n3 ) - recognised by extension!";
 			}
 			@Override
 			public String getShortName() {
