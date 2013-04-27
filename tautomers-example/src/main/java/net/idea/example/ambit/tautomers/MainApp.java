@@ -99,7 +99,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Input file (SDF)";
+				return "Input file ( .sdf | .txt  | .csv | .cml)";
 			}
 			@Override
 			public String getShortName() {

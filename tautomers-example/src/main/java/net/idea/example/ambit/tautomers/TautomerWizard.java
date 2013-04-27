@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.util.Vector;
@@ -13,16 +12,22 @@ import java.util.logging.Logger;
 
 import net.idea.example.ambit.tautomers.MainApp._option;
 
+import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.inchi.InChIGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.IChemObjectWriter;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
+import ambit2.base.data.Property;
 import ambit2.base.exceptions.AmbitIOException;
+import ambit2.core.config.AmbitCONSTANTS;
 import ambit2.core.io.FileInputState;
+import ambit2.core.io.FileOutputState;
+import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerManager;
 
 /**
@@ -35,6 +40,7 @@ public class TautomerWizard {
 	protected File file;
 	protected File resultFile;
 	protected boolean all = true;
+	protected InchiProcessor inchiProcessor;
 	
 	public void setAll(boolean all) {
 		this.all = all;
@@ -95,7 +101,6 @@ public class TautomerWizard {
 
 	protected IIteratingChemObjectReader<IAtomContainer> getReader(InputStream in, String extension) throws CDKException, AmbitIOException {
 		FileInputState instate = new FileInputState();
-		//return new IteratingMDLReader(in, SilentChemObjectBuilder.getInstance());
 		return instate.getReader(in,extension);
 	}
 	/**
@@ -119,7 +124,7 @@ public class TautomerWizard {
 		IIteratingChemObjectReader<IAtomContainer> reader = null;
 		
 		IChemObjectWriter writer = createWriter();
-		
+		System.err.println(writer.getClass().getName());
 		try {
 			/**
 			 * cdk-slient module
@@ -149,13 +154,18 @@ public class TautomerWizard {
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
 					 */
 					Vector<IAtomContainer> resultTautomers=null;
-				
+
 					tautomerManager.setStructure(molecule);
 					resultTautomers = tautomerManager.generateTautomersIncrementaly();
 					/**
 					 * Write the original structure
 					 */
 					molecule.setProperty("MOLECULE_NO", records_read);
+					molecule.setProperty("TAUTOMER_RANK","Original structure");
+					molecule.setProperty("TAUTOMER_OF_MOLECULE_NO", "");
+					molecule.setProperty("InChIKey","");
+					molecule.setProperty("InChI.status","");
+					molecule.setProperty("InChI.msg","");
 					writer.write(molecule);
 					
 					/**
@@ -207,10 +217,20 @@ public class TautomerWizard {
 		return records_read;
 	}
 
-	protected IChemObjectWriter createWriter() throws IOException {
-		return new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
+	protected IChemObjectWriter createWriter() throws Exception {
+		if ((resultFile==null) || resultFile.getName().endsWith(FileOutputState.extensions[FileOutputState.SDF_INDEX]))
+			return new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
+		else
+			return FileOutputState.getWriter(new FileOutputStream(resultFile),resultFile.getName());
 	}
 	protected void writeResult(IChemObjectWriter writer, IAtomContainer molecule) throws Exception {
+		if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
+		InChIGenerator generator = inchiProcessor.process(molecule);
+		molecule.setProperty("InChI",generator.getInchi());
+		molecule.setProperty("InChIKey",generator.getInchiKey());
+		molecule.setProperty("InChI.status",generator.getReturnStatus().name());
+		molecule.setProperty("InChI.msg",generator.getMessage());
+		//if (writer instanceof SDFWriter) ((SDFWriter)writer).
 		writer.write(molecule);
 	}
 }
