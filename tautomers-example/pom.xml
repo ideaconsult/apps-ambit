@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.idea.examples.ambit</groupId>
@@ -6,6 +6,16 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ambit-tautomers-example</name>
   <description>Ambit Tautomers Example</description>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ambit-plovdiv-snapshots</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ambit-plovdiv-releases</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
   <repositories>
     <repository>
       <id>ambit-plovdiv</id>
@@ -47,11 +57,11 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>junit</groupId>
-    	<artifactId>junit</artifactId>
-    	<version>4.11</version>
-    	<type>jar</type>
-    	<scope>test</scope>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <type>jar</type>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <properties>
