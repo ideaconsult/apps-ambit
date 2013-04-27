@@ -117,7 +117,7 @@ Write only the best tautomer to an N3 file ( linked to http://rdf.open.molecules
     The N3 output will be:
     
     @prefix rom:  <http://rdf.openmolecules.net/?> .
-    <rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2-3,5,7-9H,1H2>    :tautomerOf	
-                <rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2,5,7-8,10-11H,1H2/t2-,5+/m0/s1>.
+    rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2-3,5,7-9H,1H2    :tautomerOf	
+                rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2,5,7-8,10-11H,1H2/t2-,5+/m0/s1.
 
   
