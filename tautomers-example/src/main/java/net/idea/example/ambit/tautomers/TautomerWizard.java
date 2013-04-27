@@ -12,7 +12,9 @@ import java.util.logging.Logger;
 
 import net.idea.example.ambit.tautomers.MainApp._option;
 
+import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
@@ -138,6 +140,9 @@ public class TautomerWizard {
 					 * cdk-standard module
 					 */
 					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
+					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
+					//implicit H count is NULL if read from InChI ...
+					molecule = AtomContainerManipulator.removeHydrogens(molecule);
 					/**
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
