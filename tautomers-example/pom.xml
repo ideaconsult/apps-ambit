@@ -69,6 +69,20 @@
     <junit.version>4.8.1</junit.version>
     <ambit.version>2.4.11</ambit.version>
   </properties>
+  <issueManagement>
+  	<system>GitHub</system>
+  	<url>https://github.com/ideaconsult/examples-ambit/issues</url>
+  </issueManagement>
+  <inceptionYear>2012</inceptionYear>
+  <scm>
+  	<connection>git://github.com/ideaconsult/examples-ambit.git</connection>
+  	<developerConnection>scm:git:git@github.com:ideaconsult/examples-ambit.git</developerConnection>
+  	<url>https://github.com/ideaconsult/examples-ambit.git</url>
+  </scm>
+  <organization>
+  	<name>Ideaconsult Ltd.</name>
+  	<url>http://www.idesconsult.net</url>
+  </organization>
   <build>
     <finalName>example-ambit-tautomers</finalName>
     <resources>
