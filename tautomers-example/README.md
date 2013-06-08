@@ -27,6 +27,48 @@ This project contains examples how to use ambit2-tautomer package. The package c
 and the artifacts are available at the [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomer).
 For a quick test, try the [tautomer generation](http://apps.ideaconsult.net:8080/ambit2/depict/tautomer?search=NC%3D1N%3DCN%3DC2N%3DCNC2%3D1) online.
 
+Download
+---
+
+###Command line application
+
+   * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-example-1.0.0.jar/download)
+
+   * Download from [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~) 
+
+###Maven artifact
+
+    <dependency>
+        <groupId>net.idea.examples.ambit</groupId>
+        <artifactId>ambit-tautomers-example</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    <repository>
+        <id>ambit-plovdiv-releases</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository>
+
+Run
+---
+
+    >java -jar target/example-ambit-tautomers-jar-with-dependencies.jar -h
+    Tautomer generation by ambit-tautomers package
+    usage: net.idea.example.ambit.tautomers.MainApp
+    -f,--file <file>        Input file name ( .sdf | .txt  | .csv | .cml ) -
+                            recognised by extension!
+    -h,--help               Tautomer generation by ambit-tautomers package
+    -o,--output <output>    Output file name ( .sdf | .txt  | .csv | .cml |
+                            .n3 ) - recognised by extension!
+    -t,--tautomers <file>   all: Write all tautomers; best: Write only the
+                            best tautomer
+    Examples:
+    Read file and write all tautomers to the standard out :
+    java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
+    Examples:
+    Read file and write only the best tautomers to an SDF file :
+    java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
+
+                             
 Build
 -----
 
@@ -70,33 +112,6 @@ Build
     [INFO] Final Memory: 34M/497M
     [INFO] ------------------------------------------------------------------------
 
-Run
----
-
-    >java -jar target/example-ambit-tautomers-jar-with-dependencies.jar -h
-    Tautomer generation by ambit-tautomers package
-    usage: net.idea.example.ambit.tautomers.MainApp
-     -f,--file <file>        Input file name ( .sdf | .txt  | .csv | .cml ) -  recognised by extension!
-     -h,--help               Tautomer generation by ambit-tautomers package
-     -o,--output <output>    Output file name ( .sdf | .txt  | .csv | .cml | .n3 ) - recognised by extension!
-     -t,--tautomers <file>   all: Write all tautomers; 
-                             best: Write only the  best tautomer (lowest rank, as ranking is energy based)
-                             
-Download
----
-
-###Command line application
-
-    
-Download [ambit-tautomers-example-VERSION-jar-with-dependencies.jar] (http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~) 
-
-###Maven artifact
-
-    <dependency>
-        <groupId>net.idea.examples.ambit</groupId>
-        <artifactId>ambit-tautomers-example</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
 
 
 Examples:
