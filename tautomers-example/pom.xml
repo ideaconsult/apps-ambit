@@ -202,7 +202,7 @@
           <configuration>
             <releaseProfiles>release</releaseProfiles>
             <remoteTagging>true</remoteTagging>
-            <tagBase></tagBase>
+            <tagBase />
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <!--               		<preparationGoals>clean install</preparationGoals> -->
           </configuration>
