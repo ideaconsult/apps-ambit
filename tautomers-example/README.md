@@ -11,7 +11,7 @@ undergoes tautomerization.
 
 Publications:
 
-* Nikolay T. Kochev, Vesselina H. Paskaleva and Nina Jeliazkova, Ambit-Tautomer: An open source tool for tautomer generation, Molecular Informatics, in print, 2013
+* Nikolay T. Kochev, Vesselina H. Paskaleva and Nina Jeliazkova, Ambit-Tautomer: An open source tool for tautomer generation, Molecular Informatics, 32/5, 2013 [doi:10.1002/minf.201200133] (http://onlinelibrary.wiley.com/doi/10.1002/minf.201200133/abstract)
 * Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
 
 The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
