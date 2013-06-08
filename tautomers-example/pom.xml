@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.idea.examples.ambit</groupId>
   <artifactId>ambit-tautomers-example</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>ambit-tautomers-example</name>
   <description>Ambit Tautomers Example</description>
   <distributionManagement>
@@ -202,7 +202,7 @@
           <configuration>
             <releaseProfiles>release</releaseProfiles>
             <remoteTagging>true</remoteTagging>
-            <tagBase />
+            <tagBase></tagBase>
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <!--               		<preparationGoals>clean install</preparationGoals> -->
           </configuration>
