@@ -18,4 +18,17 @@ public class TautomersTest {
 		for (String arg:args) System.out.println(arg);
 		app.run(args);
 	}
+	
+	@Test
+	public void testSDF() throws Exception {
+		MainApp app = new MainApp();
+		URL url = TautomersTest.class.getClassLoader().getResource("net/idea/example/ambit/tautomers/input.sdf");
+		
+		org.junit.Assert.assertNotNull(url.getFile());
+		String[] args = new String[] {
+				"-"+MainApp._option.file.getShortName(),url.getFile(),
+				"-"+MainApp._option.output.getShortName(),url.getFile().replace(".sdf", "_result.sdf")};
+		for (String arg:args) System.out.println(arg);
+		app.run(args);
+	}
 }
