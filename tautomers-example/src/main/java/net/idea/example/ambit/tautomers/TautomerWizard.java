@@ -13,13 +13,17 @@ import java.util.logging.Logger;
 import net.idea.example.ambit.tautomers.MainApp._option;
 import net.idea.example.ambit.writers.RDFTautomersWriter;
 
+import org.openscience.cdk.CDKConstants;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.inchi.InChIGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IBond;
+import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.io.IChemObjectWriter;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
+import org.openscience.cdk.smiles.FixBondOrdersTool;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
@@ -27,7 +31,6 @@ import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
-import ambit2.core.processors.structure.HydrogenAdderProcessor;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerManager;
 
@@ -42,6 +45,7 @@ public class TautomerWizard {
 	protected File resultFile;
 	protected boolean all = true;
 	protected InchiProcessor inchiProcessor;
+	protected FixBondOrdersTool kekulizer = new FixBondOrdersTool();
 	
 	public void setAll(boolean all) {
 		this.all = all;
@@ -232,7 +236,17 @@ public class TautomerWizard {
 			//don't generate InChI for the original molecule
 			if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
 			try {
-				InChIGenerator generator = inchiProcessor.process(tautomer);
+				//InChI fails on aromatic bonds, so let's Kekulize them if needed
+				boolean aromatic = false;
+				for (IBond bond : tautomer.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) {aromatic = true; break;}
+				IAtomContainer kekulized = tautomer;
+				if (aromatic) {
+					kekulized = kekulizer.kekuliseAromaticRings((IMolecule)tautomer);
+					for (IBond bond : kekulized.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) 
+						bond.setFlag(CDKConstants.ISAROMATIC,false);
+				}
+				InChIGenerator generator = inchiProcessor.process(kekulized);
+				
 				tautomer.setProperty("InChI",generator.getInchi());
 				tautomer.setProperty("InChIKey",generator.getInchiKey());
 				tautomer.setProperty("InChI.status",generator.getReturnStatus().name());
