@@ -109,7 +109,7 @@ Read file and write only the best tautomer (the lowest rank) to an SDF file :
     
     java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
 
-Read text file with InChIs (tab delimited with header InChI, as in https://github.com/ideaconsult/examples-ambit/blob/master/tautomers-example/src/test/resources/net/idea/example/ambit/tautomers/inchi.txt).
+Read text file with InChIs (tab delimited with header InChI, as in [inchi.txt] (https://github.com/ideaconsult/examples-ambit/blob/master/tautomers-example/src/test/resources/net/idea/example/ambit/tautomers/inchi.txt)).
 Write only the best tautomer to an N3 file ( linked to http://rdf.open.molecules.net ):
     
     java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.txt -o tautomers.n3 -t best
