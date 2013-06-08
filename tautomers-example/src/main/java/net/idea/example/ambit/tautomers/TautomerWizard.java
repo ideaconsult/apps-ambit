@@ -20,12 +20,14 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.IChemObjectWriter;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
+import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
+import ambit2.core.processors.structure.HydrogenAdderProcessor;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerManager;
 
@@ -113,7 +115,7 @@ public class TautomerWizard {
 		int records_read = 0;
 		int records_processed = 0;
 		int records_error = 0;
-		
+
 
 		InputStream in = new FileInputStream(file);
 		/**
@@ -148,6 +150,7 @@ public class TautomerWizard {
 					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
 					//implicit H count is NULL if read from InChI ...
 					molecule = AtomContainerManipulator.removeHydrogens(molecule);
+					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);
 					/**
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
@@ -228,12 +231,17 @@ public class TautomerWizard {
 		if (parent!=null) {
 			//don't generate InChI for the original molecule
 			if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
-			InChIGenerator generator = inchiProcessor.process(tautomer);
-			tautomer.setProperty("InChI",generator.getInchi());
-			tautomer.setProperty("InChIKey",generator.getInchiKey());
-			tautomer.setProperty("InChI.status",generator.getReturnStatus().name());
-			tautomer.setProperty("InChI.msg",generator.getMessage());
-			tautomer.setProperty("tautomerOf",parent.getProperty("InChI"));
+			try {
+				InChIGenerator generator = inchiProcessor.process(tautomer);
+				tautomer.setProperty("InChI",generator.getInchi());
+				tautomer.setProperty("InChIKey",generator.getInchiKey());
+				tautomer.setProperty("InChI.status",generator.getReturnStatus().name());
+				tautomer.setProperty("InChI.msg",generator.getMessage()==null?"":generator.getMessage());
+				if (parent.getProperty("InChI")!=null)
+					tautomer.setProperty("tautomerOf",parent.getProperty("InChI"));
+			} catch (Exception x) {
+				x.printStackTrace();
+			}
 		}
 		//if (writer instanceof SDFWriter) ((SDFWriter)writer).
 		writer.write(tautomer);
