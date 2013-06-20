@@ -128,7 +128,7 @@ The following ontology entries are used to denote:
 * [CAS Registry](http://en.wikipedia.org/wiki/CAS_registry_number) number : "http://www.opentox.org/api/1.1#CASRN"
 * [EC Registry](http://en.wikipedia.org/wiki/European_Commission_number) number : "http://www.opentox.org/api/1.1#EINECS"
 * [IUPAC](http://www.iupac.org/) name : "http://www.opentox.org/api/1.1#IUPACName"
-* Chemical name : "http:////www.opentox.org/api/1.1#ChemicalName"
+* Chemical name : "http://www.opentox.org/api/1.1#ChemicalName"
 * [SMILES](http://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system) : "http://www.opentox.org/api/1.1#SMILES"
 * [InChI](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChI_std"
 * [InChIKey]((http://en.wikipedia.org/wiki/Inchi)"http://www.opentox.org/api/1.1#InChIKey_std"
