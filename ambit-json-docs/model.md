@@ -31,6 +31,7 @@ Example:
 ````
 
 ````json
+ТОДО
 
 ````
 
@@ -88,26 +89,26 @@ See [Toxtree examples](toxtree.md)
 
 
 ````
-    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/model2"
+    curl -H "Accept:application/json" "http://хост:порт/ambit2/model/{mid}"
 ````
   
 ````json
 {
     "model": [
         {
-            "URI": "http://apps.ideaconsult.net:8080/ambit2/model/2",
+            "URI": "http://host:port/ambit2/model/{mid}",
             "id": 2,
             "title": "ToxTree: Cramer rules",
             "stars": 9,
             "algorithm": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer"
+                "URI": "http://host:port/ambit2/algorithm/{aid}"
             },
-            "trainingDataset": "http://apps.ideaconsult.net:8080/ambit2/dataset/27764",
-            "independent": "http://apps.ideaconsult.net:8080/ambit2/model/2/independent",
-            "dependent": "http://apps.ideaconsult.net:8080/ambit2/model/2/dependent",
-            "predicted": "http://apps.ideaconsult.net:8080/ambit2/model/2/predicted",
+            "trainingDataset": "http://host:port/ambit2/dataset/{did}",
+            "independent": "http://host:port/ambit2/model/2/independent",
+            "dependent": "http://host:port/ambit2/model/{mid}/dependent",
+            "predicted": "http://host:port/ambit2/model/{mid}/predicted",
             "ambitprop": {
-                "legend": "http://apps.ideaconsult.net:8080/ambit2/model/2?media=image/png"
+                "legend": "http://host:port/ambit2/model/{mid}?media=image/png"
             }
         }
     ]
@@ -118,8 +119,8 @@ See [Toxtree examples](toxtree.md)
 
 ````
     curl -X POST -H "Accept:application/json" \
-           -d "dataset_uri=http://apps.ideaconsult.net:8080/ambit2/compound/328" \
-           "http://apps.ideaconsult.net:8080/ambit2/model/2"
+           -d "dataset_uri=http://host:port/ambit2/compound/{cid}" \
+           "http://host:port/ambit2/model/{mid}"
 ````
   
     here is the task
@@ -127,12 +128,12 @@ See [Toxtree examples](toxtree.md)
 {
     "task": [
         {
-            "uri": "http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539",
+            "uri": "http://host:port/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539",
             "id": "80552714-de54-4319-9a88-ec9d39f64539",
-            "name": "Apply Model ToxTree: Cramer rules to http://apps.ideaconsult.net:8080/ambit2/compound/328",
+            "name": "Apply Model {mid} to http://host:port/ambit2/compound/{cid}",
             "status": "Running",
             "started": 1371743438742,
-            "result": "http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539"
+            "result": "http://host:port/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539"
         }
     ]
 }
@@ -140,7 +141,7 @@ See [Toxtree examples](toxtree.md)
     
      poll the task
 ````
-    curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539
+    curl -H "Accept:application/json" http://host:port/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539
 ````
 
 and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
@@ -148,13 +149,13 @@ and now the task is completed. The **result** field contains the URI of the data
 {
     "task": [
         {
-            "uri": "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted",
+            "uri": "http://host:port/ambit2/compound/{cid}?feature_uris[]=http%3A%2F%2Fhost%3Aport%2Fambit2%2Fmodel%2Fmid%2Fpredicted",
             "id": "80552714-de54-4319-9a88-ec9d39f64539",
-            "name": "Apply Model ToxTree: Cramer rules to http://apps.ideaconsult.net:8080/ambit2/compound/328",
+            "name": "Apply Model {mid} to http://host:port/ambit2/compound/{cid}",
             "status": "Completed",
             "started": 1371743438742,
             "completed": 1371743439633,
-            "result": "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted"
+            "result": "http://host:port/ambit2/compound/{cid}?feature_uris[]=http%3A%2F%2Fhost%3Aport%2Fambit2%2Fmodel%2Fmid%2Fpredicted"
         }
     ]
 }
@@ -162,46 +163,9 @@ and now the task is completed. The **result** field contains the URI of the data
    
    Retrieve the predictions
 ````
-    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted"
+    curl -H "Accept:application/json" "http://host:port/ambit2/compound/{cid?feature_uris[]=http%3A%2F%2Fhost%3Aport%2Fambit2%2Fmodel%2Fmid%2Fpredicted"
 ````
  
   The resutls are in the same format, as when retrieving a [dataset](dataset.md)
-````json
-{
-    "query": {
-        "summary": "idcompound=328"
-    },
-    "dataEntry": [
-        {
-            "compound": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/compound/328/conformer/144160"
-            },
-            "values": {
-                "http://apps.ideaconsult.net:8080/ambit2/feature/9042927": "High (Class III)",
-                "http://apps.ideaconsult.net:8080/ambit2/feature/9042928": "Q1.Normal constituent of the body No <br>Q2.Contains functional groups associated with enhanced toxicity No <br>Q3.Contains elements other than C,H,O,N,divalent S No <br>Q5.Simply branched aliphatic hydrocarbon or a common carbohydrate No <br>Q6.Benzene derivative with certain substituents No <br>7.Heterocyclic Yes <br>Q8.Lactone or cyclic diester No <br>Q10.3-membered heterocycle No <br>11.Has a heterocyclic ring with complex substituents. Yes <br>Q33.Has sufficient number of sulphonate or sulphamate groups No Class High (Class III)<br>"
-            }
-        }
-    ],
-    "model_uri": null,
-    "feature": {
-        "http://apps.ideaconsult.net:8080/ambit2/feature/9042927": {
-            "type": "Feature",
-            "title": "Cramer rules",
-            "creator": "http://toxtree.sourceforge.net/cramer.html",
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/Cramer+rules",
-                "type": "Algorithm"
-            }
-        },
-        "http://apps.ideaconsult.net:8080/ambit2/feature/9042928": {
-            "type": "Feature",
-            "title": "Cramer rules#explanation",
-            "creator": "http://toxtree.sourceforge.net/cramer.html",
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/Cramer+rules",
-                "type": "Algorithm"
-            }
-        }
-    }
-}
-````
+
+* For specific examples see the [Toxtree](toxtree.md) page.
