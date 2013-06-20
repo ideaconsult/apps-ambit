@@ -48,7 +48,7 @@ Examples:
         "http://apps.ideaconsult.net:8080/query/similarity?search=c1ccccc1&threshold=0.8&page=0&pagesize=100" 
 ````
 
-#### Similarity search
+#### Substructure search
 ````
     curl -H "Accept:application/json" \
         "http://host:port/ambit2/query/compound/search/all?search=caffeine&page=0&pagesize=1" 
