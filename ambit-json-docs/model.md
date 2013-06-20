@@ -1,0 +1,207 @@
+##OpenTox REST API: Models
+
+Provides different representations for QSAR/toxicology models. 
+
+* Models are the output/result of (learning) algorithms and cannot be modified. 
+* To apply a model, it is necessary to provide as input a dataset with compatible descriptors/features. 
+* Documentation http://opentox.org/dev/apis/api-1.2/Model
+
+
+### JSON
+
+OpenTox mandatory representation of REST resources is [RDF](http://www.w3.org/RDF/) (W3C Resource Description Framework). 
+Examples: [1](http://opentox.org/dev/apis/api-1.2/algorithm),[2](http://ambit.sourceforge.net/api_algorithm.html).
+
+The JSON representation is a new development, implemented in AMBIT web services [1](http://ambit.sf.net),[2](http://www.jcheminf.com/content/3/1/18).
+
+* The model JSON representation closely follows the RDF representation;
+
+* The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
+* As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
+
+#### Models
+#####Retrieve first 10 models
+````
+    curl -H "Accept:application/json" "http://host:port/ambit2/model?page=0&pagesize=10"
+````
+
+Example: 
+````
+    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/model?page=0&pagesize=10"
+````
+
+````json
+
+````
+
+#####Retrieve a model, created by a given algorithm
+
+````
+    curl -H "Accept:application/json" http://host:port/ambit2/model?algorithm=ALGORITHM_URI
+````
+
+Example: Retrieve the model, which will apply the Cramer rules algorithm
+
+See [Toxtree examples](toxtree.md)
+
+
+######Create a model 
+````
+    curl -X POST http://host:port/ambit2/algorithm/{id} -H "Accept:application/json"
+````
+   a task is returned
+````json
+{"task": [
+{
+        "uri":"http://host:port/ambit2/task/{id}",
+        "id": "7aadd2a5-06de-4ae2-851e-3e13ca6811d9",
+        "name": "The model name",
+        "status": "Running",
+        "started": 1371742727965,
+        "result": "http://host:port/ambit2/task/7aadd2a5-06de-4ae2-851e-3e13ca6811d9",
+}
+]
+````
+
+  poll the task 
+````
+    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/task/7aadd2a5-06de-4ae2-851e-3e13ca6811d9"
+````
+  
+  the task is now completed and the model URI is http://ahst:port/ambit2/model/{md}
+````json
+{"task": [
+{
+        "uri":"http://host:port/ambit2/model/{mid}",
+        "id": "7aadd2a5-06de-4ae2-851e-3e13ca6811d9",
+        "name": "Apply algorithm {aid}  ",
+        "status": "Completed",
+        "started": 1371742727965,
+        "completed": 1371742727974,
+        "result": "http://host:port/ambit2/model/{mid}",
+}
+]
+}
+````
+
+#### Retrieve model representation by URI 
+
+
+````
+    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/model2"
+````
+  
+````json
+{
+    "model": [
+        {
+            "URI": "http://apps.ideaconsult.net:8080/ambit2/model/2",
+            "id": 2,
+            "title": "ToxTree: Cramer rules",
+            "stars": 9,
+            "algorithm": {
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer"
+            },
+            "trainingDataset": "http://apps.ideaconsult.net:8080/ambit2/dataset/27764",
+            "independent": "http://apps.ideaconsult.net:8080/ambit2/model/2/independent",
+            "dependent": "http://apps.ideaconsult.net:8080/ambit2/model/2/dependent",
+            "predicted": "http://apps.ideaconsult.net:8080/ambit2/model/2/predicted",
+            "ambitprop": {
+                "legend": "http://apps.ideaconsult.net:8080/ambit2/model/2?media=image/png"
+            }
+        }
+    ]
+}
+````
+
+#### Finally, get some prediction (e.g. apply the model to compound or dataset URI )
+
+````
+    curl -X POST -H "Accept:application/json" \
+           -d "dataset_uri=http://apps.ideaconsult.net:8080/ambit2/compound/328" \
+           "http://apps.ideaconsult.net:8080/ambit2/model/2"
+````
+  
+    here is the task
+````json
+{
+    "task": [
+        {
+            "uri": "http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539",
+            "id": "80552714-de54-4319-9a88-ec9d39f64539",
+            "name": "Apply Model ToxTree: Cramer rules to http://apps.ideaconsult.net:8080/ambit2/compound/328",
+            "status": "Running",
+            "started": 1371743438742,
+            "result": "http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539"
+        }
+    ]
+}
+````
+    
+     poll the task
+````
+    curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539
+````
+
+and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
+````json
+{
+    "task": [
+        {
+            "uri": "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted",
+            "id": "80552714-de54-4319-9a88-ec9d39f64539",
+            "name": "Apply Model ToxTree: Cramer rules to http://apps.ideaconsult.net:8080/ambit2/compound/328",
+            "status": "Completed",
+            "started": 1371743438742,
+            "completed": 1371743439633,
+            "result": "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted"
+        }
+    ]
+}
+````
+   
+   Retrieve the predictions
+````
+    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted"
+````
+ 
+  The resutls are in the same format, as when retrieving a [dataset](dataset.md)
+````json
+{
+    "query": {
+        "summary": "idcompound=328"
+    },
+    "dataEntry": [
+        {
+            "compound": {
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/compound/328/conformer/144160"
+            },
+            "values": {
+                "http://apps.ideaconsult.net:8080/ambit2/feature/9042927": "High (Class III)",
+                "http://apps.ideaconsult.net:8080/ambit2/feature/9042928": "Q1.Normal constituent of the body No <br>Q2.Contains functional groups associated with enhanced toxicity No <br>Q3.Contains elements other than C,H,O,N,divalent S No <br>Q5.Simply branched aliphatic hydrocarbon or a common carbohydrate No <br>Q6.Benzene derivative with certain substituents No <br>7.Heterocyclic Yes <br>Q8.Lactone or cyclic diester No <br>Q10.3-membered heterocycle No <br>11.Has a heterocyclic ring with complex substituents. Yes <br>Q33.Has sufficient number of sulphonate or sulphamate groups No Class High (Class III)<br>"
+            }
+        }
+    ],
+    "model_uri": null,
+    "feature": {
+        "http://apps.ideaconsult.net:8080/ambit2/feature/9042927": {
+            "type": "Feature",
+            "title": "Cramer rules",
+            "creator": "http://toxtree.sourceforge.net/cramer.html",
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/Cramer+rules",
+                "type": "Algorithm"
+            }
+        },
+        "http://apps.ideaconsult.net:8080/ambit2/feature/9042928": {
+            "type": "Feature",
+            "title": "Cramer rules#explanation",
+            "creator": "http://toxtree.sourceforge.net/cramer.html",
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/Cramer+rules",
+                "type": "Algorithm"
+            }
+        }
+    }
+}
+````
