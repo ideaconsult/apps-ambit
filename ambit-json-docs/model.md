@@ -2,8 +2,8 @@
 
 Provides different representations for QSAR/toxicology models. 
 
-* Models are the output/result of (learning) algorithms and cannot be modified. 
-* To apply a model, it is necessary to provide as input a dataset with compatible descriptors/features. 
+* Models are the output/result of (learning) [algorithms](algorithm.md) and cannot be modified. 
+* To apply a model, it is necessary to provide as input a [dataset](dataset.md) with compatible descriptors/features. 
 * Documentation http://opentox.org/dev/apis/api-1.2/Model
 
 
