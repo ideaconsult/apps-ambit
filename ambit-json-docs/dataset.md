@@ -121,9 +121,9 @@ Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/amb
 In RDF the feature type is denoted by a mandatory link to an ontology via owl:sameAs or directly subclassing a class from an ontology.
 The JSON representation uses the key **"sameAs"** and the same ontology URIs.
 
-The following ontology entries (from opentox.owl ) are used to denote: 
+The following ontology entries are used to denote: 
 
-#### Chemical identifiers:
+#### Chemical identifiers [opentox.owl](http://www.opentox.org/api/1.1/opentox.owl):
 
 * [CAS Registry](http://en.wikipedia.org/wiki/CAS_registry_number) number : "http://www.opentox.org/api/1.1#CASRN"
 * [EC Registry](http://en.wikipedia.org/wiki/European_Commission_number) number : "http://www.opentox.org/api/1.1#EINECS"
@@ -133,4 +133,12 @@ The following ontology entries (from opentox.owl ) are used to denote:
 * [InChI](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChI_std"
 * [InChIKey]((http://en.wikipedia.org/wiki/Inchi)"http://www.opentox.org/api/1.1#InChIKey_std"
  
-#### Endpoints
+#### Toxicological endpoints [echaEndpoints.owl](http://www.opentox.org/echaEndpoints.owl), [SPARQL endpoint](http://apps.ideaconsult.net:8080/ontology/query/Endpoints) 
+
+Examples:
+
+* Fish toxicity http://www.opentox.org/echaEndpoints.owl#Acute_toxicity_to_fish_lethality 
+* Carcinogenicity http://www.opentox.org/echaEndpoints.owl#Carcinogenicity	
+
+
+
