@@ -145,3 +145,53 @@ Retrieve all Toxtree modules, available as OpenTox [algorithms](algorithm.md)
     ]
 }
 ````
+
+#### Models
+
+######Retrieve a model, created by a given algorithm
+
+````
+    curl -H "Accept:application/json" http://host:port/ambit2/model?algorithm=ALGORITHM_URI
+````
+
+Example: Retrieve the model, which will apply the Cramer rules algorithm
+
+````
+    curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/model?algorithm=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Falgorithm%2Ftoxtreecramer
+````
+
+````json
+{
+    "model": [
+        {
+            "URI": "http://apps.ideaconsult.net:8080/ambit2/model/2",
+            "id": 2,
+            "title": "ToxTree: Cramer rules",
+            "stars": 9,
+            "algorithm": {
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer",
+                "algFormat": "JAVA_CLASS",
+                "img": "/images/toxtree.png"
+            },
+            "trainingDataset": "http://apps.ideaconsult.net:8080/ambit2/dataset/27764",
+            "independent": "http://apps.ideaconsult.net:8080/ambit2/model/2/independent",
+            "dependent": "http://apps.ideaconsult.net:8080/ambit2/model/2/dependent",
+            "predicted": "http://apps.ideaconsult.net:8080/ambit2/model/2/predicted",
+            "ambitprop": {
+                "legend": "http://apps.ideaconsult.net:8080/ambit2/model/2?media=image/png",
+                "creator": "guest",
+                "mimetype": "application/java",
+                "content": "toxTree.tree.cramer.CramerRules",
+                "evaluations": {},
+                "stars": 9
+            }
+        }
+    ]
+} 
+````
+
+
+######Create a model 
+````
+    curl -X POST http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer -H "Accept:application/json"
+````
