@@ -1,5 +1,10 @@
 ### Toxtree via web services
 
+This document describes how to:
+* Retrieve Toxtree modules via OpenTox [algorithm](algorithm.md) and [model](model.md) API
+* [Run predictions](#finally-get-some-predictions-eg-apply-the-model-to-compound-or-dataset-uri-)
+* The examples assume compound URIs are known. At the [query](query.md) page there is a guide how to search and retrieve chemical compounds.
+
 
 #### Algorithms
 
