@@ -18,15 +18,15 @@ The JSON representation is a new development, implemented in AMBIT web services 
 * The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
 * As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
  
-* [Dataset JSON](dataset.md)
-* [Query JSON](query.md)
-* [Algorithm JSON](algorithm.md) 
-* [Model JSON](model.md)
+* How to access [Datasets](dataset.md)
+* How to [search chemical compounds](query.md)
+* How to access [Algorithms](algorithm.md) 
+* How to access [Models](model.md)
 
 
 ### Example  
 
-* Retrieve [Toxtree](http://toxtree.sf.net) predictions using REST web services and JSON. [How to](toxtree.md)
+* How to [run Toxtree predictions](toxtree.md) using REST web services and JSON.
 
 
 
