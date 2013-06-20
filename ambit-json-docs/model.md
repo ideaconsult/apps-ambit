@@ -66,10 +66,10 @@ See [Toxtree examples](toxtree.md)
 
   poll the task 
 ````
-    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/task/7aadd2a5-06de-4ae2-851e-3e13ca6811d9"
+    curl -H "Accept:application/json" "http://host:port/ambit2/task/7aadd2a5-06de-4ae2-851e-3e13ca6811d9"
 ````
   
-  the task is now completed and the model URI is http://ahst:port/ambit2/model/{md}
+  the task is now completed and the model URI is http://host:port/ambit2/model/{md}
 ````json
 {"task": [
 {
@@ -89,7 +89,7 @@ See [Toxtree examples](toxtree.md)
 
 
 ````
-    curl -H "Accept:application/json" "http://хост:порт/ambit2/model/{mid}"
+    curl -H "Accept:application/json" "http://host:port/ambit2/model/{mid}"
 ````
   
 ````json
