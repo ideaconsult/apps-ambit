@@ -57,7 +57,9 @@
 }
 ````
 
-#### Models
+#### Models 
+
+[What is an OpenTox Model](model.md)
 
 #####Retrieve a model, created by a given algorithm
 
