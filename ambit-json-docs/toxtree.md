@@ -254,7 +254,9 @@
 }
 ````
 
-##### Finally, get some predictions (e.g. apply the model to compound or dataset URI )
+##### Finally, get some predictions (e.g. apply the model to compound or dataset URI ). 
+
+* The compound URI is usually result of a [chemical compound search](query.md). Parse the [dataset](dataset.md) to retrieve the compound URIs.
 
 ````
     curl -X POST -H "Accept:application/json" \
