@@ -150,6 +150,7 @@ More info on OpenTox compound API [here](http://opentox.org/dev/apis/api-1.2/str
     curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/model2"
 ````
   
+ 
 ````json
 {
     "model": [
@@ -182,13 +183,16 @@ More info on OpenTox compound API [here](http://opentox.org/dev/apis/api-1.2/str
 
 ###### Retrieve existing predictions 
 
+The variables, assigned upon prediction are represented as [OpenTox features](http://ambit.sourceforge.net/api_feature.html) and could be accessed via http://host:port/model/{mid}/predicted.
 
 ````
     curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http://apps.ideaconsult.net:8080/ambit2/model2/predicted"
 ````
-  
-````json
+
 The resutls are in the same format, as when retrieving a [dataset](dataset.md)
+
+````json
+
 ````
 
 ###### Apply the model to compound or dataset URI
