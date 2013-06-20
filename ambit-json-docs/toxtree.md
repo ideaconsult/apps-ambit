@@ -173,11 +173,26 @@ More info on OpenTox compound API [here](http://opentox.org/dev/apis/api-1.2/str
 }
 ````
 
-##### Finally, get some predictions (e.g. apply the model to compound or dataset URI ). 
+##### Finally, get some predictions 
 
 * The compound URI is usually result of a [chemical compound search](query.md). 
 * Parse the [dataset](dataset.md) to retrieve the compound URIs.
 * The 2D structure diagram of a chemical compound can be retrieved by requesting **image/png* by [http://host:port/ambit2/compound/328&media=image/png&w=200&h=200](http://apps.ideaconsult.net:8080/ambit2/compound/328&media=image/png&w=200&h=200).
+
+
+###### Retrieve existing predictions 
+
+
+````
+    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http://apps.ideaconsult.net:8080/ambit2/model2/predicted"
+````
+  
+````json
+The resutls are in the same format, as when retrieving a [dataset](dataset.md)
+````
+
+###### Apply the model to compound or dataset URI
+
 
 ````
     curl -X POST -H "Accept:application/json" \
