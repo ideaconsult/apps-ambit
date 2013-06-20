@@ -1,6 +1,6 @@
 ##OpenTox REST API
 
-OpenTox is an European Commission Framework Program 7 funded project (2008-2001), 
+[OpenTox](http://opentox.org) is an European Commission Framework Program 7 funded project (2008-2001), 
 aims to develop distributed framework for predictive toxicology. 
 The building blocks considered are : data, chemical structures, algorithms and models. 
 The framework allows to build models, apply models, validate models, access and query data in various ways.
