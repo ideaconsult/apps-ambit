@@ -3,7 +3,8 @@
 This document describes how to:
 * Retrieve Toxtree modules via OpenTox [algorithm](algorithm.md) and [model](model.md) API
 * [Run predictions](#finally-get-some-predictions-eg-apply-the-model-to-compound-or-dataset-uri-)
-* The examples assume compound URIs are known. At the [query](query.md) page there is a guide how to search and retrieve chemical compounds.
+* The examples assume the chemical compound URIs are known. At the [query](query.md) page there is a guide how to search and retrieve chemical compounds. 
+More info on OpenTox compound API [here](http://opentox.org/dev/apis/api-1.2/structure)
 
 
 #### Algorithms
