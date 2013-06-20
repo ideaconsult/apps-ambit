@@ -133,7 +133,7 @@ The following ontology entries are used to denote:
 * [InChI](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChI_std"
 * [InChIKey]((http://en.wikipedia.org/wiki/Inchi)"http://www.opentox.org/api/1.1#InChIKey_std"
  
-#### Toxicological endpoints [echaEndpoints.owl](http://www.opentox.org/echaEndpoints.owl), [SPARQL endpoint](http://apps.ideaconsult.net:8080/ontology/query/Endpoints) 
+#### Toxicological endpoints [echaEndpoints.owl](http://www.opentox.org/echaEndpoints.owl), [SPARQL](http://apps.ideaconsult.net:8080/ontology/query/Endpoints) 
 
 Examples:
 
