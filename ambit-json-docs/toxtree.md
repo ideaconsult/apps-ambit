@@ -174,7 +174,9 @@ This document describes how to:
 
 ##### Finally, get some predictions (e.g. apply the model to compound or dataset URI ). 
 
-* The compound URI is usually result of a [chemical compound search](query.md). Parse the [dataset](dataset.md) to retrieve the compound URIs.
+* The compound URI is usually result of a [chemical compound search](query.md). 
+* Parse the [dataset](dataset.md) to retrieve the compound URIs.
+* The 2D structure diagram of a chemical compound can be retrieved by requesting **image/png* by [http://host:port/ambit2/compound/328&media=image/png&w=200&h=200](http://apps.ideaconsult.net:8080/ambit2/compound/328&media=image/png&w=200&h=200).
 
 ````
     curl -X POST -H "Accept:application/json" \
