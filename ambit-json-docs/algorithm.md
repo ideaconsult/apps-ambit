@@ -87,27 +87,27 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 Retrieve the list of [Descriptor calculation](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation) algorithms
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation 
+    curl -H "Accept:application/x-javascript" "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation"
 ````
 
 Retrieve the list of [Classification](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification) algorithms
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification
+    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification&media=application/json"
 ````
 
 Retrieve the list of [Regression](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression) algorithms
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression
+    curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression
 ````
 
 Retrieve the list of algorithms based on [Expert rules](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules) 
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules 
+    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules&media=application/x-javascript" 
 ````
 
 Retrieve the list of [Applicability domain](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain) algorithms
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain 
+    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain&media=application/x-javascript"
 ````
 
 ### <a id="ONTOLOGY_ENTRY">The ontology entries</a>
@@ -115,6 +115,9 @@ Retrieve the list of [Applicability domain](http://apps.ideaconsult.net:8080/amb
 * An algorithm resource may contain an "implementationOf" field, linking to the BlueObelisk ontology , e.g. http://www.blueobelisk.org/ontologies/chemoinformatics-algorithms/#xlogP. 
 * The BlueObelisk ontology provides details of the algorithm itself, e.g. publication reference.
 * The BlueObelisk ontology can be queried via Ontology service [SPARQL](http://apps.ideaconsult.net:8080/ontology/query/BODO).
+
+* An algorithm resource may contain an "endpoint" field, linking to the [endpoints ontology](http://www.opentox.org/echaEndpoints.owl) , e.g. http://www.opentox.org/echaEndpoints.owl#Carcinogenicity. 
+
 
  
 
