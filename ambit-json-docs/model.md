@@ -51,6 +51,7 @@ See [Toxtree examples](toxtree.md)
     curl -X POST http://host:port/ambit2/algorithm/{id} -H "Accept:application/json"
 ````
    a task is returned
+   
 ````json
 {"task": [
 {
@@ -123,7 +124,8 @@ See [Toxtree examples](toxtree.md)
            "http://host:port/ambit2/model/{mid}"
 ````
   
-    here is the task
+######here is the task
+    
 ````json
 {
     "task": [
@@ -139,12 +141,12 @@ See [Toxtree examples](toxtree.md)
 }
 ````
     
-     poll the task
+######poll the task
 ````
     curl -H "Accept:application/json" http://host:port/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539
 ````
 
-and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
+######and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
 ````json
 {
     "task": [
@@ -161,7 +163,7 @@ and now the task is completed. The **result** field contains the URI of the data
 }
 ````
    
-   Retrieve the predictions
+######Retrieve the predictions
 ````
     curl -H "Accept:application/json" "http://host:port/ambit2/compound/{cid?feature_uris[]=http%3A%2F%2Fhost%3Aport%2Fambit2%2Fmodel%2Fmid%2Fpredicted"
 ````
