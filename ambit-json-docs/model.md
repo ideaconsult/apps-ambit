@@ -116,7 +116,7 @@ See [Toxtree examples](toxtree.md)
 }
 ````
 
-#### Finally, get some prediction (e.g. apply the model to compound or dataset URI )
+####<a id="prediction"></a> Finally, get some prediction (e.g. apply the model to compound or dataset URI )
 
 ````
     curl -X POST -H "Accept:application/json" \
