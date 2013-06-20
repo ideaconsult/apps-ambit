@@ -1,4 +1,30 @@
+##OpenTox REST API: Dataset
 
+Provides access to chemical compounds and their features (e.g. structural, physical-chemical, biological, toxicological properties).
+
+The concept of a Dataset of chemical compounds is central to OpenTox web services functionality. 
+
+* Algorithm services accept dataset URI in order to build a model, or to generate descriptor values. 
+* Model services accept dataset URI in order to apply a model and obtain predictions. 
+* Predictions are again returned as dataset URI, which could be subsequently retrieved. 
+* Search results (exact chemical structure, similarity or substructure) are also available as datasets.
+* Documentation http://opentox.org/dev/apis/api-1.2/dataset 
+
+### JSON
+
+OpenTox mandatory representation of REST resources is [RDF](http://www.w3.org/RDF/) (W3C Resource Description Framework). 
+Examples: [1](http://opentox.org/dev/apis/api-1.2/dataset),[2](http://ambit.sourceforge.net/api_dataset.html).
+
+The JSON representation is a new development, implemented in AMBIT web services [1](http://ambit.sf.net),[2](http://www.jcheminf.com/content/3/1/18).
+
+* The dataset JSON representation closely follows the RDF data model;
+* The dataset consists of data entries (or data rows);
+* Each row is associated with exactly one chemical compound, identified by its URL and available via OpenTox Compound service API;
+* One and the same compound URL can be associated with multiple dataset rows;
+* Every column is associated with a Feature URL, representation should be available via OpenTox [Feature](feature.md) API. A feature is identified by its URL and has name and source,along with other properties. Any OpenTox [Dataset](dataset.md), [Algorithm](algorithm.md) or [Model](model.md) can serve as feature source. 
+
+* The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
+* As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
 
 
 
@@ -10,8 +36,7 @@
     "dataEntry": [
         {
             "compound": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/compound/{id}/conformer/{id}",
-                "metric": null
+                "URI": "http://apps.ideaconsult.net:8080/ambit2/compound/{id}/conformer/{id}"
             },
             "values": {
                 "key1": "value1",
@@ -20,8 +45,7 @@
         },
         {
             "compound": {
-                "URI": "http://host:port/ambit2/compound/{id}/conformer/{id}",
-                "metric": null
+                "URI": "http://host:port/ambit2/compound/{id}/conformer/{id}"
             },
             "values": {
                 "key1": "value3",
@@ -78,3 +102,15 @@
     }
 }
 ````
+
+#### [cURL](http://curl.haxx.se/) examples:
+
+[Search](http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1) for compound with name *caffeine*
+````
+    curl http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1 
+````
+
+Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/ambit2/dataset/12?page=0&pagesize=10)
+````
+    http://apps.ideaconsult.net:8080/ambit2/dataset/12?media=application/json&page=0&pagesize=10
+```` 
