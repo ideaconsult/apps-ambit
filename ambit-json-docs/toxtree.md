@@ -15,7 +15,6 @@ Retrieve all Toxtree modules, available as OpenTox [algorithms](algorithm.md)
 	"id": "toxtreecramer",
 	"name": "ToxTree: Cramer rules",
 	"endpoint": "http://www.opentox.org/echaEndpoints.owl#HumanHealthEffects",
-	"format": "JAVA_CLASS",
 	"implementationOf": "http://ambit.sourceforge.net/descriptors.owl#toxtreecramer",
 	"type": [
 		"http://www.opentox.org/algorithmTypes.owl#Rules"]
