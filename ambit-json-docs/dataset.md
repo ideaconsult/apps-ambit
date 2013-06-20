@@ -60,7 +60,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             "units": "",
             "isNominal": false,
             "isNumeric": false,
-            "sameAs": "ONTOLOGY_ENTRY",
+            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
             "isModelPredictionFeature": false,
             "creator": "URI",
             "order": 1,
@@ -75,7 +75,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             "units": "",
             "isNominal": false,
             "isNumeric": true,
-            "sameAs": "ONTOLOGY_ENTRY",
+            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
             "isModelPredictionFeature": false,
             "creator": "URI",
             "order": 3,
@@ -86,11 +86,11 @@ The JSON representation is a new development, implemented in AMBIT web services 
         },
         "key3": {
             "type": "Feature",
-            "title": "http://www.opentox.org/api/1.1#ChemicalName",
+            "title": "Title 3",
             "units": "",
             "isNominal": false,
             "isNumeric": false,
-            "sameAs": "ONTOLOGY_ENTRY",
+            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
             "isModelPredictionFeature": true,
             "creator": "URI",
             "order": 2,
@@ -114,3 +114,7 @@ Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/amb
 ````
     http://apps.ideaconsult.net:8080/ambit2/dataset/12?media=application/json&page=0&pagesize=10
 ```` 
+
+
+### <a id="ONTOLOGY_ENTRY">The ontology entries</a>
+
