@@ -148,13 +148,13 @@
 
 #### Models
 
-######Retrieve a model, created by a given algorithm
+#####Retrieve a model, created by a given algorithm
 
 ````
     curl -H "Accept:application/json" http://host:port/ambit2/model?algorithm=ALGORITHM_URI
 ````
 
-Example: Retrieve the model, which will apply the Cramer rules algorithm
+######Example: Retrieve the model, which will apply the Cramer rules algorithm
 
 ````
     curl -H "Accept:application/json" \
@@ -185,11 +185,11 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
 ````
 
 
-######Create a model 
+#####Create a model 
 ````
     curl -X POST http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer -H "Accept:application/json"
 ````
-   a task is returned
+#####A task is returned
 ````json
 {"task": [
 {
@@ -203,12 +203,12 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
 ]
 ````
 
-  poll the task 
+###### Poll the task 
 ````
     curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/task/7aadd2a5-06de-4ae2-851e-3e13ca6811d9"
 ````
   
-  the task is now completed and themodel URI is http://apps.ideaconsult.net:8080/ambit2/model/2
+######the task is now completed and themodel URI is http://apps.ideaconsult.net:8080/ambit2/model/2
 ````json
 {"task": [
 {
@@ -224,7 +224,7 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
 }
 ````
 
-#### Retrieve model representation by URI 
+#### Retrieve the model representation by URI 
 
 
 ````
@@ -254,7 +254,7 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
 }
 ````
 
-#### Finally, get some prediction (e.g. apply the model to compound or dataset URI )
+##### Finally, get some predictions (e.g. apply the model to compound or dataset URI )
 
 ````
     curl -X POST -H "Accept:application/json" \
@@ -262,7 +262,7 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
            "http://apps.ideaconsult.net:8080/ambit2/model/2"
 ````
   
-    here is the task
+######Here is the task
 ````json
 {
     "task": [
@@ -278,12 +278,12 @@ Example: Retrieve the model, which will apply the Cramer rules algorithm
 }
 ````
     
-     poll the task
+######poll the task
 ````
     curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/task/80552714-de54-4319-9a88-ec9d39f64539
 ````
 
-and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
+#####and now the task is completed. The **result** field contains the URI of the dataset with the predictions. 
 ````json
 {
     "task": [
@@ -300,12 +300,12 @@ and now the task is completed. The **result** field contains the URI of the data
 }
 ````
    
-   Retrieve the predictions
+#####Retrieve the predictions
 ````
     curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/compound/328?feature_uris[]=http%3A%2F%2Fapps.ideaconsult.net%3A8080%2Fambit2%2Fmodel%2F2%2Fpredicted"
 ````
  
-  The resutls are in the same format, as when retrieving a [dataset](dataset.md)
+#####The resutls are in the same format, as when retrieving a [dataset](dataset.md)
 ````json
 {
     "query": {
