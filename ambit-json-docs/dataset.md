@@ -107,7 +107,8 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 [Search](http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1) for compound with name *caffeine*
 ````
-    curl http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1 
+    curl -H "Accept:application/json" \
+        "http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&page=0&pagesize=1" 
 ````
 
 Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/ambit2/dataset/12?page=0&pagesize=10)
