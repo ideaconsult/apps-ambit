@@ -189,7 +189,7 @@
 ````
     curl -X POST http://apps.ideaconsult.net:8080/ambit2/algorithm/toxtreecramer -H "Accept:application/json"
 ````
-#####A task is returned
+#####A task is returned. More about the [OpenTox Task API](http://opentox.org/dev/apis/api-1.2/AsyncTask) 
 ````json
 {"task": [
 {
