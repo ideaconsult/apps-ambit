@@ -1,12 +1,12 @@
 ### Toxtree via web services
 
 
+#### Algorithms
+
 Retrieve all Toxtree modules, available as OpenTox [algorithms](algorithm.md)
 ````
-    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?search=ToxTree&media=application/x-javascript"
+    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?search=ToxTree&media=application/json"
 ````
-
-###JSON
 
 ````json
 {"algorithm": [
