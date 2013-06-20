@@ -166,6 +166,6 @@ and now the task is completed. The **result** field contains the URI of the data
     curl -H "Accept:application/json" "http://host:port/ambit2/compound/{cid?feature_uris[]=http%3A%2F%2Fhost%3Aport%2Fambit2%2Fmodel%2Fmid%2Fpredicted"
 ````
  
-  The resutls are in the same format, as when retrieving a [dataset](dataset.md)
+  The resutls are in the same format, as if retrieving a [dataset](dataset.md). 
 
 * For specific examples see the [Toxtree](toxtree.md) page.
