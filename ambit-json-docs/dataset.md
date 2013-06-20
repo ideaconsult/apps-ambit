@@ -60,7 +60,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             "units": "",
             "isNominal": false,
             "isNumeric": false,
-            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
+            "sameAs": "ONTOLOGY_ENTRY",
             "isModelPredictionFeature": false,
             "creator": "URI",
             "order": 1,
@@ -75,7 +75,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             "units": "",
             "isNominal": false,
             "isNumeric": true,
-            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
+            "sameAs": "ONTOLOGY_ENTRY",
             "isModelPredictionFeature": false,
             "creator": "URI",
             "order": 3,
@@ -90,7 +90,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             "units": "",
             "isNominal": false,
             "isNumeric": false,
-            "sameAs": "[ONTOLOGY_ENTRY](ONTOLOGY_ENTRY)",
+            "sameAs": "ONTOLOGY_ENTRY",
             "isModelPredictionFeature": true,
             "creator": "URI",
             "order": 2,
@@ -118,3 +118,19 @@ Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/amb
 
 ### <a id="ONTOLOGY_ENTRY">The ontology entries</a>
 
+In RDF the feature type is denoted by a mandatory link to an ontology via owl:sameAs or directly subclassing a class from an ontology.
+The JSON representation uses the key **"sameAs"** and the same ontology URIs.
+
+The following ontology entries (from opentox.owl ) are used to denote: 
+
+#### Chemical identifiers:
+
+* [CAS Registry](http://en.wikipedia.org/wiki/CAS_registry_number) number : "http://www.opentox.org/api/1.1#CASRN"
+* [EC Registry](http://en.wikipedia.org/wiki/European_Commission_number) number : "http://www.opentox.org/api/1.1#EINECS"
+* [IUPAC](http://www.iupac.org/) name : "http://www.opentox.org/api/1.1#IUPACName"
+* Chemical name : "http:////www.opentox.org/api/1.1#ChemicalName"
+* [SMILES](http://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system) : "http://www.opentox.org/api/1.1#SMILES"
+* [InChI](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChI_std"
+* [InChIKey]((http://en.wikipedia.org/wiki/Inchi)"http://www.opentox.org/api/1.1#InChIKey_std"
+ 
+#### Endpoints
