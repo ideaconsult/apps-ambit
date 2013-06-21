@@ -2,7 +2,7 @@
 
 A Feature is a resource, representing any kind of a property or identifier, assigned to a Compound. 
 
-* The feature types are determined via their links to ontologies, e.g. BlueObelisk ontology and [ECHA endpoints ontology](http://www.opentox.org/echaEndpoints.owl).
+* The feature types are determined via their links to ontologies, e.g. [BlueObelisk ontology](http://apps.ideaconsult.net:8080/ontology/query/BODO) and [ECHA endpoints ontology](http://www.opentox.org/echaEndpoints.owl).
 * Documentation http://opentox.org/dev/apis/api-1.2/Feature 
 
 ### JSON
@@ -19,8 +19,8 @@ The JSON representation is a new development, implemented in AMBIT web services 
 * The origin of the Feature *source:*. Any OpenTox [Dataset](dataset.md), [Algorithm](algorithm.md) or [Model](model.md) can serve as feature source. 
 * Relations to other resources, which represent the same entity, could be established via *sameAs:* property. 
 * This approach is be used for example to link the [feature](feature.md) resource to a resource form another [ontology](#ONTOLOGY_ENTRY).
-* *isNumeric* denotes if a feature holds numeric  or string values.
-* *isNominal* denote if a feature holds nominal values (a finite predefined list of string values).
+*  *isNumeric* denotes if a feature holds numeric  or string values.
+*  *isNominal* denote if a feature holds nominal values (a predefined list of string values).
 
 * The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
 * As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
@@ -81,12 +81,12 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 #### [cURL](http://curl.haxx.se/) examples:
 
-#####[Retrieve dataset features](http://apps.ideaconsult.net:8080/ambit2/dataset/1/feature) 
+##### [Retrieve dataset features](http://apps.ideaconsult.net:8080/ambit2/dataset/1/feature). More about [dataset](dataset.md).
 ````
     curl -H "Accept:application/json" \
         "http://apps.ideaconsult.net:8080/ambit2/dataset/1/feature" 
 ````
-#######Result
+ Result
 ````json
 {
     "feature": {
@@ -134,12 +134,12 @@ The JSON representation is a new development, implemented in AMBIT web services 
 }
 ````
 
-######[Retrieve model output variables](http://apps.ideaconsult.net:8080/ambit2/model/2/predicted) 
+###### [Retrieve model output variables](http://apps.ideaconsult.net:8080/ambit2/model/2/predicted) 
 ````
     curl "http://apps.ideaconsult.net:8080/ambit2/model/2/predicted?media=application/json&page=0&pagesize=10"
 ```` 
 
-#######Result
+ Result
 ````json
 {
     "feature": {
