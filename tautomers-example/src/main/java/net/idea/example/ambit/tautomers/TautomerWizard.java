@@ -20,9 +20,12 @@ import org.openscience.cdk.inchi.InChIGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.io.IChemObjectReader.Mode;
+import org.openscience.cdk.io.IChemObjectReaderErrorHandler;
 import org.openscience.cdk.io.IChemObjectWriter;
 import org.openscience.cdk.io.SDFWriter;
 import org.openscience.cdk.io.iterator.IIteratingChemObjectReader;
+import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.smiles.FixBondOrdersTool;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
@@ -31,6 +34,7 @@ import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
+import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerManager;
 
@@ -106,7 +110,38 @@ public class TautomerWizard {
 
 	protected IIteratingChemObjectReader<IAtomContainer> getReader(InputStream in, String extension) throws CDKException, AmbitIOException {
 		FileInputState instate = new FileInputState();
-		return instate.getReader(in,extension);
+		IIteratingChemObjectReader<IAtomContainer> reader ;
+		if (extension.endsWith(FileInputState.extensions[FileInputState.SDF_INDEX])) {
+			reader = new InteractiveIteratingMDLReader(in,SilentChemObjectBuilder.getInstance());
+			((InteractiveIteratingMDLReader) reader).setSkip(true);
+		} else reader = instate.getReader(in,extension);
+		
+		reader.setReaderMode(Mode.RELAXED);
+		reader.setErrorHandler(new IChemObjectReaderErrorHandler() {
+			
+			@Override
+			public void handleError(String message, int row, int colStart, int colEnd,
+					Exception exception) {
+				exception.printStackTrace();
+			}
+			
+			@Override
+			public void handleError(String message, int row, int colStart, int colEnd) {
+				System.out.println(message);
+			}
+			
+			@Override
+			public void handleError(String message, Exception exception) {
+				exception.printStackTrace();				
+			}
+			
+			@Override
+			public void handleError(String message) {
+				System.out.println(message);
+			}
+		});
+		return reader;
+		
 	}
 	/**
 	 * 
@@ -146,6 +181,7 @@ public class TautomerWizard {
 				IAtomContainer molecule  = reader.next();
 	
 				records_read++;
+				System.out.println(molecule.getProperty("DRUGBANK_ID"));
 				try {
 					/**
 					 * cdk-standard module
@@ -179,6 +215,7 @@ public class TautomerWizard {
 					 */
 					IAtomContainer best = null;
 					double bestRank = 0;
+					if (resultTautomers!=null)
 					for (IAtomContainer tautomer: resultTautomers) {
 						try {
 							Object rank_property = tautomer.getProperty("TAUTOMER_RANK");
@@ -222,6 +259,7 @@ public class TautomerWizard {
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
 		return records_read;
 	}
+	
 
 	protected IChemObjectWriter createWriter() throws Exception {
 		if ((resultFile==null) || resultFile.getName().endsWith(FileOutputState.extensions[FileOutputState.SDF_INDEX]))
