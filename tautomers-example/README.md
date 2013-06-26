@@ -37,7 +37,7 @@ Download
 
 ###Command line application
 
-   * Download [1.0.1-SNAPSHOT](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-example-1.0.1-SNAPSHOT.jar/download)
+   * Download [1.0.1-SNAPSHOT](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~net.idea.examples.ambit~ambit-tautomers-example~1.0.1-SNAPSHOT~~jar-with-dependencies) 
    
    ##### [Change log](ChangeLog.md#1.0.1-SNAPSHOT)
    
