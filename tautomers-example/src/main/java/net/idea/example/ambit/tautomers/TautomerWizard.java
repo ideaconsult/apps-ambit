@@ -179,9 +179,11 @@ public class TautomerWizard {
 				 * IAtomContainer molecule  = reader.next();
 				 */
 				IAtomContainer molecule  = reader.next();
-	
 				records_read++;
-				System.out.println(molecule.getProperty("DRUGBANK_ID"));
+				if (molecule==null) {
+					records_error++;
+					continue;
+				}
 				try {
 					/**
 					 * cdk-standard module
