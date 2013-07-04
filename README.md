@@ -5,6 +5,8 @@ This project consists of examples how to call [AMBIT](http://ambit.sourceforge.n
 
 AMBIT source code and site is at [Sourceforge.net](http://ambit.sourceforge.net/)
 
+AMBIT publications http://ambit.sourceforge.net/pubs_citeambit.html
+
 Tautomers generation
 ---
 
