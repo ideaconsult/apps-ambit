@@ -1,4 +1,4 @@
-AMBIT examples
+<span><img src='http://ambit.sourceforge.net/images/ambit-logo.png' alt='AMBIT'>examples</span>
 ==============
 
 This project consists of examples how to call [AMBIT](http://ambit.sourceforge.net/ "AMBIT") modules from Java code.
