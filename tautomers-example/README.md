@@ -11,7 +11,9 @@ undergoes tautomerization.
 
 Publications:
 
-* [Nikolay T. Kochev](http://web.uni-plovdiv.bg/nick/), Vesselina H. Paskaleva and [Nina Jeliazkova](http://vedina.users.sf.net), Ambit-Tautomer: An open source tool for tautomer generation, Molecular Informatics, 32/5, 2013 [doi:10.1002/minf.201200133] (http://onlinelibrary.wiley.com/doi/10.1002/minf.201200133/abstract)
+* [Kochev N.T.](http://web.uni-plovdiv.bg/nick/), Paskaleva V.H. and [Jeliazkova N.](http://vedina.users.sf.net), Ambit-Tautomer: An open source tool for tautomer generation, Molecular Informatics, 32/5, 2013 [doi:10.1002/minf.201200133] (http://onlinelibrary.wiley.com/doi/10.1002/minf.201200133/abstract)
+* Kochev N.T., Paskaleva V.H., Jeliazkova N., Algorithms for Automatic Tautomer Generation and Their Applications - [Poster #14](http://cisrg.shef.ac.uk/shef2013/showabstract.php?id=33) at [6th Joint Sheffield Conference on Chemoinformatics](http://cisrg.shef.ac.uk/shef2013/conference.php)
+* Jeliazkova N., Kochev N.T., Jeliazkov V., [Chemical Landscape Analysis – the Case of Tautomers](http://toxmatch.sf.net) - [Poster #38](http://cisrg.shef.ac.uk/shef2013/showabstract.php?id=34) at [6th Joint Sheffield Conference on Chemoinformatics](http://cisrg.shef.ac.uk/shef2013/conference.php)
 * Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
 
 The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
