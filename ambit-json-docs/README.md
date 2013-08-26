@@ -15,7 +15,7 @@ Examples: [1](http://opentox.org/dev/apis/api-1.2/dataset),[2](http://ambit.sour
 
 The JSON representation is a new development, implemented in AMBIT web services [1](http://ambit.sf.net),[2](http://www.jcheminf.com/content/3/1/18).
 
-* The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
+* The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively. The callback parameter when using JSONP is 'callback'.
 * As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
  
 * How to access [Datasets](dataset.md)
