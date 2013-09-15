@@ -4,7 +4,7 @@
 aims to develop distributed framework for predictive toxicology. 
 The building blocks considered are : data, chemical structures, algorithms and models. 
 The framework allows to build models, apply models, validate models, access and query data in various ways.
-Technologies used are REST style web services and W3C Resource Description Framework for description of services.
+Technologies used are [REST](http://ambit.sourceforge.net/rest.html) style web services and [W3C Resource Description Framework](http://ambit.sourceforge.net/rdf.html) for description of services.
 
 * API Documentation http://opentox.org/dev/apis/api-1.2 
 
