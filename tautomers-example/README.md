@@ -28,6 +28,7 @@ filters, allowing more fine-grained output control.
 This project contains examples how to use ambit2-tautomer package. The package code itself is hosted at [sourceforge.net](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html)
 and the artifacts are available at the [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomer).
 For a quick test, try the [tautomer generation](http://apps.ideaconsult.net:8080/ambit2/depict/tautomer?search=NC%3D1N%3DCN%3DC2N%3DCNC2%3D1) online.
+The tautomer generation is also available as OpenTox [algorithm](http://apps.ideaconsult.net:8080/ambit2/algorithm/tautomers) and [model API](http://apps.ideaconsult.net:8080/ambit2/model?algorithm=http://apps.ideaconsult.net:8080/ambit2/algorithm/tautomers).
 
 
   * Please use the issue tracker to report bugs https://github.com/ideaconsult/examples-ambit/issues 
