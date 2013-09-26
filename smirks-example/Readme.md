@@ -57,7 +57,27 @@ The transformations can be applied on various sites of the target molecule in se
 
 ### Code examples
 
- http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-smarts/examples.html#SMIRKS
+```java
+    IAtomContainer target = (initialize)
+    SMIRKSManager smrkMan = new SMIRKSManager();
+    SMIRKSReaction reaction = smrkMan.parse(smirks);
+    if (!smrkMan.getErrors().equals(""))  {
+           throw(new Exception("Smirks Parser errors:\n" + smrkMan.getErrors()));
+    }
+    if (smrkMan.applyTransformation(target, reaction)) 
+           return target; //all products inside the same atomcontainer, could be disconnected
+    else return null;
+```
+
+#### Generate separate products for every possible reaction (used in [Toxtree](http://toxtree.sf.net/smartcyp.html))
+
+```java
+    SMIRKSManager smrkMan = new SMIRKSManager();
+    SMIRKSReaction smr = smrkMan.parse(reaction.getSMIRKS());
+    IAtomContainer product = reactant; //(IAtomContainer) reactant.clone();
+    IAtomContainerSet rproducts = smrkMan.applyTransformationWithSingleCopyForEachPos(product, null, smr);
+    //products returned in a separate atom sontainer set
+```
 
 ##Ambit- SMIRKS Application in metabolite generation
 
