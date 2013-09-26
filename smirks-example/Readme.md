@@ -74,6 +74,7 @@ The transformations can be applied on various sites of the target molecule in se
 ##Ambit- SMIRKS Application in metabolite generation
 
 [Toxtree](http://toxtree.sf.net) is an open-source application that predicts various kinds of toxic effects, mostly by applying structural alerts, arranged in a decision tree fashion.
+You could [download the application](http://toxtree.sourceforge.net/download.html) or test [Toxtree online](http://toxtree.sourceforge.net/predict)
 
 [SMARTCyp](http://www.farma.ku.dk/smartcyp/) (Cytochrome P450-Mediated Drug Metabolism) model is developed by Patrik Rydberg et al and is included as [Toxtree module](http://toxtree.sourceforge.net/smartcyp.html) since Toxtree 2.1.0. 
 
