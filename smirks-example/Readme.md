@@ -29,6 +29,35 @@ The transformations can be applied on various sites of the target molecule in se
 
 ### Test online at http://tinyurl.com/testreaction
 
+### Maven artifacts
+
+#### Depends on [The CDK](http://cdk.sf.net) 1.4.11 
+
+    <dependency>
+      <groupId>ambit</groupId>
+      <artifactId>ambit2-smarts</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <repository>
+        <id>ambit-plovdiv-releases</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository> 
+
+#### Depends on [The CDK](http://cdk.sf.net) 1.5.3 
+
+    <dependency>
+      <groupId>ambit</groupId>
+      <artifactId>ambit2-smarts</artifactId>
+      <version>2.6.0-SNAPSHOT</version>
+    </dependency>
+    <repository>
+        <id>ambit-plovdiv-snapshots</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+    </repository>
+
+### Code examples
+
+ http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-smarts/examples.html#SMIRKS
 
 ##Ambit- SMIRKS Application in metabolite generation
 
