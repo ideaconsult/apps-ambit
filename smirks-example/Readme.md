@@ -10,7 +10,7 @@ once that site of metabolisms are predicted by [SMARTCyp](http://www.farma.ku.dk
 * Parsing of [SMIRKS linear notations](http://www.daylight.com/dayhtml_tutorials/languages/smirks/) into internal reaction (transformation) representations based on [The Chemistry Development Kit](http://cdk.sf.net) objects 
 * Application of the stored reactions against target molecules for actual transformation of the target chemical objects 
 
-### Transformation mapping modes
+##### Transformation mapping modes
 
 The transformations can be applied on various sites of the target molecule in several modes: 
 * single 
@@ -19,11 +19,11 @@ The transformations can be applied on various sites of the target molecule in se
 * non-homomorphic or
 * externally specified list of sites
 
-### Test online at http://tinyurl.com/testreaction
+##### Test online at http://tinyurl.com/testreaction
 
-### Maven artifacts
+#### Maven artifacts
 
-#### Depends on [The CDK](http://cdk.sf.net) 1.4.11 
+* Depends on [The CDK](http://cdk.sf.net) 1.4.11 
 
     <dependency>
       <groupId>ambit</groupId>
@@ -35,7 +35,7 @@ The transformations can be applied on various sites of the target molecule in se
         <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
     </repository> 
 
-#### Depends on [The CDK](http://cdk.sf.net) 1.5.3 
+* Depends on [The CDK](http://cdk.sf.net) 1.5.3 
 
     <dependency>
       <groupId>ambit</groupId>
@@ -47,7 +47,7 @@ The transformations can be applied on various sites of the target molecule in se
         <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
     </repository>
 
-### Code examples
+#### Code examples
 
 ```java
     IAtomContainer target = (initialize)
@@ -60,8 +60,7 @@ The transformations can be applied on various sites of the target molecule in se
            return target; //all products inside the same atomcontainer, could be disconnected
     else return null;
 ```
-
-#### Generate separate products for every possible reaction (used in [Toxtree](http://toxtree.sf.net/smartcyp.html))
+* Generate separate products for every possible reaction (used in [Toxtree](http://toxtree.sf.net/smartcyp.html))
 
 ```java
     SMIRKSManager smrkMan = new SMIRKSManager();
