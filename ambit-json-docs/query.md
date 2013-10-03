@@ -56,7 +56,7 @@ Examples:
 
 Examples:
 
-[Compounds containing substructure](http://apps.ideaconsult.net:8080/ambit2/query/smarts?search=c1ccccc1&threshold=0.8&page=0&pagesize=100&media=application/json) , specified by SMILES c1ccccc1
+[Compounds containing substructure](http://apps.ideaconsult.net:8080/ambit2/query/smarts?search=c1ccccc1&page=0&pagesize=100&media=application/json) , specified by SMILES c1ccccc1
 ````
     curl -H "Accept:application/json" \
         "http://apps.ideaconsult.net:8080/ambit2/query/smarts?search=c1ccccc1&threshold=0.8&page=0&pagesize=100" 
