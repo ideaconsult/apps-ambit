@@ -26,7 +26,8 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 ### Example  
 
-* How to [run Toxtree predictions](toxtree.md) using REST web services and JSON.
+* How to [run Toxtree predictions](toxtree.md) using REST web services and JSON. 
+* Try [Toxtree web edition](http://toxtree.sf.net/predict)
 
 
 
