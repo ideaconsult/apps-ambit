@@ -1,0 +1,14 @@
+Manifest-version: 1.0
+Package: net.idea.ambit.molbrowser
+Main-Class: net.idea.ambit.molbrowser.MainApp
+
+Name: net/idea/ambit/molbrowser
+Specification-Title: Generates molbrowser web page
+Specification-Vendor: IdeaConsult Ltd.
+Specification-Version: 2013
+Package-Title: net.idea.ambit.molbrowser
+Package-Version: ${project.version}
+Package-Vendor: IdeaConsult Ltd.
+Implementation-Title: ambit2-core ${ambit.version}
+Implementation-Version: ${project.version}
+Implementation-Vendor: IdeaConsult Ltd.
