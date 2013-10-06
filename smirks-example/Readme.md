@@ -1,10 +1,10 @@
 #Ambit-SMIRKS
 
+Best poster award at [OpenTox Euro 2013](http://www.opentox.org/meet/opentoxeu2013/opentoxeuro13awards) |
 [This page](http://tinyurl.com/ambitsmirks) | [Ambit at Google+](https://plus.google.com/b/116849658963631645389/116849658963631645389/posts) |
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="10705013" data-related="10705013" data-count="none" data-hashtags="ambit,smirks,metabolism,oteu13,opentox">Tweet</a>
 
 --
-
 Ambit-SMIRKS is an extension of the [Ambit-SMARTS](http://onlinelibrary.wiley.com/doi/10.1002/minf.201100028/abstract) Java library, both part of the [AMBIT project](http://ambit.sf.net)
 
 The SMIRKS module is used to enable metabolite predictions in [Toxtree](http://toxtree.sourceforge.net),
