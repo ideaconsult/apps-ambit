@@ -46,6 +46,14 @@ Tautomers generation
 
   * ambit2-tautomer.jar at [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick%7Eambit2-tautomer)
 
+JavaScript Molecular browser 
+---
+
+ * Publishing a chemical dataset online is easy - just convert SDF file to JSON and a folder of images with [molbrowser commandline application](https://github.com/ideaconsult/examples-ambit/tree/master/molbrowser}
+ 
+ * Try it at http://ideaconsult.github.io/examples-ambit/molbrowser/
+ 
+
 More examples 
 ----------------
 
