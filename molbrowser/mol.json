@@ -1,0 +1,1955 @@
+{
+"dataset":	{
+	"name":"Open Source Malaria Data",	"molecule":	[
+{
+		"record":	1,
+		"img":	"images/a756b793-31a3-43cd-848a-26336a5aa404.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Name":	"(2Z,5Z)-5-((1-(3-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methylene)-3-phenyl-2-(phenylimino)thiazolidin-4-one",
+			"OSM_ID":	"OSM-L-01",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	3200.0
+		}
+	},{
+		"record":	2,
+		"img":	"images/b11b6017-f3c3-471e-b08a-88fdec49dc31.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/5403/Preparation_of_14Fluorophenyl25dimethyl1Hpyrrole_OSMS1.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-1",
+			"Sample_ID":	"PMY 1-1, PMY 1-2, PMY 1-3, PMY 1-4, PMY 1-5, PMY 1-6"
+		}
+	},{
+		"record":	3,
+		"img":	"images/643a4422-ac32-4d18-8101-d697cfc496f5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 2-4",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"60% @ 120000",
+			"OSM_ID":	"OSM-S-2",
+			"Name":	"1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carbaldehyde",
+			"K1_IC50_nM_Avery":	"50%@120uM",
+			"HEK293_at_120uM":	"25%",
+			"3D7_IC50_nM_GSK":	">5000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/5848/Preparation_of_14fluorophenyl25dimethyl1Hpyrrole3carbaldehyde_OSMS2.html"
+		}
+	},{
+		"record":	4,
+		"img":	"images/986cf8e7-6360-43c2-86f6-5d36c79e66d1.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 6-1, JRC 1-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	11960.0,
+			"OSM_ID":	"OSM-S-3",
+			"Name":	"ethyl 1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylate",
+			"K1_IC50_nM_Avery":	12400.0,
+			"HEK293_at_120uM":	"25%",
+			"3D7_IC50_nM_GSK":	">5000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7048/Preparation_of_OSMS3.html"
+		}
+	},{
+		"record":	5,
+		"img":	"images/507c4cca-4a1e-4883-af8e-28d79e2750d5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 8-2, JRC 2-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"75% @ 120000",
+			"OSM_ID":	"OSM-S-4",
+			"Name":	"1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylic acid",
+			"K1_IC50_nM_Avery":	"50%@120uM",
+			"HEK293_at_120uM":	"20%",
+			"3D7_IC50_nM_GSK":	">5000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7051/Preparation_of_OSMS4.html"
+		}
+	},{
+		"record":	6,
+		"img":	"images/f84e4628-c13e-42b2-9eb7-178410dca41f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7054/Preparation_of_OSMS5.html",
+			"OSM_ID":	"OSM-S-5",
+			"HEK293_at_120uM":	"20%",
+			"3D7_IC50_nM_GSK":	818.0,
+			"Degradation_rate_classification":	"moderate",
+			"Kinetic_solubility_pH2_ug_per_mL":	"50-100",
+			"hERG_IC50_uM":	">33",
+			"K1_IC50_nM_Avery":	375.0,
+			"ChEMBL":	"dep1",
+			"Series Tag":	"Series 1",
+			"In_vitro_CLint_uL_min_mg_protein":	29.0,
+			"In_vivo_mouse_ P.Berghei_ora_50mg_per_kg":	"neg",
+			"Sample_ID":	"PMY 10-2",
+			"3D7_IC50_nM_Avery":	404.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"50-100",
+			"Degradation_half_life _mins":	59.0,
+			"Name":	"TCMDC-123812",
+			"Late_stage_gametocyte_IC50_nM":	598.0
+		}
+	},{
+		"record":	7,
+		"img":	"images/d68f4b23-002f-47f3-b949-6cd62d738443.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 11-2",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	345.0,
+			"OSM_ID":	"OSM-S-6",
+			"Degradation_half_life _mins":	29.0,
+			"In_vitro_CLint_uL_min_mg_protein":	60.0,
+			"Degradation_rate_classification":	"modrate",
+			"In_vivo_mouse_ P.Berghei_ora_50mg_per_kg":	"neg",
+			"Kinetic_solubility_pH2_ug_per_mL":	"12.5-25",
+			"Name":	"TCMDC-123794",
+			"K1_IC50_nM_Avery":	152.0,
+			"HEK293_at_120uM":	"20%",
+			"3D7_IC50_nM_GSK":	245.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"12.5-25",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7057/Preparation_of_OSMS6.html"
+		}
+	},{
+		"record":	8,
+		"img":	"images/42f05aca-4165-4763-b9d5-64313efc7510.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 12-1",
+			"ChEMBL":	"dep1+2",
+			"3D7_IC50_nM_Avery":	7800.0,
+			"OSM_ID":	"OSM-S-7",
+			"Name":	"N-cyclohexyl-N-(cyclohexylcarbamoyl)-1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole",
+			"K1_IC50_nM_Avery":	4550.0,
+			"HEK293_at_120uM":	"75%",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7059/Preparation_of_OSMS7.html"
+		}
+	},{
+		"record":	9,
+		"img":	"images/0784eaff-e90b-4601-b312-a7db628a36b1.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 12-5",
+			"ChEMBL":	"dep1+2",
+			"3D7_IC50_nM_Avery":	"100% @ 80000",
+			"OSM_ID":	"OSM-S-8",
+			"Name":	"N-(1,5-dimethyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazol-4-yl)-1-(4-fluorophenyl)-",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7060/Preparation_of_OSMS8.html"
+		}
+	},{
+		"record":	10,
+		"img":	"images/5f414f8e-f283-4f53-8a54-a8e02553ce0c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 14-1, PMY 35-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	47.0,
+			"OSM_ID":	"OSM-S-9",
+			"Degradation_rate_classification":	"rapid non-NADPH acetamide hydrolysis to OSM-S-10",
+			"Late_stage_gametocyte_IC50_nM":	53.0,
+			"Kinetic_solubility_pH2_ug_per_mL":	"0-1.6",
+			"Name":	"(Z)-N-(5-((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methylene)-4-oxo-4,5-",
+			"K1_IC50_nM_Avery":	66.19999694824219,
+			"HEK293_at_120uM":	"75%",
+			"3D7_IC50_nM_GSK":	46.5,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7061/Preparation_of_OSMS9.html"
+		}
+	},{
+		"record":	11,
+		"img":	"images/4775cb54-5814-4223-b0e7-0d3116ec725b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 14-3-A, PMY 14-4, PMY 16-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	176.0,
+			"OSM_ID":	"OSM-S-10",
+			"Degradation_half_life _mins":	"92-113",
+			"In_vitro_CLint_uL_min_mg_protein":	"15-19",
+			"Degradation_rate_classification":	"moderate",
+			"Kinetic_solubility_pH2_ug_per_mL":	"0-1.6",
+			"Name":	"(Z)-5-((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methylene)-2-(phenylamin",
+			"K1_IC50_nM_Avery":	360.79998779296875,
+			"HEK293_at_120uM":	"25%",
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7062/Preparation_of_OSMS10.html"
+		}
+	},{
+		"record":	12,
+		"img":	"images/b8f5238c-aedf-48b2-aba4-8edeb8b0134e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7064/Preparation_of_OSMS11.html",
+			"Series Tag":	"Series 1",
+			"Name":	"(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methanol",
+			"OSM_ID":	"OSM-S-11",
+			"Sample_ID":	"PMY 18-3, PMY 15-2"
+		}
+	},{
+		"record":	13,
+		"img":	"images/fef236da-e83b-4f9a-8161-8c59e77aace9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 20-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"70% @ 120000",
+			"OSM_ID":	"OSM-S-12",
+			"Name":	"2,5-dimethyl-1-phenyl-1H-pyrrole-3-carboxylic acid",
+			"K1_IC50_nM_Avery":	"50%@120uM",
+			"HEK293_at_120uM":	"0%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7065/Preparation_of_OSMS12.html"
+		}
+	},{
+		"record":	14,
+		"img":	"images/642f57ac-486b-420c-b2db-8f3d1e32f40a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 21-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"70% @ 120000",
+			"OSM_ID":	"OSM-S-13",
+			"Name":	"2,5-dimethyl-1-(p-tolyl)-1H-pyrrole-3-carboxylic acid",
+			"K1_IC50_nM_Avery":	"0%",
+			"HEK293_at_120uM":	"0%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7066/Preparation_of_OSMS13.html"
+		}
+	},{
+		"record":	15,
+		"img":	"images/68ea330d-da9c-488b-8c7e-5568ab15ef5c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 22-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"25% @ 120000",
+			"OSM_ID":	"OSM-S-14",
+			"Name":	"2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrole-3-carboxylic acid",
+			"K1_IC50_nM_Avery":	"0%",
+			"HEK293_at_120uM":	"0%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7068/Preparation_of_OSMS14.html"
+		}
+	},{
+		"record":	16,
+		"img":	"images/51108ad9-768d-4072-ac0a-18e7cb926798.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7069/Preparation_of_OSMS15.html",
+			"Name":	"2-benzamidoacetic acid",
+			"OSM_ID":	"OSM-S-15",
+			"Sample_ID":	"PMY 26-1"
+		}
+	},{
+		"record":	17,
+		"img":	"images/8ff4a50c-49e0-4295-89d5-07b7fc855b4c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7070/Preparation_of_OSMS16.html",
+			"Name":	"N-(2-((1,5-dimethyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazol-4-yl)amino)-2-oxoethyl)benzamide",
+			"OSM_ID":	"OSM-S-16",
+			"3D7_IC50_nM_GSK":	">5000",
+			"ChEMBL":	"dep1",
+			"Sample_ID":	"PMY 27-2",
+			"3D7_IC50_nM_Avery":	">80000"
+		}
+	},{
+		"record":	18,
+		"img":	"images/ebfb677a-6815-4239-883d-a9987275fe5b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7071/Preparation_of_OSMS17.html",
+			"Name":	"tert-butyl (2-((1,5-dimethyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazol-4-yl)amino)-2-oxoethyl)carbamate",
+			"OSM_ID":	"OSM-S-17",
+			"Sample_ID":	"PMY 29-1, PMY 29-2"
+		}
+	},{
+		"record":	19,
+		"img":	"images/d258960e-139a-4448-98d4-581c52aaa7c8.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7072/Preparation_of_OSMS18.html",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-18",
+			"Sample_ID":	"PMY 30-3"
+		}
+	},{
+		"record":	20,
+		"img":	"images/9ddbc692-a140-4a7b-82d0-ebb657f75347.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 31-5",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"25-80% @ 80000",
+			"OSM_ID":	"OSM-S-19",
+			"Name":	"N-(2-amino-2-oxoethyl)-1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxamide",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7073/Preparation_of_OSMS19.html"
+		}
+	},{
+		"record":	21,
+		"img":	"images/32efa13f-36be-48bc-9486-e29426787a0f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7077/Preparation_of_OSMS20.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carbonyl chloride",
+			"OSM_ID":	"OSM-S-20",
+			"Sample_ID":	"PMY 32-3"
+		}
+	},{
+		"record":	22,
+		"img":	"images/f0c29795-f475-4823-956e-3a89d28eb624.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"PMY 34-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	31000.0,
+			"OSM_ID":	"OSM-S-21",
+			"Name":	"N-(2-((1,5-dimethyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazol-4-yl)amino)-2-oxoethyl)-1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxamide",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7078/Preparation_of_OSMS21.html"
+		}
+	},{
+		"record":	23,
+		"img":	"images/08506eb9-df40-4d26-959c-f5123c2ecc27.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7079/Preparation_of_OSMS22.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-22",
+			"Sample_ID":	"PMY 42-1"
+		}
+	},{
+		"record":	24,
+		"img":	"images/e63cab80-4fe5-45dc-99c6-61087e434a26.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7080/Preparation_of_OSMS23.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-23",
+			"Sample_ID":	"PMY 43-1"
+		}
+	},{
+		"record":	25,
+		"img":	"images/8546cbbe-c428-4f53-9703-b3dcd6a826bc.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7081/Preparation_of_OSMS24.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-24",
+			"Sample_ID":	"PMY 44-1"
+		}
+	},{
+		"record":	26,
+		"img":	"images/2b602395-d94f-40ba-8814-43bfdecebc6d.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7082/Preparation_of_OSMS25.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-25",
+			"Sample_ID":	"LMW 1-1"
+		}
+	},{
+		"record":	27,
+		"img":	"images/a089178c-19ec-4fad-bb8a-eb1eab151e72.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7083/Preparation_of_OSMS26.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-26",
+			"Sample_ID":	"LMW 2-1"
+		}
+	},{
+		"record":	28,
+		"img":	"images/e27c4b17-5d54-46a0-815f-ac20b21ef43a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7084/Preparation_of_OSMS27.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-27",
+			"Sample_ID":	"LMW 3-1"
+		}
+	},{
+		"record":	29,
+		"img":	"images/ecd95312-d73c-4060-a512-b73e6a709196.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"LMW 4-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"55% @ 120000",
+			"OSM_ID":	"OSM-S-28",
+			"Name":	"2,5-dimethyl-1-phenyl-1H-pyrrole-3-carbaldehyde",
+			"K1_IC50_nM_Avery":	"80%@120uM",
+			"HEK293_at_120uM":	"25%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7085/Preparation_of_OSMS28.html"
+		}
+	},{
+		"record":	30,
+		"img":	"images/551c0a2a-49e8-408d-9e1a-d89fa105a33c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"LMW 5-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"could not determine",
+			"OSM_ID":	"OSM-S-29",
+			"Name":	"2,5-dimethyl-1-(p-tolyl)-1H-pyrrole-3-carbaldehyde",
+			"K1_IC50_nM_Avery":	"Hook over",
+			"HEK293_at_120uM":	"Hook over",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7086/Preparation_of_OSMS29.html"
+		}
+	},{
+		"record":	31,
+		"img":	"images/df9ddd95-0ac2-4e86-ae3a-9205e873b17d.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"LMW 6-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"85% @ 120000",
+			"OSM_ID":	"OSM-S-30",
+			"Name":	"ethyl 2,5-dimethyl-1-(p-tolyl)-1H-pyrrole-3-carboxylate",
+			"K1_IC50_nM_Avery":	"50%@120uM",
+			"HEK293_at_120uM":	"0%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7087/Preparation_of_OSMS30.html"
+		}
+	},{
+		"record":	32,
+		"img":	"images/ea20cc42-3370-4616-8249-5948afebb29f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"LMW 8-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"80% @ 120000",
+			"OSM_ID":	"OSM-S-31",
+			"Name":	"ethyl 2,5-dimethyl-1-phenyl-1H-pyrrole-3-carboxylate",
+			"K1_IC50_nM_Avery":	"0%",
+			"HEK293_at_120uM":	"0%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7088/Preparation_of_OSMS31.html"
+		}
+	},{
+		"record":	33,
+		"img":	"images/82ea46d4-5546-4e71-8783-dc5a946b741e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"LMW 9-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"85% @ 120000",
+			"OSM_ID":	"OSM-S-32",
+			"Name":	"ethyl 2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrole-3-carboxylate",
+			"K1_IC50_nM_Avery":	"20%@120uM",
+			"HEK293_at_120uM":	"75%",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7089/Preparation_of_OSMS32.html"
+		}
+	},{
+		"record":	34,
+		"img":	"images/58db4a19-2d96-4032-8c1e-bfd8bc13a7f3.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7090/Preparation_of_OSMS33.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(3,5-bis(trifluoromethyl)phenyl)-2,5-dimethyl-1H-pyrrole",
+			"OSM_ID":	"OSM-S-33",
+			"Sample_ID":	"ZYH 1-1"
+		}
+	},{
+		"record":	35,
+		"img":	"images/05c63091-7e1f-4832-84d5-65d404ebc3ef.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7091/Preparation_of_OSMS34.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-34",
+			"Sample_ID":	"ZYH 2-2"
+		}
+	},{
+		"record":	36,
+		"img":	"images/6b740bc9-3a42-4cc5-9d55-6af866472d5a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 3-1, PMY 47-1, MNR93-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	26.0,
+			"OSM_ID":	"OSM-S-35",
+			"hERG_IC50_uM":	">33",
+			"In_vivo_mouse_ P.Berghei_ora_50mg_per_kg":	"neg",
+			"Name":	"(2Z,5Z)-5-((2,5-dimethyl-1-phenyl-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	36.0,
+			"3D7_IC50_nM_Ralph":	10.899999618530273,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7092/Preparation_of_OSMS35.html"
+		}
+	},{
+		"record":	37,
+		"img":	"images/99db0a27-b1a1-4fbd-94fa-f1fe52e1aa64.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7094/Preparation_of_OSMS36.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(3,5-bis(trifluoromethyl)phenyl)-2,5-dimethyl-1H-pyrrole-3-carbaldehyde",
+			"OSM_ID":	"OSM-S-36",
+			"Sample_ID":	"ZYH 4-2/4-3"
+		}
+	},{
+		"record":	38,
+		"img":	"images/f5015fa4-9b6c-478d-a9a7-9d689deb1213.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 5-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	15.0,
+			"OSM_ID":	"OSM-S-37",
+			"Degradation_half_life _mins":	245.0,
+			"In_vitro_CLint_uL_min_mg_protein":	7.0,
+			"Degradation_rate_classification":	"low",
+			"Kinetic_solubility_pH2_ug_per_mL":	"0-1.6",
+			"Name":	"(2Z,5Z)-5-((2,5-dimethyl-1-(p-tolyl)-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	15.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"3D7_IC50_nM_Ralph":	9.199999809265137,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7095/Preparation_of_OSMS37.html"
+		}
+	},{
+		"record":	39,
+		"img":	"images/02b1687a-ba8a-4dc1-9d19-7279844d8b3c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 6-1/6-2",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	2.0,
+			"OSM_ID":	"OSM-S-38",
+			"Degradation_half_life _mins":	">250",
+			"In_vitro_CLint_uL_min_mg_protein":	"<7",
+			"Degradation_rate_classification":	"low",
+			"Late_stage_gametocyte_IC50_nM":	2.200000047683716,
+			"Kinetic_solubility_pH2_ug_per_mL":	"0.1-6",
+			"Name":	"(2Z,5Z)-5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	29.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"3D7_IC50_nM_Ralph":	205.0,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7096/Preparation_of_OSMS38.html"
+		}
+	},{
+		"record":	40,
+		"img":	"images/a53e555b-8800-4388-ba3c-02f48103371e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 7-2",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	0.7799999713897705,
+			"OSM_ID":	"OSM-S-39",
+			"Degradation_half_life _mins":	">250",
+			"In_vitro_CLint_uL_min_mg_protein":	"<7",
+			"Degradation_rate_classification":	"low",
+			"Late_stage_gametocyte_IC50_nM":	0.7799999713897705,
+			"Kinetic_solubility_pH2_ug_per_mL":	"0-1.6",
+			"Name":	"(2Z,5Z)-5-((1-(3,5-bis(trifluoromethyl)phenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	7.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"3D7_IC50_nM_Ralph":	4.699999809265137,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7097/Preparation_of_OSMS39.html"
+		}
+	},{
+		"record":	41,
+		"img":	"images/9cc3675d-f0df-4273-a662-0f1ab0403f78.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7098/Preparation_of_OSMS40.html",
+			"Series Tag":	"Series 1",
+			"Name":	"ethyl 4-(2,5-dimethyl-1H-pyrrol-1-yl)benzoate",
+			"OSM_ID":	"OSM-S-40",
+			"Sample_ID":	"ZYH 8-1"
+		}
+	},{
+		"record":	42,
+		"img":	"images/26c7f329-bd3c-403b-8779-625b4fb56511.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7099/Preparation_of_OSMS41.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-41",
+			"Sample_ID":	"ZYH 9-1"
+		}
+	},{
+		"record":	43,
+		"img":	"images/4575679c-ae78-4489-bd20-b3c504c8a363.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 10-1 A",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	"could not determine",
+			"OSM_ID":	"OSM-S-42",
+			"Name":	"2-((2Z,5Z)-5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-4-oxo-2-(phenylimino)thiazolidin-3-yl)acetonitrile",
+			"HEK293_at_120uM":	"40%",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7100/Preparation_of_OSMS42.html"
+		}
+	},{
+		"record":	44,
+		"img":	"images/3f3b8f6d-cc78-4ab6-baa0-0b0f0b048a84.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 10-1 B",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	3120.0,
+			"OSM_ID":	"OSM-S-43",
+			"Name":	"(Z)-2-((5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-4-oxo-4,5-dihydrothiazol-2-yl)(phenyl)amino)acetonitrile",
+			"3D7_IC50_nM_GSK":	">5000",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7110/Preparation_of_OSMS43.html"
+		}
+	},{
+		"record":	45,
+		"img":	"images/50a82e9a-c0a6-4fdf-b752-da1e681f792c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7111/Preparation_of_OSMS44.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2,5-dimethyl-1-(pyridin-2-yl)-1H-pyrrole-3-carbaldehyde",
+			"OSM_ID":	"OSM-S-44",
+			"Sample_ID":	"ZYH 11-1"
+		}
+	},{
+		"record":	46,
+		"img":	"images/fd4fd65e-c5d2-470f-a2c3-ffb29d1a380a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 12-1/12-2",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	12.0,
+			"OSM_ID":	"OSM-S-45",
+			"Name":	"(Z)-N-(5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-4-oxo-4,5-dihydrothiazol-2-yl)-N-phenylacetamide",
+			"3D7_IC50_nM_GSK":	26.0,
+			"3D7_IC50_nM_Ralph":	7.699999809265137,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7112/Preparation_of_OSMS45.html"
+		}
+	},{
+		"record":	47,
+		"img":	"images/7ace70e4-6346-40d6-81ca-83b23449cce9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7113/Preparation_of_OSMS46.html",
+			"Series Tag":	"Series 1",
+			"Name":	"ethyl 4-(3-formyl-2,5-dimethyl-1H-pyrrol-1-yl)benzoate",
+			"OSM_ID":	"OSM-S-46",
+			"Sample_ID":	"ZYH 13-1"
+		}
+	},{
+		"record":	48,
+		"img":	"images/4cebf604-b383-4bc7-b5d4-4ccc46140301.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7114/Preparation_of_OSMS47.html",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-47",
+			"Sample_ID":	"ZYH 14-1"
+		}
+	},{
+		"record":	49,
+		"img":	"images/c6c73105-94fc-455d-b035-1bec3a718ad7.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 15-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	169.0,
+			"OSM_ID":	"OSM-S-48",
+			"Name":	"ethyl 4-(2,5-dimethyl-3-((Z)-((Z)-4-oxo-2-(phenylimino)thiazolidin-5-ylidene)methyl)-1H-pyrrol-1-yl)benzoate",
+			"3D7_IC50_nM_GSK":	267.0,
+			"3D7_IC50_nM_Ralph":	338.8999938964844,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7115/Preparation_of_OSMS48.html"
+		}
+	},{
+		"record":	50,
+		"img":	"images/39803b68-e306-46d9-9ced-87e280c132fa.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 16-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	63.0,
+			"OSM_ID":	"OSM-S-49",
+			"Name":	"(Z)-N-(5-((2,5-dimethyl-1-phenyl-1H-pyrrol-3-yl)methylene)-4-oxo-4,5-dihydrothiazol-2-yl)-N-phenylacetamide",
+			"3D7_IC50_nM_GSK":	85.0,
+			"3D7_IC50_nM_Ralph":	27.600000381469727,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7116/Preparation_of_OSMS49.html"
+		}
+	},{
+		"record":	51,
+		"img":	"images/36d9ecc0-9ce7-4ab1-a973-08aca5697f76.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 17-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	326.0,
+			"OSM_ID":	"OSM-S-50",
+			"Name":	"(Z)-N-(5-((2,5-dimethyl-1-(p-tolyl)-1H-pyrrol-3-yl)methylene)-4-oxo-4,5-dihydrothiazol-2-yl)-N-phenylacetamide",
+			"3D7_IC50_nM_GSK":	25.0,
+			"3D7_IC50_nM_Ralph":	156.0,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7117/Preparation_of_OSMS50.html"
+		}
+	},{
+		"record":	52,
+		"img":	"images/d66db2bf-0ae4-467f-990e-b42d9285f6af.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 18-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	307.0,
+			"OSM_ID":	"OSM-S-51",
+			"Name":	"(2Z,5Z)-5-((2,5-dimethyl-1-(pyridin-2-yl)-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	309.0,
+			"3D7_IC50_nM_Ralph":	442.3999938964844,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7118/Preparation_of_OSMS51.html"
+		}
+	},{
+		"record":	53,
+		"img":	"images/bb1608db-aa86-47de-b27d-980853837bd7.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 19-1",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	54.0,
+			"OSM_ID":	"OSM-S-52",
+			"Name":	"(2Z,5Z)-5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-3-phenyl-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	372.0,
+			"3D7_IC50_nM_Ralph":	484.70001220703125,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7119/Preparation_of_OSMS52.html"
+		}
+	},{
+		"record":	54,
+		"img":	"images/20f4171e-53b3-45eb-8c5a-8c133c7b832e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7120/Preparation_of_OSMS53.html",
+			"Name":	"N-(phenylcarbamoyl)acetamide",
+			"OSM_ID":	"OSM-S-53",
+			"Sample_ID":	"ZYH 20-1"
+		}
+	},{
+		"record":	55,
+		"img":	"images/ba055b6d-f495-4bef-97db-28c370685cf7.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Series Tag":	"Series 1",
+			"Sample_ID":	"ZYH 22-3",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	34.0,
+			"OSM_ID":	"OSM-S-54",
+			"Degradation_half_life _mins":	121.0,
+			"In_vitro_CLint_uL_min_mg_protein":	14.0,
+			"Degradation_rate_classification":	"moderate",
+			"Kinetic_solubility_pH2_ug_per_mL":	"0-1.6",
+			"Name":	"(2Z,5Z)-3-cyclopentyl-5-((2,5-dimethyl-1-(4-(trifluoromethyl)phenyl)-1H-pyrrol-3-yl)methylene)-2-(phenylimino)thiazolidin-4-one",
+			"3D7_IC50_nM_GSK":	276.0,
+			"Kinetic_solubilitiy_pH6.5_ug_per_mL":	"0-1.6",
+			"3D7_IC50_nM_Ralph":	520.0999755859375,
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7121/Preparation_of_OSMS54.html"
+		}
+	},{
+		"record":	56,
+		"img":	"images/3bebf408-efb6-4036-b8ff-1dce5cb20aba.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7122/Preparation_of_OSMS55.html",
+			"Name":	"(2Z,5E)-5-benzylidene-2-(phenylimino)thiazolidin-4-one",
+			"OSM_ID":	"OSM-S-55",
+			"3D7_IC50_nM_Ralph":	">1000",
+			"3D7_IC50_nM_GSK":	">5000",
+			"ChEMBL":	"dep1",
+			"Sample_ID":	"ZYH 23-1",
+			"3D7_IC50_nM_Avery":	"could not determine"
+		}
+	},{
+		"record":	57,
+		"img":	"images/c289244f-f072-4f33-8112-f479a4306e26.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7126/Preparation_of_OSMS56.html",
+			"Series Tag":	"Series 2",
+			"Name":	"3-(N-(4-chlorobenzyl)sulfamoyl)-N,N-dimethyl-1H-1,2,4-triazole-1-carboxamide",
+			"OSM_ID":	"OSM-S-56",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 12-4(a)",
+			"3D7_IC50_nM_Avery":	333.0
+		}
+	},{
+		"record":	58,
+		"img":	"images/30a2d57e-bfa1-4f67-8a96-a6464059852e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7127/Preparation_of_OSMS57.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-amino-2-oxoethyl 5-methyl-1-phenyl-1H-pyrazole-4-carboxylate",
+			"OSM_ID":	"OSM-S-57",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 50-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	59,
+		"img":	"images/d84ea2e6-387c-4dc3-b67b-31a87c8453d5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7138/Preparation_of_OSMS58.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)amino)acetamide",
+			"OSM_ID":	"OSM-S-58",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 38-5-B",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	60,
+		"img":	"images/7e9e323f-876d-40cc-a4e1-42cd68cc2291.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7140/Preparation_of_OSMS59.html",
+			"Series Tag":	"Series 1",
+			"Name":	"N-(2-amino-2-oxoethyl)-1-(4-fluorophenyl)-N,2,5-trimethyl-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-59",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 55-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	61,
+		"img":	"images/09516d34-c924-4434-a481-cbcc89894937.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7141/Preparation_of_OSMS60.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)(methyl)amino)acetamide",
+			"OSM_ID":	"OSM-S-60",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 56-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	62,
+		"img":	"images/703bf62b-0d04-41b1-8500-19f88258e2ba.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7142/Preparation_of_OSMS61.html",
+			"Series Tag":	"Series 1",
+			"Name":	"methyl 2-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxamido)-3-hydroxypr",
+			"OSM_ID":	"OSM-S-61",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 57-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	63,
+		"img":	"images/3318f548-53a6-4773-8e86-b595188e40de.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7143/Preparation_of_OSMS62.html",
+			"Series Tag":	"Series 1",
+			"Name":	"methyl 2-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)oxazole-4-carboxylate",
+			"OSM_ID":	"OSM-S-62",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 58-1-A",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	64,
+		"img":	"images/74f536b3-1aec-42c2-bd53-b266fef928f9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7144/Preparation_of_OSMS63.html",
+			"Series Tag":	"Series 1",
+			"Name":	"methyl 2-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)-4,5-dihydrooxazole-4-",
+			"OSM_ID":	"OSM-S-63",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 58-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	65,
+		"img":	"images/33635bad-01cb-4f13-ac05-b4791741181f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7145/Preparation_of_OSMS64.html",
+			"Series Tag":	"Series 3",
+			"Name":	"4-(thieno[3,2-d]pyrimidin-4-yl)morpholine",
+			"OSM_ID":	"OSM-S-64",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 17-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	66,
+		"img":	"images/c9060ea6-4b48-46e3-8789-bc953829e936.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7146/Preparation_of_OSMS65.html",
+			"Series Tag":	"Series 3",
+			"Name":	"6-iodothieno[3,2-d]pyrimidin-4-ol",
+			"OSM_ID":	"OSM-S-65",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 20-3",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	67,
+		"img":	"images/68d80097-e915-4bb8-a4c8-f538c31ded6a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7147/Preparation_of_OSMS66.html",
+			"Series Tag":	"Series 2",
+			"Name":	"3-(benzylthio)-1H-1,2,4-triazole",
+			"OSM_ID":	"OSM-S-66",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 6-5",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	68,
+		"img":	"images/a6a4b097-0745-4c60-8fa6-a212af2bf0be.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7148/Preparation_of_OSMS67.html",
+			"Series Tag":	"Series 2",
+			"Name":	"3-(benzylthio)-N,N-dimethyl-1H-1,2,4-triazole-1-carboxamide",
+			"OSM_ID":	"OSM-S-67",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 10-5",
+			"3D7_IC50_nM_Avery":	438.0
+		}
+	},{
+		"record":	69,
+		"img":	"images/0f9a4d7e-24fd-425d-bbef-491382d61d06.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7149/Preparation_of_OSMS68.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-amino-2-methyl-1-oxopropan-2-yl 1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylate",
+			"OSM_ID":	"OSM-S-68",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MD 5-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	70,
+		"img":	"images/eafd95cb-e792-48dc-b359-56c38826f17e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7150/Preparation_of_OSMS69.html",
+			"Name":	"methyl 3-formamidothiophene-2-carboxylate",
+			"OSM_ID":	"OSM-S-69",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC15-3",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	71,
+		"img":	"images/b5eb79c6-4d5a-483d-92a8-645b808b3aa5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7151/Preparation_of_OSMS70.html",
+			"Series Tag":	"Series 3",
+			"Name":	"4-chlorothieno[3,2-d]pyrimidine",
+			"OSM_ID":	"OSM-S-70",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC13-3",
+			"3D7_IC50_nM_Avery":	94000.0
+		}
+	},{
+		"record":	72,
+		"img":	"images/f9d82f24-8b62-4f28-b3bc-f27742616794.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7152/Preparation_of_OSMS71.html",
+			"Series Tag":	"Series 3",
+			"Name":	"thieno[3,2-d]pyrimidin-4-amine",
+			"OSM_ID":	"OSM-S-71",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"JRC 14-5",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	73,
+		"img":	"images/38be266c-280d-4eb7-8d88-c6bd05658115.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7153/Preparation_of_OSMS72.html",
+			"Name":	"N-(6-phenylthieno[2,3-d]pyrimidin-4-yl)benzenesulfonamide",
+			"OSM_ID":	"OSM-S-72",
+			"Catalog No.":	"Z31210525",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z31210525",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	74,
+		"img":	"images/3ab44bfd-8c05-46a1-a2a5-90a1f0289eed.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7154/Preparation_of_OSMS73.html",
+			"Series Tag":	"Series 3",
+			"Name":	"N-(3-hydrosulfonyl-4-methylphenyl)thieno[3,2-d]pyrimidin-4-amine",
+			"OSM_ID":	"OSM-S-73",
+			"Catalog No.":	"Z196131886",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z196131886",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	75,
+		"img":	"images/124d307a-9d38-4fc5-bf62-a4a034d2c2d3.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7155/Preparation_of_OSMS74.html",
+			"Series Tag":	"Series 3",
+			"Name":	"5-(((6-(4-methoxyphenyl)thieno[3,2-d]pyrimidin-4-yl)amino)methyl)-N-methylthiophene-2-sulfonamide",
+			"OSM_ID":	"OSM-S-74",
+			"Catalog No.":	"Z217709300",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z217709300",
+			"3D7_IC50_nM_Avery":	17600.0
+		}
+	},{
+		"record":	76,
+		"img":	"images/9d1bd0f6-1879-451d-afb8-b5d1526b7d00.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7156/Preparation_of_OSMS75.html",
+			"Series Tag":	"Series 3",
+			"Name":	"N-(1-((4-methoxyphenyl)sulfonyl)piperidin-4-yl)thieno[3,2-d]pyrimidin-4-amine",
+			"OSM_ID":	"OSM-S-75",
+			"Catalog No.":	"Z229496652",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z229496652",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	77,
+		"img":	"images/446ecb7d-7724-4f7b-8695-5c91c33ab4ac.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7157/Preparation_of_OSMS76.html",
+			"Series Tag":	"Series 3",
+			"Name":	"(S)-3-(1-(thieno[3,2-d]pyrimidin-4-ylamino)ethyl)benzenesulfonamide",
+			"OSM_ID":	"OSM-S-76",
+			"Catalog No.":	"Z196139376",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z196139376",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	78,
+		"img":	"images/f6d7aacd-767e-467a-b275-28ee73f3ee66.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7158/Preparation_of_OSMS77.html",
+			"Series Tag":	"Series 3",
+			"Name":	"2-ethoxy-N,N-dimethyl-5-(thieno[3,2-d]pyrimidin-4-ylamino)benzenesulfonamide",
+			"OSM_ID":	"OSM-S-77",
+			"Catalog No.":	"Z196139364",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z196139364",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	79,
+		"img":	"images/674a1c12-f0cf-4077-ada2-718352fd0066.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7159/Preparation_of_OSMS78.html",
+			"Name":	"4-(((2-(thiophen-3-yl)quinazolin-4-yl)amino)methyl)benzenesulfonamide",
+			"OSM_ID":	"OSM-S-78",
+			"Catalog No.":	"Z86248675",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z86248675",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	80,
+		"img":	"images/1635f92a-4b15-421e-a13e-61d338de1e5a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7160/Preparation_of_OSMS79.html",
+			"Series Tag":	"Series 3",
+			"Name":	"3-((thieno[3,2-d]pyrimidin-4-ylamino)methyl)benzenesulfonamide",
+			"OSM_ID":	"OSM-S-79",
+			"Catalog No.":	"Z367550756",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z367550756",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	81,
+		"img":	"images/9618080b-c981-4e67-9beb-e17bb9fa646e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7161/Preparation_of_OSMS80.html",
+			"Series Tag":	"Series 3",
+			"Name":	"4-((4-((6-(4-methoxyphenyl)thieno[3,2-d]pyrimidin-4-yl)oxy)phenyl)sulfonyl)morpholine",
+			"OSM_ID":	"OSM-S-80",
+			"Catalog No.":	"Z127173570",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z127173570",
+			"3D7_IC50_nM_Avery":	"80% @ 40000"
+		}
+	},{
+		"record":	82,
+		"img":	"images/56752030-d413-43a5-a896-27272f978ca4.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7162/Preparation_of_OSMS81.html",
+			"Series Tag":	"Series 1",
+			"Name":	"N-(2-(dimethylamino)-2-oxoethyl)-2,5-dimethyl-1-phenyl-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-81",
+			"Catalog No.":	"Z102381252",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z102381252",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	83,
+		"img":	"images/4efa887d-634d-467f-bdec-dc3eb33524e1.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7164/Preparation_of_OSMS82.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(methylamino)-2-oxoethyl 1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylate",
+			"OSM_ID":	"OSM-S-82",
+			"Catalog No.":	"Z18964039",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z18964039",
+			"3D7_IC50_nM_Avery":	9400.0
+		}
+	},{
+		"record":	84,
+		"img":	"images/98f91830-40ce-48c8-bff9-934f0af436f3.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7165/Preparation_of_OSMS83.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-(2,5-dimethyl-1-phenyl-1H-pyrrole-3-carbonyl)piperazin-2-one",
+			"OSM_ID":	"OSM-S-83",
+			"Catalog No.":	"Z31603451",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z31603451",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	85,
+		"img":	"images/59c2bc32-49d6-46a9-8813-03b914da2552.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7166/Preparation_of_OSMS84.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(4-bromophenyl)-N,2,5-trimethyl-N-(2-(methylamino)-2-oxoethyl)-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-84",
+			"Catalog No.":	"Z322133338",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z322133338",
+			"3D7_IC50_nM_Avery":	"70% @ 40000"
+		}
+	},{
+		"record":	86,
+		"img":	"images/063ff9c3-1dde-447b-a726-40d0e444c572.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7167/Preparation_of_OSMS85.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-((5-(2,5-dimethyl-1-phenyl-1H-pyrrol-3-yl)-1,3,4-oxadiazol-2-yl)thio)-N-(3-methoxyphenyl)acetamide",
+			"OSM_ID":	"OSM-S-85",
+			"Catalog No.":	"Z56895831",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z56895831",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	87,
+		"img":	"images/9f3fd8c6-9515-4dd3-bd77-60219e49d71b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7168/Preparation_of_OSMS86.html",
+			"Series Tag":	"Series 1",
+			"Name":	"N-(2-((2,6-difluorophenyl)amino)-2-oxoethyl)-N-ethyl-1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-86",
+			"Catalog No.":	"Z252425684",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z252425684",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	88,
+		"img":	"images/8e0856a4-5842-4b4e-850a-40d29f99a05a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7169/Preparation_of_OSMS87.html",
+			"Series Tag":	"Series 1",
+			"Name":	"N,2,5-trimethyl-N-(2-((5-methylisoxazol-3-yl)amino)-2-oxoethyl)-1-(m-tolyl)-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-87",
+			"Catalog No.":	"Z168527658",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z168527658",
+			"3D7_IC50_nM_Avery":	"85% @ 40000"
+		}
+	},{
+		"record":	89,
+		"img":	"images/ddcd7fd7-9d77-45a0-84f1-8956ddf07abc.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7170/Preparation_of_OSMS88.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(4-(((1-(4-chlorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)amino)piperidin-1-yl)-N-methylacetamide",
+			"OSM_ID":	"OSM-S-88",
+			"Catalog No.":	"Z401944072",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z401944072",
+			"3D7_IC50_nM_Avery":	14700.0
+		}
+	},{
+		"record":	90,
+		"img":	"images/9c033029-bcb3-406b-b0b2-ee4454e3e6f7.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7171/Preparation_of_OSMS89.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-amino-1-((1-(2-chlorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)-N-ethylpyrrolidine-2-carboxamide",
+			"OSM_ID":	"OSM-S-89",
+			"Catalog No.":	7.0163816E7,
+			"ChEMBL":	"dep2",
+			"Sample_ID":	7.0163816E7,
+			"3D7_IC50_nM_Avery":	24700.0
+		}
+	},{
+		"record":	91,
+		"img":	"images/45e9e4f1-d3f3-40fb-8e09-541ed47c9981.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7172/Preparation_of_OSMS90.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-((1-(4-ethylphenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)piperidine-4-carboxyli",
+			"OSM_ID":	"OSM-S-90",
+			"Catalog No.":	"C799-0833",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"C799-0833",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	92,
+		"img":	"images/c82f040c-0bd3-4ffa-9722-c6888c29ea4e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7173/Preparation_of_OSMS91.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(dimethylamino)-2-oxoethyl 1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylate",
+			"OSM_ID":	"OSM-S-91",
+			"Catalog No.":	"Z18963831",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"Z18963831",
+			"3D7_IC50_nM_Avery":	11300.0
+		}
+	},{
+		"record":	93,
+		"img":	"images/a061aa64-4723-4af5-86fb-c1013b96a03c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7174/Preparation_of_OSMS92.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-amino-2-oxoethyl 1-(4-fluorophenyl)-1H-pyrazole-4-carboxylate",
+			"OSM_ID":	"OSM-S-92",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY 66-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	94,
+		"img":	"images/4c3a682b-dd15-4e31-831a-29fc82e6f990.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7175/Preparation_of_OSMS93.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(4-fluorophenyl)-N,N,2,5-tetramethyl-1H-pyrrole-3-carboxamide",
+			"OSM_ID":	"OSM-S-93",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"AEW 16-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	95,
+		"img":	"images/36f8eea0-cf1a-4ca9-be15-98cc2e6d6a81.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7177/Preparation_of_OSMS94.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-(4-fluorophenyl)-2,5-dimethyl-3-(pyrrolidin-1-ylmethyl)-1H-pyrrole",
+			"OSM_ID":	"OSM-S-94",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"AEW 12-1",
+			"3D7_IC50_nM_Avery":	"96% @ 40000"
+		}
+	},{
+		"record":	96,
+		"img":	"images/eb3452d9-6c6d-4388-83e2-fd4ce04bb973.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7178/Preparation_of_OSMS95.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-benzyl-N-((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)methyl)piperidin-4-",
+			"OSM_ID":	"OSM-S-95",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"AEW 9-2",
+			"3D7_IC50_nM_Avery":	4800.0
+		}
+	},{
+		"record":	97,
+		"img":	"images/b290cf8e-dab0-4f19-aeaf-4458b733e7a7.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7179/Preparation_of_OSMS96.html",
+			"Series Tag":	"Series 1",
+			"Name":	"methyl 2-(1-(4-fluorophenyl)-5-methyl-1H-pyrazol-4-yl)oxazole-4-carboxylate",
+			"OSM_ID":	"OSM-S-96",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MJT6-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	98,
+		"img":	"images/8113643e-efd8-491b-ae43-f282e9609fe0.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7180/Preparation_of_OSMS97.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)-4-oxobutanoic acid",
+			"OSM_ID":	"OSM-S-97",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR51-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	99,
+		"img":	"images/4ecdb4ff-1953-49f8-9e1e-c916c8b2c1ab.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7181/Preparation_of_OSMS98.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)-N,N-dimethyl-4-oxobutanamide",
+			"OSM_ID":	"OSM-S-98",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR52-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	100,
+		"img":	"images/65203c56-42fe-4b57-850c-587f4f291d2e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7182/Preparation_of_OSMS99.html",
+			"Series Tag":	"Series 1",
+			"Name":	"1-ethoxy-1-oxopropan-2-yl 1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carboxylate",
+			"OSM_ID":	"OSM-S-99",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MD17-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	101,
+		"img":	"images/531dd5df-b00e-4de3-b6cd-aab3d84a82d9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7183/Preparation_of_OSMS100.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-((1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrole-3-carbonyl)oxy)propanoic acid",
+			"OSM_ID":	"OSM-S-100",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MD18-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	102,
+		"img":	"images/16af5bf7-6efc-4a4d-acdc-661a4ca1fdad.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7184/Preparation_of_OSMS101.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)oxazole-4-carboxylic acid",
+			"OSM_ID":	"OSM-S-101",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"PMY59-3",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	103,
+		"img":	"images/85cd7ef9-66ad-41ec-bb19-d101d93e5be2.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7185/Preparation_of_OSMS102.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)-N-methyl-4-oxobutanamide",
+			"OSM_ID":	"OSM-S-102",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR53-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	104,
+		"img":	"images/a7870904-f4d8-42da-b556-0905a10960e0.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7186/Preparation_of_OSMS103.html",
+			"Series Tag":	"Series 1",
+			"Name":	"4-(1-(4-fluorophenyl)-2,5-dimethyl-1H-pyrrol-3-yl)-4-oxobutanamide",
+			"OSM_ID":	"OSM-S-103",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR54-1",
+			"3D7_IC50_nM_Avery":	"61% @ 40000"
+		}
+	},{
+		"record":	105,
+		"img":	"images/b6ba0057-35ed-4e1c-ac2b-3d0f0f98b2cf.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7187/Preparation_of_OSMS104.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(1-(4-fluorophenyl)-5-methyl-1H-pyrazol-4-yl)oxazole-4-carboxylic acid",
+			"OSM_ID":	"OSM-S-104",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR55-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	106,
+		"img":	"images/bf676e4c-f39d-4680-b57b-314413f2c233.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7188/Preparation_of_OSMS105.html",
+			"Series Tag":	"Series 1",
+			"Name":	"2-(1-(4-fluorophenyl)-5-methyl-1H-pyrazol-4-yl)oxazole-4-carboxamide",
+			"OSM_ID":	"OSM-S-105",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR56-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	107,
+		"img":	"images/a486af86-b08b-4387-81dc-32247394a57f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7189/Preparation_of_OSMS106.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-106",
+			"Sample_ID":	"JRC50-2",
+			"3D7_IC50_nM_Avery":	36.0
+		}
+	},{
+		"record":	108,
+		"img":	"images/64344948-1236-4401-aabd-e0b99741ba06.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7190/Preparation_of_OSMS107.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-107",
+			"Sample_ID":	"MNR113-1",
+			"3D7_IC50_nM_Avery":	"92% @ 40,000"
+		}
+	},{
+		"record":	109,
+		"img":	"images/5cf4155b-0fef-45e5-a24d-4bf13e5af89a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7191/Preparation_of_OSMS108.html",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-108",
+			"Sample_ID":	"AEW34-1",
+			"3D7_IC50_nM_Avery":	1200.0
+		}
+	},{
+		"record":	110,
+		"img":	"images/1d4818d5-d9d9-463f-aa77-90ccfcbe267c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7192/Preparation_of_OSMS109.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-109",
+			"Sample_ID":	"MNR82-1",
+			"3D7_IC50_nM_Avery":	262.0
+		}
+	},{
+		"record":	111,
+		"img":	"images/d525f436-defb-4853-b5d6-6abddc2502d6.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7193/Preparation_of_OSMS110.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-110",
+			"Sample_ID":	"MNR83-1",
+			"3D7_IC50_nM_Avery":	2300.0
+		}
+	},{
+		"record":	112,
+		"img":	"images/d469fa2a-f99f-42e4-9fe9-7b9ef1bb62ca.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7194/Preparation_of_OSMS111.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-111",
+			"Sample_ID":	"MNR84-1",
+			"3D7_IC50_nM_Avery":	146.0
+		}
+	},{
+		"record":	113,
+		"img":	"images/819693bf-95eb-4881-b951-068d34c66f1c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7195/Preparation_of_OSMS112.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-112",
+			"Sample_ID":	"MNR85-1",
+			"3D7_IC50_nM_Avery":	1600.0
+		}
+	},{
+		"record":	114,
+		"img":	"images/1b020d6b-aa41-407a-9fd1-177f454badc9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7196/Preparation_of_OSMS113.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-113",
+			"Sample_ID":	"MNR92-1",
+			"3D7_IC50_nM_Avery":	">40000"
+		}
+	},{
+		"record":	115,
+		"img":	"images/d3dd6236-723b-4e61-9c16-a9b076d2c1b2.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7197/Preparation_of_OSMS114.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-114",
+			"Sample_ID":	"MNR94-1",
+			"3D7_IC50_nM_Avery":	1200.0
+		}
+	},{
+		"record":	116,
+		"img":	"images/0d9bc4fd-8f83-4b7e-941a-6597444cf2ca.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7198/Preparation_of_OSMS115.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-115",
+			"Sample_ID":	"MNR95-1",
+			"3D7_IC50_nM_Avery":	1800.0
+		}
+	},{
+		"record":	117,
+		"img":	"images/ac9dafa0-5dba-4dac-813f-3ce4ec5ce881.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7199/Preparation_of_OSMS116.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-116",
+			"Sample_ID":	"MD21-1",
+			"3D7_IC50_nM_Avery":	11000.0
+		}
+	},{
+		"record":	118,
+		"img":	"images/f5dff995-1740-4531-b36f-d01e86bde0ae.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7200/Preparation_of_OSMS117.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-117",
+			"ChEMBL":	"dep2",
+			"Sample_ID":	"MNR100-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	119,
+		"img":	"images/aac1ea69-566e-4171-88ea-cfc2ecf368cc.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7201/Preparation_of_OSMS118.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-118",
+			"Sample_ID":	"AT-2-5",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	120,
+		"img":	"images/84e5c824-0571-47e9-b6d3-bbb2473d4b9c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7202/Preparation_of_OSMS119.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-119",
+			"Sample_ID":	"AT-4-1-f3",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	121,
+		"img":	"images/95df61ea-662a-4fda-a834-f8fac2468234.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7203/Preparation_of_OSMS120.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-120",
+			"Sample_ID":	"AT-4-1-f4",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	122,
+		"img":	"images/8494d00e-c80c-439f-a011-d5ff2eeaea69.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7204/Preparation_of_OSMS121.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-121",
+			"Sample_ID":	"AT-5-1",
+			"3D7_IC50_nM_Avery":	"95% @ 40,000"
+		}
+	},{
+		"record":	123,
+		"img":	"images/5841d878-7e90-49f8-9466-94fd3655b6af.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7205/Preparation_of_OSMS122.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-122",
+			"Sample_ID":	"AT-7-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	124,
+		"img":	"images/e3af1e06-3f25-41e4-ba7e-0ba44d46d4cf.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7206/Preparation_of_OSMS123.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-123",
+			"Sample_ID":	"AT-9-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	125,
+		"img":	"images/5058337e-fdb3-4013-9949-4565e35a3694.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7207/Preparation_of_OSMS124.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-124",
+			"Sample_ID":	"MNR114-1",
+			"3D7_IC50_nM_Avery":	"62% @ 40,000"
+		}
+	},{
+		"record":	126,
+		"img":	"images/01f0c012-513d-4818-9adc-c7feca524d3e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7208/Preparation_of_OSMS125.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-125",
+			"Sample_ID":	"MNR101-2",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	127,
+		"img":	"images/729b9138-b41e-4466-aafb-b621ba6a32e5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7209/Preparation_of_OSMS126.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-126",
+			"Sample_ID":	"MNR104-1",
+			"3D7_IC50_nM_Avery":	"39% @ 40,000"
+		}
+	},{
+		"record":	128,
+		"img":	"images/bbbe38aa-6000-4c5d-9478-0fc2c942314c.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7210/Preparation_of_OSMS127.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-127",
+			"Sample_ID":	"MNR106-1",
+			"3D7_IC50_nM_Avery":	"42% @ 40,000"
+		}
+	},{
+		"record":	129,
+		"img":	"images/86fe63b4-bd9c-4776-a623-fba250d6e3e0.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7211/Preparation_of_OSMS128.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-128",
+			"Sample_ID":	"AT-14-1",
+			"3D7_IC50_nM_Avery":	"54% @ 40,000"
+		}
+	},{
+		"record":	130,
+		"img":	"images/97a5190f-d662-4680-b0ce-c0b604c8bb16.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7212/Preparation_of_OSMS129.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-129",
+			"Sample_ID":	"AT-10-4",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	131,
+		"img":	"images/5a6f3467-dc87-48d4-99c3-46d45fa5980d.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7213/Preparation_of_OSMS130.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-130",
+			"Sample_ID":	"AT-17-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	132,
+		"img":	"images/e5af5779-bc6d-45ae-913c-4eb8a116298a.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7214/Preparation_of_OSMS131.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-131",
+			"Sample_ID":	"AT-13-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	133,
+		"img":	"images/3a692d11-348a-49cf-8322-b2055a44f5a5.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7377/Preparation_of_OSMS132.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-132",
+			"Sample_ID":	"AT-19-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	134,
+		"img":	"images/bde750a2-9432-43d9-a915-c08100e8db0b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7378/Preparation_of_OSMS133.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-133",
+			"Sample_ID":	"AT-22-1",
+			"3D7_IC50_nM_Avery":	"73% @ 40,000"
+		}
+	},{
+		"record":	135,
+		"img":	"images/99c9e3d9-0f5f-4435-996c-f297cd928063.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7379/Preparation_of_OSMS134.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-134",
+			"Sample_ID":	"AT-21-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	136,
+		"img":	"images/3dd05304-0b74-4246-a902-f1b97ab72ede.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7380/Preparation_of_OSMS135.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-135",
+			"Sample_ID":	"AT-24-1",
+			"3D7_IC50_nM_Avery":	">40,000"
+		}
+	},{
+		"record":	137,
+		"img":	"images/75ab7565-9b7f-4975-b1d9-b0f3463b67e9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7381/Preparation_of_OSMS136.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-136",
+			"Sample_ID":	"MNR115-2",
+			"3D7_IC50_nM_Avery":	15000.0
+		}
+	},{
+		"record":	138,
+		"img":	"images/96e6efe1-df85-4e8c-8ddc-78b75df1925e.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7382/Preparation_of_OSMS137.html",
+			"Series Tag":	"Series 3",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-137",
+			"Sample_ID":	"MNR120-1",
+			"3D7_IC50_nM_Avery":	17000.0
+		}
+	},{
+		"record":	139,
+		"img":	"images/dbcb036b-c682-490b-b3c8-dae722a0f426.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"link":	"http://malaria.ourexperiment.org/osm_procedures/7383/Preparation_of_OSMS138.html",
+			"Series Tag":	"Series 1",
+			"Name":	"Molecule",
+			"OSM_ID":	"OSM-S-138",
+			"Sample_ID":	"MNR121-1",
+			"3D7_IC50_nM_Avery":	23000.0
+		}
+	},{
+		"record":	140,
+		"img":	"images/77400a5c-ad9e-428a-83a8-0a0ce734ec4b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"chloroquine",
+			"OSM_ID":	"chloroquine",
+			"Series":	"control",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	18.700000762939453
+		}
+	},{
+		"record":	141,
+		"img":	"images/5fea1423-9f8a-4313-903d-e6b7e662fc62.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"artemisinin",
+			"OSM_ID":	"artemisinin",
+			"Series":	"control",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	6.0
+		}
+	},{
+		"record":	142,
+		"img":	"images/9239ac3c-faa9-4389-b6ef-18e596ddf8ec.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"artesunate",
+			"OSM_ID":	"artesunate",
+			"Series":	"control",
+			"ChEMBL":	"dep1"
+		}
+	},{
+		"record":	143,
+		"img":	"images/b99e978e-3d3d-4f2b-9065-d689c95ac89b.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"Pyrimethamine",
+			"OSM_ID":	"Pyrimethamine",
+			"Series":	"control",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	11.0
+		}
+	},{
+		"record":	144,
+		"img":	"images/4743ccfa-559c-4fb1-8a39-fe5a03de39e4.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"Tafenoquine",
+			"OSM_ID":	"Tafenoquine",
+			"Series":	"control",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	451.0
+		}
+	},{
+		"record":	145,
+		"img":	"images/53b46977-2650-405c-9378-d86d32071d0f.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"Pyronaridine",
+			"OSM_ID":	"Pyronaridine",
+			"Series":	"control",
+			"ChEMBL":	"dep1"
+		}
+	},{
+		"record":	146,
+		"img":	"images/91025da5-d512-4598-bb91-473adbccdb21.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"Epoxomicin",
+			"OSM_ID":	"Stan-Epoxomicin",
+			"Series":	"control",
+			"ChEMBL":	"dep1",
+			"3D7_IC50_nM_Avery":	4.199999809265137
+		}
+	},{
+		"record":	147,
+		"img":	"images/61450bb1-124f-48f0-abdd-891fe3e358f9.png",
+		"tags":{
+			"cdk:Title":	"http://creativecommons.org/licenses/by-sa/3.0/",
+			"Name":	"Atovaquone",
+			"OSM_ID":	"Stan-Atovaquone",
+			"Series":	"control",
+			"ChEMBL":	"dep1"
+		}
+	}
+	]
+}
+}
