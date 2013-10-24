@@ -159,8 +159,7 @@ public class MolbrowserWizard {
 		 */
 		IIteratingChemObjectReader<IAtomContainer> reader = null;
 		Writer writer = createWriter();
-		jsonHeader(writer);
-		System.err.println(writer.getClass().getName());
+		jsonHeader(writer,file.getName());
 		try {
 			/**
 			 * cdk-slient module
@@ -249,9 +248,12 @@ public class MolbrowserWizard {
 	protected Writer createWriter() throws Exception {
 		return new BufferedWriter(new FileWriter(new File(getResultFolder(),"mol.json")));
 	}
-	protected void jsonHeader(Writer writer) throws Exception {
+	protected void jsonHeader(Writer writer,String title) throws Exception {
 		writer.write("{\n");
 		writer.write("\"dataset\":\t{\n");
+		writer.write("\t\"name\":\"");
+		writer.write(title);
+		writer.write("\",");
 		writer.write("\t\"molecule\":\t[\n");
 	}
 	protected void jsonFooter(Writer writer) throws Exception {
