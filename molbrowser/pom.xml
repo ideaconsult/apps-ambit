@@ -46,6 +46,13 @@
       <type>jar</type>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>ambit</groupId>
+      <artifactId>ambit2-rendering</artifactId>
+      <version>${ambit.version}</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>    
     <!-- Command line options parsing by Apache commons-cli -->
     <dependency>
       <groupId>commons-cli</groupId>

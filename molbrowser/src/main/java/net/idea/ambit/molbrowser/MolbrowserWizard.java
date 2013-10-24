@@ -1,16 +1,21 @@
 package net.idea.ambit.molbrowser;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.Writer;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
 
 import net.idea.ambit.molbrowser.MainApp._option;
 
@@ -27,9 +32,11 @@ import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ambit2.base.exceptions.AmbitIOException;
 import ambit2.base.json.JSONUtils;
+import ambit2.core.data.IStructureDiagramHighlights;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
+import ambit2.rendering.CompoundImageTools;
 
 /**
  * The class that does the work.
@@ -43,6 +50,7 @@ public class MolbrowserWizard {
 	protected boolean all = true;
 	protected InchiProcessor inchiProcessor;
 	protected FixBondOrdersTool kekulizer = new FixBondOrdersTool();
+	protected CompoundImageTools tool = new CompoundImageTools();
 	
 	public void setAll(boolean all) {
 		this.all = all;
@@ -178,11 +186,12 @@ public class MolbrowserWizard {
 					 */
 					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
 					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
-					//implicit H count is NULL if read from InChI ...
+					/*implicit H count is NULL if read from InChI ...
 					molecule = AtomContainerManipulator.removeHydrogens(molecule);
 					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);
-				
-					mol2json(molecule, writer,records_processed);
+					*/
+					String imgURI = getImageURI(molecule, null, getResultFolder(), UUID.randomUUID().toString());
+					mol2json(molecule, imgURI, writer,records_processed);
 					
 					records_processed++;;
 				} catch (Exception x) {
@@ -205,13 +214,15 @@ public class MolbrowserWizard {
 		return records_read;
 	}
 	
-	protected void mol2json(IAtomContainer mol,Writer writer, int record) throws Exception {
+	protected void mol2json(IAtomContainer mol,String imgURI, Writer writer, int record) throws Exception {
 		if (record>0) writer.write(",");
 		writer.write("{\n");
 		writer.write("\t\t\"record\":\t");
 		writer.write(Integer.toString(record+1));
 		writer.write(",\n");
-		writer.write("\t\t\"img\":\t\"TBD\",\n");
+		writer.write("\t\t\"img\":\t\"");
+		writer.write(imgURI);
+		writer.write("\",\n");
 		writer.write("\t\t\"tags\":{\n");
 		Iterator<Entry<Object,Object>> props = mol.getProperties().entrySet().iterator();
 		int i= 0;
@@ -245,5 +256,27 @@ public class MolbrowserWizard {
 	}
 	protected void jsonFooter(Writer writer) throws Exception {
 		writer.write("\n\t]\n}\n}");
+	}
+	
+	protected String getImageURI(IAtomContainer ac, 
+			IStructureDiagramHighlights hilights, 
+			File folder, String name) {
+		
+		File imgFolder = new File(String.format("%s/%s/",folder,"images"));
+		if (!imgFolder.exists()) imgFolder.mkdir();
+		String file = String.format("%s/%s.png", imgFolder.getAbsolutePath(),name);
+
+		try {
+			//IAtomContainer c = (IAtomContainer) ac.clone();
+			AtomContainerManipulator.removeHydrogensPreserveMultiplyBonded(ac);
+			
+			BufferedImage img = hilights==null?tool.getImage(ac,null,true,false):hilights.getImage(ac);
+			ImageIO.write(img, "png",new FileOutputStream(file));
+		} catch (Exception x) {
+			System.out.println(file);
+			//x.printStackTrace();
+		}
+		return String.format("images/%s.png", name);
+		
 	}
 }
