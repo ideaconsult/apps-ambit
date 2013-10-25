@@ -14,6 +14,25 @@
       <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
     </repository>
   </distributionManagement>
+   <licenses>
+        <license>
+            <name>LGPL3</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+            <comments>LGPL 3</comments>
+        </license>
+    </licenses>
+    <inceptionYear>2013</inceptionYear>
+    <developers>
+        <developer>
+            <id>vedina</id>
+            <name>Nina Jeliazkova</name>
+            <email>jeliazkova.nina@gmail.com</email>
+            <url>https://github.com/vedina</url>
+            <organization>IdeaConsult Ltd.</organization>
+            <organizationUrl>http://ideaconsult.net</organizationUrl>
+        </developer>
+    </developers>  
   <repositories>
     <repository>
       <id>ambit-plovdiv</id>
@@ -78,7 +97,6 @@
   	<system>GitHub</system>
   	<url>https://github.com/ideaconsult/examples-ambit/issues</url>
   </issueManagement>
-  <inceptionYear>2012</inceptionYear>
   <scm>
   	<connection>git://github.com/ideaconsult/examples-ambit.git</connection>
   	<developerConnection>scm:git:git@github.com:ideaconsult/examples-ambit.git</developerConnection>
@@ -161,15 +179,7 @@
           <configuration>
             <archive>
               <manifest>
-                <!--
-		              <mainClass>${mainclass}</mainClass>
-		              <packageName>${project.artifactId}</packageName>
-		              -->
                 <addClasspath>true</addClasspath>
-                <!-- 
-		              <addExtensions />
-		              <classpathPrefix />
-		              -->
               </manifest>
               <manifestEntries>
                 <mode>development</mode>
