@@ -29,7 +29,7 @@ usage: net.idea.ambit.molbrowser.MainApp
  -o,--output <output>   Output folder
 ````
 
-Running the application will generate *mol.json* and */images* folder with structure diagrams as .png output files.
+Running the application will generate *mol.json* and */images* folder with structure diagrams as .png files.
 The newly generated files have to be combined with the [static content](https://github.com/ideaconsult/examples-ambit/tree/master/molbrowser/src/main/resources/webapp)
 and copied to a server of choice.
 
