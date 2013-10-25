@@ -12,8 +12,10 @@ with some [jQuery](http://jquery.com/) scripts and a bit of styling. The [entire
 ###Build
 
 ````
-   mvn clean install
+   mvn clean package
 ````
+
+Look for target\molbrowser-jar-with-dependencies.jar
 
 ###Run
 ````
