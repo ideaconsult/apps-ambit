@@ -32,3 +32,15 @@ usage: net.idea.ambit.molbrowser.MainApp
 ### Download
 
    [molbrowser-0.0.1-SNAPSHOT-jar-with-dependencies.jar](http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots/net/idea/examples/ambit/molbrowser/0.0.1-SNAPSHOT/molbrowser-0.0.1-20131025.084507-1-jar-with-dependencies.jar)
+
+#### Maven artifact [search](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~molbrowser)
+
+````
+<dependency>
+  <groupId>net.idea.examples.ambit</groupId>
+  <artifactId>molbrowser</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
+````
+
+
