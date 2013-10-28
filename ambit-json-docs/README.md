@@ -7,6 +7,7 @@ The framework allows to build models, apply models, validate models, access and 
 Technologies used are [REST](http://ambit.sourceforge.net/rest.html) style web services and [W3C Resource Description Framework](http://ambit.sourceforge.net/rdf.html) for description of services.
 
 * API Documentation http://opentox.org/dev/apis/api-1.2 
+* OpenTox API discussion, new ideas and examples at https://github.com/opentox-api
 
 ### JSON
 
