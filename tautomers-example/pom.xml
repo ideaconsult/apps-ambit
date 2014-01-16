@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.idea.examples.ambit</groupId>
@@ -67,21 +67,21 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>2.4.13</ambit.version>
+    <ambit.version>2.5.3</ambit.version>
   </properties>
   <issueManagement>
-  	<system>GitHub</system>
-  	<url>https://github.com/ideaconsult/examples-ambit/issues</url>
+    <system>GitHub</system>
+    <url>https://github.com/ideaconsult/examples-ambit/issues</url>
   </issueManagement>
   <inceptionYear>2012</inceptionYear>
   <scm>
-  	<connection>git://github.com/ideaconsult/examples-ambit.git</connection>
-  	<developerConnection>scm:git:git@github.com:ideaconsult/examples-ambit.git</developerConnection>
-  	<url>https://github.com/ideaconsult/examples-ambit.git</url>
+    <connection>git://github.com/ideaconsult/examples-ambit.git</connection>
+    <developerConnection>scm:git:git@github.com:ideaconsult/examples-ambit.git</developerConnection>
+    <url>https://github.com/ideaconsult/examples-ambit.git</url>
   </scm>
   <organization>
-  	<name>Ideaconsult Ltd.</name>
-  	<url>http://www.idesconsult.net</url>
+    <name>Ideaconsult Ltd.</name>
+    <url>http://www.idesconsult.net</url>
   </organization>
   <build>
     <finalName>example-ambit-tautomers</finalName>
