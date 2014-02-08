@@ -1,8 +1,8 @@
 #Ambit-tautomer configurations
 
-The flags are used for fine-tuning of the tautomer generation process and post-generation filtering
+The flags are used for fine-tuning the tautomer generation process and post-generation filtering in [Ambit-Tautomer](README.md) 
 
-* Tautomer shifts:
+* Tautomeric shifts:
 [FlagUse13Shifts](#FlagUse13Shifts), [FlagUse15Shifts](#FlagUse15Shifts), [FlagUse17Shifts](#FlagUse17Shifts), [FlagUse19Shifts](#FlagUse19Shifts)
 
 * Rules:
