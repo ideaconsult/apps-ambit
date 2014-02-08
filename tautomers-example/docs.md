@@ -2,13 +2,18 @@
 
 The flags are used for fine-tuning of the tautomer generation process and post-generation filtering
 
-[FlagUse13Shifts](#FlagUse13Shifts) [FlagUse15Shifts](#FlagUse15Shifts) [FlagUse17Shifts](#FlagUse17Shifts) [FlagUse19Shifts](#FlagUse19Shifts)
+* Tautomer shifts:
+[FlagUse13Shifts](#FlagUse13Shifts), [FlagUse15Shifts](#FlagUse15Shifts), [FlagUse17Shifts](#FlagUse17Shifts), [FlagUse19Shifts](#FlagUse19Shifts)
 
-[FlagRecurseBackResultTautomers](#FlagRecurseBackResultTautomers) [FlagUseRingChainRules](#FlagUseRingChainRules) [FlagUseChlorineRules](#FlagUseChlorineRules) 
+* Rules:
+[FlagRecurseBackResultTautomers](#FlagRecurseBackResultTautomers), [FlagUseRingChainRules](#FlagUseRingChainRules), [FlagUseChlorineRules](#FlagUseChlorineRules) 
 
-[FlagApplyWarningFilter](#FlagApplyWarningFilter) [FlagApplyExcludeFilter](#FlagApplyExcludeFilter) [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
+* Filters: 
+[FlagApplyWarningFilter](#FlagApplyWarningFilter), [FlagApplyExcludeFilter](#FlagApplyExcludeFilter), [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
 
-[FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering)  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism) [maxNumOfBackTracks](#maxNumOfBackTracks)
+* Duplicates:
+[FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering),  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism), [maxNumOfBackTracks](#maxNumOfBackTracks)
+
 
 ####<a name="FlagUse13Shifts"></a>tman.getKnowledgeBase().FlagUse13Shifts
 * Default value : *true*
