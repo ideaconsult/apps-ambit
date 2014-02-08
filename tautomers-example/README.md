@@ -30,6 +30,7 @@ and the artifacts are available at the [Maven repository](http://ambit.uni-plovd
 For a quick test, try the [tautomer generation](http://apps.ideaconsult.net:8080/ambit2/depict/tautomer?search=NC%3D1N%3DCN%3DC2N%3DCNC2%3D1) online.
 The tautomer generation is also available as OpenTox [algorithm](http://apps.ideaconsult.net:8080/ambit2/algorithm/tautomers) and [model API](http://apps.ideaconsult.net:8080/ambit2/model?algorithm=http://apps.ideaconsult.net:8080/ambit2/algorithm/tautomers).
 
+  * [Documentation](docs.md) on various configuration options
 
   * Please use the issue tracker to report bugs https://github.com/ideaconsult/examples-ambit/issues 
   
