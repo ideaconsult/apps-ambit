@@ -16,13 +16,13 @@ Publications:
 * Jeliazkova N., Kochev N.T., Jeliazkov V., [Chemical Landscape Analysis – the Case of Tautomers](http://toxmatch.sf.net) - [Poster #38](http://cisrg.shef.ac.uk/shef2013/showabstract.php?id=34) at [6th Joint Sheffield Conference on Chemoinformatics](http://cisrg.shef.ac.uk/shef2013/conference.php)
 * Ambit-Tautomer [EuroQSAR 2012 poster](http://www.slideshare.net/jeliazkova_nina/ambittautomer-an-open-source-tool-for-tautomer-generation).
 
-The predefined knowledge base covers 1-3, 1-5 and 1-7 proton tautomeric shifts. As an
-extra feature, there are rules, which use chlorine atom as a mobile group and a few ring-chain tautomerism rules.
+The predefined knowledge base covers [1-3](docs.md#FlagUse13Shifts), [1-5](docs.md#FlagUse15Shifts) and [1-7](docs.md#FlagUse17Shifts) proton tautomeric shifts. As an
+extra feature, there are [rules](docs.md#FlagUseChlorineRules), which use chlorine atom as a mobile group and a few ring-chain tautomerism rules.
 Some typical supported tautomerism rules are keto-enol, amin-imin, nitroso-oxime, azo-hydrazone,
 thioketo-thioenol, thionitroso-thiooxime, amidine-imidine, diazoamino-diazoamino, thioamide-iminothiol and
 nitrosamine-diazohydroxide. Ambit-Tautomer uses a simple energy based system for tautomer ranking
 implemented by a set of empirically derived rules. Additionally, the user may apply a set of post-generation
-filters, allowing more fine-grained output control.
+[filters](docs.md#Filters), allowing more fine-grained output control.
 
 
 This project contains examples how to use ambit2-tautomer package. The package code itself is hosted at [sourceforge.net](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html)
