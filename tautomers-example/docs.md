@@ -14,15 +14,11 @@ The flags are used for fine-tuning of the tautomer generation process and post-g
 ##### Default value : *true*
 Determines whether to use rules for 1-3 tautomer shifts. These are the primary rules therefore this flag should not be false.
 
-####<a name="FlagUse15Shifts"></a>tman.getKnowledgeBase().FlagUse15Shifts
-alternative access:
-tman.getKnowledgeBase().use15ShiftRules(true)
+####<a name="FlagUse15Shifts"></a>tman.getKnowledgeBase().FlagUse15Shifts | tman.getKnowledgeBase().use15ShiftRules(true)
 ##### Default value : *true*
 Determines whether to use rules for 1-5 tautomer shifts. These rules are also considered as important ones therefore by default this flag is true. This flag could be set to be *false* in order to improve the tautomer generation speed where it is expected the percentage of tautomers omitted to be low.
 
-####<a name="FlagUse17Shifts"></a>tman.getKnowledgeBase().FlagUse17Shifts
-alternative access:
-tman.getKnowledgeBase().use17ShiftRules(true)
+####<a name="FlagUse17Shifts"></a>tman.getKnowledgeBase().FlagUse17Shifts | tman.getKnowledgeBase().use17ShiftRules(true)
 ##### Default value : *false*
 Determines whether to use the rules for 1-7 tautomer shifts. These rules can be used optionally. If this flag is *true*, the tautomer generation for complicated cases will be slower, however more exhaustive results will be guaranteed. 
 
