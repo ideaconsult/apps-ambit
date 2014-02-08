@@ -11,7 +11,7 @@ The flags are used for fine-tuning the tautomer generation process and post-gene
 * <a name="Filters"></a>Filters: 
 [FlagApplyWarningFilter](#FlagApplyWarningFilter), [FlagApplyExcludeFilter](#FlagApplyExcludeFilter), [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
 
-* Duplicates:
+* Duplicates handling:
 [FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering),  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism), [maxNumOfBackTracks](#maxNumOfBackTracks)
 
 
