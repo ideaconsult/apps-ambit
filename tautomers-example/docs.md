@@ -8,7 +8,7 @@ The flags are used for fine-tuning of the tautomer generation process and post-g
 * Rules:
 [FlagRecurseBackResultTautomers](#FlagRecurseBackResultTautomers), [FlagUseRingChainRules](#FlagUseRingChainRules), [FlagUseChlorineRules](#FlagUseChlorineRules) 
 
-* Filters: 
+* <a name="Filters"></a>Filters: 
 [FlagApplyWarningFilter](#FlagApplyWarningFilter), [FlagApplyExcludeFilter](#FlagApplyExcludeFilter), [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
 
 * Duplicates:
