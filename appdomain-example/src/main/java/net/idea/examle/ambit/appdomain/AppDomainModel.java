@@ -354,13 +354,13 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 			}
 			URL url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+training);
 			setTrainingInstances(new File(url.getFile()));
-			url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+training);
+			url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+test);
 			setTestInstances(new File(url.getFile()));
-			setResultFile(File.createTempFile("AMBIT_",test));
+			if (resultFile==null)
+				setResultFile(File.createTempFile("AMBIT_",test));
 			
 			break;
 		}
-
 		case training: {
 			if ((argument==null) || "".equals(argument.trim())) throw new Exception("No training file");
 			setTrainingInstances(new File(argument));

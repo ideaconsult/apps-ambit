@@ -83,6 +83,12 @@ public class MainApp {
 		System.out.println(title);
 	    HelpFormatter formatter = new HelpFormatter();
 	    formatter.printHelp( MainApp.class.getName(), options );
+	    System.out.println("Examples:");
+	    System.out.println(example_demo_fp());
+	    System.out.println(example_demo_density());
+	    System.out.println(example_density());
+	    
+	    
 	    Runtime.getRuntime().runFinalization();						 
 		Runtime.getRuntime().exit(0);	
 	}
@@ -142,6 +148,21 @@ public class MainApp {
 			public String getShortName() {
 				return "r";
 			}
+		},	
+		output {
+			@Override
+			public String getArgName() {
+				return "output";
+			}
+			@Override
+			public String getDescription() {
+				return "Output file (CSV,SDF)";
+			}
+			@Override
+			public String getShortName() {
+				return "o";
+			}
+	
 		},		
 		demo {
 			@Override
@@ -189,22 +210,6 @@ public class MainApp {
 			}
 	
 		},		
-		
-		output {
-			@Override
-			public String getArgName() {
-				return "output";
-			}
-			@Override
-			public String getDescription() {
-				return "Output file (CSV,SDF)";
-			}
-			@Override
-			public String getShortName() {
-				return "o";
-			}
-	
-		},
 		
 		descriptors {
 			//
@@ -261,6 +266,30 @@ public class MainApp {
 
 	    	return option;
 		}
+	}
+
+	
+	protected static String example_demo_density() {
+		return String.format(
+		"Read the demo files and apply applicability domain by probability density estimation,\nassuming all of the training set compounds are in the app.domain. : \njava -jar %s\t-m _modeDENSITY -d mutagenicity\n",
+		"example-ambit-appdomain-jar-with-dependencies.jar"
+		);
+	}
+	
+	protected static String example_demo_fp() {
+		return String.format(
+		"Read the demo files and apply applicability domain by Tanimoto consensus fingerprint,\nassuming all of the training set compounds are in the app.domain. Results saved in result.sdf file. : \njava -jar %s\t-m _modeFINGERPRINTS_CONSENSUS -d mutagenicity -o result.csv\n",
+		"example-ambit-appdomain-jar-with-dependencies.jar"
+		);
+	}
+	
+	//-m _modeDENSITY -d mutagenicity -r 0.9
+	protected static String example_density() {
+		return String.format(
+		"Read training and test CSV files and apply applicability domain by probability density estimation,\nassuming 90%% of the training set compounds are in the app.domain. : \njava -jar %s\t-m _modeDENSITY -t Debnath_smiles.csv -s Glende_smiles.csv -f log_P,eLumo,eHomo,IL -r 0.9\n",
+		"example-ambit-appdomain-jar-with-dependencies.jar"
+		);
+
 	}
 
 
