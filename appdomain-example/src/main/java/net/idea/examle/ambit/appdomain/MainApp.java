@@ -8,13 +8,15 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.PosixParser;
 
+import ambit2.model.numeric.ADomainMethodType;
+
 /**
  * Main example application
  * @author nina
  *
  */
 public class MainApp {
-	private static final String title = "Tautomer generation by ambit-tautomers package";
+	private static final String title = "Ambit applicability domain estimation by ambit-models package";
 	/**
 	 * Main 
 	 * @param args
@@ -22,7 +24,7 @@ public class MainApp {
 	public static void main(String[] args) {
 
     	Options options = createOptions();
-    	AppdomainWizard worker = new AppdomainWizard();
+    	AppDomainModel model ;
     	final CommandLineParser parser = new PosixParser();
 		try {
 		    CommandLine line = parser.parse( options, args,false );
@@ -30,16 +32,34 @@ public class MainApp {
 		    	printHelp(options, null);
 		    	return;
 		    }
+		    
+		    if (line.hasOption(_option.method.name())) {
+		    	model = new AppDomainModel();
 		    	
-	    	for (_option o: _option.values()) 
-	    		if (line.hasOption(o.getShortName())) try {
-	    			worker.setOption(o,line.getOptionValue(o.getShortName()));
-	    		} catch (Exception x) {
-	    			printHelp(options,x.getMessage());
-	    			return;
-	    		}
-	    		
-	    	worker.process();	
+		    	for (_option o: _option.values()) {
+		    		switch (o) {
+		    		case demo : {
+		    			if (line.hasOption(o.getShortName())) {
+			    			model.setOption(o,line.getOptionValue(o.getShortName()));
+		    			}
+		    		 	model.build();
+				    	model.predict();
+				    	return;
+		    		}
+		    		default : {
+		    			if (line.hasOption(o.getShortName())) try {
+			    			model.setOption(o,line.getOptionValue(o.getShortName()));
+			    		} catch (Exception x) {
+			    			printHelp(options,x.getMessage());
+			    			return;
+			    		}	
+		    		}
+		    		}
+		    		
+		    	}	
+		    	model.build();
+		    	model.predict();
+		    } else throw new Exception("Applicability domain method not specified");
 
 		} catch (Exception x ) {
 			printHelp(options,x.getMessage());
@@ -61,9 +81,6 @@ public class MainApp {
 		System.out.println(title);
 	    HelpFormatter formatter = new HelpFormatter();
 	    formatter.printHelp( MainApp.class.getName(), options );
-	    System.out.println("Examples:");
-	    System.out.println(example1());
-	    System.out.println(example2());
 	    Runtime.getRuntime().runFinalization();						 
 		Runtime.getRuntime().exit(0);	
 	}
@@ -85,23 +102,92 @@ public class MainApp {
 	 *
 	 */
 	enum _option {
-
+		
+		method {
+			@Override
+			public String getArgName() {
+				return "method";
+			}
+			@Override
+			public String getDescription() {
+				StringBuilder b = new StringBuilder();
+				b.append("Applicability domain estimation method:\n");
+				for (ADomainMethodType ad : ADomainMethodType.values()) {
+					b.append(ad.name());
+					b.append("\t(");
+					b.append(ad.getName());
+					b.append(")\n");
+				}
+				b.append("Example:\t -m _modeFINGERPRINTS");
+				return b.toString();
+			}
+			@Override
+			public String getShortName() {
+				return "m";
+			}
 	
-		file {
+		},
+		threshold {
+			@Override
+			public String getArgName() {
+				return "value";
+			}
+			@Override
+			public String getDescription() {
+				return "1.0 : all compounds from training set considered in the applicability domain (default); 0.9 : 90% of compounds from training set";
+			}
+			@Override
+			public String getShortName() {
+				return "r";
+			}
+		},		
+		demo {
+			@Override
+			public String getArgName() {
+				return "dataset";
+			}
+			@Override
+			public String getDescription() {
+				return "mutagenicity | kowwin";
+			}
+			@Override
+			public String getShortName() {
+				return "d";
+			}
+		},
+	
+		training {
 			@Override
 			public String getArgName() {
 				return "file";
 			}
 			@Override
 			public String getDescription() {
-				return "Input file (SDF)";
+				return "Training file (CSV,SDF)";
 			}
 			@Override
 			public String getShortName() {
-				return "f";
+				return "t";
+			}
+	
+		},
+		
+		test {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "Test file (CSV,SDF)";
+			}
+			@Override
+			public String getShortName() {
+				return "s";
 			}
 	
 		},		
+		
 		
 		output {
 			@Override
@@ -110,30 +196,14 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Output file (SDF)";
+				return "Output file (CSV,SDF)";
 			}
 			@Override
 			public String getShortName() {
 				return "o";
 			}
 	
-		},				
-	
-		tautomers {
-			@Override
-			public String getArgName() {
-				return "file";
-			}
-			@Override
-			public String getDescription() {
-				return "all: Write all tautomers; best: Write only the best tautomer";
-			}
-			@Override
-			public String getShortName() {
-				return "t";
-			}
-	
-		},	
+		},
 		
 		help {
 			@Override
@@ -177,27 +247,5 @@ public class MainApp {
 		}
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
-	protected static String example1() {
-		return String.format(
-		"Read file and write all tautomers to the standard out : \njava -jar %s\t-f filename.sdf\n",
-		"example-ambit-tautomers-jar-with-dependencies.jar"
-		);
 
-	}	
-	
-	/**
-	 * 
-	 * @return
-	 */
-	protected static String example2() {
-		return String.format(
-		"Read file and write only the best tautomers to an SDF file : \njava -jar %s\t-f filename.sdf -o tautomers.sdf -t best\n",
-		"example-ambit-tautomers-jar-with-dependencies.jar"
-		);
-
-	}	
 }
