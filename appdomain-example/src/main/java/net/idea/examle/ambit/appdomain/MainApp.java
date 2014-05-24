@@ -1,5 +1,7 @@
 package net.idea.examle.ambit.appdomain;
 
+import java.util.List;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -42,8 +44,8 @@ public class MainApp {
 		    			if (line.hasOption(o.getShortName())) {
 			    			model.setOption(o,line.getOptionValue(o.getShortName()));
 		    			}
-		    		 	model.build();
-				    	model.predict();
+		    		 	model.buildAD();
+				    	model.estimateAD();
 				    	return;
 		    		}
 		    		default : {
@@ -57,8 +59,8 @@ public class MainApp {
 		    		}
 		    		
 		    	}	
-		    	model.build();
-		    	model.predict();
+		    	model.buildAD();
+		    	model.estimateAD();
 		    } else throw new Exception("Applicability domain method not specified");
 
 		} catch (Exception x ) {
@@ -188,7 +190,6 @@ public class MainApp {
 	
 		},		
 		
-		
 		output {
 			@Override
 			public String getArgName() {
@@ -205,6 +206,21 @@ public class MainApp {
 	
 		},
 		
+		descriptors {
+			//
+			@Override
+			public String getArgName() {
+				return "list";
+			}
+			@Override
+			public String getDescription() {
+				return "Comma delimited list of field names (as in the input files) to be used as descriptors.\nExample -e log_P,eLumo,eHomo,IL ";
+			}
+			@Override
+			public String getShortName() {
+				return "f";
+			}
+		},
 		help {
 			@Override
 			public String getArgName() {

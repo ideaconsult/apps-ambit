@@ -9,12 +9,14 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import net.idea.examle.ambit.appdomain.MainApp._option;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -27,6 +29,7 @@ import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
+import Jama.Matrix;
 import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.data.model.ModelWrapper;
 import ambit2.core.io.FileInputState;
@@ -35,6 +38,7 @@ import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.FingerprintGenerator;
 import ambit2.model.numeric.ADomainMethodType;
 import ambit2.model.numeric.DataCoverage;
+import ambit2.model.numeric.DataCoverageDescriptors;
 import ambit2.model.structure.DataCoverageFingerprintsTanimoto;
 
 /**
@@ -44,6 +48,7 @@ import ambit2.model.structure.DataCoverageFingerprintsTanimoto;
  * @param <DATA>
  */
 public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCoverage<DATA>,String>{
+	protected String[] header = null;
 	protected File resultFile;
 	public File getResultFile() {
 		return resultFile;
@@ -73,7 +78,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	 */
 	private static final long serialVersionUID = -628626048238373558L;
 
-	public void build() throws Exception {
+	public void buildAD() throws Exception {
 		LOGGER.log(Level.INFO,String.format("AD method\t%s\t%s\t%s\t%s\t%s\tthreshold\t%4.2f%%",
 				dataCoverage.getClass().getName(),
 				dataCoverage.getAppDomainMethodType(),
@@ -81,48 +86,119 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 				dataCoverage.getMetricName(),
 				dataCoverage.getDomainName(),
 				100*dataCoverage.getPThreshold()));
-		final List<BitSet> bitsets = new ArrayList<BitSet>();
-		process(getTrainingInstances(), new IProcessMolecule() {
-			FingerprintGenerator gen = new FingerprintGenerator();
-			@Override
-			public void processMolecule(IAtomContainer molecule) throws Exception {
-				bitsets.add(gen.process(molecule));
-			}
-		});
-
-		dataCoverage.build(bitsets);
-		//dataCoverage.
-	}
-	
-	public void predict() throws Exception {
-		final IChemObjectWriter writer = createWriter();
-		try {
-			process(getTestInstances(), new IProcessMolecule() {
-				
+		
+		if (dataCoverage instanceof DataCoverageDescriptors) {
+			if (header == null || header.length==0) throw new Exception("Missing descriptors list. Use -f option to specify fields names to use as descriptors.");
+			
+			//Not most efficient way to get the number of records
+			int records = process(getTrainingInstances(), new IProcessMolecule() {
+				int record = 0;
+				@Override
+				public void processMolecule(IAtomContainer molecule) throws Exception {
+					record++;
+				}
+			});
+			final Matrix matrix = new Matrix(records,header.length);
+			
+			process(getTrainingInstances(), new IProcessMolecule() {
+				int record = 0;
+				@Override
+				public void processMolecule(IAtomContainer molecule)
+						throws Exception {
+					for (int i=0; i < header.length; i++) {
+						Object v = molecule.getProperty(header[i]);
+						if (v!=null)
+							matrix.set(record,i,Double.parseDouble(v.toString()));
+						else 
+							matrix.set(record,i,Double.NaN);
+					}
+					record++;
+				}
+			});
+			dataCoverage.build(matrix);
+			
+		} else { //fingerprints
+			final List<BitSet> bitsets = new ArrayList<BitSet>();
+			process(getTrainingInstances(), new IProcessMolecule() {
 				FingerprintGenerator gen = new FingerprintGenerator();
 				@Override
 				public void processMolecule(IAtomContainer molecule) throws Exception {
-					final List<BitSet> bitsets = new ArrayList<BitSet>();
+					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
+					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
+					//implicit H count is NULL if read from InChI ...
+					molecule = AtomContainerManipulator.removeHydrogens(molecule);
+					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);					
 					bitsets.add(gen.process(molecule));
-					double[] prediction = dataCoverage.predict(bitsets);
-					
-					for (double d : prediction) {
-						molecule.setProperty(dataCoverage.getName(), d);
-						molecule.setProperty(dataCoverage.getDomainName(), dataCoverage.getDomain(d));
-					}
-					writer.write(molecule);
-					/*
-					System.out.print(molecule.getProperty(dataCoverage.getAppDomainMethodType().name()));
-					System.out.print("\t");
-					System.out.println(molecule.getProperty(dataCoverage.getDomainName()));
-					*/
 				}
 			});
-		} catch (Exception x) {
-			LOGGER.log(Level.SEVERE,x.getMessage());
-		} finally {
-			writer.close();
+			dataCoverage.build(bitsets);
 		}
+	}
+	
+	/**
+	 * 
+	 * @param header 
+	 * @throws Exception
+	 */
+	public void estimateAD() throws Exception {
+		final IChemObjectWriter writer = createWriter();
+		if (dataCoverage instanceof DataCoverageDescriptors) { 
+			try {
+				//prediction could be done one by one
+				process(getTestInstances(), new IProcessMolecule() {
+					Matrix matrix = new Matrix(1,header.length);
+					@Override
+					public void processMolecule(IAtomContainer molecule) throws Exception {
+						//fill in the matrix
+						for (int i=0; i < header.length; i++) {
+							Object v = molecule.getProperty(header[i]);
+							if (v!=null)
+								matrix.set(0,i,Double.parseDouble(v.toString()));
+							else 
+								matrix.set(0,i,Double.NaN);
+						}
+						double[] prediction =  dataCoverage.predict(matrix);
+						for (double d : prediction) {
+							molecule.setProperty(dataCoverage.getName(), d);
+							molecule.setProperty(dataCoverage.getDomainName(), dataCoverage.getDomain(d));
+						}
+						writer.write(molecule);
+					}
+				});
+			} catch (Exception x) {
+				 LOGGER.log(Level.WARNING,x.getMessage(),x);
+			} finally {
+				writer.close();
+			}
+		} else {	
+			try {
+				process(getTestInstances(), new IProcessMolecule() {
+					
+					FingerprintGenerator gen = new FingerprintGenerator();
+					@Override
+					public void processMolecule(IAtomContainer molecule) throws Exception {
+						final List<BitSet> bitsets = new ArrayList<BitSet>();
+						bitsets.add(gen.process(molecule));
+						double[] prediction = dataCoverage.predict(bitsets);
+						
+						for (double d : prediction) {
+							molecule.setProperty(dataCoverage.getName(), d);
+							molecule.setProperty(dataCoverage.getDomainName(), dataCoverage.getDomain(d));
+						}
+						writer.write(molecule);
+						/*
+						System.out.print(molecule.getProperty(dataCoverage.getAppDomainMethodType().name()));
+						System.out.print("\t");
+						System.out.println(molecule.getProperty(dataCoverage.getDomainName()));
+						*/
+					}
+				});
+			} catch (Exception x) {
+				LOGGER.log(Level.SEVERE,x.getMessage());
+			} finally {
+				writer.close();
+			}
+		}	
 	}
 	
 	public int process(File file, IProcessMolecule processor) throws Exception {
@@ -154,11 +230,6 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 					continue;
 				}
 				try {
-					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
-					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
-					//implicit H count is NULL if read from InChI ...
-					molecule = AtomContainerManipulator.removeHydrogens(molecule);
-					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);
 					/**
 					 * ambit2-model package
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-model
@@ -268,20 +339,28 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 			}
 			break;
 		}
+		case descriptors: {
+			header = parseDescriptorNames(argument);
+			break;
+		}
 		case demo: {
 			String training = "Debnath_smiles.csv";
 			String test = "Glende_smiles.csv";
+			header = parseDescriptorNames("log_P,eLumo,eHomo,IL");
 			if ((argument!=null) && "kowwin".equals(argument.trim())) {
 				training = "kowwin_training.csv";
 				test = "kowwin_validation.csv";				
+				header = null; //no descriptors in the file
 			}
 			URL url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+training);
 			setTrainingInstances(new File(url.getFile()));
-			url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+test);
+			url = getClass().getClassLoader().getResource("net/idea/example/ambit/appdomain/"+training);
 			setTestInstances(new File(url.getFile()));
 			setResultFile(File.createTempFile("AMBIT_",test));
+			
 			break;
 		}
+
 		case training: {
 			if ((argument==null) || "".equals(argument.trim())) throw new Exception("No training file");
 			setTrainingInstances(new File(argument));
@@ -300,6 +379,15 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 		}
 		default: 
 		}
+	}
+	
+	protected String[] parseDescriptorNames(String list) {
+		String[] header = StringUtils.splitPreserveAllTokens(list,new String(","));
+		if (header != null)
+			for (int i=0; i < header.length; i++)
+				header[i] = header[i].trim();
+		return header;
+		
 	}
 }
 
