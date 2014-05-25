@@ -1,4 +1,6 @@
-###Ambit applicability domain estimation by [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package
+###[AMBIT](http://ambit.sf.net) applicability domain estimation
+
+[ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package is an implementation of methods described in [1](http://www.ncbi.nlm.nih.gov/pubmed/16268757), [2](http://www.ncbi.nlm.nih.gov/pubmed/16268758), [3](http://www.ncbi.nlm.nih.gov/pubmed/16180989), [4](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
 
 Run
 ---
@@ -58,9 +60,9 @@ java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t D
 
 #### Example files
 
-* Mutagenicity (structures and descriptors) [Reference](http://www.ncbi.nlm.nih.gov/pubmed/1732103) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
+* Mutagenicity  [1](http://www.ncbi.nlm.nih.gov/pubmed/1732103) (structures and descriptors) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
     
-* EPI Suite KOWWIN [Reference](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
+* EPI Suite KOWWIN [2](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
     
 
 ### Support
