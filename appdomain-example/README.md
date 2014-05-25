@@ -81,6 +81,7 @@ java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t D
     
 * [EPI Suite KOWWIN](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) files (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
 
+* Visualisation http://ideaconsult.github.io/examples-ambit/appdomain/
 
 Support
 ---
