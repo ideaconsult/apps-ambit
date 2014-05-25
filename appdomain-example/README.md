@@ -1,5 +1,11 @@
 ###Ambit applicability domain estimation by ambit-models package
 
+Run
+---
+
+    >java -jar target/ambit-appdomain-example-jar-with-dependencies.jar -h
+    
+
 ````
 usage: net.idea.examle.ambit.appdomain.MainApp
  -d,--demo <dataset>       mutagenicity | kowwin
@@ -49,3 +55,37 @@ assuming 90% of the training set compounds are in the app.domain. :
 ````
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t Debnath_smiles.csv -s Glende_smiles.csv -f log_P,eLumo,eHomo,IL -r 0.9
 ````
+
+  * Please use the issue tracker to report bugs https://github.com/ideaconsult/examples-ambit/issues 
+  
+  * Announcements and discussions at [Google+ page](https://plus.google.com/116849658963631645389) 
+  
+Download
+---
+
+###Command line application
+
+   * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-appdomain-example-1.0.0.jar/download)
+
+   * Download from [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-appdomain-example~~~) 
+
+###Maven artifact
+
+    <dependency>
+        <groupId>net.idea.examples.ambit</groupId>
+        <artifactId>ambit-appdomain-example</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    <repository>
+        <id>ambit-plovdiv-releases</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository>
+
+
+                             
+Build
+-----
+
+    >mvn clean package
+  
+
