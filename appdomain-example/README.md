@@ -18,20 +18,21 @@ Run
     
 
 ````
-usage: net.idea.examle.ambit.appdomain.MainApp
+Ambit applicability domain estimation by ambit-models package
+usage: net.idea.example.ambit.appdomain.MainApp
  -d,--demo <dataset>       mutagenicity | kowwin
  -f,--descriptors <list>   Comma delimited list of field names (as in the
                            input files) to be used as descriptors.
-                           Example -e log_P,eLumo,eHomo,IL
+                           Example -f log_P,eLumo,eHomo,IL
  -h,--help                 Ambit applicability domain estimation by
                            ambit-models package
  -m,--method <method>      Applicability domain estimation method:
-                           _modeRANGE	(PCARanges)
-                           _modeLEVERAGE	(Leverage)
-                           _modeEUCLIDEAN	(Euclidean distance)
-                           _modeCITYBLOCK	(City-block distance)
-                           _modeMAHALANOBIS	(Mahalanobis distance)
-                           _modeDENSITY	(Probability density)
+                           _modeRANGE   (PCARanges)
+                           _modeLEVERAGE        (Leverage)
+                           _modeEUCLIDEAN       (Euclidean distance)
+                           _modeCITYBLOCK       (City-block distance)
+                           _modeMAHALANOBIS     (Mahalanobis distance)
+                           _modeDENSITY (Probability density)
                            _modeFINGERPRINTS_CONSENSUS
                            (Tanimoto Fingerprints (consensus))
                            _modeFINGERPRINT_MISSINGFRAGMENTS
@@ -44,6 +45,7 @@ usage: net.idea.examle.ambit.appdomain.MainApp
                            from training set
  -s,--test <file>          Test file (CSV,SDF)
  -t,--training <file>      Training file (CSV,SDF)
+
 ````
 
 ####Example 1
