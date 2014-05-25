@@ -32,14 +32,20 @@ usage: net.idea.examle.ambit.appdomain.MainApp
 ####Example 1
 Reads the demo files and apply applicability domain by Tanimoto consensus fingerprint,
 assuming all of the training set compounds are in the app.domain. Results saved in result.sdf file. : 
+````
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeFINGERPRINTS_CONSENSUS -d mutagenicity -o result.csv
+````
 
 ####Example 2
 Reads the demo files and apply applicability domain by probability density estimation,
 assuming all of the training set compounds are in the app.domain. : 
+````
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -d mutagenicity
+````
 
 ####Example 3
 Reads training and test CSV files and apply applicability domain by probability density estimation,
 assuming 90% of the training set compounds are in the app.domain. : 
+````
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t Debnath_smiles.csv -s Glende_smiles.csv -f log_P,eLumo,eHomo,IL -r 0.9
+````
