@@ -56,6 +56,21 @@ assuming 90% of the training set compounds are in the app.domain. :
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t Debnath_smiles.csv -s Glende_smiles.csv -f log_P,eLumo,eHomo,IL -r 0.9
 ````
 
+#### Example files
+
+##### Mutagenicity (structures and descriptors)
+
+* [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv)
+* [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
+    
+##### KowWin (structures only)
+
+* [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv)
+* [test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
+    
+
+### Support
+
   * Please use the issue tracker to report bugs https://github.com/ideaconsult/examples-ambit/issues 
   
   * Announcements and discussions at [Google+ page](https://plus.google.com/116849658963631645389) 
