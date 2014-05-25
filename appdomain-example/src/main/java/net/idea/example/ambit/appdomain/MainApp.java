@@ -173,7 +173,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Training and tets CSV files from PubMed:1732103";
+				return "Training and test CSV files from PubMed:1732103";
 			}
 			@Override
 			public String getShortName() {
