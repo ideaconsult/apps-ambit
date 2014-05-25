@@ -1,9 +1,12 @@
 ###[AMBIT](http://ambit.sf.net) applicability domain estimation examples
 
-[ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package is an implementation of methods described in *[[1]](http://www.ncbi.nlm.nih.gov/pubmed/16268757)
-*[[2]](http://www.ncbi.nlm.nih.gov/pubmed/16268758)
-*[[3]](http://www.ncbi.nlm.nih.gov/pubmed/16180989)
-*[[4]](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
+[ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package is an implementation of methods described in
+
+
+* [Jaworska, J., Nikolova-Jeliazkova, N., & Aldenberg, T. (2005). QSAR applicabilty domain estimation by projection of the training set descriptor space: a review. Alternatives to Laboratory Animals ATLA, 33(5), 445–459.](http://www.ncbi.nlm.nih.gov/pubmed/16268757)
+* [Nikolova-Jeliazkova, N., & Jaworska, J. (2005). An approach to determining applicability domains for QSAR group contribution models: an analysis of SRC KOWWIN. Alternatives to Laboratory Animals ATLA, 33(5), 461–470.](http://www.ncbi.nlm.nih.gov/pubmed/16268758)
+* [Netzeva, T. I., Worth, A., Aldenberg, T., Benigni, R., Cronin, M. T. D., Gramatica, P., … Yang, C. (2005). Current status of methods for defining the applicability domain of (quantitative) structure-activity relationships. The report and recommendations of ECVAM Workshop 52. Alternatives to Laboratory Animals ATLA.](http://www.ncbi.nlm.nih.gov/pubmed/16180989)
+* [Jaworska, J., & Nikolova-Jeliazkova, N. (2007). How can structural similarity analysis help in category formation? SAR and QSAR in Environmental Research, 18(3-4), 195–207. doi:10.1080/10629360701306050](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
 
 This project  (appdomain-example) is a command line application, demonstrating how to use [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package. 
 Alternatively, the applicability domain algorithms are implemented as REST web services in [Ambit web application](http://ambit.sourceforge.net/download_ambitrest.html).
