@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.idea.examples.ambit</groupId>
@@ -6,10 +7,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <description>Ambit Applicability domain Example</description>
   <organization>
-  	<name>Ideaconsult Ltd.</name>
-  	<url>www.ideaconsult.net</url>
+    <name>Ideaconsult Ltd.</name>
+    <url>www.ideaconsult.net</url>
   </organization>
- <dependencies>
+  <dependencies>
     <dependency>
       <groupId>ambit</groupId>
       <artifactId>ambit2-model</artifactId>
@@ -17,7 +18,6 @@
       <type>jar</type>
       <scope>compile</scope>
     </dependency>
-
     <!-- Command line options parsing by Apache commons-cli -->
     <dependency>
       <groupId>commons-cli</groupId>
@@ -27,12 +27,12 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
-     <properties>
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
     <ambit.version>2.5.5-SNAPSHOT</ambit.version>
-     </properties>
- <build>
+  </properties>
+  <build>
     <finalName>example-ambit-appdomain</finalName>
     <resources>
       <resource>
@@ -166,5 +166,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-  </build>  
+  </build>
 </project>
