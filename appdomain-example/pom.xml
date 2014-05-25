@@ -6,6 +6,50 @@
   <name>ambit-appdomain-example</name>
   <version>1.0.0</version>
   <description>Ambit Applicability domain Example</description>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ambit-plovdiv-snapshots</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ambit-plovdiv-releases</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>  
+<repositories>
+    <repository>
+      <id>ambit-plovdiv</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/thirdparty</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>ambit-plovdiv-releases</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>ambit-plovdiv-snapshots</id>
+      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>  
+  <issueManagement>
+  	<system>GitHub</system>
+  	<url>https://github.com/ideaconsult/examples-ambit/issues</url>
+  </issueManagement>
+  <inceptionYear>2013</inceptionYear>
+  <scm>
+  	<connection>git://github.com/ideaconsult/examples-ambit.git</connection>
+  	<developerConnection>scm:git:git@github.com:ideaconsult/examples-ambit.git</developerConnection>
+  	<url>https://github.com/ideaconsult/examples-ambit.git</url>
+  </scm>
   <organization>
     <name>Ideaconsult Ltd.</name>
     <url>www.ideaconsult.net</url>
