@@ -95,7 +95,7 @@ Download
 
 ###Command line application
 
-   * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/appdomain/ambit-appdomain-example-1.0.0.jar/download)
+   * Download [1.0.0 release](http://ambit.uni-plovdiv.bg:8083/nexus/service/local/repositories/releases/content/net/idea/examples/ambit/ambit-appdomain-example/1.0.0/ambit-appdomain-example-1.0.0-jar-with-dependencies.jar)
 
    * Download from [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-appdomain-example~~~) 
 
