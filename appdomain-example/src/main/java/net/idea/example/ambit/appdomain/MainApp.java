@@ -131,6 +131,10 @@ public class MainApp {
 			public String getShortName() {
 				return "m";
 			}
+			@Override
+			public String getDefaultValue() {
+				return ADomainMethodType._modeFINGERPRINTS_CONSENSUS.name();
+			}
 	
 		},
 		threshold {
@@ -165,15 +169,19 @@ public class MainApp {
 		demo {
 			@Override
 			public String getArgName() {
-				return "dataset";
+				return null;
 			}
 			@Override
 			public String getDescription() {
-				return "mutagenicity | kowwin";
+				return "Training and tets CSV files from PubMed:1732103";
 			}
 			@Override
 			public String getShortName() {
 				return "d";
+			}
+			@Override
+			public String getDefaultValue() {
+				return null;
 			}
 		},
 	
@@ -257,11 +265,12 @@ public class MainApp {
 		public Option createOption() {
 			String defaultValue = getDefaultValue();
 	    	Option option   = OptionBuilder.withLongOpt(name())
-	        .hasArg()
-	        .withArgName(getArgName())
-	        .withDescription(String.format("%s %s %s",getDescription(),defaultValue==null?"":"Default value: ",defaultValue==null?"":defaultValue))
-	        .create(getShortName());
-
+	    				.withDescription(String.format("%s %s %s",getDescription(),defaultValue==null?"":"Default value: ",defaultValue==null?"":defaultValue))
+	    				.create(getShortName());
+	    	if (getArgName()!= null) {
+	    		option.setArgs(1);
+		        option.setArgName(getArgName());
+	    	}
 	    	return option;
 		}
 	}

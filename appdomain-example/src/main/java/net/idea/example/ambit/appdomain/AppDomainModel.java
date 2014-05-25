@@ -123,12 +123,17 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 				FingerprintGenerator gen = new FingerprintGenerator();
 				@Override
 				public void processMolecule(IAtomContainer molecule) throws Exception {
-					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
-					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
-					//implicit H count is NULL if read from InChI ...
-					molecule = AtomContainerManipulator.removeHydrogens(molecule);
-					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);					
-					bitsets.add(gen.process(molecule));
+					try {
+						AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
+						CDKHueckelAromaticityDetector.detectAromaticity(molecule);
+						//implicit H count is NULL if read from InChI ...
+						molecule = AtomContainerManipulator.removeHydrogens(molecule);
+						CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);					
+						bitsets.add(gen.process(molecule));
+					} catch (Exception x) {
+						LOGGER.log(Level.WARNING,x.getMessage());
+					}
+
 				}
 			});
 			dataCoverage.build(bitsets);
