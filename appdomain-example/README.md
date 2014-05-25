@@ -1,4 +1,4 @@
-###Ambit applicability domain estimation by [ambit-models](http://ambit.sourceforge.net/download_ambitlibs.html) package
+###Ambit applicability domain estimation by [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package
 
 Run
 ---
