@@ -65,7 +65,7 @@ Download
 
 ###Command line application
 
-   * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-appdomain-example-1.0.0.jar/download)
+   * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/appdomain/ambit-appdomain-example-1.0.0.jar/download)
 
    * Download from [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-appdomain-example~~~) 
 
