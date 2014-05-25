@@ -1,4 +1,4 @@
-package net.idea.examle.ambit.appdomain;
+package net.idea.example.ambit.appdomain;
 
 import java.util.List;
 
@@ -219,7 +219,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Comma delimited list of field names (as in the input files) to be used as descriptors.\nExample -e log_P,eLumo,eHomo,IL ";
+				return "Comma delimited list of field names (as in the input files) to be used as descriptors.\nExample -f log_P,eLumo,eHomo,IL ";
 			}
 			@Override
 			public String getShortName() {

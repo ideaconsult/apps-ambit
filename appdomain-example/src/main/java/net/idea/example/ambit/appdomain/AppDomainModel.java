@@ -1,4 +1,4 @@
-package net.idea.examle.ambit.appdomain;
+package net.idea.example.ambit.appdomain;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import net.idea.examle.ambit.appdomain.MainApp._option;
+import net.idea.example.ambit.appdomain.MainApp._option;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
