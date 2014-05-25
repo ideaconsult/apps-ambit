@@ -9,7 +9,7 @@
 * [Jaworska, J., & Nikolova-Jeliazkova, N. (2007). How can structural similarity analysis help in category formation? SAR and QSAR in Environmental Research, 18(3-4), 195–207. doi:10.1080/10629360701306050](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
 
 This project  (appdomain-example) is a command line application, demonstrating how to use [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package. 
-Alternatively, the applicability domain algorithms are implemented as REST web services in [Ambit web application](http://ambit.sourceforge.net/download_ambitrest.html).
+Alternatively, the applicability domain algorithms are implemented in [Ambit Discovery](http://ambit.sourceforge.net/download_ambitdiscovery.html) desktop application as well as REST web services in [Ambit web application](http://ambit.sourceforge.net/download_ambitrest.html).
 
 Run
 ---
