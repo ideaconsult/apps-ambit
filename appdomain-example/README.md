@@ -11,6 +11,11 @@
 This project  (appdomain-example) is a command line application, demonstrating how to use [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package. 
 Alternatively, the applicability domain algorithms are implemented in [Ambit Discovery](http://ambit.sourceforge.net/download_ambitdiscovery.html) desktop application as well as REST web services in [Ambit web application](http://ambit.sourceforge.net/download_ambitrest.html).
 
+    The applicability domain is estimated based on the data in the training set only (independent of the model). The applicability domain estimation is reported for the test set.  You may specify one and the same file as both test and training set. The input file formats are recognised by extension (e.g. .csv, .sdf, .cml). 
+
+    The result file consists of all the properties in the test set, the predicted metric by the applicability domain method and a flag indicating if the molecule is out of domain ( 0 - in domain, 1 - out of domain). The output file tipe is recognised by extension (e.g. .csv, .sdf, .cml).
+
+
 Run
 ---
 
@@ -74,9 +79,10 @@ java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t D
 * Mutagenicity  [1](http://www.ncbi.nlm.nih.gov/pubmed/1732103) (structures and descriptors) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
     
 * EPI Suite KOWWIN [2](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
-    
 
-### Support
+
+Support
+---
 
   * Please use the issue tracker to report bugs https://github.com/ideaconsult/examples-ambit/issues 
   
