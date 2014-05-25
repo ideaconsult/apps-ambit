@@ -1,0 +1,23 @@
+.wrap {
+	 word-wrap:break-word;
+}
+
+
+td
+{
+vertical-align:top;
+}
+
+
+.dataTables_info {
+    width: 40%;
+}
+
+
+.dataTables_paginate .fg-button {
+	 background:#ffffff;
+	 color:#000000;
+	 min-width:4em;
+	 border:1px;
+}	
+ 

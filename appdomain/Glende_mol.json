@@ -1,0 +1,331 @@
+{
+"dataset":	{
+	"name":"result.csv",	"molecule":	[
+{
+		"record":	1,
+		"img":	"images/40d0becf-d8ec-44dd-ade5-ec135cac7ff2.png",
+		"tags":{
+			"Code":	1.0,
+			"Compound":	"2-Aminonaphthalene",
+			"CAS":	"91-59-8",
+			"SMILES":	"NC1=CC=C2C=CC=CC2=C1",
+			"Obs":	-1.43,
+			"Pred":	-0.33,
+			"Dev.":	1.1,
+			"log_P":	2.28,
+			"eLumo":	-0.175,
+			"eHomo":	-8.227,
+			"IL":	0.0,
+			"Probability density":	6.432216151945166,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	2,
+		"img":	"images/72e989ae-97d3-47af-a20c-a55d517c8f9d.png",
+		"tags":{
+			"Code":	2.0,
+			"Compound":	"1-Ethyl-2-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"CCC1=C(N)C=CC2=C1C=CC=C2",
+			"Obs":	0.36,
+			"Pred":	0.82,
+			"Dev.":	0.46,
+			"log_P":	3.29,
+			"eLumo":	-0.169,
+			"eHomo":	-8.127,
+			"IL":	0.0,
+			"Probability density":	0.4133037913065591,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	3,
+		"img":	"images/3c601e93-6d80-4c3f-88d3-161ed08d1ed8.png",
+		"tags":{
+			"Code":	3.0,
+			"Compound":	"1-iPropyl-2-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"CC(C)C1=C(N)C=CC2=C1C=CC=C2",
+			"Obs":	-0.62,
+			"Pred":	1.28,
+			"Dev.":	1.9,
+			"log_P":	3.71,
+			"eLumo":	-0.172,
+			"eHomo":	-8.102,
+			"IL":	0.0,
+			"Probability density":	0.07141016510808085,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	4,
+		"img":	"images/bba4ce4e-c6b3-48b5-ba4b-1fc3b45b539c.png",
+		"tags":{
+			"Code":	4.0,
+			"Compound":	"1-nButyl-2-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"CCCCC1=C(N)C=CC2=C1C=CC=C2",
+			"Obs":	-0.29,
+			"Pred":	1.88,
+			"Dev.":	2.17,
+			"log_P":	4.27,
+			"eLumo":	-0.171,
+			"eHomo":	-8.124,
+			"IL":	0.0,
+			"Probability density":	0.05358261515288018,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	5,
+		"img":	"images/640504c5-dec5-4429-81d2-29164fd5592e.png",
+		"tags":{
+			"Code":	5.0,
+			"Compound":	"1-tButyl-2-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"CC(C)(C)C1=C(N)C=CC2=C1C=CC=C2",
+			"Obs":	-2.0,
+			"Pred":	1.79,
+			"Dev.":	3.79,
+			"log_P":	4.16,
+			"eLumo":	-0.179,
+			"eHomo":	-8.052,
+			"IL":	0.0,
+			"Probability density":	0.03842838432699751,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	6,
+		"img":	"images/55cf2553-fcb7-4d7a-969b-076f348dee0f.png",
+		"tags":{
+			"Code":	6.0,
+			"Compound":	"2-Aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(CC3=C2C=CC=C3)C=C1",
+			"Obs":	1.54,
+			"Pred":	1.75,
+			"Dev.":	0.21,
+			"log_P":	3.14,
+			"eLumo":	-0.098,
+			"eHomo":	-8.107,
+			"IL":	1.0,
+			"Probability density":	4.1023474431584415,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	7,
+		"img":	"images/568916ef-9dd6-4397-adba-9074b4f5074c.png",
+		"tags":{
+			"Code":	7.0,
+			"Compound":	"1-Ethyl-2-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"CCC1=C(N)C=CC2=C1C3=C(C2)C=CC=C3",
+			"Obs":	1.85,
+			"Pred":	2.87,
+			"Dev.":	1.02,
+			"log_P":	4.14,
+			"eLumo":	-0.073,
+			"eHomo":	-8.06,
+			"IL":	1.0,
+			"Probability density":	0.3704139593507043,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	8,
+		"img":	"images/66e1e2e8-ab1d-4aed-ae09-81231a0e03f1.png",
+		"tags":{
+			"Code":	8.0,
+			"Compound":	"1-iPropyl-2-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"CC(C)C1=C(N)C=CC2=C1C3=C(C2)C=CC=C3",
+			"Obs":	2.23,
+			"Pred":	3.34,
+			"Dev.":	1.11,
+			"log_P":	4.55,
+			"eLumo":	-0.051,
+			"eHomo":	-8.023,
+			"IL":	1.0,
+			"Probability density":	0.3141251703937908,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	9,
+		"img":	"images/e3e134ac-97e2-4c5e-82de-fb291516cd15.png",
+		"tags":{
+			"Code":	9.0,
+			"Compound":	"1-nButyl-2-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"CCCCC1=C(N)C=CC2=C1C3=C(C2)C=CC=C3",
+			"Obs":	2.86,
+			"Pred":	3.94,
+			"Dev.":	1.08,
+			"log_P":	5.12,
+			"eLumo":	-0.065,
+			"eHomo":	-8.045,
+			"IL":	1.0,
+			"Probability density":	0.07015004926426464,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	10,
+		"img":	"images/a9b659fe-51a5-4d00-bfbe-96fbda36f763.png",
+		"tags":{
+			"Code":	10.0,
+			"Compound":	"1-tButyl-2-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"CC(C)(C)C1=C(N)C=CC2=C1C3=C(C2)C=CC=C3",
+			"Obs":	0.07,
+			"Pred":	3.86,
+			"Dev.":	3.79,
+			"log_P":	5.01,
+			"eLumo":	-0.041,
+			"eHomo":	-7.997,
+			"IL":	1.0,
+			"Probability density":	0.11919120086935701,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	11,
+		"img":	"images/89729e77-a0d8-4064-85b9-c44f18b7e78a.png",
+		"tags":{
+			"Code":	11.0,
+			"Compound":	"4-Aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=CC=C2",
+			"Obs":	0.65,
+			"Pred":	-0.33,
+			"Dev.":	-0.98,
+			"log_P":	2.86,
+			"eLumo":	0.045,
+			"eHomo":	-8.274,
+			"IL":	0.0,
+			"Probability density":	3.380974858397063,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	12,
+		"img":	"images/4161b82c-597d-41b6-bb47-20b81b22164b.png",
+		"tags":{
+			"Code":	12.0,
+			"Compound":	"3-Ethyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CCC1=C(N)C=CC(=C1)C2=CC=CC=C2",
+			"Obs":	0.17,
+			"Pred":	0.82,
+			"Dev.":	0.65,
+			"log_P":	3.88,
+			"eLumo":	0.073,
+			"eHomo":	-8.214,
+			"IL":	0.0,
+			"Probability density":	0.22124338590177534,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	13,
+		"img":	"images/4a1f7451-9251-41d7-8a84-09c1f0062ebe.png",
+		"tags":{
+			"Code":	13.0,
+			"Compound":	"3-iPropyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CC(C)C1=C(N)C=CC(=C1)C2=CC=CC=C2",
+			"Obs":	-0.01,
+			"Pred":	1.28,
+			"Dev.":	1.29,
+			"log_P":	4.3,
+			"eLumo":	0.076,
+			"eHomo":	-8.21,
+			"IL":	0.0,
+			"Probability density":	0.09749339012915528,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	14,
+		"img":	"images/a5064716-2c2c-4ec6-a25e-1907ea303e1d.png",
+		"tags":{
+			"Code":	14.0,
+			"Compound":	"3-nButyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CCCCC1=C(N)C=CC(=C1)C2=CC=CC=C2",
+			"Obs":	-0.17,
+			"Pred":	1.88,
+			"Dev.":	2.05,
+			"log_P":	4.86,
+			"eLumo":	0.072,
+			"eHomo":	-8.212,
+			"IL":	0.0,
+			"Probability density":	0.0,
+			"AppDomain_Probability density":	1.0
+		}
+	},{
+		"record":	15,
+		"img":	"images/49b3ccdc-83dd-4e22-a7d9-183e33f4e9bf.png",
+		"tags":{
+			"Code":	15.0,
+			"Compound":	"3-tButyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CC(C)(C)C1=CC(=CC=C1N)C2=CC=CC=C2",
+			"Obs":	-0.39,
+			"Pred":	1.79,
+			"Dev.":	2.18,
+			"log_P":	4.75,
+			"eLumo":	0.108,
+			"eHomo":	-8.17,
+			"IL":	0.0,
+			"Probability density":	0.0026058308792517118,
+			"AppDomain_Probability density":	1.0
+		}
+	},{
+		"record":	16,
+		"img":	"images/4cb01297-b337-49c4-be29-b8d959185adb.png",
+		"tags":{
+			"Code":	16.0,
+			"Compound":	"3,5-Dimethyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CC1=CC(=CC(C)=C1N)C2=CC=CC=C2",
+			"Obs":	-1.34,
+			"Pred":	0.92,
+			"Dev.":	2.26,
+			"log_P":	3.93,
+			"eLumo":	0.088,
+			"eHomo":	-8.166,
+			"IL":	0.0,
+			"Probability density":	0.20492311961817242,
+			"AppDomain_Probability density":	0.0
+		}
+	},{
+		"record":	17,
+		"img":	"images/e35904e0-6b5f-4b00-aeca-eea9dca13a00.png",
+		"tags":{
+			"Code":	17.0,
+			"Compound":	"3,5-Diethyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CCC1=CC(=CC(CC)=C1N)C2=CC=CC=C2",
+			"Obs":	-1.71,
+			"Pred":	2.01,
+			"Dev.":	3.72,
+			"log_P":	4.92,
+			"eLumo":	0.096,
+			"eHomo":	-8.15,
+			"IL":	0.0,
+			"Probability density":	0.0,
+			"AppDomain_Probability density":	1.0
+		}
+	},{
+		"record":	18,
+		"img":	"images/5103c702-c3c8-4af9-a31b-cd67ecd9f331.png",
+		"tags":{
+			"Code":	18.0,
+			"Compound":	"3,5-Dipropyl-4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"CC(C)C1=CC(=CC(C(C)C)=C1N)C2=CC=CC=C2",
+			"Obs":	-1.95,
+			"Pred":	2.9,
+			"Dev.":	4.85,
+			"log_P":	5.75,
+			"eLumo":	0.114,
+			"eHomo":	-8.144,
+			"IL":	0.0,
+			"Probability density":	0.0,
+			"AppDomain_Probability density":	1.0
+		}
+	}
+	]
+}
+}

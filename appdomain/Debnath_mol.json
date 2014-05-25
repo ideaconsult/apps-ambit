@@ -1,0 +1,1503 @@
+{
+"dataset":	{
+	"name":"Debnath_smiles.csv",	"molecule":	[
+{
+		"record":	1,
+		"img":	"images/5a5b4126-ebd9-4b7c-9e21-2b98bafa116b.png",
+		"tags":{
+			"Code":	1.0,
+			"Compound":	"2-bromo-7-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=C1)C3=C(C2)C=C(Br)C=C3",
+			"Obs":	2.62,
+			"Pred":	2.62,
+			"Dev.":	0.0,
+			"log_P":	3.92,
+			"eLumo":	-0.405,
+			"eHomo":	-8.236,
+			"IL":	1.0,
+			"abs dev":	0.0
+		}
+	},{
+		"record":	2,
+		"img":	"images/717b600a-62b9-4be3-81ee-bd01c20974ba.png",
+		"tags":{
+			"Code":	2.0,
+			"Compound":	"2-methoxy-5-methylaniline(p-cresidine)",
+			"CAS":	"",
+			"SMILES":	"COC1=CC=C(C)C=C1N",
+			"Obs":	-2.05,
+			"Pred":	-2.06,
+			"Dev.":	0.01,
+			"log_P":	1.74,
+			"eLumo":	0.419,
+			"eHomo":	-8.449,
+			"IL":	0.0,
+			"abs dev":	0.01
+		}
+	},{
+		"record":	3,
+		"img":	"images/688f0fad-6d85-43bd-a6b1-ac251f6d0d4d.png",
+		"tags":{
+			"Code":	3.0,
+			"Compound":	"5-aminoquinoline",
+			"CAS":	"611-34-7",
+			"SMILES":	"NC1=CC=CC2=C1C=CC=N2",
+			"Obs":	-2.0,
+			"Pred":	-2.02,
+			"Dev.":	0.02,
+			"log_P":	1.16,
+			"eLumo":	-0.395,
+			"eHomo":	-8.395,
+			"IL":	0.0,
+			"abs dev":	0.02
+		}
+	},{
+		"record":	4,
+		"img":	"images/495dc34f-58d8-4cdb-8ff8-8daeb105a3c2.png",
+		"tags":{
+			"Code":	4.0,
+			"Compound":	"4-ethoxyaniline",
+			"CAS":	"156-43-4",
+			"SMILES":	"CCOC1=CC=C(N)C=C1",
+			"Obs":	-2.3,
+			"Pred":	-2.32,
+			"Dev.":	0.02,
+			"log_P":	1.24,
+			"eLumo":	0.513,
+			"eHomo":	-8.182,
+			"IL":	0.0,
+			"abs dev":	0.02
+		}
+	},{
+		"record":	5,
+		"img":	"images/85cd1d49-5ea8-4f30-8239-dac7e594ad96.png",
+		"tags":{
+			"Code":	5.0,
+			"Compound":	"1-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"NC1=C2C=CC=CC2=CC=C1",
+			"Obs":	-0.6,
+			"Pred":	-0.63,
+			"Dev.":	0.03,
+			"log_P":	2.25,
+			"eLumo":	-0.195,
+			"eHomo":	-8.108,
+			"IL":	0.0,
+			"abs dev":	0.03
+		}
+	},{
+		"record":	6,
+		"img":	"images/8167f518-ab91-4182-a589-371bbfd78004.png",
+		"tags":{
+			"Code":	6.0,
+			"Compound":	"4-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=C2C(CC3=CC=CC=C23)=CC=C1",
+			"Obs":	1.13,
+			"Pred":	1.1,
+			"Dev.":	0.03,
+			"log_P":	2.7,
+			"eLumo":	-0.157,
+			"eHomo":	-8.256,
+			"IL":	1.0,
+			"abs dev":	0.03
+		}
+	},{
+		"record":	7,
+		"img":	"images/69863d1f-7b7f-4137-93e3-3d0e2912533a.png",
+		"tags":{
+			"Code":	7.0,
+			"Compound":	"2-aminoanthracene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C=C3C=CC=CC3=CC2=C1",
+			"Obs":	2.62,
+			"Pred":	2.65,
+			"Dev.":	-0.03,
+			"log_P":	3.26,
+			"eLumo":	-0.771,
+			"eHomo":	-7.869,
+			"IL":	1.0,
+			"abs dev":	0.03
+		}
+	},{
+		"record":	8,
+		"img":	"images/4d90dcf0-6b68-4542-b76b-3404e85b2620.png",
+		"tags":{
+			"Code":	8.0,
+			"Compound":	"7-aminofluoranthene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C=C3C=CC=CC3=CC2=C1",
+			"Obs":	2.88,
+			"Pred":	2.83,
+			"Dev.":	0.05,
+			"log_P":	3.72,
+			"eLumo":	-0.895,
+			"eHomo":	-8.186,
+			"IL":	1.0,
+			"abs dev":	0.05
+		}
+	},{
+		"record":	9,
+		"img":	"images/7ed933ec-37a7-48e6-aae3-35ee87bbc9f0.png",
+		"tags":{
+			"Code":	9.0,
+			"Compound":	"8-aminoquinoline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=C1N=CC=C2",
+			"Obs":	-1.14,
+			"Pred":	-1.08,
+			"Dev.":	-0.06,
+			"log_P":	1.79,
+			"eLumo":	-0.294,
+			"eHomo":	-8.134,
+			"IL":	0.0,
+			"abs dev":	0.06
+		}
+	},{
+		"record":	10,
+		"img":	"images/26782cd6-d2e0-49f1-886b-57280c4a0d68.png",
+		"tags":{
+			"Code":	10.0,
+			"Compound":	"1,7-diaminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=NC3=CC=CC(N)=C3N=C2C=C1",
+			"Obs":	0.75,
+			"Pred":	0.82,
+			"Dev.":	-0.07,
+			"log_P":	1.64,
+			"eLumo":	-1.045,
+			"eHomo":	-8.089,
+			"IL":	1.0,
+			"abs dev":	0.07
+		}
+	},{
+		"record":	11,
+		"img":	"images/f5462ac4-8d5f-417c-a880-8acdbc61efba.png",
+		"tags":{
+			"Code":	11.0,
+			"Compound":	"2-aminonaphthalene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C=CC=CC2=C1",
+			"Obs":	-0.67,
+			"Pred":	-0.74,
+			"Dev.":	0.07,
+			"log_P":	2.28,
+			"eLumo":	-0.198,
+			"eHomo":	-8.227,
+			"IL":	0.0,
+			"abs dev":	0.07
+		}
+	},{
+		"record":	12,
+		"img":	"images/dfd6a645-f82e-4bbb-99d6-619de98da02d.png",
+		"tags":{
+			"Code":	12.0,
+			"Compound":	"4-aminopyrene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=CC=CC3=CC=C4C=CC=C1C4=C23",
+			"Obs":	3.16,
+			"Pred":	3.25,
+			"Dev.":	-0.09,
+			"log_P":	3.72,
+			"eLumo":	-0.85,
+			"eHomo":	-7.837,
+			"IL":	1.0,
+			"abs dev":	0.09
+		}
+	},{
+		"record":	13,
+		"img":	"images/d5444241-9c3c-4ef7-bf84-1b5f623f0b2f.png",
+		"tags":{
+			"Code":	13.0,
+			"Compound":	"3-amino-3?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC(=CC=C1)C2=CC=CC(=C2)[N+]([O-])=O",
+			"Obs":	-0.55,
+			"Pred":	-0.44,
+			"Dev.":	-0.11,
+			"log_P":	2.68,
+			"eLumo":	-1.034,
+			"eHomo":	-8.801,
+			"IL":	0.0,
+			"abs dev":	0.11
+		}
+	},{
+		"record":	14,
+		"img":	"images/7c49f5f3-8910-4357-9c19-9784a4de90da.png",
+		"tags":{
+			"Code":	14.0,
+			"Compound":	"2,4,5-trimethylaniline",
+			"CAS":	"",
+			"SMILES":	"CC1=CC(C)=C(N)C=C1C",
+			"Obs":	-1.32,
+			"Pred":	-1.19,
+			"Dev.":	-0.13,
+			"log_P":	2.41,
+			"eLumo":	0.581,
+			"eHomo":	-8.244,
+			"IL":	0.0,
+			"abs dev":	0.13
+		}
+	},{
+		"record":	15,
+		"img":	"images/12ebbf56-d7e0-42d1-9ac6-bcf702f5be24.png",
+		"tags":{
+			"Code":	15.0,
+			"Compound":	"3-aminofluorene",
+			"CAS":	"6344-66-7",
+			"SMILES":	"NC1=CC2=C(CC3=C2C=CC=C3)C=C1",
+			"Obs":	0.89,
+			"Pred":	1.02,
+			"Dev.":	-0.13,
+			"log_P":	2.7,
+			"eLumo":	-0.182,
+			"eHomo":	-8.333,
+			"IL":	1.0,
+			"abs dev":	0.13
+		}
+	},{
+		"record":	16,
+		"img":	"images/6dd492e2-c7ee-4c1d-b27b-c31ed7fef842.png",
+		"tags":{
+			"Code":	16.0,
+			"Compound":	"3,3?-dichlorobenzidine",
+			"CAS":	"",
+			"SMILES":	"NC1=C(Cl)C=C(C=C1)C2=CC(Cl)=C(N)C=C2",
+			"Obs":	0.81,
+			"Pred":	0.67,
+			"Dev.":	0.14,
+			"log_P":	3.51,
+			"eLumo":	-0.142,
+			"eHomo":	-8.125,
+			"IL":	0.0,
+			"abs dev":	0.14
+		}
+	},{
+		"record":	17,
+		"img":	"images/802de7f6-246f-405c-947e-e794baeea6eb.png",
+		"tags":{
+			"Code":	17.0,
+			"Compound":	"2,4-dimethyllaniline(2,4-xylidine)",
+			"CAS":	"",
+			"SMILES":	"CC1=CC(C)=C(N)C=C1",
+			"Obs":	-2.22,
+			"Pred":	-2.05,
+			"Dev.":	-0.17,
+			"log_P":	1.68,
+			"eLumo":	0.605,
+			"eHomo":	-8.288,
+			"IL":	0.0,
+			"abs dev":	0.17
+		}
+	},{
+		"record":	18,
+		"img":	"images/e8d5cddc-f6ea-4048-88f8-b2b572c57346.png",
+		"tags":{
+			"Code":	18.0,
+			"Compound":	"2,7-diaminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C(CC3=CC(N)=CC=C23)=C1",
+			"Obs":	0.48,
+			"Pred":	0.31,
+			"Dev.":	0.17,
+			"log_P":	1.47,
+			"eLumo":	0.0,
+			"eHomo":	-7.753,
+			"IL":	1.0,
+			"abs dev":	0.17
+		}
+	},{
+		"record":	19,
+		"img":	"images/a22352c6-cdab-4118-baab-3aabe1ec546d.png",
+		"tags":{
+			"Code":	19.0,
+			"Compound":	"3-aminofluoranthene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C3=CC=CC=C3C4=CC=CC1=C24",
+			"Obs":	3.31,
+			"Pred":	3.49,
+			"Dev.":	-0.18,
+			"log_P":	4.2,
+			"eLumo":	-0.818,
+			"eHomo":	-8.033,
+			"IL":	1.0,
+			"abs dev":	0.18
+		}
+	},{
+		"record":	20,
+		"img":	"images/676a6e10-5077-4355-8da5-c9e016db5456.png",
+		"tags":{
+			"Code":	20.0,
+			"Compound":	"2-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=C1)C3=C(C2)C=CC=C3",
+			"Obs":	1.93,
+			"Pred":	1.73,
+			"Dev.":	0.2,
+			"log_P":	3.14,
+			"eLumo":	-0.108,
+			"eHomo":	-8.106,
+			"IL":	1.0,
+			"abs dev":	0.2
+		}
+	},{
+		"record":	21,
+		"img":	"images/5198a864-3787-42e9-af77-d7e406983d11.png",
+		"tags":{
+			"Code":	21.0,
+			"Compound":	"2-amino-4?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC=C1C2=CC=C(C=C2)[N+]([O-])=O",
+			"Obs":	-0.62,
+			"Pred":	-0.42,
+			"Dev.":	-0.2,
+			"log_P":	2.68,
+			"eLumo":	-1.148,
+			"eHomo":	-8.852,
+			"IL":	0.0,
+			"abs dev":	0.2
+		}
+	},{
+		"record":	22,
+		"img":	"images/eb76a703-ad27-47ab-9ff3-9a24d4c95188.png",
+		"tags":{
+			"Code":	22.0,
+			"Compound":	"4-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=CC=C2",
+			"Obs":	-0.14,
+			"Pred":	-0.34,
+			"Dev.":	0.2,
+			"log_P":	2.86,
+			"eLumo":	0.048,
+			"eHomo":	-8.263,
+			"IL":	0.0,
+			"abs dev":	0.2
+		}
+	},{
+		"record":	23,
+		"img":	"images/81babbde-c9c9-47d5-a3fc-8a49b442dbeb.png",
+		"tags":{
+			"Code":	23.0,
+			"Compound":	"3-methoxy-4-methylaniline(o-cresidine)",
+			"CAS":	"",
+			"SMILES":	"COC1=C(C)C=CC(N)=C1",
+			"Obs":	-1.96,
+			"Pred":	-2.19,
+			"Dev.":	0.23,
+			"log_P":	1.52,
+			"eLumo":	0.583,
+			"eHomo":	-8.274,
+			"IL":	0.0,
+			"abs dev":	0.23
+		}
+	},{
+		"record":	24,
+		"img":	"images/3e297355-2185-4ab0-9efe-5415ad6cd7fa.png",
+		"tags":{
+			"Code":	24.0,
+			"Compound":	"2-aminocarbazole",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=C1)C3=CC=CC=C3N2",
+			"Obs":	0.6,
+			"Pred":	0.84,
+			"Dev.":	-0.24,
+			"log_P":	2.3,
+			"eLumo":	0.025,
+			"eHomo":	-8.023,
+			"IL":	1.0,
+			"abs dev":	0.24
+		}
+	},{
+		"record":	25,
+		"img":	"images/6ea65673-0363-467a-990f-4e79884f70d4.png",
+		"tags":{
+			"Code":	25.0,
+			"Compound":	"2-amino-5-nitrophenol",
+			"CAS":	"",
+			"SMILES":	"NC1=C(O)C=C(C=C1)[N+]([O-])=O",
+			"Obs":	-2.52,
+			"Pred":	-2.26,
+			"Dev.":	-0.26,
+			"log_P":	1.36,
+			"eLumo":	-0.923,
+			"eHomo":	-9.052,
+			"IL":	0.0,
+			"abs dev":	0.26
+		}
+	},{
+		"record":	26,
+		"img":	"images/62a8a570-6b25-44ec-82cc-0f4c3bb54bcb.png",
+		"tags":{
+			"Code":	26.0,
+			"Compound":	"2,2?-diaminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC=C1C2=CC=CC=C2N",
+			"Obs":	-1.52,
+			"Pred":	-1.79,
+			"Dev.":	0.27,
+			"log_P":	1.58,
+			"eLumo":	0.267,
+			"eHomo":	-8.193,
+			"IL":	0.0,
+			"abs dev":	0.27
+		}
+	},{
+		"record":	27,
+		"img":	"images/c149d2ba-916f-4ecf-bc2d-18fdf8fad441.png",
+		"tags":{
+			"Code":	27.0,
+			"Compound":	"2-hydroxy-7-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=C1)C3=C(C2)C=C(O)C=C3",
+			"Obs":	0.41,
+			"Pred":	0.69,
+			"Dev.":	-0.28,
+			"log_P":	2.03,
+			"eLumo":	-0.127,
+			"eHomo":	-7.998,
+			"IL":	1.0,
+			"abs dev":	0.28
+		}
+	},{
+		"record":	28,
+		"img":	"images/2785337a-60e5-4953-b49b-0b740e4f4beb.png",
+		"tags":{
+			"Code":	28.0,
+			"Compound":	"1-aminophenanthrene",
+			"CAS":	"",
+			"SMILES":	"NC1=C2C=CC3=C(C=CC=C3)C2=CC=C1",
+			"Obs":	2.38,
+			"Pred":	2.01,
+			"Dev.":	0.37,
+			"log_P":	3.26,
+			"eLumo":	-0.357,
+			"eHomo":	-8.132,
+			"IL":	1.0,
+			"abs dev":	0.37
+		}
+	},{
+		"record":	29,
+		"img":	"images/67dcba6f-ee40-4888-a6ae-8c92f8b2c5d3.png",
+		"tags":{
+			"Code":	29.0,
+			"Compound":	"2,5-dimethylaniline(2,5-xylidine)",
+			"CAS":	"",
+			"SMILES":	"CC1=CC(N)=C(C)C=C1",
+			"Obs":	-2.4,
+			"Pred":	-2.02,
+			"Dev.":	-0.38,
+			"log_P":	1.83,
+			"eLumo":	0.581,
+			"eHomo":	-8.404,
+			"IL":	0.0,
+			"abs dev":	0.38
+		}
+	},{
+		"record":	30,
+		"img":	"images/2db52bf3-29f8-465d-90ea-e4cf624fd886.png",
+		"tags":{
+			"Code":	30.0,
+			"Compound":	"4-amino-2?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=CC=C2[N+]([O-])=O",
+			"Obs":	-0.92,
+			"Pred":	-0.53,
+			"Dev.":	-0.39,
+			"log_P":	2.68,
+			"eLumo":	-0.554,
+			"eHomo":	-8.597,
+			"IL":	0.0,
+			"abs dev":	0.39
+		}
+	},{
+		"record":	31,
+		"img":	"images/30bd8efa-b6af-46c4-8011-872311cf9814.png",
+		"tags":{
+			"Code":	31.0,
+			"Compound":	"2-amino-4-methylphenol",
+			"CAS":	"",
+			"SMILES":	"CC1=CC(N)=C(O)C=C1",
+			"Obs":	-2.1,
+			"Pred":	-2.5,
+			"Dev.":	0.4,
+			"log_P":	1.16,
+			"eLumo":	0.478,
+			"eHomo":	-8.274,
+			"IL":	0.0,
+			"abs dev":	0.4
+		}
+	},{
+		"record":	32,
+		"img":	"images/c804372c-6410-4160-919a-2749420d28b5.png",
+		"tags":{
+			"Code":	32.0,
+			"Compound":	"2-aminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=NC3=CC=CC=C3N=C2C=C1",
+			"Obs":	0.55,
+			"Pred":	0.97,
+			"Dev.":	-0.42,
+			"log_P":	2.18,
+			"eLumo":	-1.165,
+			"eHomo":	-8.495,
+			"IL":	1.0,
+			"abs dev":	0.42
+		}
+	},{
+		"record":	33,
+		"img":	"images/423cfa7c-603f-4a98-a5b6-3af74b96a708.png",
+		"tags":{
+			"Code":	33.0,
+			"Compound":	"4-aminophenylsulfide",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(S)C=C1",
+			"Obs":	0.31,
+			"Pred":	-0.13,
+			"Dev.":	0.44,
+			"log_P":	2.18,
+			"eLumo":	0.047,
+			"eHomo":	-7.528,
+			"IL":	0.0,
+			"abs dev":	0.44
+		}
+	},{
+		"record":	34,
+		"img":	"images/891ccde6-4eab-451e-a51f-d33b876371b1.png",
+		"tags":{
+			"Code":	34.0,
+			"Compound":	"2,4-dinitroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=C(C=C(C=C1)[N+]([O-])=O)[N+]([O-])=O",
+			"Obs":	-2.0,
+			"Pred":	-2.46,
+			"Dev.":	0.46,
+			"log_P":	1.84,
+			"eLumo":	-1.491,
+			"eHomo":	-9.931,
+			"IL":	0.0,
+			"abs dev":	0.46
+		}
+	},{
+		"record":	35,
+		"img":	"images/df94c39c-61c7-4dd7-8e15-f8d530db166f.png",
+		"tags":{
+			"Code":	35.0,
+			"Compound":	"2,4-diaminoisopropylbenzene",
+			"CAS":	"",
+			"SMILES":	"CC(C)C1=CC=C(N)C=C1N",
+			"Obs":	-3.0,
+			"Pred":	-2.53,
+			"Dev.":	-0.47,
+			"log_P":	1.12,
+			"eLumo":	0.722,
+			"eHomo":	-8.121,
+			"IL":	0.0,
+			"abs dev":	0.47
+		}
+	},{
+		"record":	36,
+		"img":	"images/b452f313-9387-445f-a176-86045fdf2dc7.png",
+		"tags":{
+			"Code":	36.0,
+			"Compound":	"2,4-difluoroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(F)C=C1F",
+			"Obs":	-2.7,
+			"Pred":	-2.22,
+			"Dev.":	-0.48,
+			"log_P":	1.54,
+			"eLumo":	-0.085,
+			"eHomo":	-8.695,
+			"IL":	0.0,
+			"abs dev":	0.48
+		}
+	},{
+		"record":	37,
+		"img":	"images/a7888acc-52c7-498a-9136-929a1e42fe9e.png",
+		"tags":{
+			"Code":	37.0,
+			"Compound":	"4,4?-methylenedianiline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(CC2=CC=C(N)C=C2)C=C1",
+			"Obs":	-1.6,
+			"Pred":	-2.11,
+			"Dev.":	0.51,
+			"log_P":	1.59,
+			"eLumo":	0.576,
+			"eHomo":	-8.274,
+			"IL":	0.0,
+			"abs dev":	0.51
+		}
+	},{
+		"record":	38,
+		"img":	"images/72c76317-b1e6-4fc9-ac4b-0350875aed4d.png",
+		"tags":{
+			"Code":	38.0,
+			"Compound":	"3,3?-dimethylbenzidine",
+			"CAS":	"",
+			"SMILES":	"CC1=C(N)C=CC(=C1)C2=CC(C)=C(N)C=C2",
+			"Obs":	0.01,
+			"Pred":	-0.5,
+			"Dev.":	0.51,
+			"log_P":	2.34,
+			"eLumo":	0.185,
+			"eHomo":	-7.873,
+			"IL":	0.0,
+			"abs dev":	0.51
+		}
+	},{
+		"record":	39,
+		"img":	"images/efa0dbb2-c606-4e07-b6a9-bc7035d77a78.png",
+		"tags":{
+			"Code":	39.0,
+			"Compound":	"2-aminofluoranthene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C3C(=CC=C2)C4=CC=CC=C4C3=C1",
+			"Obs":	3.23,
+			"Pred":	2.71,
+			"Dev.":	0.52,
+			"log_P":	3.72,
+			"eLumo":	-0.887,
+			"eHomo":	-8.273,
+			"IL":	1.0,
+			"abs dev":	0.52
+		}
+	},{
+		"record":	40,
+		"img":	"images/008cc3a9-c142-4eee-9e74-a2e0d8f89715.png",
+		"tags":{
+			"Code":	40.0,
+			"Compound":	"2-amino-3?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC=C1C2=CC=CC(=C2)[N+]([O-])=O",
+			"Obs":	-0.89,
+			"Pred":	-0.37,
+			"Dev.":	-0.52,
+			"log_P":	2.68,
+			"eLumo":	-1.029,
+			"eHomo":	-8.746,
+			"IL":	0.0,
+			"abs dev":	0.52
+		}
+	},{
+		"record":	41,
+		"img":	"images/05eca9a4-eb2a-4192-86b4-94cfb0a9c903.png",
+		"tags":{
+			"Code":	41.0,
+			"Compound":	"1 aminofluoranthene",
+			"CAS":	"",
+			"SMILES":	"NC1=C2C3=C(C=CC=C3)C4=CC=CC(C=C1)=C24",
+			"Obs":	3.35,
+			"Pred":	2.81,
+			"Dev.":	0.54,
+			"log_P":	3.72,
+			"eLumo":	-0.816,
+			"eHomo":	-8.159,
+			"IL":	1.0,
+			"abs dev":	0.54
+		}
+	},{
+		"record":	42,
+		"img":	"images/303a7a17-a349-4bd0-86f8-2ce14516d0af.png",
+		"tags":{
+			"Code":	42.0,
+			"Compound":	"4,4?-ethylenebis(aniline)",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(CCC2=CC=C(N)C=C2)C=C1",
+			"Obs":	-2.15,
+			"Pred":	-1.6,
+			"Dev.":	-0.55,
+			"log_P":	2.13,
+			"eLumo":	0.589,
+			"eHomo":	-8.318,
+			"IL":	0.0,
+			"abs dev":	0.55
+		}
+	},{
+		"record":	43,
+		"img":	"images/99587c2a-4083-47e8-b764-e015c538f6f6.png",
+		"tags":{
+			"Code":	43.0,
+			"Compound":	"4-chloroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(Cl)C=C1",
+			"Obs":	-2.52,
+			"Pred":	-1.96,
+			"Dev.":	-0.56,
+			"log_P":	1.88,
+			"eLumo":	0.284,
+			"eHomo":	-8.568,
+			"IL":	0.0,
+			"abs dev":	0.56
+		}
+	},{
+		"record":	44,
+		"img":	"images/3f16180b-76d2-4578-9f7e-c35fd8083ac8.png",
+		"tags":{
+			"Code":	44.0,
+			"Compound":	"2-aminophenanthrene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C(C=CC3=C2C=CC=C3)=C1",
+			"Obs":	2.46,
+			"Pred":	1.89,
+			"Dev.":	0.57,
+			"log_P":	3.26,
+			"eLumo":	-0.365,
+			"eHomo":	-8.233,
+			"IL":	1.0,
+			"abs dev":	0.57
+		}
+	},{
+		"record":	45,
+		"img":	"images/b63f9c64-4803-4770-bd6a-29c480e4ff3a.png",
+		"tags":{
+			"Code":	45.0,
+			"Compound":	"4-fluoroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(F)C=C1",
+			"Obs":	-3.32,
+			"Pred":	-2.73,
+			"Dev.":	-0.59,
+			"log_P":	1.15,
+			"eLumo":	0.275,
+			"eHomo":	-8.56,
+			"IL":	0.0,
+			"abs dev":	0.59
+		}
+	},{
+		"record":	46,
+		"img":	"images/b8f4115d-4ce2-49c9-a1c9-5bc8c18356ab.png",
+		"tags":{
+			"Code":	46.0,
+			"Compound":	"9-aminophenanthrene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=CC=C2)C3=C1C=CC=C3",
+			"Obs":	2.98,
+			"Pred":	2.38,
+			"Dev.":	0.6,
+			"log_P":	3.56,
+			"eLumo":	-0.364,
+			"eHomo":	-8.099,
+			"IL":	1.0,
+			"abs dev":	0.6
+		}
+	},{
+		"record":	47,
+		"img":	"images/82f3053b-6497-4762-9994-d71361c30aef.png",
+		"tags":{
+			"Code":	47.0,
+			"Compound":	"3,3?-diaminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC(=C1)C2=CC=CC(N)=C2",
+			"Obs":	-1.3,
+			"Pred":	-1.92,
+			"Dev.":	0.62,
+			"log_P":	1.58,
+			"eLumo":	0.056,
+			"eHomo":	-8.414,
+			"IL":	0.0,
+			"abs dev":	0.62
+		}
+	},{
+		"record":	48,
+		"img":	"images/aca18e8a-ebad-47e1-8ec3-3fe196652f2f.png",
+		"tags":{
+			"Code":	48.0,
+			"Compound":	"2-aminopyrene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=CC=C3C=CC=C4C=CC(=C1)C2=C34",
+			"Obs":	3.5,
+			"Pred":	2.86,
+			"Dev.":	0.64,
+			"log_P":	3.72,
+			"eLumo":	-0.865,
+			"eHomo":	-8.144,
+			"IL":	1.0,
+			"abs dev":	0.64
+		}
+	},{
+		"record":	49,
+		"img":	"images/41dc074c-1541-446e-b02a-51eda0762bb8.png",
+		"tags":{
+			"Code":	49.0,
+			"Compound":	"2,6-dichloro-1,4-phenylenediamine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC(Cl)=C(N)C(Cl)=C1",
+			"Obs":	-0.69,
+			"Pred":	-1.33,
+			"Dev.":	0.64,
+			"log_P":	1.79,
+			"eLumo":	-0.029,
+			"eHomo":	-8.18,
+			"IL":	0.0,
+			"abs dev":	0.64
+		}
+	},{
+		"record":	50,
+		"img":	"images/2fe532c9-6985-417b-89bc-56905312f34f.png",
+		"tags":{
+			"Code":	50.0,
+			"Compound":	"2-amino-7-acetamidofluorene",
+			"CAS":	"",
+			"SMILES":	"CC(=O)NC1=CC=C2C(CC3=CC(N)=CC=C23)=C1",
+			"Obs":	1.18,
+			"Pred":	0.53,
+			"Dev.":	0.65,
+			"log_P":	1.72,
+			"eLumo":	-0.143,
+			"eHomo":	-7.876,
+			"IL":	1.0,
+			"abs dev":	0.65
+		}
+	},{
+		"record":	51,
+		"img":	"images/be91eca2-9dc5-462d-976c-0f1269b43452.png",
+		"tags":{
+			"Code":	51.0,
+			"Compound":	"2,8-diaminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2N=C3C=CC(N)=CC3=NC2=C1",
+			"Obs":	1.12,
+			"Pred":	0.46,
+			"Dev.":	0.66,
+			"log_P":	1.64,
+			"eLumo":	-1.039,
+			"eHomo":	-8.369,
+			"IL":	1.0,
+			"abs dev":	0.66
+		}
+	},{
+		"record":	52,
+		"img":	"images/51b0d348-abc3-4b6a-9d59-7cfc0ced4fd8.png",
+		"tags":{
+			"Code":	52.0,
+			"Compound":	"6-aminoquinoline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=C1)N=CC=C2",
+			"Obs":	-2.67,
+			"Pred":	-1.96,
+			"Dev.":	-0.71,
+			"log_P":	1.28,
+			"eLumo":	-0.383,
+			"eHomo":	-8.443,
+			"IL":	0.0,
+			"abs dev":	0.71
+		}
+	},{
+		"record":	53,
+		"img":	"images/1b1e9751-ae8d-4adc-9f9d-6d1a501be0c8.png",
+		"tags":{
+			"Code":	53.0,
+			"Compound":	"4-methoxy-2-methylaniline(me-crisidine)",
+			"CAS":	"",
+			"SMILES":	"COC1=CC(C)=C(N)C=C1",
+			"Obs":	-3.0,
+			"Pred":	-2.27,
+			"Dev.":	-0.73,
+			"log_P":	1.23,
+			"eLumo":	0.474,
+			"eHomo":	-8.152,
+			"IL":	0.0,
+			"abs dev":	0.73
+		}
+	},{
+		"record":	54,
+		"img":	"images/40c03ebf-ef11-4a97-9ac3-d91dacf88bd5.png",
+		"tags":{
+			"Code":	54.0,
+			"Compound":	"3-amino-2?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC(=CC=C1)C2=CC=CC=C2[N+]([O-])=O",
+			"Obs":	-1.3,
+			"Pred":	-0.55,
+			"Dev.":	-0.75,
+			"log_P":	2.68,
+			"eLumo":	-0.648,
+			"eHomo":	-8.665,
+			"IL":	0.0,
+			"abs dev":	0.75
+		}
+	},{
+		"record":	55,
+		"img":	"images/4f84a4a7-43d8-4695-be4c-5ef859859360.png",
+		"tags":{
+			"Code":	55.0,
+			"Compound":	"2,4?-diaminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=C(N)C=CC=C2",
+			"Obs":	-0.92,
+			"Pred":	-1.69,
+			"Dev.":	0.77,
+			"log_P":	1.58,
+			"eLumo":	0.215,
+			"eHomo":	-8.144,
+			"IL":	0.0,
+			"abs dev":	0.77
+		}
+	},{
+		"record":	56,
+		"img":	"images/d1c04d7a-707a-4b2b-95bd-998176660f15.png",
+		"tags":{
+			"Code":	56.0,
+			"Compound":	"1,6-diaminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=NC3=C(N)C=CC=C3N=C12",
+			"Obs":	0.2,
+			"Pred":	0.99,
+			"Dev.":	-0.79,
+			"log_P":	1.64,
+			"eLumo":	-1.058,
+			"eHomo":	-7.967,
+			"IL":	1.0,
+			"abs dev":	0.79
+		}
+	},{
+		"record":	57,
+		"img":	"images/3cacfefb-d750-4732-b1b7-146359bb61b6.png",
+		"tags":{
+			"Code":	57.0,
+			"Compound":	"4- aminophenyldisulfide",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(SSC2=CC=CC=C2)C=C1",
+			"Obs":	-1.03,
+			"Pred":	-0.2,
+			"Dev.":	-0.83,
+			"log_P":	1.99,
+			"eLumo":	-1.33,
+			"eHomo":	-8.209,
+			"IL":	0.0,
+			"abs dev":	0.83
+		}
+	},{
+		"record":	58,
+		"img":	"images/76cc59ad-7c20-4887-b006-1130160d765a.png",
+		"tags":{
+			"Code":	58.0,
+			"Compound":	"2-bromo-4,6-dinotroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=C(C=C(C=C1Br)[N+]([O-])=O)[N+]([O-])=O",
+			"Obs":	-0.54,
+			"Pred":	-1.41,
+			"Dev.":	0.87,
+			"log_P":	2.78,
+			"eLumo":	-1.691,
+			"eHomo":	-10.018,
+			"IL":	0.0,
+			"abs dev":	0.87
+		}
+	},{
+		"record":	59,
+		"img":	"images/f75333b2-7cbc-4a45-9027-957914ece942.png",
+		"tags":{
+			"Code":	59.0,
+			"Compound":	"2,4-diamino-n-butylbenzene",
+			"CAS":	"",
+			"SMILES":	"CCCCC1=C(N)C=C(N)C=C1",
+			"Obs":	-2.7,
+			"Pred":	-1.82,
+			"Dev.":	-0.88,
+			"log_P":	1.77,
+			"eLumo":	0.702,
+			"eHomo":	-8.13,
+			"IL":	0.0,
+			"abs dev":	0.88
+		}
+	},{
+		"record":	60,
+		"img":	"images/373a98fd-aed8-42b2-b270-e3505ffd141b.png",
+		"tags":{
+			"Code":	60.0,
+			"Compound":	"4-aminophenylether",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(OC2=CC=C(N)C=C2)C=C1",
+			"Obs":	-1.14,
+			"Pred":	-2.03,
+			"Dev.":	0.89,
+			"log_P":	1.36,
+			"eLumo":	0.317,
+			"eHomo":	-8.167,
+			"IL":	0.0,
+			"abs dev":	0.89
+		}
+	},{
+		"record":	61,
+		"img":	"images/3e44dfd6-3fc8-4e49-a000-92b595ad4572.png",
+		"tags":{
+			"Code":	61.0,
+			"Compound":	"2-aminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=C(C=CC=C1)C2=CC=CC=C2",
+			"Obs":	-1.49,
+			"Pred":	-0.59,
+			"Dev.":	-0.9,
+			"log_P":	2.84,
+			"eLumo":	0.107,
+			"eHomo":	-8.407,
+			"IL":	0.0,
+			"abs dev":	0.9
+		}
+	},{
+		"record":	62,
+		"img":	"images/1fe02014-4479-4e57-8ad5-d1ef31c084a4.png",
+		"tags":{
+			"Code":	62.0,
+			"Compound":	"1,9-diaminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=NC3=CC=CC(N)=C3N=C12",
+			"Obs":	0.04,
+			"Pred":	0.94,
+			"Dev.":	-0.9,
+			"log_P":	1.64,
+			"eLumo":	-1.04,
+			"eHomo":	-7.997,
+			"IL":	1.0,
+			"abs dev":	0.9
+		}
+	},{
+		"record":	63,
+		"img":	"images/6db33bca-7bce-4b86-be97-36d7fbb7b6fc.png",
+		"tags":{
+			"Code":	63.0,
+			"Compound":	"1-aminofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=C1CC3=C2C=CC=C3",
+			"Obs":	0.43,
+			"Pred":	1.38,
+			"Dev.":	-0.95,
+			"log_P":	3.18,
+			"eLumo":	-0.191,
+			"eHomo":	-8.467,
+			"IL":	1.0,
+			"abs dev":	0.95
+		}
+	},{
+		"record":	64,
+		"img":	"images/157ae0f9-6882-4d46-abfd-d5ee984a4cd0.png",
+		"tags":{
+			"Code":	64.0,
+			"Compound":	"8-aminofluoranthene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C3=CC=CC4=C3C(=CC=C4)C2=C1",
+			"Obs":	3.8,
+			"Pred":	2.83,
+			"Dev.":	0.97,
+			"log_P":	3.72,
+			"eLumo":	-0.853,
+			"eHomo":	-8.166,
+			"IL":	1.0,
+			"abs dev":	0.97
+		}
+	},{
+		"record":	65,
+		"img":	"images/002acaac-1039-4c36-9390-9ef2e360f3c8.png",
+		"tags":{
+			"Code":	65.0,
+			"Compound":	"2-chloroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=C(Cl)C=CC=C1",
+			"Obs":	-3.0,
+			"Pred":	-2.01,
+			"Dev.":	-0.99,
+			"log_P":	1.9,
+			"eLumo":	0.268,
+			"eHomo":	-8.632,
+			"IL":	0.0,
+			"abs dev":	0.99
+		}
+	},{
+		"record":	66,
+		"img":	"images/aba264fa-06bb-487c-8faf-f43e3061323b.png",
+		"tags":{
+			"Code":	66.0,
+			"Compound":	"3-amino-aaa-trifluorotoluene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C(F)(F)F",
+			"Obs":	-0.8,
+			"Pred":	-1.79,
+			"Dev.":	0.99,
+			"log_P":	2.29,
+			"eLumo":	-0.104,
+			"eHomo":	-9.032,
+			"IL":	0.0,
+			"abs dev":	0.99
+		}
+	},{
+		"record":	67,
+		"img":	"images/489c5665-a907-46ab-b2d8-237249bd6525.png",
+		"tags":{
+			"Code":	67.0,
+			"Compound":	"2-amino-1-nitronaphthalene",
+			"CAS":	"",
+			"SMILES":	"NC1=C(C2=C(C=CC=C2)C=C1)[N+]([O-])=O",
+			"Obs":	-1.17,
+			"Pred":	-0.17,
+			"Dev.":	-1.0,
+			"log_P":	2.95,
+			"eLumo":	-0.998,
+			"eHomo":	-8.8,
+			"IL":	0.0,
+			"abs dev":	1.0
+		}
+	},{
+		"record":	68,
+		"img":	"images/8ca096ac-3ef8-472b-bcd3-54a5e1cc8d82.png",
+		"tags":{
+			"Code":	68.0,
+			"Compound":	"3-amino-4?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC(=CC=C1)C2=CC=C(C=C2)[N+]([O-])=O",
+			"Obs":	0.69,
+			"Pred":	-0.43,
+			"Dev.":	1.12,
+			"log_P":	2.68,
+			"eLumo":	-1.178,
+			"eHomo":	-8.879,
+			"IL":	0.0,
+			"abs dev":	1.12
+		}
+	},{
+		"record":	69,
+		"img":	"images/c80d4f5a-9759-43c7-b7f3-dc558a8a3172.png",
+		"tags":{
+			"Code":	69.0,
+			"Compound":	"4-bromoaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(Br)C=C1",
+			"Obs":	-2.7,
+			"Pred":	-1.57,
+			"Dev.":	-1.13,
+			"log_P":	2.26,
+			"eLumo":	0.212,
+			"eHomo":	-8.62,
+			"IL":	0.0,
+			"abs dev":	1.13
+		}
+	},{
+		"record":	70,
+		"img":	"images/cd4dcc99-4617-4402-8f9a-aa556ac96fb8.png",
+		"tags":{
+			"Code":	70.0,
+			"Compound":	"2-amino-4-chlorophenol",
+			"CAS":	"",
+			"SMILES":	"NC1=CC(Cl)=CC=C1O",
+			"Obs":	-3.0,
+			"Pred":	-1.87,
+			"Dev.":	-1.13,
+			"log_P":	1.81,
+			"eLumo":	0.154,
+			"eHomo":	-8.508,
+			"IL":	0.0,
+			"abs dev":	1.13
+		}
+	},{
+		"record":	71,
+		"img":	"images/cefbfb81-c7ca-479c-8c2f-d340f363667b.png",
+		"tags":{
+			"Code":	71.0,
+			"Compound":	"3,3?-dimethoxybenzidine",
+			"CAS":	"",
+			"SMILES":	"COC1=C(N)C=CC(=C1)C2=CC(OC)=C(N)C=C2",
+			"Obs":	0.15,
+			"Pred":	-1.01,
+			"Dev.":	1.16,
+			"log_P":	1.81,
+			"eLumo":	-0.005,
+			"eHomo":	-7.927,
+			"IL":	0.0,
+			"abs dev":	1.16
+		}
+	},{
+		"record":	72,
+		"img":	"images/fcc153c1-c0a8-48ed-af31-34518adb5d98.png",
+		"tags":{
+			"Code":	72.0,
+			"Compound":	"4-cyclohexylaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2CCCCC2",
+			"Obs":	-1.24,
+			"Pred":	-0.06,
+			"Dev.":	-1.18,
+			"log_P":	3.65,
+			"eLumo":	0.62,
+			"eHomo":	-8.38,
+			"IL":	0.0,
+			"abs dev":	1.18
+		}
+	},{
+		"record":	73,
+		"img":	"images/9f0fb9dd-5980-4c2d-b4ef-436f6a3a02f8.png",
+		"tags":{
+			"Code":	73.0,
+			"Compound":	"4-phenoxyaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(OC2=CC=CC=C2)C=C1",
+			"Obs":	0.38,
+			"Pred":	-0.82,
+			"Dev.":	1.2,
+			"log_P":	2.96,
+			"eLumo":	0.255,
+			"eHomo":	-8.598,
+			"IL":	0.0,
+			"abs dev":	1.2
+		}
+	},{
+		"record":	74,
+		"img":	"images/9caa1999-94a4-4ec3-884f-1fd8e642c1e0.png",
+		"tags":{
+			"Code":	74.0,
+			"Compound":	"4,4?-methylenebis(o-ethylaniline)",
+			"CAS":	"",
+			"SMILES":	"CCC1=CC(CC2=CC(CC)=C(N)C=C2)=CC=C1N",
+			"Obs":	-0.99,
+			"Pred":	0.22,
+			"Dev.":	-1.21,
+			"log_P":	3.66,
+			"eLumo":	0.605,
+			"eHomo":	-8.181,
+			"IL":	0.0,
+			"abs dev":	1.21
+		}
+	},{
+		"record":	75,
+		"img":	"images/c8c38d02-af26-49a2-a30b-9fed071496e1.png",
+		"tags":{
+			"Code":	75.0,
+			"Compound":	"2-amino-7-nitrofluorene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C(CC3=C2C=CC(=C3)[N+]([O-])=O)=C1",
+			"Obs":	3.0,
+			"Pred":	1.79,
+			"Dev.":	1.21,
+			"log_P":	3.06,
+			"eLumo":	-1.164,
+			"eHomo":	-8.595,
+			"IL":	1.0,
+			"abs dev":	1.21
+		}
+	},{
+		"record":	76,
+		"img":	"images/4f7f26cb-4060-4bcf-9bc7-e350004d2c59.png",
+		"tags":{
+			"Code":	76.0,
+			"Compound":	"Benzidine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=C(N)C=C2",
+			"Obs":	-0.39,
+			"Pred":	-1.63,
+			"Dev.":	1.24,
+			"log_P":	1.34,
+			"eLumo":	0.147,
+			"eHomo":	-7.931,
+			"IL":	0.0,
+			"abs dev":	1.24
+		}
+	},{
+		"record":	77,
+		"img":	"images/5f610ab4-2f2e-4bee-87fa-70f369b1b7d1.png",
+		"tags":{
+			"Code":	77.0,
+			"Compound":	"1-amino-4-nitronaphthalene",
+			"CAS":	"",
+			"SMILES":	"NC1=C2C=CC=CC2=C(C=C1)[N+]([O-])=O",
+			"Obs":	-1.77,
+			"Pred":	-0.48,
+			"Dev.":	-1.29,
+			"log_P":	2.48,
+			"eLumo":	-1.035,
+			"eHomo":	-8.663,
+			"IL":	0.0,
+			"abs dev":	1.29
+		}
+	},{
+		"record":	78,
+		"img":	"images/195e72fd-6cee-4757-8323-5f61820e3281.png",
+		"tags":{
+			"Code":	78.0,
+			"Compound":	"4-amino-3?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=CC(=C2)[N+]([O-])=O",
+			"Obs":	1.02,
+			"Pred":	-0.27,
+			"Dev.":	1.29,
+			"log_P":	2.68,
+			"eLumo":	-0.959,
+			"eHomo":	-8.63,
+			"IL":	0.0,
+			"abs dev":	1.29
+		}
+	},{
+		"record":	79,
+		"img":	"images/a669e59e-6ca0-4287-8989-cc9e415d7791.png",
+		"tags":{
+			"Code":	79.0,
+			"Compound":	"4-amino-4?-nitrobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=C(C=C2)[N+]([O-])=O",
+			"Obs":	1.04,
+			"Pred":	-0.27,
+			"Dev.":	1.31,
+			"log_P":	2.68,
+			"eLumo":	-1.102,
+			"eHomo":	-8.707,
+			"IL":	0.0,
+			"abs dev":	1.31
+		}
+	},{
+		"record":	80,
+		"img":	"images/f864ec06-d62b-43ea-a342-f49136330c03.png",
+		"tags":{
+			"Code":	80.0,
+			"Compound":	"1-aminophenazine",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=NC3=CC=CC=C3N=C12",
+			"Obs":	-0.01,
+			"Pred":	1.31,
+			"Dev.":	-1.32,
+			"log_P":	2.18,
+			"eLumo":	-1.164,
+			"eHomo":	-8.23,
+			"IL":	1.0,
+			"abs dev":	1.32
+		}
+	},{
+		"record":	81,
+		"img":	"images/d521c8d3-bd10-4daf-b9fe-334659113fb4.png",
+		"tags":{
+			"Code":	81.0,
+			"Compound":	"4,4?-methylenebis(o-fluoroaniline)",
+			"CAS":	"",
+			"SMILES":	"NC1=C(F)C=C(CC2=CC(F)=C(N)C=C2)C=C1",
+			"Obs":	0.23,
+			"Pred":	-1.09,
+			"Dev.":	1.32,
+			"log_P":	2.5,
+			"eLumo":	0.186,
+			"eHomo":	-8.467,
+			"IL":	0.0,
+			"abs dev":	1.32
+		}
+	},{
+		"record":	82,
+		"img":	"images/862337ce-fce5-477a-a869-114d7e9a2ffc.png",
+		"tags":{
+			"Code":	82.0,
+			"Compound":	"4-chloro-2-nitroaniline",
+			"CAS":	"",
+			"SMILES":	"NC1=C(C=C(Cl)C=C1)[N+]([O-])=O",
+			"Obs":	-2.22,
+			"Pred":	-0.8,
+			"Dev.":	-1.42,
+			"log_P":	2.72,
+			"eLumo":	-1.019,
+			"eHomo":	-9.11,
+			"IL":	0.0,
+			"abs dev":	1.42
+		}
+	},{
+		"record":	83,
+		"img":	"images/e11b36f3-6aac-4415-8be0-f052cb089af0.png",
+		"tags":{
+			"Code":	83.0,
+			"Compound":	"3-aminoquinoline",
+			"CAS":	"",
+			"SMILES":	"NC1=CC2=C(C=CC=C2)N=C1",
+			"Obs":	-3.14,
+			"Pred":	-1.71,
+			"Dev.":	-1.43,
+			"log_P":	1.63,
+			"eLumo":	-0.376,
+			"eHomo":	-8.534,
+			"IL":	0.0,
+			"abs dev":	1.43
+		}
+	},{
+		"record":	84,
+		"img":	"images/b26ca739-f33e-4987-aee6-09a834c4db87.png",
+		"tags":{
+			"Code":	84.0,
+			"Compound":	"3-aminocarbazole",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2NC3=C(C=CC=C3)C2=C1",
+			"Obs":	-0.48,
+			"Pred":	1.12,
+			"Dev.":	-1.6,
+			"log_P":	2.3,
+			"eLumo":	-0.107,
+			"eHomo":	-7.877,
+			"IL":	1.0,
+			"abs dev":	1.6
+		}
+	},{
+		"record":	85,
+		"img":	"images/3a72c52e-15c0-4598-a047-9c09927d86df.png",
+		"tags":{
+			"Code":	85.0,
+			"Compound":	"4-chloro-1,2-phenylenediamine",
+			"CAS":	"",
+			"SMILES":	"NC1=C(N)C=C(Cl)C=C1",
+			"Obs":	-0.49,
+			"Pred":	-2.27,
+			"Dev.":	1.78,
+			"log_P":	1.28,
+			"eLumo":	0.241,
+			"eHomo":	-8.325,
+			"IL":	0.0,
+			"abs dev":	1.78
+		}
+	},{
+		"record":	86,
+		"img":	"images/2394b789-5cc6-48a7-b677-2f0578963fe3.png",
+		"tags":{
+			"Code":	86.0,
+			"Compound":	"3-aminophenanthrene",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C2C=CC3=C(C=CC=C3)C2=C1",
+			"Obs":	3.77,
+			"Pred":	1.91,
+			"Dev.":	1.86,
+			"log_P":	3.26,
+			"eLumo":	-0.203,
+			"eHomo":	-8.122,
+			"IL":	1.0,
+			"abs dev":	1.86
+		}
+	},{
+		"record":	87,
+		"img":	"images/63456d12-6882-47f8-be4c-8c3c80b45e9b.png",
+		"tags":{
+			"Code":	87.0,
+			"Compound":	"3,4?-diaminobiphenyl",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=C(C=C1)C2=CC=CC(N)=C2",
+			"Obs":	0.2,
+			"Pred":	-1.67,
+			"Dev.":	1.87,
+			"log_P":	1.58,
+			"eLumo":	0.103,
+			"eHomo":	-8.187,
+			"IL":	0.0,
+			"abs dev":	1.87
+		}
+	},{
+		"record":	88,
+		"img":	"images/ec5023db-2222-45eb-83d0-d5c1a15db8dc.png",
+		"tags":{
+			"Code":	89.0,
+			"Compound":	"1-aminocarbazoleb",
+			"CAS":	"",
+			"SMILES":	"NC1=CC=CC2=C1NC3=C2C=CC=C3",
+			"Obs":	-1.04,
+			"Pred":	0.93,
+			"Dev.":	-1.97,
+			"log_P":	2.3,
+			"eLumo":	-0.115,
+			"eHomo":	-8.035,
+			"IL":	1.0,
+			"abs dev":	1.97
+		}
+	}
+	]
+}
+}
