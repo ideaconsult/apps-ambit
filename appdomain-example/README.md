@@ -1,6 +1,12 @@
-###[AMBIT](http://ambit.sf.net) applicability domain estimation
+###[AMBIT](http://ambit.sf.net) applicability domain estimation examples
 
-[ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package is an implementation of methods described in [1](http://www.ncbi.nlm.nih.gov/pubmed/16268757), [2](http://www.ncbi.nlm.nih.gov/pubmed/16268758), [3](http://www.ncbi.nlm.nih.gov/pubmed/16180989), [4](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
+[ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package is an implementation of methods described in *[[1]](http://www.ncbi.nlm.nih.gov/pubmed/16268757)
+*[[2]](http://www.ncbi.nlm.nih.gov/pubmed/16268758)
+*[[3]](http://www.ncbi.nlm.nih.gov/pubmed/16180989)
+*[[4]](http://www.ncbi.nlm.nih.gov/pubmed/17514565)
+
+This project  (appdomain-example) is a command line application, demonstrating how to use [ambit-model](http://ambit.sourceforge.net/download_ambitlibs.html) package. 
+Alternatively, the applicability domain algorithms are implemented as REST web services in [Ambit web application](http://ambit.sourceforge.net/download_ambitrest.html).
 
 Run
 ---
