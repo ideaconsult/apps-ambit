@@ -25,7 +25,8 @@ Run
 ````
 Ambit applicability domain estimation by ambit-models package
 usage: net.idea.example.ambit.appdomain.MainApp
- -d,--demo <dataset>       mutagenicity | kowwin
+ -d,--demo                 Training and tets CSV files from PubMed:1732103
+
  -f,--descriptors <list>   Comma delimited list of field names (as in the
                            input files) to be used as descriptors.
                            Example -f log_P,eLumo,eHomo,IL
@@ -43,7 +44,7 @@ usage: net.idea.example.ambit.appdomain.MainApp
                            _modeFINGERPRINT_MISSINGFRAGMENTS
                            (Tanimoto Fingerprints (consensus))
                            Example:
-                           -m _modeFINGERPRINTS
+                           -m _modeFINGERPRINTS Default value:  _modeFINGERPRINTS_CONSENSUS
  -o,--output <output>      Output file (CSV,SDF)
  -r,--threshold <value>    1.0 : all compounds from training set
                            considered in the applicability domain (default); 0.9 : 90% of compounds
