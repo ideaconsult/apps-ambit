@@ -19,7 +19,7 @@ The result file consists of all the properties in the test set, the predicted me
 Run
 ---
 
-    >java -jar target/ambit-appdomain-example-jar-with-dependencies.jar -h
+    >java -jar ambit-appdomain-example-jar-with-dependencies.jar -h
     
 
 ````
@@ -116,5 +116,8 @@ Build
 -----
 
     >mvn clean package
-  
+
+The executable file is at target/ambit-appdomain-example-jar-with-dependencies.jar
+
+    >java -jar target/ambit-appdomain-example-jar-with-dependencies.jar -h  
 
