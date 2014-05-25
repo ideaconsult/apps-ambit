@@ -79,10 +79,10 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	private static final long serialVersionUID = -628626048238373558L;
 
 	public void buildAD() throws Exception {
-		LOGGER.log(Level.INFO,String.format("AD method\t%s\t%s\t%s\t%s\t%s\tthreshold\t%4.2f%%",
-				dataCoverage.getClass().getName(),
+		LOGGER.log(Level.INFO,String.format("Method\t%s\t%s\t%s\tMetric property\t'%s'\tIn domain property\t'%s'\tthreshold\t%4.2f%%",
+				dataCoverage.getAppDomainMethodType().name(),
 				dataCoverage.getAppDomainMethodType(),
-				dataCoverage.getName(),
+				dataCoverage.getClass().getName(),
 				dataCoverage.getMetricName(),
 				dataCoverage.getDomainName(),
 				100*dataCoverage.getPThreshold()));
@@ -202,7 +202,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	}
 	
 	public int process(File file, IProcessMolecule processor) throws Exception {
-		if (file==null) throw new Exception("File not assigned! Use -f command line option.");
+		if (file==null) throw new Exception("File not assigned! Use -t or -s options to set input files.");
 		if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());
 		int records_read = 0;
 		int records_processed = 0;
@@ -249,7 +249,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
 		}
-		LOGGER.log(Level.INFO, String.format("[Records read/processed/error %d/%d/%d] %s", 
+		LOGGER.log(Level.FINE, String.format("[Records read/processed/error %d/%d/%d] %s", 
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
 		return records_read;
 	}

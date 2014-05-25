@@ -1,7 +1,5 @@
 package net.idea.example.ambit.appdomain;
 
-import java.util.List;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -43,10 +41,10 @@ public class MainApp {
 		    		case demo : {
 		    			if (line.hasOption(o.getShortName())) {
 			    			model.setOption(o,line.getOptionValue(o.getShortName()));
+			    		 	model.buildAD();
+					    	model.estimateAD();
+					    	return;
 		    			}
-		    		 	model.buildAD();
-				    	model.estimateAD();
-				    	return;
 		    		}
 		    		default : {
 		    			if (line.hasOption(o.getShortName())) try {
