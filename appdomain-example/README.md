@@ -1,5 +1,6 @@
+###Ambit applicability domain estimation by ambit-models package
 
-Ambit applicability domain estimation by ambit-models package
+````
 usage: net.idea.examle.ambit.appdomain.MainApp
  -d,--demo <dataset>       mutagenicity | kowwin
  -f,--descriptors <list>   Comma delimited list of field names (as in the
@@ -26,16 +27,19 @@ usage: net.idea.examle.ambit.appdomain.MainApp
                            from training set
  -s,--test <file>          Test file (CSV,SDF)
  -t,--training <file>      Training file (CSV,SDF)
-Examples:
-Read the demo files and apply applicability domain by Tanimoto consensus fingerprint,
+````
+
+####Example 1
+Reads the demo files and apply applicability domain by Tanimoto consensus fingerprint,
 assuming all of the training set compounds are in the app.domain. Results saved in result.sdf file. : 
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeFINGERPRINTS_CONSENSUS -d mutagenicity -o result.csv
 
-Read the demo files and apply applicability domain by probability density estimation,
+####Example 2
+Reads the demo files and apply applicability domain by probability density estimation,
 assuming all of the training set compounds are in the app.domain. : 
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -d mutagenicity
 
-Read training and test CSV files and apply applicability domain by probability density estimation,
+####Example 3
+Reads training and test CSV files and apply applicability domain by probability density estimation,
 assuming 90% of the training set compounds are in the app.domain. : 
 java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t Debnath_smiles.csv -s Glende_smiles.csv -f log_P,eLumo,eHomo,IL -r 0.9
-
