@@ -25,7 +25,7 @@ Run
 ````
 Ambit applicability domain estimation by ambit-models package
 usage: net.idea.example.ambit.appdomain.MainApp
- -d,--demo                 Training and tets CSV files from PubMed:1732103
+ -d,--demo                 Training and test CSV files from PubMed:1732103
 
  -f,--descriptors <list>   Comma delimited list of field names (as in the
                            input files) to be used as descriptors.
