@@ -76,9 +76,9 @@ java -jar example-ambit-appdomain-jar-with-dependencies.jar	-m _modeDENSITY -t D
 
 #### Example files
 
-* Mutagenicity  [1](http://www.ncbi.nlm.nih.gov/pubmed/1732103) (structures and descriptors) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
+* Mutagenicity  [pubmed:17514565](http://www.ncbi.nlm.nih.gov/pubmed/1732103) (structures and descriptors) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Debnath_smiles.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/Glende_smiles.csv)
     
-* EPI Suite KOWWIN [2](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
+* [EPI Suite KOWWIN](http://www.epa.gov/opptintr/exposure/pubs/episuite.htm) files (structures only) [Training set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_training.csv) [Test set](https://github.com/ideaconsult/examples-ambit/blob/master/appdomain-example/src/main/resources/net/idea/example/ambit/appdomain/kowwin_validation.csv)
 
 
 Support
