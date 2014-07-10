@@ -1,7 +1,7 @@
 Substance
 ====
 
-[Composition](#composition), [Study](#study)
+[Composition](#composition), [Study](#study), [Summary](#summary)
 
 ###<a name="composition"></a>Composition
 
@@ -1076,6 +1076,34 @@ Substance
                         "errQualifier": "sd",
                         "errorValue": 0.027
                     }
+                }
+            ]
+        }
+    ]
+}
+````
+
+###<a name="summary"></a>Summary
+````json
+{
+    "substance": [
+        {
+            "URI": "http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
+            "ownerUUID": "PRCR-a6103acb-f2c6-3190-98d2-ff3404f1e36c",
+            "ownerName": "Protein Corona Fingerprinting Predicts the Cellular Interaction of Gold and Silver Nanoparticles",
+            "i5uuid": "PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
+            "name": "G15.AC",
+            "publicname": "G15.AC",
+            "format": "SDF",
+            "substanceType": "nanoparticle",
+            "referenceSubstance": {
+                "i5uuid": "PRCR-50cca421-d821-396d-b4a5-e2702f0859c6",
+                "uri": "http://apps.ideaconsult.net:8080/enanomapper/query/compound/search/all?search=PRCR-50cca421-d821-396d-b4a5-e2702f0859c6"
+            },
+            "externalIdentifiers": [
+                {
+                    "type": "Classification",
+                    "id": "Anionic"
                 }
             ]
         }
