@@ -11,7 +11,7 @@
 ````json
 {
     "study": [
-  {
+        {
             "uuid": "IUC5-89019c4a-acc8-4457-8a5a-4db66cd16ff3",
             "owner": {
                 "substance": {
@@ -98,7 +98,7 @@
                 }
             ]
         },
-          {
+        {
             "uuid": "IUC5-be3e995e-f308-4247-b811-d9eb9a2f842a",
             "owner": {
                 "substance": {
@@ -254,7 +254,7 @@
                 }
             ]
         },
-           {
+        {
             "uuid": "IUC5-f1fb9fe7-3ed0-4650-a7f8-d56ba17e5d07",
             "owner": {
                 "substance": {
@@ -506,7 +506,7 @@
                 }
             ]
         }
-    ]   
+    ]
 }
 ````
 
