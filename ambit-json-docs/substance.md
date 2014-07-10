@@ -71,7 +71,7 @@
                         }
                     },
                     "result": {
-                        "unit": "58289",
+                        "unit": "mV",
                         "loQualifier": ">",
                         "loValue": 1,
                         "upQualifier": "<",
