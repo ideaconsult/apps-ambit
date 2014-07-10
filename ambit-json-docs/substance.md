@@ -23,7 +23,7 @@
                 }
             },
             "citation": {
-                "title": "Vedrin Jeliazkov",
+                "title": "eNMtest",
                 "year": "2014",
                 "owner": "Owner company"
             },
@@ -99,162 +99,6 @@
             ]
         },
         {
-            "uuid": "IUC5-be3e995e-f308-4247-b811-d9eb9a2f842a",
-            "owner": {
-                "substance": {
-                    "uuid": "IUC4-d0966414-0e9b-3610-ab7d-7d27848027e2"
-                },
-                "company": {
-                    "uuid": "IUC4-44bf02d8-47c5-385d-b203-9a8f315911cb",
-                    "name": "OECD / Paris / France"
-                }
-            },
-            "citation": {
-                "title": "Vedrin Jeliazkov",
-                "year": "2014",
-                "owner": "Owner company"
-            },
-            "protocol": {
-                "topcategory": "P-CHEM",
-                "category": {
-                    "code": "SURFACE_CHEMISTRY_SECTION",
-                    "title": "4.30 Nanomaterial surface chemistry"
-                },
-                "endpoint": "Surface chemistry.001",
-                "guideline": [
-                    "some guideline"
-                ]
-            },
-            "parameters": {
-                "DATA_GATHERING_INSTRUMENTS": null,
-                "Method details": "Details",
-                "SAMPLING": null,
-                "Type of method": "XPS"
-            },
-            "reliability": {
-                "r_isRobustStudy": "true",
-                "r_isUsedforClassification": "true",
-                "r_isUsedforMSDS": "true",
-                "r_purposeFlag": "key study",
-                "r_studyResultType": "experimental result",
-                "r_value": "1 (reliable without restriction)"
-            },
-            "interpretation": {
-                "result": "Conclusions",
-                "criteria": "both"
-            },
-            "effects": [
-                {
-                    "endpoint": "ATOMIC COMPOSITION",
-                    "conditions": {
-                        "COATING_DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "decsription"
-                        },
-                        "DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "inorganic"
-                        },
-                        "ELEMENT_OR_GROUP": {},
-                        "Remark": "Remarks",
-                        "STD_DEV": {
-                            "loValue": 3
-                        },
-                        "TYPE": {
-                            "loQualifier": "  ",
-                            "loValue": "COATING"
-                        }
-                    },
-                    "result": {
-                        "unit": null,
-                        "loQualifier": ">",
-                        "loValue": 10,
-                        "upQualifier": "<",
-                        "upValue": 20,
-                        "textValue": "Ti"
-                    }
-                },
-                {
-                    "endpoint": "ATOMIC COMPOSITION",
-                    "conditions": {
-                        "COATING_DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "decsription"
-                        },
-                        "DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "inorganic"
-                        },
-                        "ELEMENT_OR_GROUP": {},
-                        "Remark": null,
-                        "STD_DEV": {},
-                        "TYPE": {
-                            "loQualifier": "  ",
-                            "loValue": "COATING"
-                        }
-                    },
-                    "result": {
-                        "unit": null,
-                        "loQualifier": "ca.",
-                        "loValue": 50,
-                        "upQualifier": "",
-                        "textValue": "O"
-                    }
-                },
-                {
-                    "endpoint": "FUNCTIONAL GROUP",
-                    "conditions": {
-                        "COATING_DESCRIPTION": null,
-                        "DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "description"
-                        },
-                        "ELEMENT_OR_GROUP": {},
-                        "Remark": "Remarks",
-                        "STD_DEV": {
-                            "loValue": 3
-                        },
-                        "TYPE": {
-                            "loQualifier": "  ",
-                            "loValue": "FUNCTIONALIZATION"
-                        }
-                    },
-                    "result": {
-                        "unit": null,
-                        "loQualifier": ">",
-                        "loValue": 1,
-                        "upQualifier": "<",
-                        "upValue": 2,
-                        "textValue": ""
-                    }
-                },
-                {
-                    "endpoint": "FUNCTIONAL GROUP",
-                    "conditions": {
-                        "COATING_DESCRIPTION": null,
-                        "DESCRIPTION": {
-                            "loQualifier": "  ",
-                            "loValue": "description"
-                        },
-                        "ELEMENT_OR_GROUP": {},
-                        "Remark": null,
-                        "STD_DEV": {},
-                        "TYPE": {
-                            "loQualifier": "  ",
-                            "loValue": "FUNCTIONALIZATION"
-                        }
-                    },
-                    "result": {
-                        "unit": null,
-                        "loQualifier": ">=",
-                        "loValue": 90,
-                        "upQualifier": "",
-                        "textValue": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
-                    }
-                }
-            ]
-        },
-        {
             "uuid": "IUC5-f1fb9fe7-3ed0-4650-a7f8-d56ba17e5d07",
             "owner": {
                 "substance": {
@@ -266,7 +110,7 @@
                 }
             },
             "citation": {
-                "title": "Vedrin Jeliazkov",
+                "title": "eNMtest",
                 "year": "2014",
                 "owner": "Owner company"
             },
