@@ -1,4 +1,10 @@
-##Substance dataset
+##Substance
+
+###[Composition](substance.md#composition), [Study](substance.md#study), [Summary](substance.md#summary), [Substance dataset](substance_dataset.md)
+
+
+###Substance dataset
+
 
 ````json
 {
