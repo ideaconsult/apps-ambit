@@ -1,8 +1,8 @@
 ##Substance
 
+###Existing chemical [Composition](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
 
-###[Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
-
+###Nanomaterial [Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
 
 ####<a name="study"></a>Study  
 
@@ -1112,3 +1112,6 @@
     }
 }
 ````
+
+
+
