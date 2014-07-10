@@ -1,7 +1,7 @@
 ##Substance
 
 
-###[Composition](#composition), [Study](#study), [Summary](#summary), (Substance dataset)[substance_dataset.md]
+###[Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
 
 
 ####<a name="study"></a>Study  
