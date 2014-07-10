@@ -1,8 +1,10 @@
-Substance
-====
+##Substance
 
 
-###<a name="study"></a>Study  
+###[Composition](#composition), [Study](#study), [Summary](#summary)
+
+
+####<a name="study"></a>Study  
 
 [Demo link](http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
 
@@ -919,7 +921,7 @@ Substance
 }
 ````
 
-###<a name="summary"></a>Summary
+####<a name="summary"></a>Summary
 ````json
 {
     "substance": [
@@ -948,9 +950,7 @@ Substance
 ````
 
 
-[Composition](#composition), [Study](#study), [Summary](#summary)
-
-###<a name="composition"></a>Composition
+####<a name="composition"></a>Composition
 
 ````json
 {
