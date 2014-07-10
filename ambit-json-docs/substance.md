@@ -1,7 +1,9 @@
 Substance
 ====
 
-###Composition
+[Composition](#composition), [Study](#study)
+
+###<a name="composition"></a>Composition
 
 ````json
 {
@@ -164,7 +166,7 @@ Substance
 }
 ````
 
-###Study  
+###<a name="study"></a>Study  
 
 [Demo link](http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
 
