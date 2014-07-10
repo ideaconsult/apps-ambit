@@ -354,5 +354,167 @@
 }
 ````
 
+####<a name='composition'></a>Composition
+````json
+{
+    "composition": [
+        {
+            "substance": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/substance/1"
+            },
+            "component": {
+                "compound": {
+                    "URI": "http://apps.ideaconsult.net:8080/enanomapper/compound/1/conformer/1",
+                    "structype": "NA",
+                    "metric": null,
+                    "name": "",
+                    "cas": "",
+                    "einecs": ""
+                },
+                "values": {
+                    "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "[Au]"
+                },
+                "facets": []
+            },
+            "compositionUUID": "PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
+            "relation": "HAS_CORE",
+            "proportion": {
+                "typical": {
+                    "precision": null,
+                    "value": 0,
+                    "unit": null
+                },
+                "real": {
+                    "lowerPrecision": null,
+                    "lowerValue": 0,
+                    "upperPrecision": null,
+                    "upperValue": 0,
+                    "unit": null
+                },
+                "function_as_additive": null
+            }
+        },
+        {
+            "substance": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/substance/1"
+            },
+            "component": {
+                "compound": {
+                    "URI": "http://apps.ideaconsult.net:8080/enanomapper/compound/2/conformer/2",
+                    "structype": "NA",
+                    "metric": null,
+                    "name": "",
+                    "cas": "",
+                    "einecs": ""
+                },
+                "values": {
+                    "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "AC"
+                },
+                "facets": []
+            },
+            "compositionUUID": "PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
+            "relation": "HAS_COATING",
+            "proportion": {
+                "typical": {
+                    "precision": null,
+                    "value": 0,
+                    "unit": null
+                },
+                "real": {
+                    "lowerPrecision": null,
+                    "lowerValue": 0,
+                    "upperPrecision": null,
+                    "upperValue": 0,
+                    "unit": null
+                },
+                "function_as_additive": null
+            }
+        }
+    ],
+    "feature": {
+        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23IUPACNameDefault": {
+            "type": "Feature",
+            "title": "IUPAC name",
+            "units": "",
+            "isNominal": "false",
+            "isNumeric": "false",
+            "sameAs": "http://www.opentox.org/api/1.1#IUPACName",
+            "isModelPredictionFeature": false,
+            "creator": "http://ambit.sourceforge.net",
+            "order": 1,
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
+                "type": "Dataset"
+            },
+            "annotation": []
+        },
+        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": {
+            "type": "Feature",
+            "title": "Names",
+            "units": "",
+            "isNominal": "false",
+            "isNumeric": "false",
+            "sameAs": "http://www.opentox.org/api/1.1#ChemicalName",
+            "isModelPredictionFeature": false,
+            "creator": "http://ambit.sourceforge.net",
+            "order": 2,
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
+                "type": "Dataset"
+            },
+            "annotation": []
+        },
+        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23CASRNDefault": {
+            "type": "Feature",
+            "title": "CasRN",
+            "units": "",
+            "isNominal": "false",
+            "isNumeric": "false",
+            "sameAs": "http://www.opentox.org/api/1.1#CASRN",
+            "isModelPredictionFeature": false,
+            "creator": "http://ambit.sourceforge.net",
+            "order": 3,
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
+                "type": "Dataset"
+            },
+            "annotation": []
+        },
+        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23EINECSDefault": {
+            "type": "Feature",
+            "title": "EC number",
+            "units": "",
+            "isNominal": "false",
+            "isNumeric": "false",
+            "sameAs": "http://www.opentox.org/api/1.1#EINECS",
+            "isModelPredictionFeature": false,
+            "creator": "http://ambit.sourceforge.net",
+            "order": 4,
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
+                "type": "Dataset"
+            },
+            "annotation": []
+        },
+        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23TradeNameDefault": {
+            "type": "Feature",
+            "title": "Trade Name",
+            "units": "",
+            "isNominal": "false",
+            "isNumeric": "false",
+            "sameAs": "http://www.opentox.org/api/1.1#TradeName",
+            "isModelPredictionFeature": false,
+            "creator": "http://ambit.sourceforge.net",
+            "order": 5,
+            "source": {
+                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
+                "type": "Dataset"
+            },
+            "annotation": []
+        }
+    }
+}
+````
+
 
 
