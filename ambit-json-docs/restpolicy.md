@@ -76,3 +76,16 @@ Expects Content-type:[application/x-www-form-urlencoded](http://www.w3.org/TR/ht
  <input type=submit name="submit" value=" OK ">
 </form>
 ````
+
+### List of roles
+
+#### GET /admin/role
+
+````json
+   {
+       "roles": [
+           "test_role",
+           "test_admin"
+       ]
+   }
+````
