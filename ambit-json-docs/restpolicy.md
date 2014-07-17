@@ -47,7 +47,7 @@ Updates one policy.  Returns a task URI
 Expects Content-type:[application/x-www-form-urlencoded](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1) with the following fields (all fields optional, unspecified fields will not be updated):
 
 ````
-<form method="POST" action="/admin/restpolicy">
+<form method="POST" action="/admin/restpolicy" enctype='application/x-www-form-urlencoded'>
  <input type=text name="role">
  <input type=text name="resource">
  <input type=checkbox name="get">
@@ -66,7 +66,7 @@ Creates a new policy. Returns a task URI.
 Expects Content-type:[application/x-www-form-urlencoded](http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1) with the following fields (role and resource fields mandatory, unspecified method fields will be assigned 'false'):
 
 ````
-<form method="POST" action="/admin/restpolicy">
+<form method="POST" action="/admin/restpolicy" enctype='application/x-www-form-urlencoded'>
  <input type=text name="role">
  <input type=text name="resource">
  <input type=checkbox name="get">
