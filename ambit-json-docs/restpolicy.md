@@ -77,13 +77,13 @@ Expects Content-type:[application/x-www-form-urlencoded](http://www.w3.org/TR/ht
 </form>
 ````
 
-##### cURL example
+##### [cURL](http://curl.haxx.se/) example
 
 ````
-$ curl -X POST http://host:port/app/admin/restpolicy -H "Accept:application/json" -drole="ambit_user" -dresource="/ambit2/model" -i
+curl -X POST http://host:port/app/admin/restpolicy -H "Accept:application/json" -d"role=ambit_user" -d"resource=/ambit2/model/123" -i
 HTTP/1.1 202 Accepted
 Content-Language: en
-Date: Thu, 17 Jul 2014 15:48:26 GMT
+Date: Thu, 17 Jul 2014 15:53:24 GMT
 Vary: Accept-Charset, Accept-Encoding, Accept-Language, Accept
 Accept-Ranges: bytes
 Access-Control-Allow-Origin: *
@@ -96,15 +96,15 @@ Content-Length: 522
 
 {"task": [
 {
-        "uri":"http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf",
-        "id": "Apply  to null [http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf] Started Thu Jul 17 18:48:26 EEST 2014 Completed - [Queued] [null] ",
-        "name": "Apply  to null",
+        "uri":"http://host:port/app/task/1c545da3-bc36-4c58-8d1f-ad2d4f05e07f",
+        "id": "Started Thu Jul 17 18:53:24 EEST 2014 Completed ",
+        "name": "Apply  to XYZ",
         "error": "",
         "policyError": "",
         "status": "Running",
-        "started": 1405612106906,
+        "started": 1405612404938,
         "completed": -1,
-        "result": "http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf",
+        "result": "http://host:port/app/task/1c545da3-bc36-4c58-8d1f-ad2d4f05e07f",
         "user": ""
 }
 ]
