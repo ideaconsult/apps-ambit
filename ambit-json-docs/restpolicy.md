@@ -77,6 +77,43 @@ Expects Content-type:[application/x-www-form-urlencoded](http://www.w3.org/TR/ht
 </form>
 ````
 
+##### cURL example
+
+````
+$ curl -X POST http://host:port/app/admin/restpolicy -H "Accept:application/json" -drole="ambit_user" -dresource="/ambit2/model" -i
+HTTP/1.1 202 Accepted
+Content-Language: en
+Date: Thu, 17 Jul 2014 15:48:26 GMT
+Vary: Accept-Charset, Accept-Encoding, Accept-Language, Accept
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 60
+Server: Restlet-Framework/2.0m6
+Content-Type: application/json;charset=UTF-8
+Content-Length: 522
+
+{"task": [
+{
+        "uri":"http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf",
+        "id": "Apply  to null [http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf] Started Thu Jul 17 18:48:26 EEST 2014 Completed - [Queued] [null] ",
+        "name": "Apply  to null",
+        "error": "",
+        "policyError": "",
+        "status": "Running",
+        "started": 1405612106906,
+        "completed": -1,
+        "result": "http://apps.ideaconsult.net:8080/biodeg/task/db81d77d-2f81-4db7-b7a4-9d86aaf691bf",
+        "user": ""
+}
+]
+}
+
+````
+
+
 ### List of roles
 
 #### GET /admin/role
