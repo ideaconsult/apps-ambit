@@ -516,5 +516,13 @@
 }
 ````
 
+####<a name="upload"></a>Substance and study upload
 
+````
+    curl --form files[]=@localfilename 
+                --form clearMeasurements=yes --form clearComposition=yes
+                --form qaenabled=yes /substance
+         
+    
+````
 
