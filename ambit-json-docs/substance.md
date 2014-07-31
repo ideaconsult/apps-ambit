@@ -4,6 +4,19 @@
 
 ###Nanomaterial [Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
 
+
+####<a name="upload"></a>Substance and study upload 
+
+ [example web form ](http://apps.ideaconsult.net:8080/enanomapper/ui/uploadsubstance1)
+
+````
+    curl --form files[]=@localfilename 
+                --form clearMeasurements=yes --form clearComposition=yes
+                --form qaenabled=yes /substance
+         
+    
+````
+
 ####<a name="study"></a>Study  
 
 [Demo link](http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
@@ -516,13 +529,5 @@
 }
 ````
 
-####<a name="upload"></a>Substance and study upload
 
-````
-    curl --form files[]=@localfilename 
-                --form clearMeasurements=yes --form clearComposition=yes
-                --form qaenabled=yes /substance
-         
-    
-````
-
+  
