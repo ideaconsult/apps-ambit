@@ -10,9 +10,8 @@
  [example web form ](http://apps.ideaconsult.net:8080/enanomapper/ui/uploadsubstance1)
 
 ````
-    curl --form files[]=@localfilename 
-                --form clearMeasurements=yes --form clearComposition=yes
-                --form qaenabled=yes /substance
+  curl -H "subjectid:OPENSSO_TOKEN" --form files[]=predicted.csv --form clearMeasurements=yes --form     clearComposition=yes --form qaenabled=yes http://apps.ideaconsult.net:8080/enanomapper/substance -iv
+                
          
     
 ````
