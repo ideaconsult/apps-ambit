@@ -289,7 +289,7 @@ public class TautomerWizard {
 				
 				tautomer.setProperty("InChI",generator.getInchi());
 				tautomer.setProperty("InChIKey",generator.getInchiKey());
-				tautomer.setProperty("InChI.status",generator.getReturnStatus().name());
+				tautomer.setProperty("InChIstatus",generator.getReturnStatus().name());
 				tautomer.setProperty("InChI.msg",generator.getMessage()==null?"":generator.getMessage());
 				if (parent.getProperty("InChI")!=null)
 					tautomer.setProperty("tautomerOf",parent.getProperty("InChI"));
