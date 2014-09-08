@@ -8,6 +8,7 @@ Technologies used are [REST](http://ambit.sourceforge.net/rest.html) style web s
 
 * API Documentation http://opentox.org/dev/apis/api-1.2 
 * OpenTox API discussion, new ideas and examples at https://github.com/opentox-api
+* API Documentation by Swagger-ui http://ideaconsult.github.io/examples-ambit/apidocs/
 
 ### JSON
 
