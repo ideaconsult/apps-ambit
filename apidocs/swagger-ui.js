@@ -1379,7 +1379,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.events = {
       'click #show-pet-store-icon': 'showPetStore',
-      'click #show-wordnik-dev-icon': 'showWordnikDev',
+      'click #show-ambit-dev-icon': 'showAmbitDev',
+      'click #show-enanomapper-dev-icon': 'showEnanoMapperDev',
       'click #explore': 'showCustom',
       'keyup #input_baseUrl': 'showCustomOnKeyup',
       'keyup #input_apiKey': 'showCustomOnKeyup'
@@ -1392,10 +1393,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         url: "http://petstore.swagger.wordnik.com/api/api-docs"
       });
     };
-
-    HeaderView.prototype.showWordnikDev = function(e) {
+    
+    HeaderView.prototype.showAmbitDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://api.wordnik.com/v4/resources.json"
+        url: "http://apps.ideaconsult.net:8080/data/api-docs"
+      });
+    };
+
+    HeaderView.prototype.showEnanoMapperDev = function(e) {
+      return this.trigger('update-swagger-ui', {
+        url: "http://apps.ideaconsult.net:8080/enanomapper/api-docs"
       });
     };
 
