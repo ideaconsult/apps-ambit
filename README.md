@@ -22,6 +22,8 @@ AMBIT Web REST services
   
   * Ambit/OpenTox REST API client library https://github.com/ideaconsult/opentox-cli
   
+  * [Ambit API documentation ](http://ideaconsult.github.io/examples-ambit/apidocs/)
+  
   
 
 SMARTS (and SMIRKS)
