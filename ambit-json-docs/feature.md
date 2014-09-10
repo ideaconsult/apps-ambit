@@ -3,7 +3,8 @@
 A Feature is a resource, representing any kind of a property or identifier, assigned to a Compound. 
 
 * The feature types are determined via their links to ontologies, e.g. [BlueObelisk ontology](http://apps.ideaconsult.net:8080/ontology/query/BODO) and [ECHA endpoints ontology](http://www.opentox.org/echaEndpoints.owl).
-* Documentation http://opentox.org/dev/apis/api-1.2/Feature 
+* Documentation (wiki) http://opentox.org/dev/apis/api-1.2/Feature 
+* Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/feature
 
 ### JSON
 
