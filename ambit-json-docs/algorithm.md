@@ -7,7 +7,8 @@ Provides access to OpenTox algorithms.
 * There are multiple kinds of algorithms (descriptor calculation, machine learning procedures or various data preprocessing). 
 * Generally, a machine learning algorithm takes a [dataset](dataset.md) URI as input and generate a [model](model.md), also identified with an URI.
 * The Algorithm types ontology provides a hierarchical classification of [Algorithm types](http://opentox.org/data/documents/development/RDF%20files/AlgorithmTypes).
-* Documentation http://opentox.org/dev/apis/api-1.2/Algorithm
+* Documentation (wiki) http://opentox.org/dev/apis/api-1.2/Algorithm
+* Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/algorithm
 
 
 ### JSON
