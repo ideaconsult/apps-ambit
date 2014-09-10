@@ -8,7 +8,8 @@ The concept of a Dataset of chemical compounds is central to OpenTox web service
 * Model services accept dataset URI in order to apply a model and obtain predictions. 
 * Predictions are again returned as dataset URI, which could be subsequently retrieved. 
 * Search results (exact chemical structure, similarity or substructure) are also available as datasets.
-* Documentation http://opentox.org/dev/apis/api-1.2/dataset 
+* Documentation (wiki) http://opentox.org/dev/apis/api-1.2/dataset 
+* Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/dataset
 
 ### JSON
 
