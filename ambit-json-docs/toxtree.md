@@ -4,7 +4,7 @@ This document describes how to:
 * Retrieve Toxtree modules via OpenTox [algorithm](algorithm.md) and [model](model.md) API
 * [Run predictions](http://apps.ideaconsult.net:8080/data/ui/toxtree)
 * The examples assume the chemical compound URIs are known. At the [query](query.md) page there is a guide how to search and retrieve chemical compounds. 
-More info on OpenTox compound API [here](http://opentox.org/dev/apis/api-1.2/structure)
+More info on OpenTox compound API [wiki](http://opentox.org/dev/apis/api-1.2/structure) and [runnable](http://ideaconsult.github.io/examples-ambit/apidocs/#!/compound).
 
 
 #### Algorithms
