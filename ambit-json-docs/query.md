@@ -1,5 +1,7 @@
 ##Searching chemical compounds
 
+* Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/compound_0
+
 All search queries return the results in the [dataset](dataset.md) format 
 
 #### Exact search and search by chemical identifier
