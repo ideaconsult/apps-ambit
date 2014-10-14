@@ -48,6 +48,11 @@ Tautomers generation
 
   * ambit2-tautomer.jar at [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick%7Eambit2-tautomer)
 
+Applicability domain command line appliction
+---
+
+ * https://github.com/ideaconsult/examples-ambit/tree/master/appdomain-example
+
 JavaScript Molecular browser 
 ---
 
