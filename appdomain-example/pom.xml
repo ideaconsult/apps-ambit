@@ -4,7 +4,7 @@
   <groupId>net.idea.examples.ambit</groupId>
   <artifactId>ambit-appdomain-example</artifactId>
   <name>ambit-appdomain-example</name>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <description>Ambit Applicability domain Example</description>
   <distributionManagement>
     <snapshotRepository>
@@ -74,7 +74,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>2.5.5-SNAPSHOT</ambit.version>
+    <ambit.version>2.5.9</ambit.version>
   </properties>
   <build>
     <finalName>example-ambit-appdomain</finalName>

@@ -9,7 +9,6 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.BitSet;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +18,7 @@ import net.idea.example.ambit.appdomain.MainApp._option;
 import org.apache.commons.lang3.StringUtils;
 import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
+import org.openscience.cdk.fingerprint.Fingerprinter;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.io.IChemObjectReader.Mode;
 import org.openscience.cdk.io.IChemObjectReaderErrorHandler;
@@ -120,7 +120,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 		} else { //fingerprints
 			final List<BitSet> bitsets = new ArrayList<BitSet>();
 			process(getTrainingInstances(), new IProcessMolecule() {
-				FingerprintGenerator gen = new FingerprintGenerator();
+				FingerprintGenerator gen = new FingerprintGenerator(new Fingerprinter());
 				@Override
 				public void processMolecule(IAtomContainer molecule) throws Exception {
 					try {
@@ -179,7 +179,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 			try {
 				process(getTestInstances(), new IProcessMolecule() {
 					
-					FingerprintGenerator gen = new FingerprintGenerator();
+					FingerprintGenerator gen = new FingerprintGenerator(new Fingerprinter());
 					@Override
 					public void processMolecule(IAtomContainer molecule) throws Exception {
 						final List<BitSet> bitsets = new ArrayList<BitSet>();
@@ -207,8 +207,11 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	}
 	
 	public int process(File file, IProcessMolecule processor) throws Exception {
-		if (file==null) throw new Exception("File not assigned! Use -t or -s options to set input files.");
+		if (file==null) throw new Exception("ERROR: File not assigned! Use -t or -s options to set input files.");
 		if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());
+		
+		if (getResultFile()==null) throw new Exception("ERROR: Output file not assigned! Use -o option to set the output file.");
+		
 		int records_read = 0;
 		int records_processed = 0;
 		int records_error = 0;
