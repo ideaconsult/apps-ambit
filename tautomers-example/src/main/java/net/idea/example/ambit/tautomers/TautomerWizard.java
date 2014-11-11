@@ -54,7 +54,7 @@ public class TautomerWizard {
 	protected int algorithm = TautomerConst.GAT_Incremental;
 	protected boolean benchmark = false;
 	protected String benchmarkOutFile = "benchmark.out";
-	protected long curMoleculeTime = 0;
+	protected double curMoleculeTime = 0;
 	
 	public boolean getBenchmark() {
 		return benchmark;
@@ -93,8 +93,8 @@ public class TautomerWizard {
 	protected TautomerManager tautomerManager = new TautomerManager();
 	
 	public TautomerWizard() {
-		LOGGER.setLevel(Level.FINEST);
-		//LOGGER.setLevel(Level.OFF);
+		//LOGGER.setLevel(Level.FINEST);
+		LOGGER.setLevel(Level.OFF);
 	}
 	/**
 	 * 
@@ -150,7 +150,7 @@ public class TautomerWizard {
 					setAlgorithm(TautomerConst.GAT_Comb_Improved);
 				else
 					if(argument.equals("incr"))
-						setAlgorithm(TautomerConst.GAT_Comb_Improved);
+						setAlgorithm(TautomerConst.GAT_Incremental);
 					else
 						throw new Exception("Incorrect argument \"" +argument + "\" for option --algorithm (-a)!");
 			break;
@@ -253,10 +253,15 @@ public class TautomerWizard {
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
 					 */
 					Vector<IAtomContainer> resultTautomers=null;
-
-					//tautomerManager.setStructure(molecule);
-					//resultTautomers = tautomerManager.generateTautomersIncrementaly();
+					
 					resultTautomers = generateTautomers(molecule);
+					if (benchmark)
+					{
+						String info =("Mol #" + records_read + "  time = " + curMoleculeTime 
+								+ " s     nTautomers = " + ((resultTautomers == null)?0:resultTautomers.size())  + "\n");
+						benchmarkOut.write(info.getBytes());
+						//System.out.println(info);
+					}
 					
 					/**
 					 * Write the original structure
@@ -323,10 +328,30 @@ public class TautomerWizard {
 	
 	protected Vector<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception
 	{
-		long beginTime = 0;
-		long endTime = 0;
+		long beginTime = System.nanoTime();	
+		
+		Vector<IAtomContainer> res = null;
 		tautomerManager.setStructure(molecule);
-		return tautomerManager.generateTautomersIncrementaly();
+		
+		switch (algorithm)
+		{
+		case TautomerConst.GAT_Comb_Pure:
+			res = tautomerManager.generateTautomers();	
+			break;
+			
+		case TautomerConst.GAT_Comb_Improved:
+			res = tautomerManager.generateTautomers_ImprovedCombApproach();	
+			break;	
+			
+		case TautomerConst.GAT_Incremental:	
+			res =  tautomerManager.generateTautomersIncrementaly();
+			break;	
+		}
+		
+		long endTime = System.nanoTime();
+		curMoleculeTime = (endTime - beginTime) / 1.0e9; //from nano sec. to s
+		
+		return res;
 	}
 
 	protected IChemObjectWriter createWriter() throws Exception {

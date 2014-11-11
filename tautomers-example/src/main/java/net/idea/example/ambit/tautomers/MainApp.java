@@ -143,7 +143,7 @@ public class MainApp {
 		benchmark {
 			@Override
 			public String getArgName() {
-				return "benchmark";
+				return "benchmark-file";
 			}
 			@Override
 			public String getDescription() {
