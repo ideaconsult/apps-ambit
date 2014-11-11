@@ -36,6 +36,7 @@ import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
+import ambit2.tautomers.TautomerConst;
 import ambit2.tautomers.TautomerManager;
 
 /**
@@ -50,6 +51,34 @@ public class TautomerWizard {
 	protected boolean all = true;
 	protected InchiProcessor inchiProcessor;
 	protected FixBondOrdersTool kekulizer = new FixBondOrdersTool();
+	protected int algorithm = TautomerConst.GAT_Incremental;
+	protected boolean benchmark = false;
+	protected String benchmarkOutFile = "benchmark.out";
+	protected long curMoleculeTime = 0;
+	
+	public boolean getBenchmark() {
+		return benchmark;
+	}
+	
+	public void setBenchmark(boolean benchmark) {
+		this.benchmark = benchmark;
+	}
+	
+	public String getBenchmarkOutFile() {
+		return benchmarkOutFile;
+	}
+	
+	public void setBenchmarkOutFile(String benchmarkOutFile) {
+		this.benchmarkOutFile = benchmarkOutFile;
+	}
+	
+	public int getAlgorithm() {
+		return algorithm;
+	}
+	
+	public void setAlgorithm(int algorithm) {
+		this.algorithm = algorithm;
+	}
 	
 	public void setAll(boolean all) {
 		this.all = all;
@@ -65,6 +94,7 @@ public class TautomerWizard {
 	
 	public TautomerWizard() {
 		LOGGER.setLevel(Level.FINEST);
+		//LOGGER.setLevel(Level.OFF);
 	}
 	/**
 	 * 
@@ -103,6 +133,27 @@ public class TautomerWizard {
 			setAll(true);
 			if ((argument!=null) && "best".equals(argument.trim().toLowerCase())) setAll(false);
 			break;			
+		}
+		case benchmark: {
+			setBenchmark(true);
+			if (argument != null)
+				benchmarkOutFile = argument;
+			break;
+		}
+		case algorithm: {
+			if (argument == null)
+				throw new Exception("Option --algorithm (-a) requires argument!");
+			if(argument.equals("comb"))
+				setAlgorithm(TautomerConst.GAT_Comb_Pure);
+			else
+				if(argument.equals("icomb"))
+					setAlgorithm(TautomerConst.GAT_Comb_Improved);
+				else
+					if(argument.equals("incr"))
+						setAlgorithm(TautomerConst.GAT_Comb_Improved);
+					else
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --algorithm (-a)!");
+			break;
 		}
 		default: 
 		}
@@ -154,7 +205,11 @@ public class TautomerWizard {
 		int records_read = 0;
 		int records_processed = 0;
 		int records_error = 0;
-
+				
+		FileOutputStream benchmarkOut = null;
+		if (benchmark)
+			benchmarkOut = new FileOutputStream(benchmarkOutFile);
+		
 
 		InputStream in = new FileInputStream(file);
 		/**
@@ -199,8 +254,10 @@ public class TautomerWizard {
 					 */
 					Vector<IAtomContainer> resultTautomers=null;
 
-					tautomerManager.setStructure(molecule);
-					resultTautomers = tautomerManager.generateTautomersIncrementaly();
+					//tautomerManager.setStructure(molecule);
+					//resultTautomers = tautomerManager.generateTautomersIncrementaly();
+					resultTautomers = generateTautomers(molecule);
+					
 					/**
 					 * Write the original structure
 					 */
@@ -256,12 +313,21 @@ public class TautomerWizard {
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
 			try { writer.close(); } catch (Exception x) {}
+			if (benchmark)
+				try { benchmarkOut.close(); } catch (Exception x) {}
 		}
 		LOGGER.log(Level.INFO, String.format("[Records read/processed/error %d/%d/%d] %s", 
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
 		return records_read;
 	}
 	
+	protected Vector<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception
+	{
+		long beginTime = 0;
+		long endTime = 0;
+		tautomerManager.setStructure(molecule);
+		return tautomerManager.generateTautomersIncrementaly();
+	}
 
 	protected IChemObjectWriter createWriter() throws Exception {
 		if ((resultFile==null) || resultFile.getName().endsWith(FileOutputState.extensions[FileOutputState.SDF_INDEX]))

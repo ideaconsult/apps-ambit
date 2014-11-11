@@ -140,6 +140,40 @@ public class MainApp {
 	
 		},	
 		
+		benchmark {
+			@Override
+			public String getArgName() {
+				return "benchmark";
+			}
+			@Override
+			public String getDescription() {
+				return "Benchmarking tautomer generation time for each molecule. Benchmark info is outputted to the specified file";
+			}
+			@Override
+			public String getShortName() {
+				return "b";
+			}
+	
+		},
+		
+		algorithm {
+			@Override
+			public String getArgName() {
+				return "algorithm";
+			}
+			@Override
+			public String getDescription() {
+				return "comb: Combinatorial algorithm based on simple binary combinations; "
+						+ "icomb: Improved combinatorial algorithm; "
+						+ "incr: Incremental method based of Depth First Search Algorithm (default one)";
+			}
+			@Override
+			public String getShortName() {
+				return "a";
+			}
+	
+		},
+		
 		help {
 			@Override
 			public String getArgName() {
