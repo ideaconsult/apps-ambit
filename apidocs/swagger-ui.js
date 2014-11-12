@@ -1378,7 +1378,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     }
 
     HeaderView.prototype.events = {
-      'click #show-pet-store-icon': 'showPetStore',
+      'click #show-opentox-dev-icon': 'showOpenToxDev',
       'click #show-ambit-dev-icon': 'showAmbitDev',
       'click #show-enanomapper-dev-icon': 'showEnanoMapperDev',
       'click #explore': 'showCustom',
@@ -1388,9 +1388,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.initialize = function() {};
 
-    HeaderView.prototype.showPetStore = function(e) {
+    HeaderView.prototype.showOpenToxDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://petstore.swagger.wordnik.com/api/api-docs"
+        url: "http://apps.ideaconsult.net:8080/opentox/api-docs"
       });
     };
     
