@@ -54,7 +54,13 @@ public class TautomerWizard {
 	protected int algorithm = TautomerConst.GAT_Incremental;
 	protected boolean benchmark = false;
 	protected String benchmarkOutFile = "benchmark.out";
+		
 	protected double curMoleculeTime = 0;
+	protected long globalBeginTime = 0;
+	protected long globalEndTime = 0;
+	protected double globalCalcTime = 0;
+	
+	
 	
 	public boolean getBenchmark() {
 		return benchmark;
@@ -89,6 +95,39 @@ public class TautomerWizard {
 	public void setResultFile(File resultFile) {
 		this.resultFile = resultFile;
 	}
+	
+	public int getMaxBackTracks() {
+		return tautomerManager.maxNumOfBackTracks;		
+	}
+	
+	public void setMaxBackTracks(int maxBackTracks) {
+		tautomerManager.maxNumOfBackTracks = maxBackTracks;		
+	}
+	
+	public boolean getUse13Rules(){
+		return tautomerManager.getKnowledgeBase().FlagUse13Shifts;
+	}
+	
+	public void setUse13Rules(boolean use13Rules){
+		tautomerManager.getKnowledgeBase().FlagUse13Shifts = use13Rules;
+	}
+	
+	public boolean getUse15Rules(){
+		return tautomerManager.getKnowledgeBase().FlagUse15Shifts;
+	}
+	
+	public void setUse15Rules(boolean use15Rules){
+		tautomerManager.getKnowledgeBase().FlagUse15Shifts = use15Rules;
+	}
+	
+	public boolean getUse17Rules(){
+		return tautomerManager.getKnowledgeBase().FlagUse17Shifts;
+	}
+	
+	public void setUse17Rules(boolean use17Rules){
+		tautomerManager.getKnowledgeBase().FlagUse17Shifts = use17Rules;
+	}
+	
 
 	protected TautomerManager tautomerManager = new TautomerManager();
 	
@@ -154,6 +193,50 @@ public class TautomerWizard {
 					else
 						throw new Exception("Incorrect argument \"" +argument + "\" for option --algorithm (-a)!");
 			break;
+		}		
+		case maxbacktracks: {
+			int m = Integer.parseInt(argument);
+			setMaxBackTracks(m);
+			break;
+		}
+		case rule1_3: {
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --rule1_3 (-3)! Set it to be 'on' or 'off'.");
+			}	
+			setUse13Rules(flag);
+			break;
+		}
+		case rule1_5: {
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --rule1_5 (-5)! Set it to be 'on' or 'off'.");
+			}	
+			setUse15Rules(flag);
+			break;
+		}
+		case rule1_7: {
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --rule1_7 (-7)! Set it to be 'on' or 'off'.");
+			}	
+			setUse13Rules(flag);
+			break;
 		}
 		default: 
 		}
@@ -205,12 +288,19 @@ public class TautomerWizard {
 		int records_read = 0;
 		int records_processed = 0;
 		int records_error = 0;
-				
+		String sep = "\t";
+		
 		FileOutputStream benchmarkOut = null;
 		if (benchmark)
+		{	
+			globalBeginTime = System.nanoTime();
 			benchmarkOut = new FileOutputStream(benchmarkOutFile);
+			if (benchmarkOutFile.endsWith(".csv"))
+				sep = ",";
+			String headerLine ="Mol#"+sep+"Time(s)" + sep + "NumOfTaut\n";
+			benchmarkOut.write(headerLine.getBytes());			
+		}
 		
-
 		InputStream in = new FileInputStream(file);
 		/**
 		 * cdk-io module
@@ -252,15 +342,15 @@ public class TautomerWizard {
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
 					 */
-					Vector<IAtomContainer> resultTautomers=null;
+					Vector<IAtomContainer> resultTautomers= generateTautomers(molecule);
 					
-					resultTautomers = generateTautomers(molecule);
 					if (benchmark)
 					{
-						String info =("Mol #" + records_read + "  time = " + curMoleculeTime 
-								+ " s     nTautomers = " + ((resultTautomers == null)?0:resultTautomers.size())  + "\n");
+						globalCalcTime += curMoleculeTime;
+						String info = "" + records_read + sep + curMoleculeTime  + sep 
+								+ ((resultTautomers == null)?0:resultTautomers.size())  + "\n";
 						benchmarkOut.write(info.getBytes());
-						//System.out.println(info);
+						System.out.println("Mol#"+info);
 					}
 					
 					/**
@@ -318,11 +408,24 @@ public class TautomerWizard {
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
 			try { writer.close(); } catch (Exception x) {}
+			
 			if (benchmark)
+			{	
+				globalEndTime = System.nanoTime();
+				double t_total = (globalEndTime-globalBeginTime)/1.0e9; //from nano sec to s.
+				
+				String totalTimeStat = "Total time" + sep + t_total + sep + "s\n" +
+						"Generation" + sep +  globalCalcTime + sep + "s" + sep + (100.0*globalCalcTime/t_total)+sep + "%\n"+
+						"IO/conversion" + sep + (t_total-globalCalcTime) + sep + "s" + sep + (100.0*(t_total-globalCalcTime)/t_total) + sep + "%\n";
+				benchmarkOut.write(totalTimeStat.getBytes());
+				
 				try { benchmarkOut.close(); } catch (Exception x) {}
+			}	
 		}
 		LOGGER.log(Level.INFO, String.format("[Records read/processed/error %d/%d/%d] %s", 
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
+		
+		
 		return records_read;
 	}
 	

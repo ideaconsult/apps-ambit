@@ -174,6 +174,70 @@ public class MainApp {
 	
 		},
 		
+		maxbacktracks {
+			@Override
+			public String getArgName() {
+				return "m";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number (m) of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
+			}
+			@Override
+			public String getShortName() {
+				return "m";
+			}
+	
+		},
+		
+		rule1_3 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-5 shift rules (defaut value 'on', recomended always 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "3";
+			}
+	
+		},
+		
+		rule1_5 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-5 shift rules (defaut value 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "5";
+			}
+	
+		},
+		
+		rule1_7 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-7 shift rules (defaut value 'off')";
+			}
+			@Override
+			public String getShortName() {
+				return "7";
+			}
+	
+		},
+		
 		help {
 			@Override
 			public String getArgName() {
