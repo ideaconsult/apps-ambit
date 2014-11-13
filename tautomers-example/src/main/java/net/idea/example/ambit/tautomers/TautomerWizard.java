@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,7 +61,7 @@ public class TautomerWizard {
 	protected long globalBeginTime = 0;
 	protected long globalEndTime = 0;
 	protected double globalCalcTime = 0;
-	
+	protected String RANK = "TAUTOMER_RANK";
 	
 	
 	public boolean getBenchmark() {
@@ -290,6 +292,12 @@ public class TautomerWizard {
 		int records_error = 0;
 		String sep = "\t";
 		
+		if (algorithm == TautomerConst.GAT_Comb_Pure || algorithm == TautomerConst.GAT_Comb_Improved)
+		{	
+			tautomerManager.FlagCalculateCACTVSEnergyRank = true;
+			RANK = "CACTVS_ENERGY_RANK";
+		}
+			
 		FileOutputStream benchmarkOut = null;
 		if (benchmark)
 		{	
@@ -342,7 +350,7 @@ public class TautomerWizard {
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
 					 */
-					Vector<IAtomContainer> resultTautomers= generateTautomers(molecule);
+					List<IAtomContainer> resultTautomers= generateTautomers(molecule);
 					
 					if (benchmark)
 					{
@@ -372,7 +380,7 @@ public class TautomerWizard {
 					if (resultTautomers!=null)
 					for (IAtomContainer tautomer: resultTautomers) {
 						try {
-							Object rank_property = tautomer.getProperty("TAUTOMER_RANK");
+							Object rank_property = tautomer.getProperty(RANK);
 							if (rank_property == null) 
 								LOGGER.log(Level.INFO, String.format("No tautomer rank, probably this is the original structure"));
 							else {
@@ -416,7 +424,7 @@ public class TautomerWizard {
 				
 				String totalTimeStat = "Total time" + sep + t_total + sep + "s\n" +
 						"Generation" + sep +  globalCalcTime + sep + "s" + sep + (100.0*globalCalcTime/t_total)+sep + "%\n"+
-						"IO/conversion" + sep + (t_total-globalCalcTime) + sep + "s" + sep + (100.0*(t_total-globalCalcTime)/t_total) + sep + "%\n";
+						"IO/convert" + sep + (t_total-globalCalcTime) + sep + "s" + sep + (100.0*(t_total-globalCalcTime)/t_total) + sep + "%\n";
 				benchmarkOut.write(totalTimeStat.getBytes());
 				
 				try { benchmarkOut.close(); } catch (Exception x) {}
@@ -429,11 +437,11 @@ public class TautomerWizard {
 		return records_read;
 	}
 	
-	protected Vector<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception
+	protected List<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception
 	{
 		long beginTime = System.nanoTime();	
 		
-		Vector<IAtomContainer> res = null;
+		List<IAtomContainer> res = null;
 		tautomerManager.setStructure(molecule);
 		
 		switch (algorithm)
