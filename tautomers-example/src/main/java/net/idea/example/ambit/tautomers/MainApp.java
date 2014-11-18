@@ -190,6 +190,22 @@ public class MainApp {
 	
 		},
 		
+		maxregistrations {
+			@Override
+			public String getArgName() {
+				return "r";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number (r) of tautomer registrations by the combinatorial algorithms (comb and icomb)";
+			}
+			@Override
+			public String getShortName() {
+				return "r";
+			}
+	
+		},
+		
 		rule1_3 {
 			@Override
 			public String getArgName() {

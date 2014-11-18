@@ -106,6 +106,14 @@ public class TautomerWizard {
 		tautomerManager.maxNumOfBackTracks = maxBackTracks;		
 	}
 	
+	public int getMaxNumOfRegistrations() {
+		return tautomerManager.maxNumOfTautomerRegistrations;		
+	}
+	
+	public void setMaxNumOfRegistrations(int maxNumRegistrations) {
+		tautomerManager.maxNumOfTautomerRegistrations = maxNumRegistrations;		
+	}
+	
 	public boolean getUse13Rules(){
 		return tautomerManager.getKnowledgeBase().FlagUse13Shifts;
 	}
@@ -199,6 +207,11 @@ public class TautomerWizard {
 		case maxbacktracks: {
 			int m = Integer.parseInt(argument);
 			setMaxBackTracks(m);
+			break;
+		}
+		case maxregistrations: {
+			int r = Integer.parseInt(argument);
+			setMaxNumOfRegistrations(r);
 			break;
 		}
 		case rule1_3: {
