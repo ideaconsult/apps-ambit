@@ -1402,7 +1402,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showEnanoMapperDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://apps.ideaconsult.net:8080/enanomapper/api-docs"
+        url: "http://apps.ideaconsult.net:8080/enmtest/api-docs"
       });
     };
 
