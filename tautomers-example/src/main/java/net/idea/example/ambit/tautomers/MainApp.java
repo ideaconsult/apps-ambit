@@ -177,11 +177,11 @@ public class MainApp {
 		maxbacktracks {
 			@Override
 			public String getArgName() {
-				return "m";
+				return "n";
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number (m) of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
+				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
 			}
 			@Override
 			public String getShortName() {
@@ -193,11 +193,11 @@ public class MainApp {
 		maxregistrations {
 			@Override
 			public String getArgName() {
-				return "r";
+				return "n";
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number (r) of tautomer registrations by the combinatorial algorithms (comb and icomb)";
+				return "Maximal number <n> of tautomer registrations by the combinatorial algorithms (default value 2000)";
 			}
 			@Override
 			public String getShortName() {
@@ -206,6 +206,38 @@ public class MainApp {
 	
 		},
 		
+		maxsubcombinations {
+			@Override
+			public String getArgName() {
+				return "n";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number <n> of subcombinations for the improved combinatorial algorithm (default value 100000)";
+			}
+			@Override
+			public String getShortName() {
+				return "s";
+			}
+	
+		},
+		
+		estimate {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "Estimate the number of tautomers and save data to <file>. "
+						+ "Output file name ( .txt  | .csv ) - recognised by extension!";
+			}
+			@Override
+			public String getShortName() {
+				return "e";
+			}
+		},
+						
 		rule1_3 {
 			@Override
 			public String getArgName() {
@@ -253,6 +285,8 @@ public class MainApp {
 			}
 	
 		},
+		
+		
 		
 		help {
 			@Override

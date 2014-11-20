@@ -40,6 +40,7 @@ import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerConst;
 import ambit2.tautomers.TautomerManager;
+import ambit2.tautomers.TautomerUtils;
 
 /**
  * The class that does the work.
@@ -62,6 +63,7 @@ public class TautomerWizard {
 	protected long globalEndTime = 0;
 	protected double globalCalcTime = 0;
 	protected String RANK = "TAUTOMER_RANK";
+	protected String estimateTautomersFile = null;
 	
 	
 	public boolean getBenchmark() {
@@ -114,6 +116,14 @@ public class TautomerWizard {
 		tautomerManager.maxNumOfTautomerRegistrations = maxNumRegistrations;		
 	}
 	
+	public int getMaxNumOfSubCombinations() {
+		return tautomerManager.maxNumOfSubCombinations;		
+	}
+	
+	public void setMaxNumOfSubCombinations(int maxNumOfSubCombinations) {
+		tautomerManager.maxNumOfSubCombinations = maxNumOfSubCombinations;		
+	}
+	
 	public boolean getUse13Rules(){
 		return tautomerManager.getKnowledgeBase().FlagUse13Shifts;
 	}
@@ -142,8 +152,8 @@ public class TautomerWizard {
 	protected TautomerManager tautomerManager = new TautomerManager();
 	
 	public TautomerWizard() {
-		//LOGGER.setLevel(Level.FINEST);
-		LOGGER.setLevel(Level.OFF);
+		LOGGER.setLevel(Level.FINEST);
+		//LOGGER.setLevel(Level.OFF);
 	}
 	/**
 	 * 
@@ -214,6 +224,15 @@ public class TautomerWizard {
 			setMaxNumOfRegistrations(r);
 			break;
 		}
+		case maxsubcombinations: {
+			int s = Integer.parseInt(argument);
+			setMaxNumOfSubCombinations(s);
+			break;
+		}
+		case estimate: {
+			estimateTautomersFile = argument;
+			break;
+		}
 		case rule1_3: {
 			boolean flag = true;
 			if (argument != null)
@@ -253,7 +272,7 @@ public class TautomerWizard {
 			setUse13Rules(flag);
 			break;
 		}
-		default: 
+		default:
 		}
 	}
 
@@ -305,6 +324,14 @@ public class TautomerWizard {
 		int records_error = 0;
 		String sep = "\t";
 		
+		//tautomerManager.FlagPrintTargetMoleculeInfo = true;
+		//tautomerManager.FlagPrintExtendedRuleInstances = true;
+		//tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = truee;
+		//tautomerManager.tautomerFilter.FlagApplyDuplicationFilter = false;
+		//tautomerManager.tautomerFilter.FlagApplyExcludeFilter = false;
+		
+		
+		
 		if (algorithm == TautomerConst.GAT_Comb_Pure || algorithm == TautomerConst.GAT_Comb_Improved)
 		{	
 			tautomerManager.FlagCalculateCACTVSEnergyRank = true;
@@ -312,15 +339,24 @@ public class TautomerWizard {
 		}
 			
 		FileOutputStream benchmarkOut = null;
-		if (benchmark)
-		{	
-			globalBeginTime = System.nanoTime();
-			benchmarkOut = new FileOutputStream(benchmarkOutFile);
-			if (benchmarkOutFile.endsWith(".csv"))
+		FileOutputStream estimateOut = null;
+		
+		if (estimateTautomersFile != null)
+		{
+			estimateOut = new FileOutputStream(estimateTautomersFile);
+			if (estimateTautomersFile.endsWith(".csv"))
 				sep = ",";
-			String headerLine ="Mol#"+sep+"Time(s)" + sep + "NumOfTaut\n";
-			benchmarkOut.write(headerLine.getBytes());			
 		}
+		else		
+			if (benchmark) //Benchmarking is not performed if estimate option is selected
+			{	
+				globalBeginTime = System.nanoTime();
+				benchmarkOut = new FileOutputStream(benchmarkOutFile);
+				if (benchmarkOutFile.endsWith(".csv"))
+					sep = ",";
+				String headerLine ="Mol#"+sep+"Time(s)" + sep + "NumOfTaut\n";
+				benchmarkOut.write(headerLine.getBytes());			
+			}
 		
 		InputStream in = new FileInputStream(file);
 		/**
@@ -329,8 +365,13 @@ public class TautomerWizard {
 		 */
 		IIteratingChemObjectReader<IAtomContainer> reader = null;
 		
-		IChemObjectWriter writer = createWriter();
-		System.err.println(writer.getClass().getName());
+		IChemObjectWriter writer = null;
+		if (estimateTautomersFile == null) //Tautomers are not generated if tautomer number is estimated
+			createWriter();
+		
+		if (writer != null)
+			System.err.println(writer.getClass().getName());
+		
 		try {
 			/**
 			 * cdk-slient module
@@ -354,11 +395,23 @@ public class TautomerWizard {
 					/**
 					 * cdk-standard module
 					 */
+					
 					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(molecule);
 					CDKHueckelAromaticityDetector.detectAromaticity(molecule);
 					//implicit H count is NULL if read from InChI ...
 					molecule = AtomContainerManipulator.removeHydrogens(molecule);
 					CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);
+					
+					if (estimateTautomersFile != null)
+					{
+						double estim = TautomerUtils.getFastTautomerCountEstimation(tautomerManager, molecule);
+						
+						String info = "" + records_read + sep + estim +  "\n";
+						estimateOut.write(info.getBytes());
+						System.out.println("Mol#"+info);
+						continue;
+					}
+					
 					/**
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
@@ -428,7 +481,8 @@ public class TautomerWizard {
 			LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x);
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
-			try { writer.close(); } catch (Exception x) {}
+			if (writer != null)
+				try { writer.close(); } catch (Exception x) {}
 			
 			if (benchmark)
 			{	
@@ -441,7 +495,11 @@ public class TautomerWizard {
 				benchmarkOut.write(totalTimeStat.getBytes());
 				
 				try { benchmarkOut.close(); } catch (Exception x) {}
-			}	
+			}
+			
+			if (estimateTautomersFile != null)
+				try { estimateOut.close(); } catch (Exception x) {}
+			
 		}
 		LOGGER.log(Level.INFO, String.format("[Records read/processed/error %d/%d/%d] %s", 
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
@@ -474,6 +532,8 @@ public class TautomerWizard {
 		
 		long endTime = System.nanoTime();
 		curMoleculeTime = (endTime - beginTime) / 1.0e9; //from nano sec. to s
+		
+		tautomerManager.printDebugInfo();
 		
 		return res;
 	}
