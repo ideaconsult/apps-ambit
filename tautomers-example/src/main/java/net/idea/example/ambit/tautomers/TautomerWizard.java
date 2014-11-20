@@ -65,6 +65,7 @@ public class TautomerWizard {
 	protected String RANK = "TAUTOMER_RANK";
 	protected String estimateTautomersFile = null;
 	
+	protected TautomerManager tautomerManager = new TautomerManager();
 	
 	public boolean getBenchmark() {
 		return benchmark;
@@ -148,8 +149,10 @@ public class TautomerWizard {
 		tautomerManager.getKnowledgeBase().FlagUse17Shifts = use17Rules;
 	}
 	
-
-	protected TautomerManager tautomerManager = new TautomerManager();
+	public TautomerManager getTautomerManager(){
+		return tautomerManager;
+	}
+	
 	
 	public TautomerWizard() {
 		LOGGER.setLevel(Level.FINEST);
@@ -231,6 +234,21 @@ public class TautomerWizard {
 		}
 		case estimate: {
 			estimateTautomersFile = argument;
+			break;
+		}
+		case ruleselection: {
+			if (argument.equals("all"))
+				tautomerManager.getRuleSelector().setSelectionMode(TautomerConst.RSM_ALL);
+			else
+				if (argument.equals("random"))
+					tautomerManager.getRuleSelector().setSelectionMode(TautomerConst.RSM_RANDOM);
+				else
+					throw new Exception("Incorrect argument \"" +argument + "\" for option --ruleselection (-s)!");
+			break;
+		}
+		case rulenumberlimit: {
+			int limit = Integer.parseInt(argument);
+			tautomerManager.getRuleSelector().setRuleNumberLimit(limit);
 			break;
 		}
 		case rule1_3: {
@@ -367,7 +385,7 @@ public class TautomerWizard {
 		
 		IChemObjectWriter writer = null;
 		if (estimateTautomersFile == null) //Tautomers are not generated if tautomer number is estimated
-			createWriter();
+			writer = createWriter();
 		
 		if (writer != null)
 			System.err.println(writer.getClass().getName());

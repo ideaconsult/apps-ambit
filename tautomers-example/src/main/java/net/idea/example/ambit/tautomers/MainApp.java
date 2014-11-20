@@ -217,7 +217,7 @@ public class MainApp {
 			}
 			@Override
 			public String getShortName() {
-				return "s";
+				return "c";
 			}
 	
 		},
@@ -235,6 +235,37 @@ public class MainApp {
 			@Override
 			public String getShortName() {
 				return "e";
+			}
+		},
+		
+		ruleselection {
+			@Override
+			public String getArgName() {
+				return "mode";
+			}
+			@Override
+			public String getDescription() {
+				return "Rule selection mode: all, random";
+			}
+			@Override
+			public String getShortName() {
+				return "s";
+			}
+		},
+		
+		rulenumberlimit {
+			@Override
+			public String getArgName() {
+				return "limit";
+			}
+			@Override
+			public String getDescription() {
+				return "The rule number limit n. If the number or found rules is larger than <limit> then "
+						+ "rule selection is performed.";
+			}
+			@Override
+			public String getShortName() {
+				return "l";
 			}
 		},
 						
