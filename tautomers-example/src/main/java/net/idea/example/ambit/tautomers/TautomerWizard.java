@@ -348,6 +348,8 @@ public class TautomerWizard {
 		//tautomerManager.tautomerFilter.FlagApplyDuplicationFilter = false;
 		//tautomerManager.tautomerFilter.FlagApplyExcludeFilter = false;
 		
+		//tautomerManager.getRuleSelector().setSelectionOrder(TautomerConst.RULE_ORDER_NONE);
+		//tautomerManager.getRuleSelector().setRuleNumberLimit(5);
 		
 		
 		if (algorithm == TautomerConst.GAT_Comb_Pure || algorithm == TautomerConst.GAT_Comb_Improved)
@@ -372,7 +374,7 @@ public class TautomerWizard {
 				benchmarkOut = new FileOutputStream(benchmarkOutFile);
 				if (benchmarkOutFile.endsWith(".csv"))
 					sep = ",";
-				String headerLine ="Mol#"+sep+"Time(s)" + sep + "NumOfTaut\n";
+				String headerLine ="Mol#"+sep+"Time(s)" + sep + "nTaut" + sep + "nRules\n";
 				benchmarkOut.write(headerLine.getBytes());			
 			}
 		
@@ -426,7 +428,7 @@ public class TautomerWizard {
 						
 						String info = "" + records_read + sep + estim +  "\n";
 						estimateOut.write(info.getBytes());
-						System.out.println("Mol#"+info);
+						LOGGER.info("--- Mol#"+info);
 						continue;
 					}
 					
@@ -440,9 +442,10 @@ public class TautomerWizard {
 					{
 						globalCalcTime += curMoleculeTime;
 						String info = "" + records_read + sep + curMoleculeTime  + sep 
-								+ ((resultTautomers == null)?0:resultTautomers.size())  + "\n";
+								+ ((resultTautomers == null)?0:resultTautomers.size())  + sep 
+								+ tautomerManager.getInitialRuleCount() + "\n";
 						benchmarkOut.write(info.getBytes());
-						System.out.println("Mol#"+info);
+						LOGGER.info("--- Mol#"+info);
 					}
 					
 					/**

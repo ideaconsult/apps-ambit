@@ -127,7 +127,7 @@ public class MainApp {
 		tautomers {
 			@Override
 			public String getArgName() {
-				return "file";
+				return "set";
 			}
 			@Override
 			public String getDescription() {
@@ -213,7 +213,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of subcombinations for the improved combinatorial algorithm (default value 100000)";
+				return "Maximal number <n> of subcombinations for the improved combinatorial algorithm (default value 10000)";
 			}
 			@Override
 			public String getShortName() {
