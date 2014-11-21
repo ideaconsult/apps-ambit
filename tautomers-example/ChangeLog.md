@@ -4,4 +4,6 @@
 
 ##### Fixed Doesn't stop anymore if an incorrect SDF record is found.
 
-##### Ambit dependency updated to 2.5.3
+##### Ambit dependency updated to 2.7.1
+
+##### Added new flags
