@@ -127,7 +127,7 @@ public class MainApp {
 		tautomers {
 			@Override
 			public String getArgName() {
-				return "file";
+				return "set";
 			}
 			@Override
 			public String getDescription() {
@@ -139,6 +139,185 @@ public class MainApp {
 			}
 	
 		},	
+		
+		benchmark {
+			@Override
+			public String getArgName() {
+				return "benchmark-file";
+			}
+			@Override
+			public String getDescription() {
+				return "Benchmarking tautomer generation time for each molecule. Benchmark info is outputted to the specified file";
+			}
+			@Override
+			public String getShortName() {
+				return "b";
+			}
+	
+		},
+		
+		algorithm {
+			@Override
+			public String getArgName() {
+				return "algorithm";
+			}
+			@Override
+			public String getDescription() {
+				return "comb: Combinatorial algorithm based on simple binary combinations; "
+						+ "icomb: Improved combinatorial algorithm; "
+						+ "incr: Incremental method based of Depth First Search Algorithm (default one)";
+			}
+			@Override
+			public String getShortName() {
+				return "a";
+			}
+	
+		},
+		
+		maxbacktracks {
+			@Override
+			public String getArgName() {
+				return "n";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
+			}
+			@Override
+			public String getShortName() {
+				return "m";
+			}
+	
+		},
+		
+		maxregistrations {
+			@Override
+			public String getArgName() {
+				return "n";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number <n> of tautomer registrations by the combinatorial algorithms (default value 2000)";
+			}
+			@Override
+			public String getShortName() {
+				return "r";
+			}
+	
+		},
+		
+		maxsubcombinations {
+			@Override
+			public String getArgName() {
+				return "n";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal number <n> of subcombinations for the improved combinatorial algorithm (default value 10000)";
+			}
+			@Override
+			public String getShortName() {
+				return "c";
+			}
+	
+		},
+		
+		estimate {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "Estimate the number of tautomers and save data to <file>. "
+						+ "Output file name ( .txt  | .csv ) - recognised by extension!";
+			}
+			@Override
+			public String getShortName() {
+				return "e";
+			}
+		},
+		
+		ruleselection {
+			@Override
+			public String getArgName() {
+				return "mode";
+			}
+			@Override
+			public String getDescription() {
+				return "Rule selection mode: all, random";
+			}
+			@Override
+			public String getShortName() {
+				return "s";
+			}
+		},
+		
+		rulenumberlimit {
+			@Override
+			public String getArgName() {
+				return "limit";
+			}
+			@Override
+			public String getDescription() {
+				return "The rule number limit n. If the number or found rules is larger than <limit> then "
+						+ "rule selection is performed.";
+			}
+			@Override
+			public String getShortName() {
+				return "l";
+			}
+		},
+						
+		rule1_3 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-5 shift rules (defaut value 'on', recomended always 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "3";
+			}
+	
+		},
+		
+		rule1_5 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-5 shift rules (defaut value 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "5";
+			}
+	
+		},
+		
+		rule1_7 {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Switch on/off the usage of 1-7 shift rules (defaut value 'off')";
+			}
+			@Override
+			public String getShortName() {
+				return "7";
+			}
+	
+		},
+		
+		
 		
 		help {
 			@Override
