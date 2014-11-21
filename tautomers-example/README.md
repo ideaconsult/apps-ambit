@@ -45,6 +45,65 @@ Download
    
    ##### [Change log](ChangeLog.md#1.0.1-SNAPSHOT)
    
+
+###Maven artifact
+
+    <dependency>
+        <groupId>net.idea.examples.ambit</groupId>
+        <artifactId>ambit-tautomers-example</artifactId>
+        <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+    <repository>
+        <id>ambit-plovdiv-releases</id>
+        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+    </repository>
+
+Run
+---
+
+````
+java -jar example-ambit-tautomers-jar-with-dependencies.jar
+Tautomer generation by ambit-tautomers package
+ -3,--rule1_3 <on/off>             Switch on/off the usage of 1-5 shift
+                                   rules (defaut value 'on', recomended always 'on')
+ -5,--rule1_5 <on/off>             Switch on/off the usage of 1-5 shift
+                                   rules (defaut value 'on')
+ -7,--rule1_7 <on/off>             Switch on/off the usage of 1-7 shift
+                                   rules (defaut value 'off')
+ -a,--algorithm <algorithm>        comb: Combinatorial algorithm based on
+                                   simple binary combinations; icomb: Improved combinatorial algorithm; incr:
+                                   Incremental method based of Depth First Search Algorithm (default one)
+ -b,--benchmark <benchmark-file>   Benchmarking tautomer generation time
+                                   for each molecule. Benchmark info is outputted to the specified file
+ -c,--maxsubcombinations <n>       Maximal number <n> of subcombinations
+                                   for the improved combinatorial algorithm (default value 10000)
+ -e,--estimate <file>              Estimate the number of tautomers and
+                                   save data to <file>. Output file name ( .txt  | .csv ) - recognised by
+                                   extension!
+ -f,--file <file>                  Input file name ( .sdf | .txt  | .csv |
+                                   .cml ) - recognised by extension!
+ -h,--help                         Tautomer generation by ambit-tautomers
+                                   package
+ -l,--rulenumberlimit <limit>      The rule number limit n. If the number
+                                   or found rules is larger than <limit> then rule selection is performed.
+ -m,--maxbacktracks <n>            Maximal number <n> of backtracks
+                                   performed by the incremental algorithms-DFSA (default value 100000)
+ -o,--output <output>              Output file name ( .sdf | .txt  | .csv
+                                   | .cml | .n3 ) - recognised by extension!
+ -r,--maxregistrations <n>         Maximal number <n> of tautomer
+                                   registrations by the combinatorial algorithms (default value 2000)
+ -s,--ruleselection <mode>         Rule selection mode: all, random
+ -t,--tautomers <set>              all: Write all tautomers; best: Write
+                                   only the best tautomer
+Examples:
+Read file and write all tautomers to the standard out :
+java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
+
+Read file and write only the best tautomers to an SDF file :
+java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
+
+````
+
    * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-example-1.0.0.jar/download)
 
    * Download from [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~~ambit-tautomers-example~~~) 
