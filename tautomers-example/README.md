@@ -217,7 +217,9 @@ Logging
 
   Use JVM command line option with [configuration file](https://github.com/ideaconsult/examples-ambit/blob/master/tautomers-example/src/main/resources/config/logging.prop)
   
-  java -jar -Djava.util.logging.config.file=config/logging.properties ....
+````
+java -jar -Djava.util.logging.config.file=config/logging.properties ....
+````
   
   
  
