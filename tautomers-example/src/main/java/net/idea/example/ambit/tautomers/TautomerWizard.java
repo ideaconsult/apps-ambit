@@ -6,9 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,6 +46,21 @@ import ambit2.tautomers.TautomerUtils;
  *
  */
 public class TautomerWizard {
+	enum on_off {
+		on {
+			@Override
+			public boolean getValue() {
+				return true;
+			}
+		},
+		off {
+			@Override
+			public boolean getValue() {
+				return false;
+			}
+		};
+		public abstract boolean getValue();
+	}
 	private final static Logger LOGGER = Logger.getLogger(TautomerWizard.class.getName());
 	protected File file;
 	protected File resultFile;
@@ -64,6 +77,8 @@ public class TautomerWizard {
 	protected double globalCalcTime = 0;
 	protected String RANK = "TAUTOMER_RANK";
 	protected String estimateTautomersFile = null;
+
+	protected boolean generateInchi = true;
 	
 	protected TautomerManager tautomerManager = new TautomerManager();
 	
@@ -290,6 +305,11 @@ public class TautomerWizard {
 			setUse13Rules(flag);
 			break;
 		}
+		case inchi: {
+			try {
+				generateInchi = on_off.valueOf(argument.toLowerCase()).getValue();
+			} catch (Exception x) {generateInchi = true;}
+		}
 		default:
 		}
 	}
@@ -498,7 +518,6 @@ public class TautomerWizard {
 
 			}
 		} catch (Exception x) {
-			x.printStackTrace();
 			LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x);
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
@@ -568,7 +587,7 @@ public class TautomerWizard {
 			return FileOutputState.getWriter(new FileOutputStream(resultFile),resultFile.getName());
 	}
 	protected void writeResult(IChemObjectWriter writer, IAtomContainer parent,IAtomContainer tautomer) throws Exception {
-		if (parent!=null) {
+		if (parent!=null && generateInchi) {
 			//don't generate InChI for the original molecule
 			if (inchiProcessor==null) inchiProcessor = new InchiProcessor();
 			try {
@@ -590,7 +609,7 @@ public class TautomerWizard {
 				if (parent.getProperty("InChI")!=null)
 					tautomer.setProperty("tautomerOf",parent.getProperty("InChI"));
 			} catch (Exception x) {
-				x.printStackTrace();
+				LOGGER.log(Level.WARNING, x.getMessage(),x);
 			}
 		}
 		//if (writer instanceof SDFWriter) ((SDFWriter)writer).

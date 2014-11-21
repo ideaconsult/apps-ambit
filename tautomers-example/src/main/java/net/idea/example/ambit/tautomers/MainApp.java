@@ -316,7 +316,21 @@ public class MainApp {
 			}
 	
 		},
-		
+		inchi {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "Generate InChI (default 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "i";
+			}
+	
+		},
 		
 		
 		help {
