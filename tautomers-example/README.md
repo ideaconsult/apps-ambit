@@ -36,7 +36,7 @@ The tautomer generation is also available as OpenTox [algorithm](http://apps.ide
   
   * Announcements and discussions at [Google+ page](https://plus.google.com/116849658963631645389) 
   
-Download
+Download development verison
 ---
 
 ###Command line application
@@ -103,6 +103,9 @@ Read file and write only the best tautomers to an SDF file :
 java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
 
 ````
+
+Download Release
+---
 
    * Download [1.0.0 release](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-example-1.0.0.jar/download)
 
