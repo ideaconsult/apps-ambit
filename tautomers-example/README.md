@@ -84,6 +84,7 @@ Tautomer generation by ambit-tautomers package
                                    .cml ) - recognised by extension!
  -h,--help                         Tautomer generation by ambit-tautomers
                                    package
+ -i,--inchi <on/off>               Generate InChI (default 'on')
  -l,--rulenumberlimit <limit>      The rule number limit n. If the number
                                    or found rules is larger than <limit> then rule selection is performed.
  -m,--maxbacktracks <n>            Maximal number <n> of backtracks
