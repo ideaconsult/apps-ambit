@@ -20,7 +20,7 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle
 
 #### delete a bundle [api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteBundle)
 
-### Dataset of substances [api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleDataset)
+### Dataset of substances, defined by the bundle [api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleDataset)
 
 * The format is the same as for [Substance dataset](substance_dataset.md). The substances and the endpoints can be added and removed to / from the bundle.
  
