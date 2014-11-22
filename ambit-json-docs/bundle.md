@@ -2,9 +2,7 @@
 
 > bundle: a collection of things, or a quantity of material, tied or wrapped up together. 
 
-A Bundle resource provides means to define collections of [Substance](substance.md), [Compounds](dataset.md) and Endpoints. 
-
-http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle
+A Bundle resource provides means to define collections of [Substance](substance.md), [Compounds](dataset.md) and Endpoints. [API documentation](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle)
 
 ### Bundle
 
