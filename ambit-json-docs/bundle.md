@@ -26,6 +26,12 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundles
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteBundle
 
+### Dataset of substances
+
+http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleDataset
+
+* The format is the same as for [Substance dataset](substance_dataset.md). The substances and the endpoints can be added and removed to / from the bundle.
+ 
 ### Summary of studies 
 
 #### get study summary per bundle
@@ -33,6 +39,7 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteBundle
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleStudySummary
 
 * The outcome is the same format as for  [/substance/id/studysummary](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstanceStudySummary) 
+
 ### Substances in a bundle
 
 #### get all substances. 
