@@ -16,9 +16,11 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/createBundle
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateBundle
 
-#### get all bundles. The result is a [Dataset](dataset.md) metadata.
+#### get all bundles
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundles
+
+* The result is a [Dataset](dataset.md) metadata.
 
 #### delete a bundle
 
@@ -30,13 +32,14 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteBundle
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleStudySummary
 
-(similar to [/substance/id/studysummary](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstanceStudySummary) )
+* The outcome is the same format as for  [/substance/id/studysummary](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstanceStudySummary) 
 ### Substances in a bundle
 
 #### get all substances. 
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleSubstances
-The result is a list of [Substance](substance.md)s (similar to [/substance](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstances))
+
+* The result is a list of [Substance](substance.md)s ; the same format as for  [/substance](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstances)
 
 #### add or delete substance to / from a bundle
 
@@ -48,7 +51,7 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateSubstanceInB
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleCompounds
 
-The result is a [Dataset](dataset.md)
+* The result is a [Dataset](dataset.md)
 
 #### add or delete compound to / from a bundle
 
