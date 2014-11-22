@@ -26,15 +26,17 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteBundle
 
 ### Summary of studies 
 
-#### get study summary per bundle (similar to [/substance/id/studysummary](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstanceStudySummary) )
+#### get study summary per bundle
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleStudySummary
 
+(similar to [/substance/id/studysummary](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstanceStudySummary) )
 ### Substances in a bundle
 
-#### get all substances. The result is a list of [Substance](substance.md)s (similar to [/substance](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstances)
+#### get all substances. 
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleSubstances
+The result is a list of [Substance](substance.md)s (similar to [/substance](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/getSubstances))
 
 #### add or delete substance to / from a bundle
 
@@ -42,9 +44,11 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateSubstanceInB
 
 ### Compounds in a bundle
 
-#### get all compounds. The result is a [Dataset](dataset.md)
+#### get all compounds 
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleCompounds
+
+The result is a [Dataset](dataset.md)
 
 #### add or delete compound to / from a bundle
 
