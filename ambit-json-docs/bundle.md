@@ -33,3 +33,13 @@ http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleSubstance
 #### add or delete substance to / from a bundle
 
 http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateSubstanceInBundle
+
+### Compounds in a bundle
+
+#### get all compounds
+
+http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleCompounds
+
+#### add or delete compound to / from a bundle
+
+http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateCompoundInBundle
