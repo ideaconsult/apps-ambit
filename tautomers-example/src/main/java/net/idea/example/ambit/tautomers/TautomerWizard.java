@@ -81,7 +81,7 @@ public class TautomerWizard {
 	protected String RANK = "TAUTOMER_RANK";
 	protected String estimateTautomersFile = null;
 	protected MoleculeFilter molecularFilter = null;
-
+	
 	protected boolean generateInchi = true;
 	
 	protected TautomerManager tautomerManager = new TautomerManager();
@@ -327,6 +327,32 @@ public class TautomerWizard {
 			} catch (Exception x) {
 				throw new Exception("Incorrect molecule filter: " + x.getMessage());
 			}			
+			break;
+		}
+		case isomorphismcheck: {	
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --isomorphismcheck (-z)!");
+			}	
+			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = flag;
+			break;
+		}
+		case inchicheck: {	
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --inchicheck (-n)!");
+			}	
+			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI = flag;
 			break;
 		}
 		

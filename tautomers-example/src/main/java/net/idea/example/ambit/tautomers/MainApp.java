@@ -367,6 +367,36 @@ public class MainApp {
 			}
 		},
 		
+		isomorphismcheck {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "The result isomorphic tautomers are filtrated (default 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "z";
+			}
+		},
+		
+		inchicheck {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "The result tautomers are checked for duplicatin comparing InChI keys (default 'off')";
+			}
+			@Override
+			public String getShortName() {
+				return "n";
+			}
+		},
+		
 		
 		help {
 			@Override
