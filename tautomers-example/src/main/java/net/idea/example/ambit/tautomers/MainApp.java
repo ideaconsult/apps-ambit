@@ -347,7 +347,6 @@ public class MainApp {
 			public String getShortName() {
 				return "x";
 			}
-	
 		},
 		
 		
