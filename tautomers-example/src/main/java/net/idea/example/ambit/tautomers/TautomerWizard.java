@@ -36,6 +36,7 @@ import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
+import ambit2.core.filter.MoleculeFilter;
 import ambit2.tautomers.TautomerConst;
 import ambit2.tautomers.TautomerManager;
 import ambit2.tautomers.TautomerUtils;
@@ -79,6 +80,7 @@ public class TautomerWizard {
 	protected double globalCalcTime = 0;
 	protected String RANK = "TAUTOMER_RANK";
 	protected String estimateTautomersFile = null;
+	protected MoleculeFilter molecularFilter = null;
 
 	protected boolean generateInchi = true;
 	
@@ -318,6 +320,15 @@ public class TautomerWizard {
 			tautomerManager.FlagStopGenerationOnReachingRuleSelectorLimit = true;
 			break;
 		}
+		case inputfilter: {
+			try {
+				MoleculeFilter filter = MoleculeFilter.parseFromCommandLineString(argument);
+				molecularFilter = filter;
+			} catch (Exception x) {
+				throw new Exception("Incorrect molecule filter: " + x.getMessage());
+			}			
+			break;
+		}
 		
 		default:
 		}
@@ -457,6 +468,12 @@ public class TautomerWizard {
 				if (molecule==null) {
 					records_error++;
 					continue;
+				}
+				
+				if (molecularFilter != null)
+				{
+					if (!molecularFilter.useMolecule(molecule, records_read))
+						continue;
 				}
 				
 				//if (records_read % 100 == 0) Runtime.getRuntime().gc();

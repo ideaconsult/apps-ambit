@@ -261,7 +261,7 @@ public class MainApp {
 			@Override
 			public String getDescription() {
 				return "The rule number limit n. If the number or found rules is larger than <limit> then "
-						+ "rule selection is performed.";
+						+ "rule selection is performed. Default value limit = 10";
 			}
 			@Override
 			public String getShortName() {
@@ -340,12 +340,30 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Excludes from the output file and benchmarking the structures which have "
-						+ "more rules than the rule number limit. The info for excluded structures is stored in <file>";
+				return "Excludes from the output file and benchmarking the structures for which the incremental algorithm is switched "
+						+ "to combinatorial one (i.e. rule number limit is reached). The info for excluded structures is stored in <file>";
 			}
 			@Override
 			public String getShortName() {
 				return "x";
+			}
+		},
+		
+		inputfilter {
+			@Override
+			public String getArgName() {
+				return "filter";
+			}
+			@Override
+			public String getDescription() {
+				return "Filters the inputed molecules as defined by the <filter> string containing conditions in the form: "
+						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Posible properties: "
+						+ "#Mol - molecule record number, NA - number of atoms, NB - number of bonds, CYCLOMATIC - cyclomatic number"
+						+ "Use symbol ';' as logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]";
+			}
+			@Override
+			public String getShortName() {
+				return "p";
 			}
 		},
 		
