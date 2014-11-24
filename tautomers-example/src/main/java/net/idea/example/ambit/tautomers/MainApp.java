@@ -316,6 +316,7 @@ public class MainApp {
 			}
 	
 		},
+		
 		inchi {
 			@Override
 			public String getArgName() {
@@ -328,6 +329,23 @@ public class MainApp {
 			@Override
 			public String getShortName() {
 				return "i";
+			}
+	
+		},
+		
+		exclude {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "Excludes from the output file and benchmarking the structures which have "
+						+ "more rules than the rule number limit. The info for excluded structures is stored in <file>";
+			}
+			@Override
+			public String getShortName() {
+				return "x";
 			}
 	
 		},

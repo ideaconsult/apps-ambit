@@ -69,7 +69,9 @@ public class TautomerWizard {
 	protected FixBondOrdersTool kekulizer = new FixBondOrdersTool();
 	protected int algorithm = TautomerConst.GAT_Incremental;
 	protected boolean benchmark = false;
-	protected String benchmarkOutFile = "benchmark.out";
+	protected String benchmarkOutFile = "benchmark.csv";
+	protected boolean exclude = false;
+	protected String excludeOutFile = null;
 		
 	protected double curMoleculeTime = 0;
 	protected long globalBeginTime = 0;
@@ -310,6 +312,13 @@ public class TautomerWizard {
 				generateInchi = on_off.valueOf(argument.toLowerCase()).getValue();
 			} catch (Exception x) {generateInchi = true;}
 		}
+		case exclude: {
+			exclude = true;
+			excludeOutFile = argument;
+			tautomerManager.FlagStopGenerationOnReachingRuleSelectorLimit = true;
+			break;
+		}
+		
 		default:
 		}
 	}
@@ -361,6 +370,7 @@ public class TautomerWizard {
 		int records_processed = 0;
 		int records_error = 0;
 		String sep = "\t";
+		String sep_exc = "\t";
 		
 		//tautomerManager.FlagPrintTargetMoleculeInfo = true;
 		//tautomerManager.FlagPrintExtendedRuleInstances = true;
@@ -380,6 +390,7 @@ public class TautomerWizard {
 			
 		FileOutputStream benchmarkOut = null;
 		FileOutputStream estimateOut = null;
+		FileOutputStream excludeOut = null;
 		
 		if (estimateTautomersFile != null)
 		{
@@ -387,8 +398,17 @@ public class TautomerWizard {
 			if (estimateTautomersFile.endsWith(".csv"))
 				sep = ",";
 		}
-		else		
-			if (benchmark) //Benchmarking is not performed if estimate option is selected
+		else
+		{	
+			//Benchmarking and exclude are not performed if estimate option is selected
+			if (exclude) 
+			{
+				excludeOut = new FileOutputStream(excludeOutFile);
+				if (excludeOutFile.endsWith(".csv"))
+					sep_exc = ",";
+			}
+			
+			if (benchmark) 
 			{	
 				globalBeginTime = System.nanoTime();
 				benchmarkOut = new FileOutputStream(benchmarkOutFile);
@@ -397,7 +417,7 @@ public class TautomerWizard {
 				String headerLine ="Mol#"+sep+"Time(s)" + sep + "nTaut" + sep + "nRules\n";
 				benchmarkOut.write(headerLine.getBytes());			
 			}
-		
+		}
 		InputStream in = new FileInputStream(file);
 		/**
 		 * cdk-io module
@@ -431,6 +451,9 @@ public class TautomerWizard {
 					records_error++;
 					continue;
 				}
+				
+				//if (records_read % 100 == 0) Runtime.getRuntime().gc();
+				
 				try {
 					/**
 					 * cdk-standard module
@@ -452,11 +475,20 @@ public class TautomerWizard {
 						continue;
 					}
 					
-					/**
-					 * ambit2-tautomers
-					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
-					 */
+					
 					List<IAtomContainer> resultTautomers= generateTautomers(molecule);
+					
+					
+					if (exclude)
+					{
+						if (tautomerManager.getStatus() == TautomerConst.STATUS_STOPPED)
+						{	
+							String info = "" + records_read + sep_exc + tautomerManager.getInitialRuleCount() + "\n";
+							excludeOut.write(info.getBytes());
+							LOGGER.info("--- Mol#"+records_read + "  excluded!");
+							continue;
+						}			
+					}
 					
 					if (benchmark)
 					{
@@ -519,6 +551,14 @@ public class TautomerWizard {
 			}
 		} catch (Exception x) {
 			LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x);
+			if (exclude)
+			{
+				try {
+					String info = "" + records_read + sep_exc + "Exception\n";
+					excludeOut.write(info.getBytes());
+				}
+				catch (Exception x1) {}
+			}
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
 			if (writer != null)
@@ -533,9 +573,13 @@ public class TautomerWizard {
 						"Generation" + sep +  globalCalcTime + sep + "s" + sep + (100.0*globalCalcTime/t_total)+sep + "%\n"+
 						"IO/convert" + sep + (t_total-globalCalcTime) + sep + "s" + sep + (100.0*(t_total-globalCalcTime)/t_total) + sep + "%\n";
 				benchmarkOut.write(totalTimeStat.getBytes());
+				LOGGER.info(totalTimeStat);
 				
 				try { benchmarkOut.close(); } catch (Exception x) {}
 			}
+			
+			if (exclude)
+				try { excludeOut.close(); } catch (Exception x) {}
 			
 			if (estimateTautomersFile != null)
 				try { estimateOut.close(); } catch (Exception x) {}
