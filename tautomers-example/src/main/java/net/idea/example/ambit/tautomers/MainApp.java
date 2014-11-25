@@ -22,7 +22,7 @@ public class MainApp {
 	public static void main(String[] args) {
 		MainApp app = new MainApp();
     	int records = app.run(args);
-    	System.err.println("Records processed "+ records);
+    	//System.err.println("Records processed "+ records);
 	}
 	
 	public int run(String[] args) {
@@ -181,7 +181,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
+				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 5000)";
 			}
 			@Override
 			public String getShortName() {
@@ -197,7 +197,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of tautomer registrations by the combinatorial algorithms (default value 2000)";
+				return "Maximal number <n> of tautomer registrations by the combinatorial and incremental algorithms (default value 1000)";
 			}
 			@Override
 			public String getShortName() {
