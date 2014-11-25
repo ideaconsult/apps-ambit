@@ -64,6 +64,7 @@ Run
 ````
 java -jar example-ambit-tautomers-jar-with-dependencies.jar
 Tautomer generation by ambit-tautomers package
+usage: net.idea.example.ambit.tautomers.MainApp
  -3,--rule1_3 <on/off>             Switch on/off the usage of 1-5 shift
                                    rules (defaut value 'on', recomended always 'on')
  -5,--rule1_5 <on/off>             Switch on/off the usage of 1-5 shift
@@ -87,15 +88,31 @@ Tautomer generation by ambit-tautomers package
  -i,--inchi <on/off>               Generate InChI (default 'on')
  -l,--rulenumberlimit <limit>      The rule number limit n. If the number
                                    or found rules is larger than <limit> then rule selection is performed.
+                                   Default value limit = 10
  -m,--maxbacktracks <n>            Maximal number <n> of backtracks
-                                   performed by the incremental algorithms-DFSA (default value 100000)
+                                   performed by the incremental algorithms-DFSA (default value 5000)
+ -n,--inchicheck <on/off>          The result tautomers are checked for
+                                   duplicatin comparing InChI keys (default 'off')
  -o,--output <output>              Output file name ( .sdf | .txt  | .csv
                                    | .cml | .n3 ) - recognised by extension!
+ -p,--inputfilter <filter>         Filters the inputed molecules as
+                                   defined by the <filter> string containing conditions in the form: PROP=a
+                                   or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval.
+                                   Posible properties: #Mol - molecule record number, NA - number of atoms,
+                                   NB - number of bonds, CYCLOMATIC - cyclomatic numberUse symbol ';' as
+                                   logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]
  -r,--maxregistrations <n>         Maximal number <n> of tautomer
-                                   registrations by the combinatorial algorithms (default value 2000)
+                                   registrations by the combinatorial and incremental algorithms (default
+                                   value 1000)
  -s,--ruleselection <mode>         Rule selection mode: all, random
  -t,--tautomers <set>              all: Write all tautomers; best: Write
                                    only the best tautomer
+ -x,--exclude <file>               Excludes from the output file and
+                                   benchmarking the structures for which the incremental algorithm is
+                                   switched to combinatorial one (i.e. rule number limit is reached). The
+                                   info for excluded structures is stored in <file>
+ -z,--isomorphismcheck <on/off>    The result isomorphic tautomers are
+                                   filtrated (default 'on')
 Examples:
 Read file and write all tautomers to the standard out :
 java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
