@@ -211,6 +211,11 @@ Write only the best tautomer to an N3 file ( linked to http://rdf.open.molecules
     rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2-3,5,7-9H,1H2    :tautomerOf	
                 rom:InChI=1S/C6H8O6/c7-1-2(8)5-3(9)4(10)6(11)12-5/h2,5,7-8,10-11H,1H2/t2-,5+/m0/s1.
 
+Generate tautomers, write benchmark stats and do not generate InChI 
+````
+java -jar example-ambit-tautomers-jar-with-dependencies.jar -a incr -m 5000 -r 500 -i off -b benchmark.csv -f input.sdf -o output.sdf
+````
+
 
 Logging
 --------
@@ -218,7 +223,7 @@ Logging
   Use JVM command line option with [configuration file](https://github.com/ideaconsult/examples-ambit/blob/master/tautomers-example/src/main/resources/config/logging.prop)
   
 ````
-java -jar -Djava.util.logging.config.file=config/logging.properties ....
+java -Djava.util.logging.config.file=config/logging.properties -jar example-ambit-tautomers-jar-with-dependencies.jar ....
 ````
   
   
