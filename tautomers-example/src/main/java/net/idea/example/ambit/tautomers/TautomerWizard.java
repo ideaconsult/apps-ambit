@@ -37,6 +37,7 @@ import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
+import ambit2.core.filter.MoleculeFilter;
 import ambit2.tautomers.TautomerConst;
 import ambit2.tautomers.TautomerManager;
 import ambit2.tautomers.TautomerUtils;
@@ -62,6 +63,7 @@ public class TautomerWizard {
 		};
 		public abstract boolean getValue();
 	}
+	
 	private final static Logger LOGGER = Logger.getLogger(TautomerWizard.class.getName());
 	protected File file;
 	protected File resultFile;
@@ -70,15 +72,18 @@ public class TautomerWizard {
 	protected FixBondOrdersTool kekulizer = new FixBondOrdersTool();
 	protected int algorithm = TautomerConst.GAT_Incremental;
 	protected boolean benchmark = false;
-	protected String benchmarkOutFile = "benchmark.out";
+	protected String benchmarkOutFile = "benchmark.csv";
+	protected boolean exclude = false;
+	protected String excludeOutFile = null;
 		
-	protected double curMoleculeTime = 0;
+	protected double curMoleculeCalcTime = 0;
 	protected long globalBeginTime = 0;
 	protected long globalEndTime = 0;
 	protected double globalCalcTime = 0;
 	protected String RANK = "TAUTOMER_RANK";
 	protected String estimateTautomersFile = null;
-
+	protected MoleculeFilter molecularFilter = null;
+	
 	protected boolean generateInchi = true;
 	
 	protected TautomerManager tautomerManager = new TautomerManager();
@@ -310,7 +315,50 @@ public class TautomerWizard {
 			try {
 				generateInchi = on_off.valueOf(argument.toLowerCase()).getValue();
 			} catch (Exception x) {generateInchi = true;}
+			break;
 		}
+		case exclude: {
+			exclude = true;
+			excludeOutFile = argument;
+			tautomerManager.FlagStopGenerationOnReachingRuleSelectorLimit = true;
+			break;
+		}
+		case inputfilter: {
+			try {
+				MoleculeFilter filter = MoleculeFilter.parseFromCommandLineString(argument);
+				molecularFilter = filter;
+			} catch (Exception x) {
+				throw new Exception("Incorrect molecule filter: " + x.getMessage());
+			}			
+			break;
+		}
+		case isomorphismcheck: {	
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --isomorphismcheck (-z)!");
+			}	
+			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = flag;
+			break;
+		}
+		case inchicheck: {	
+			boolean flag = true;
+			if (argument != null)
+			{	
+				if (argument.equals("off"))
+					flag = false;
+				else
+					if (!argument.equals("on"))
+						throw new Exception("Incorrect argument \"" +argument + "\" for option --inchicheck (-n)!");
+			}	
+			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI = flag;
+			break;
+		}
+		
 		default:
 		}
 	}
@@ -362,13 +410,16 @@ public class TautomerWizard {
 		int records_processed = 0;
 		int records_error = 0;
 		String sep = "\t";
-		
+		String sep_exc = "\t";
+		long beginRecordTime = 0;
+		long endRecordTime = 0;
+		String generationError = null;
+				
 		//tautomerManager.FlagPrintTargetMoleculeInfo = true;
 		//tautomerManager.FlagPrintExtendedRuleInstances = true;
 		//tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = truee;
 		//tautomerManager.tautomerFilter.FlagApplyDuplicationFilter = false;
 		//tautomerManager.tautomerFilter.FlagApplyExcludeFilter = false;
-		
 		//tautomerManager.getRuleSelector().setSelectionOrder(TautomerConst.RULE_ORDER_NONE);
 		//tautomerManager.getRuleSelector().setRuleNumberLimit(5);
 		
@@ -379,32 +430,56 @@ public class TautomerWizard {
 			RANK = "CACTVS_ENERGY_RANK";
 		}
 			
+
+		FileWriter excludeOut = null;
 		FileWriter benchmarkOut = null;
 		FileWriter estimateOut = null;
 		
 		if (estimateTautomersFile != null)
 		{
-			estimateOut = new FileWriter(estimateTautomersFile);
-			if (estimateTautomersFile.endsWith(".csv"))
-				sep = ",";
+			try {
+				estimateOut = new FileWriter(estimateTautomersFile);
+				if (estimateTautomersFile.endsWith(".csv"))
+					sep = ",";
+			}catch (Exception x) {
+				//in case smth's wrong with the estimate file, close it and throw an error
+				try {estimateOut.close(); } catch (Exception xx) {}
+				throw x;
+			} finally { }
 		}
-		else		
+		else
+		{	
+			//Benchmarking and exclude are not performed if estimate option is selected
+			if (exclude) 
+			{
+				try {
+					excludeOut = new FileWriter(excludeOutFile);
+					if (excludeOutFile.endsWith(".csv"))
+						sep_exc = ",";
+				}catch (Exception x) {
+					//in case smth's wrong with the estimate file, close it and throw an error
+					try {excludeOut.close(); } catch (Exception xx) {}
+					throw x;
+				} finally { }
+			}
+				
 			if (benchmark) //Benchmarking is not performed if estimate option is selected
 			try {	
 				globalBeginTime = System.nanoTime();
 				benchmarkOut = new FileWriter(benchmarkOutFile);
-				if (benchmarkOutFile.endsWith(".csv"))	sep = ",";
-				String headerLine ="Mol#"+sep+"Time(s)" + sep + "nTaut" + sep + "nRules\n";
+				if (benchmarkOutFile.endsWith(".csv"))	
+					sep = ",";
+				String headerLine = String.format("%s%s%s%s%s%s%s%s%s%s%s%s%s\n","Mol#",sep,"CalcTime(s)",sep,"TotalTime(s)",sep,
+							"nTaut",sep,"nRules",sep,"nAtoms",sep,"nBonds") ;
+				
 				benchmarkOut.write(headerLine);			
 				benchmarkOut.flush();
 			} catch (Exception x) {
 				//in case smth's wrong with the benchmark file, close it and throw an error
 				try {benchmarkOut.close(); } catch (Exception xx) {}
 				throw x;
-			} finally {
-				
-			}
-		
+			} finally { }
+		}
 		InputStream in = new FileInputStream(file);
 		/**
 		 * cdk-io module
@@ -419,11 +494,14 @@ public class TautomerWizard {
 		if (writer != null)
 			System.err.println(writer.getClass().getName());
 		
-		try {
+		try 
+		{
 			reader = getReader(in,file.getName());
 			LOGGER.log(Level.INFO, String.format("Reading %s",file.getAbsoluteFile()));
 			LOGGER.log(Level.INFO, String.format("Writing %s tautomer(s)",all?"all":"best"));
-			while (reader.hasNext()) {
+			while (reader.hasNext()) 
+			{
+				beginRecordTime = System.nanoTime();
 				/**
 				 * Note recent versions allow 
 				 * IAtomContainer molecule  = reader.next();
@@ -434,6 +512,14 @@ public class TautomerWizard {
 					records_error++;
 					continue;
 				}
+				
+				if (molecularFilter != null)
+				{
+					if (!molecularFilter.useMolecule(molecule, records_read))
+						continue;
+				}
+				
+				
 				try {
 					
 					try {
@@ -459,13 +545,14 @@ public class TautomerWizard {
 						}
 						continue;
 					}
-					
+
 					/**
 					 * ambit2-tautomers
 					 * http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick~ambit2-tautomers
 					 */
 					List<IAtomContainer> resultTautomers = null;
 					try {
+						generationError = null;
 						resultTautomers = generateTautomers(molecule);
 					} catch (Exception x) {
 						/*
@@ -473,21 +560,20 @@ public class TautomerWizard {
 						 */
 						LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\t%s", records_read, file.getAbsoluteFile(), x.getMessage()));
 						resultTautomers = null;
+						generationError = x.getMessage();
 					}
 					
-					if (benchmark) {
-						globalCalcTime += curMoleculeTime;
-						String info = String.format("%d%s%f%s%d%s%d",
-								 records_read,sep ,curMoleculeTime, sep, 
-									((resultTautomers == null)?0:resultTautomers.size()), sep, 
-									tautomerManager.getInitialRuleCount());
-						benchmarkOut.write(info);
-						benchmarkOut.write("\n");
-						if (records_read % 100 == 0) {
-							benchmarkOut.flush();
-							LOGGER.info(String.format("[Record %d] %s", records_read , info));
+					if (exclude)
+					{
+						if (tautomerManager.getStatus() == TautomerConst.STATUS_STOPPED)
+						{	
+							String info = "" + records_read + sep_exc + tautomerManager.getInitialRuleCount() + "\n";
+							excludeOut.write(info);
+							excludeOut.flush();
+							LOGGER.info("--- Mol#"+records_read + "  excluded!");
+							continue;
 						}
-					}
+					}	
 					
 					/**
 					 * Write the original structure
@@ -530,15 +616,47 @@ public class TautomerWizard {
 					
 					if (!all && (best!=null))  writeResult(writer,molecule,best);
 					
-					records_processed++;;
+					//if (generationError != null) throw new Exception(generationError);
+						
+					if (benchmark)
+					{
+						globalCalcTime += curMoleculeCalcTime;
+						endRecordTime = System.nanoTime();
+						
+						String info = String.format("%d%s%f%s%f%s%d%s%d%s%d%s%d",
+								 	records_read, sep ,curMoleculeCalcTime, sep, (endRecordTime - beginRecordTime) / 1.0e9, sep,
+									((resultTautomers == null)?0:resultTautomers.size()), sep, 
+									tautomerManager.getInitialRuleCount(), sep, 
+									molecule.getAtomCount(), sep, molecule.getBondCount());
+						benchmarkOut.write(info);
+						if (generationError != null)
+							benchmarkOut.write(sep + "Error: " + generationError);
+						benchmarkOut.write("\n");
+						if (records_read % 100 == 0) {
+							benchmarkOut.flush();
+							LOGGER.info(String.format("[Record %d] %s", records_read , info));
+						}
+					}
+					
+					records_processed++;
 				} catch (Exception x) {
 					records_error++;
 					LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x);
+					
+					if (exclude)
+					{
+						try {
+							String info = "" + records_read + sep_exc + "Exception\n";
+							excludeOut.write(info);
+							excludeOut.flush();
+						}
+						catch (Exception x1) {}
+					}
 				}
-
-			}
-		} catch (Exception x) {
-			LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x);
+			}//while
+		} catch (Exception x1) {
+			LOGGER.log(Level.SEVERE, String.format("[Record %d] Error %s\n", records_read, file.getAbsoluteFile()), x1);
+			
 		} finally {
 			try { reader.close(); } catch (Exception x) {}
 			if (writer != null)
@@ -551,10 +669,14 @@ public class TautomerWizard {
 				String totalTimeStat = "Total time" + sep + t_total + sep + "s\n" +
 						"Generation" + sep +  globalCalcTime + sep + "s" + sep + (100.0*globalCalcTime/t_total)+sep + "%\n"+
 						"IO/convert" + sep + (t_total-globalCalcTime) + sep + "s" + sep + (100.0*(t_total-globalCalcTime)/t_total) + sep + "%\n";
-				benchmarkOut.write(totalTimeStat);
 				
+				benchmarkOut.write(totalTimeStat);
+				LOGGER.info(totalTimeStat);
 				try { benchmarkOut.close(); } catch (Exception x) {}
 			}
+			
+			if (exclude)
+				try { excludeOut.close(); } catch (Exception x) {}
 			
 			if (estimateTautomersFile != null)
 				try { estimateOut.close(); } catch (Exception x) {}
@@ -563,11 +685,11 @@ public class TautomerWizard {
 		LOGGER.log(Level.INFO, String.format("[Records read/processed/error %d/%d/%d] %s", 
 						records_read,records_processed,records_error,file.getAbsoluteFile()));
 		
-		
 		return records_read;
 	}
 	
-	protected List<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception {
+	protected List<IAtomContainer> generateTautomers(IAtomContainer molecule) throws Exception 
+	{
 		long beginTime = System.nanoTime();	
 		try {
 			List<IAtomContainer> res = null;
@@ -590,7 +712,7 @@ public class TautomerWizard {
 			return res;
 		} finally {
 			long endTime = System.nanoTime();
-			curMoleculeTime = (endTime - beginTime) / 1.0e9; //from nano sec. to s
+			curMoleculeCalcTime = (endTime - beginTime) / 1.0e9; //from nano sec. to s
 			tautomerManager.printDebugInfo();
 		}
 	}

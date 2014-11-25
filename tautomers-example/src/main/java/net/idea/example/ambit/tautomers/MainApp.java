@@ -22,7 +22,7 @@ public class MainApp {
 	public static void main(String[] args) {
 		MainApp app = new MainApp();
     	int records = app.run(args);
-    	System.err.println("Records processed "+ records);
+    	//System.err.println("Records processed "+ records);
 	}
 	
 	public int run(String[] args) {
@@ -181,7 +181,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 100000)";
+				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 5000)";
 			}
 			@Override
 			public String getShortName() {
@@ -197,7 +197,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of tautomer registrations by the combinatorial algorithms (default value 2000)";
+				return "Maximal number <n> of tautomer registrations by the combinatorial and incremental algorithms (default value 1000)";
 			}
 			@Override
 			public String getShortName() {
@@ -261,7 +261,7 @@ public class MainApp {
 			@Override
 			public String getDescription() {
 				return "The rule number limit n. If the number or found rules is larger than <limit> then "
-						+ "rule selection is performed.";
+						+ "rule selection is performed. Default value limit = 10";
 			}
 			@Override
 			public String getShortName() {
@@ -316,6 +316,7 @@ public class MainApp {
 			}
 	
 		},
+		
 		inchi {
 			@Override
 			public String getArgName() {
@@ -330,6 +331,70 @@ public class MainApp {
 				return "i";
 			}
 	
+		},
+		
+		exclude {
+			@Override
+			public String getArgName() {
+				return "file";
+			}
+			@Override
+			public String getDescription() {
+				return "Excludes from the output file and benchmarking the structures for which the incremental algorithm is switched "
+						+ "to combinatorial one (i.e. rule number limit is reached). The info for excluded structures is stored in <file>";
+			}
+			@Override
+			public String getShortName() {
+				return "x";
+			}
+		},
+		
+		inputfilter {
+			@Override
+			public String getArgName() {
+				return "filter";
+			}
+			@Override
+			public String getDescription() {
+				return "Filters the inputed molecules as defined by the <filter> string containing conditions in the form: "
+						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Posible properties: "
+						+ "#Mol - molecule record number, NA - number of atoms, NB - number of bonds, CYCLOMATIC - cyclomatic number"
+						+ "Use symbol ';' as logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]";
+			}
+			@Override
+			public String getShortName() {
+				return "p";
+			}
+		},
+		
+		isomorphismcheck {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "The result isomorphic tautomers are filtrated (default 'on')";
+			}
+			@Override
+			public String getShortName() {
+				return "z";
+			}
+		},
+		
+		inchicheck {
+			@Override
+			public String getArgName() {
+				return "on/off";
+			}
+			@Override
+			public String getDescription() {
+				return "The result tautomers are checked for duplicatin comparing InChI keys (default 'off')";
+			}
+			@Override
+			public String getShortName() {
+				return "n";
+			}
 		},
 		
 		
