@@ -315,6 +315,7 @@ public class TautomerWizard {
 			try {
 				generateInchi = on_off.valueOf(argument.toLowerCase()).getValue();
 			} catch (Exception x) {generateInchi = true;}
+			break;
 		}
 		case exclude: {
 			exclude = true;
