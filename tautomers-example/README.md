@@ -41,9 +41,9 @@ Download development verison
 
 ###Command line application
 
-   * Download [1.0.1-SNAPSHOT](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~net.idea.examples.ambit~ambit-tautomers-example~1.0.1-SNAPSHOT~~jar-with-dependencies) 
+   * Download [2.0.0-SNAPSHOT](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~net.idea.examples.ambit~ambit-tautomers-example~2.0.0-SNAPSHOT~~jar-with-dependencies) 
    
-   ##### [Change log](ChangeLog.md#1.0.1-SNAPSHOT)
+   ##### [Change log](ChangeLog.md#2.0.0-SNAPSHOT)
    
 
 ###Maven artifact
