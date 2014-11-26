@@ -6,7 +6,7 @@ The flags are used for fine-tuning the tautomer generation process and post-gene
 [FlagUse13Shifts](#FlagUse13Shifts), [FlagUse15Shifts](#FlagUse15Shifts), [FlagUse17Shifts](#FlagUse17Shifts), [FlagUse19Shifts](#FlagUse19Shifts)
 
 * Rules:
-[FlagRecurseBackResultTautomers](#FlagRecurseBackResultTautomers), [FlagUseRingChainRules](#FlagUseRingChainRules), [FlagUseChlorineRules](#FlagUseChlorineRules), [ruleNumberLimit](#ruleNumberLimit) 
+[FlagRecurseBackResultTautomers](#FlagRecurseBackResultTautomers), [FlagUseRingChainRules](#FlagUseRingChainRules), [FlagUseChlorineRules](#FlagUseChlorineRules), [ruleNumberLimit](#ruleNumberLimit), [FlagSwitchToCombinatorialOnReachingRuleLimit](#FlagSwitchToCombinatorialOnReachingRuleLimit) 
 
 * <a name="Filters"></a>Filters: 
 [FlagApplyWarningFilter](#FlagApplyWarningFilter), [FlagApplyExcludeFilter](#FlagApplyExcludeFilter), [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
@@ -39,6 +39,11 @@ All examples bellow are valid for an object, *tman*, of the class *TautomerManag
 ####<a name="ruleNumberLimit"></a>tman.getRuleSelector().setRuleNumberLimit(limit)
 * Default value : *10*
 * This is a limit for the number of used rules. If the initial number of found rules is larger than limit, *l*, then only *l* rules are used. This is a restriction for molecules which have lots of rules and potencialy determine milions or even bilions of tautomers.
+
+####<a name="FlagSwitchToCombinatorialOnReachingRuleLimit"></a>tman.FlagSwitchToCombinatorialOnReachingRuleLimit
+* Default value : *true*
+* When this flag is true, the incremental algorithm is switched to improved combinatorial one for the cases of molecules reaching *(ruleNumberLimit + 3)* rules. This switching is needed because the incremental algorithm would 'find' the excluded rules (due the the reached limit) and reuse them again. 
+
 
 ####<a name="FlagRecurseBackResultTautomers"></a>tman.FlagRecurseBackResultTautomers
 * Default value : *false*
