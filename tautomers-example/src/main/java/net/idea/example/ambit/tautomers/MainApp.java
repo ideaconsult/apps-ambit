@@ -340,8 +340,8 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Excludes from the output file and benchmarking the structures for which the incremental algorithm is switched "
-						+ "to combinatorial one (i.e. rule number limit is reached). The info for excluded structures is stored in <file>";
+				return "Excludes from the output and the benchmarking file the structures for which the incremental algorithm is switched "
+						+ "to combinatorial one (i.e. rule number limit is reached). The info about the excluded structures is stored in <file>";
 			}
 			@Override
 			public String getShortName() {
@@ -356,8 +356,8 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Filters the inputed molecules as defined by the <filter> string containing conditions in the form: "
-						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Posible properties: "
+				return "Filters the input molecules as defined by the <filter> string containing conditions in the form: "
+						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Podsible properties: "
 						+ "#Mol - molecule record number, NA - number of atoms, NB - number of bonds, CYCLOMATIC - cyclomatic number"
 						+ "Use symbol ';' as logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]";
 			}
@@ -374,7 +374,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "The result isomorphic tautomers are filtrated (default 'on')";
+				return "The result isomorphic tautomers are filtered (default 'on')";
 			}
 			@Override
 			public String getShortName() {
@@ -389,7 +389,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "The result tautomers are checked for duplicatin comparing InChI keys (default 'off')";
+				return "The result tautomers are checked for duplicates by comparing InChI keys (default 'off')";
 			}
 			@Override
 			public String getShortName() {
