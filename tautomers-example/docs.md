@@ -12,7 +12,10 @@ The flags are used for fine-tuning the tautomer generation process and post-gene
 [FlagApplyWarningFilter](#FlagApplyWarningFilter), [FlagApplyExcludeFilter](#FlagApplyExcludeFilter), [FlagApplyDuplicationFilter](#FlagApplyDuplicationFilter) 
 
 * Duplicates handling:
-[FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering),  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism), [maxNumOfBackTracks](#maxNumOfBackTracks)
+[FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering),  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism) 
+
+* Algorithm termination handling:
+[maxNumOfBackTracks](#maxNumOfBackTracks), [maxNumOfTautomerRegistrations](#maxNumOfTautomerRegistrations), 
 
 All examples bellow are valid for an object, tman, of the class TautomerManager e.g. following line of code is assumed:
 TaotmerManager tman = new TautomerManager();
@@ -69,3 +72,8 @@ The _exclusion_ filters are another type of fully customable filters. The struct
 ####<a name="maxNumOfBackTracks"></a>tman.maxNumOfBackTracks
 * Default value : *5000*
 * This is the maximal number of back-tracking steps performed by the Depth-First Search algorithm for tautomer generation. Typically a value of *10000* should be enough to find most of the tautomers for quite complicated molecules. Value of *100000* guarantees full exhaustiveness in majority of the cases, however this value may cause very long calculation times for more complicated molecules. In order to achieve faster calculations one may use a lower value (e.g. *1000*) which would guarantee exhaustiveness for small molecules and quire reasonable tautomer sets for medium and larger molecules.     
+ 
+####<a name="maxNumOfTautomerRegistrations"></a>tman.maxNumOfTautomerRegistrations
+* Default value : *1000*
+* This is the maximal number of tautomer registrations performed by the combinatorial and improved combinatorial algorithms. If flag FlagCheckNumOfRegistrationsForIncrementalAlgorithm=true then maxNumOfTautomerRegistrations restriction is applied for the incremental algorithm (DFS-IA) as well. 
+
