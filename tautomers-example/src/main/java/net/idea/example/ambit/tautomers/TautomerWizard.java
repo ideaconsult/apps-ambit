@@ -7,7 +7,9 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,12 +34,12 @@ import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ambit2.base.exceptions.AmbitIOException;
+import ambit2.core.filter.MoleculeFilter;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
-import ambit2.core.filter.MoleculeFilter;
 import ambit2.tautomers.TautomerConst;
 import ambit2.tautomers.TautomerManager;
 import ambit2.tautomers.TautomerUtils;
@@ -48,6 +50,7 @@ import ambit2.tautomers.TautomerUtils;
  *
  */
 public class TautomerWizard {
+	protected NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
 	enum on_off {
 		on {
 			@Override
@@ -536,7 +539,8 @@ public class TautomerWizard {
 					{
 						double estim = TautomerUtils.getFastTautomerCountEstimation(tautomerManager, molecule);
 						
-						String info = String.format("%d%s%f",records_read,sep,estim);
+						
+						String info = String.format("%d%s%f",records_read,sep,nf.format(estim));
 						estimateOut.write(info);
 						estimateOut.write("\n");
 						if (records_read % 100 == 0) {
@@ -623,14 +627,14 @@ public class TautomerWizard {
 						globalCalcTime += curMoleculeCalcTime;
 						endRecordTime = System.nanoTime();
 						
-						String info = String.format("%d%s%f%s%f%s%d%s%d%s%d%s%d",
-								 	records_read, sep ,curMoleculeCalcTime, sep, (endRecordTime - beginRecordTime) / 1.0e9, sep,
+						String info = String.format("%d%s%s%s%s%s%d%s%d%s%d%s%d",
+								 	records_read, sep ,nf.format(curMoleculeCalcTime), sep, nf.format((endRecordTime - beginRecordTime) / 1.0e9), sep,
 									((resultTautomers == null)?0:resultTautomers.size()), sep, 
 									tautomerManager.getInitialRuleCount(), sep, 
 									molecule.getAtomCount(), sep, molecule.getBondCount());
 						benchmarkOut.write(info);
 						if (generationError != null)
-							benchmarkOut.write(sep + "Error: " + generationError);
+							benchmarkOut.write(sep + "\"Error: " + generationError+"\"");
 						benchmarkOut.write("\n");
 						if (records_read % 100 == 0) {
 							benchmarkOut.flush();
