@@ -14,6 +14,8 @@ The flags are used for fine-tuning the tautomer generation process and post-gene
 * Duplicates handling:
 [FlagCheckDuplicationOnRegistering](#FlagCheckDuplicationOnRegistering),  [FlagApplyDuplicationCheckIsomorphism](#FlagApplyDuplicationCheckIsomorphism), [maxNumOfBackTracks](#maxNumOfBackTracks)
 
+All examples bellow are valid for an object, tman, of the class TautomerManager e.g. following line of code is assumed:
+TaotmerManager tman = new TautomerManager();
 
 ####<a name="FlagUse13Shifts"></a>tman.getKnowledgeBase().FlagUse13Shifts
 * Default value : *true*
@@ -65,5 +67,5 @@ The _exclusion_ filters are another type of fully customable filters. The struct
 * If this flag is *true*, all topologically equivalent structures are to be removed.
 
 ####<a name="maxNumOfBackTracks"></a>tman.maxNumOfBackTracks
-* Default value : *100000*
-* This is the maximal number of back-tracking steps performed by the Depth-First Search algorithm for tautomer generation. Typically a value of *10000* should be enough to find most of the tautomers for quite complicated molecules. The default value of *100000* guarantees full exhaustiveness in majority of the cases, however this value may cause very long calculation times for more complicated molecules. In order to achieve faster calculations one may use a lower value (e.g. *1000*) which would guarantee exhaustiveness for small molecules and quire reasonable tautomer sets for medium and larger molecules.     
+* Default value : *5000*
+* This is the maximal number of back-tracking steps performed by the Depth-First Search algorithm for tautomer generation. Typically a value of *10000* should be enough to find most of the tautomers for quite complicated molecules. Value of *100000* guarantees full exhaustiveness in majority of the cases, however this value may cause very long calculation times for more complicated molecules. In order to achieve faster calculations one may use a lower value (e.g. *1000*) which would guarantee exhaustiveness for small molecules and quire reasonable tautomer sets for medium and larger molecules.     
