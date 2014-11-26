@@ -17,8 +17,8 @@ The flags are used for fine-tuning the tautomer generation process and post-gene
 * Algorithm termination handling:
 [maxNumOfBackTracks](#maxNumOfBackTracks), [maxNumOfTautomerRegistrations](#maxNumOfTautomerRegistrations), [maxNumOfSubCombinations](#maxNumOfSubCombinations)
 
-All examples bellow are valid for an object, tman, of the class TautomerManager e.g. following line of code is assumed:
-TaotmerManager tman = new TautomerManager();
+All examples bellow are valid for an object, *tman*, of the class *TautomerManager* e.g. following line of code is assumed:
+*TaotmerManager tman = new TautomerManager();*
 
 ####<a name="FlagUse13Shifts"></a>tman.getKnowledgeBase().FlagUse13Shifts
 * Default value : *true*
@@ -38,7 +38,7 @@ TaotmerManager tman = new TautomerManager();
 
 ####<a name="ruleNumberLimit"></a>tman.getRuleSelector().setRuleNumberLimit(limit)
 * Default value : *10*
-* This is a limit for the number of used rules. If the initial number of found rules is larger than limit (l) then only l rules are used. This is a restriction for molecules which have lots of rules and potencialy determine milions or even bilions of tautomers.
+* This is a limit for the number of used rules. If the initial number of found rules is larger than limit, *l*, then only *l* rules are used. This is a restriction for molecules which have lots of rules and potencialy determine milions or even bilions of tautomers.
 
 ####<a name="FlagRecurseBackResultTautomers"></a>tman.FlagRecurseBackResultTautomers
 * Default value : *false*
@@ -79,7 +79,7 @@ The _exclusion_ filters are another type of fully customable filters. The struct
  
 ####<a name="maxNumOfTautomerRegistrations"></a>tman.maxNumOfTautomerRegistrations
 * Default value : *1000*
-* This is the maximal number of tautomer registrations performed by the combinatorial and improved combinatorial algorithms. If flag FlagCheckNumOfRegistrationsForIncrementalAlgorithm=true then maxNumOfTautomerRegistrations restriction is applied for the incremental algorithm (DFS-IA) as well. 
+* This is the maximal number of tautomer registrations performed by the combinatorial and improved combinatorial algorithms. If flag *FlagCheckNumOfRegistrationsForIncrementalAlgorithm=true* then maxNumOfTautomerRegistrations restriction is applied for the incremental algorithm (DFS-IA) as well. 
 
 ####<a name="maxNumOfSubCombinations"></a>tman.maxNumOfSubCombinations
 * Default value : *10000*
