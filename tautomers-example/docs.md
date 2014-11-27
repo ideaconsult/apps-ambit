@@ -59,7 +59,7 @@ All examples bellow are valid for an object, *tman*, of the class *TautomerManag
 
 ####<a name="FlagCheckDuplicationOnRegistering"></a>tman.FlagCheckDuplicationOnRegistering
 * Default value : *true*
-* This is a software specific flag. It determines whether to check the for tautomer duplication during the generation process. The check is performed based on the internal atom/bond numbering therefore only the identical tautomers are filtered. The tautomers which are topologically equivalent are not recognized. This is a sort of pre-filtering option which speeds up the algorithm. Typically this flag should be *tue*.
+* This is a software specific flag. It determines whether to check the for tautomer duplication during the generation process. The check is performed based on the internal atom/bond numbering therefore only the identical tautomers are filtered. The tautomers which are topologically equivalent are not recognized. This is a sort of pre-filtering option which speeds up the algorithm. Typically this flag should be *true*.
 
 ####<a name="FlagApplyWarningFilter"></a>tman.tautomerFilter.FlagApplyWarningFilter
 * Default value : *true*
@@ -80,7 +80,7 @@ The _exclusion_ filters are another type of fully customable filters. The struct
 
 ####<a name="maxNumOfBackTracks"></a>tman.maxNumOfBackTracks
 * Default value : *5000*
-* This is the maximal number of back-tracking steps performed by the Depth-First Search algorithm for tautomer generation. Typically a value of *10000* should be enough to find most of the tautomers for quite complicated molecules. Value of *100000* guarantees full exhaustiveness in majority of the cases, however this value may cause very long calculation times for more complicated molecules. In order to achieve faster calculations one may use a lower value (e.g. *1000*) which would guarantee exhaustiveness for small molecules and quire reasonable tautomer sets for medium and larger molecules.     
+* This is the maximal number of back-tracking steps performed by the Depth-First Search algorithm for tautomer generation. Typically a value of *10000* should be enough to find most of the tautomers for quite complicated molecules. Value of *100000* guarantees full exhaustiveness in majority of the cases, however this value may cause very long calculation times for more complicated molecules. In order to achieve faster calculations one may use a lower value (e.g. *1000*) which would guarantee exhaustiveness for small molecules and quite reasonable tautomer sets for medium and larger molecules.     
  
 ####<a name="maxNumOfTautomerRegistrations"></a>tman.maxNumOfTautomerRegistrations
 * Default value : *1000*
