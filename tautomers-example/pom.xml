@@ -84,7 +84,7 @@
     <url>http://www.idesconsult.net</url>
   </organization>
   <build>
-    <finalName>example-ambit-tautomers</finalName>
+    <finalName>ambit-tautomers</finalName>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
