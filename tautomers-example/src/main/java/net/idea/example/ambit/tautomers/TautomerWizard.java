@@ -531,6 +531,10 @@ public class TautomerWizard {
 						//implicit H count is NULL if read from InChI ...
 						molecule = AtomContainerManipulator.removeHydrogens(molecule);
 						CDKHydrogenAdder.getInstance(molecule.getBuilder()).addImplicitHydrogens(molecule);
+						boolean aromatic = false;
+						for (IBond bond : molecule.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) {aromatic = true; break;}
+						if (aromatic)
+							molecule = kekulizer.kekuliseAromaticRings((IMolecule)molecule);
 					} catch (Exception x) {
 						LOGGER.log(Level.WARNING, String.format("[Record %d] Error %s\t%s", records_read, file.getAbsoluteFile(), x.getMessage()));
 					}
