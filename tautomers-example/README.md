@@ -41,7 +41,9 @@ Download development verison
 
 ###Command line application
 
-   * Download [2.0.0-SNAPSHOT](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~net.idea.examples.ambit~ambit-tautomers-example~2.0.0-SNAPSHOT~~jar-with-dependencies) 
+   * Download  [ambit-tautomers-2.0.0-SNAPSHOT](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-2.0.0-SNAPSHOT.jar/download)
+   
+   * Download as Maven artifact [2.0.0-SNAPSHOT](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;gav~net.idea.examples.ambit~ambit-tautomers-example~2.0.0-SNAPSHOT~~jar-with-dependencies) 
    
    ##### [Change log](ChangeLog.md#2.0.0-SNAPSHOT)
    
@@ -51,7 +53,7 @@ Download development verison
     <dependency>
         <groupId>net.idea.examples.ambit</groupId>
         <artifactId>ambit-tautomers-example</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
     </dependency>
     <repository>
         <id>ambit-plovdiv-releases</id>
