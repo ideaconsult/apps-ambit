@@ -6,6 +6,8 @@ A Bundle resource provides means to define collections of [Substance](substance.
 
 ### Bundle
 
+#### bundle summary [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleSummary)]
+
 #### create an empty bundle [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/createBundle)]
 
 #### update a bundle [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updateBundle)]
@@ -57,3 +59,15 @@ A Bundle resource provides means to define collections of [Substance](substance.
 #### add or delete endpoint categories to / from a bundle [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/updatePropertyInBundle)]
 
 * accepts "application/x-www-form-urlencoded"
+
+### Substances related to compouds, defined in a bundle
+[[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/searchByRelatedCompound)]
+
+Example: 
+
+````
+http://apps.ideaconsult.net:8080/data/query/substance/related?bundle_uri=http://apps.ideaconsult.net:8080/data/bundle/1
+````
+
+ 
+
