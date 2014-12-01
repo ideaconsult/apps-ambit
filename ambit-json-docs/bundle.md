@@ -60,7 +60,7 @@ A Bundle resource provides means to define collections of [Substance](substance.
 
 * accepts "application/x-www-form-urlencoded"
 
-### Substances related to compouds, defined in a bundle
+### Substances related to compounds, defined in a bundle
 [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance/searchByRelatedCompound)]
 
 Example: 
