@@ -544,7 +544,7 @@ public class TautomerWizard {
 						double estim = TautomerUtils.getFastTautomerCountEstimation(tautomerManager, molecule);
 						
 						
-						String info = String.format("%d%s%f",records_read,sep,nf.format(estim));
+						String info = String.format("%d%s%s",records_read,sep,nf.format(estim));
 						estimateOut.write(info);
 						estimateOut.write("\n");
 						if (records_read % 100 == 0) {

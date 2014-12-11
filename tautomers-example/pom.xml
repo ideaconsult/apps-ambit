@@ -67,7 +67,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>2.7.1-SNAPSHOT</ambit.version>
+    <ambit.version>2.7.2-SNAPSHOT</ambit.version>
   </properties>
   <issueManagement>
     <system>GitHub</system>
