@@ -741,3 +741,325 @@
     }
 }
 ````
+
+Example: 
+````json
+{
+"query": {
+	"summary":"query"
+},
+"dataEntry":[
+	{
+	"compound":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/substance/TX14-af35155e-5ced-269d-1d00-519a24b7c6ef",
+		"structype":"NA",
+		"metric":null,
+		"name":"",
+		"cas":"",
+		"einecs":""
+
+		},
+	"values":{
+		"http://apps.ideaconsult.net:8080/opentox/identifier/name":"Acetamide",
+		"http://apps.ideaconsult.net:8080/opentox/identifier/tradename":"TX007228",
+		"http://apps.ideaconsult.net:8080/opentox/identifier/uuid":"TX14-af35155e-5ced-269d-1d00-519a24b7c6ef",
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log2+fold+induction/53EF145739BF25B6EB9BB717D85F0EE5F3144E79":-0.615,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/percent+activity/F5F70C3F7EA5E96CA96634E5BD01CD414BD6F984":79.777,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log10+fold+induction/8B4CEA0B72E5166F5C25765BB6A335E3BC15C762": 0.002,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/3849EE0CC2D78D535662B52163745B8CAACD518E": 0.072,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/0B385234C2E90A607AB6E267509A09F4A775473F": 2.593,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/8AAE696E083C542C5CE1E76F052195B2562F3E17": 0.764,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/15F4C3F333808A5DBF5B50A793A4B98C49F8B7F4":10.876,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/4BA616BFB713FB7F1F5D5ECCE9F3C75B66B07EEE": 0.000
+		},
+	"facets":[
+
+		],
+	"bundles":{
+
+		}
+	},
+	{
+	"compound":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/substance/TX14-17cc8819-2429-10e9-67d1-44b553f4df8e",
+		"structype":"NA",
+		"metric":null,
+		"name":"",
+		"cas":"",
+		"einecs":""
+
+		},
+	"values":{
+		"http://apps.ideaconsult.net:8080/opentox/identifier/name":"Acetaminophen",
+		"http://apps.ideaconsult.net:8080/opentox/identifier/tradename":"TX002867",
+		"http://apps.ideaconsult.net:8080/opentox/identifier/uuid":"TX14-17cc8819-2429-10e9-67d1-44b553f4df8e",
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log2+fold+induction/53EF145739BF25B6EB9BB717D85F0EE5F3144E79": 0.060,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/percent+activity/F5F70C3F7EA5E96CA96634E5BD01CD414BD6F984": 0.854,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log10+fold+induction/8B4CEA0B72E5166F5C25765BB6A335E3BC15C762": 0.024,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/3849EE0CC2D78D535662B52163745B8CAACD518E": 2.490,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/0B385234C2E90A607AB6E267509A09F4A775473F": 5.906,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/8AAE696E083C542C5CE1E76F052195B2562F3E17":-0.275,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/15F4C3F333808A5DBF5B50A793A4B98C49F8B7F4":-8.582,
+		"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/4BA616BFB713FB7F1F5D5ECCE9F3C75B66B07EEE":-0.589
+		},
+	"facets":[
+
+		],
+	"bundles":{
+
+		}
+	}
+],
+"model_uri":null,
+"feature":{
+
+"http://apps.ideaconsult.net:8080/opentox/identifier/name":{
+
+	"type":"Feature",
+	"title":"Names",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"false",
+	"sameAs":"http://www.opentox.org/api/1.1#ChemicalName",
+	"isModelPredictionFeature":false,
+	"creator":"",
+	"order":1000,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/Substance",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/identifier/tradename":{
+
+	"type":"Feature",
+	"title":"Name",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"false",
+	"sameAs":"http://www.opentox.org/api/1.1#TradeName",
+	"isModelPredictionFeature":false,
+	"creator":"http://ambit.sourceforge.net",
+	"order":1001,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/Trade+name",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/identifier/uuid":{
+
+	"type":"Feature",
+	"title":"I5UUID",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"false",
+	"sameAs":"http://www.opentox.org/api/1.1#IUCLID5_UUID",
+	"isModelPredictionFeature":false,
+	"creator":"http://ambit.sourceforge.net",
+	"order":1002,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/IUCLID5+UUID",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log2+fold+induction/53EF145739BF25B6EB9BB717D85F0EE5F3144E79":{
+
+	"type":"Feature",
+	"title":"log2 fold induction",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#CELL_DEATH",
+	"isModelPredictionFeature":false,
+	"creator":"APR_CellLoss_72h is an assay readout measuring viability via cell death and designed using viability reporter (cell number) detected with HCS Fluorescent Imaging.",
+	"order":1003,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/log2+fold+induction",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/percent+activity/F5F70C3F7EA5E96CA96634E5BD01CD414BD6F984":{
+
+	"type":"Feature",
+	"title":"percent activity",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#CELL_DEATH",
+	"isModelPredictionFeature":false,
+	"creator":"NA",
+	"order":1004,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/CELL_DEATH/log10+fold+induction/8B4CEA0B72E5166F5C25765BB6A335E3BC15C762":{
+
+	"type":"Feature",
+	"title":"log10 fold induction",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#CELL_DEATH",
+	"isModelPredictionFeature":false,
+	"creator":"BSK_hDFCGF_SRB is an assay readout measuring viability via contact inhibition and designed using binding reporter (elisa) detected with Colorimetric.",
+	"order":1005,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/log10+fold+induction",
+		"type":"Dataset"
+	},
+	"annotation":[]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/3849EE0CC2D78D535662B52163745B8CAACD518E":{
+
+	"type":"Feature",
+	"title":"percent activity [pathway] [pathway-specified] [nuclear receptor] [steroidal] [positive] [gain] [17b-Estradiol] [binding]",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#PROTEIN_STABILIZATION",
+	"isModelPredictionFeature":false,
+	"creator":"OT_ER_ERaERa_1440 is an assay readout measuring reporter gene via protein stabilization and designed using binding reporter (protein fragment complementation) detected with Protein-fragment Complementation.",
+	"order":1006,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "intended_target_type",	"o" : "pathway"},
+	{	"p" : "intended_target_type_sub",	"o" : "pathway-specified"},
+	{	"p" : "intended_target_family",	"o" : "nuclear receptor"},
+	{	"p" : "intended_target_family_sub",	"o" : "steroidal"},
+	{	"p" : "concentration",	"o" : "2"},
+	{	"p" : "baseline",	"o" : "1.0295"},
+	{	"p" : "analysis_direction",	"o" : "positive"},
+	{	"p" : "signal_direction",	"o" : "gain"},
+	{	"p" : "key_positive_control",	"o" : "17b-Estradiol"},
+	{	"p" : "assay_function_type",	"o" : "binding"}]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/0B385234C2E90A607AB6E267509A09F4A775473F":{
+
+	"type":"Feature",
+	"title":"percent activity [pathway] [pathway-specified] [nuclear receptor] [non-steroidal] [positive] [gain] [Isoproterenol;Fenoterol] [binding]",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#PROTEIN_STABILIZATION",
+	"isModelPredictionFeature":false,
+	"creator":"OT_NURR1_NURR1RXRa_1440 is an assay readout measuring reporter gene via protein stabilization and designed using binding reporter (protein fragment complementation) detected with Protein-fragment Complementation.",
+	"order":1007,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "intended_target_type",	"o" : "pathway"},
+	{	"p" : "intended_target_type_sub",	"o" : "pathway-specified"},
+	{	"p" : "intended_target_family",	"o" : "nuclear receptor"},
+	{	"p" : "intended_target_family_sub",	"o" : "non-steroidal"},
+	{	"p" : "concentration",	"o" : "2"},
+	{	"p" : "baseline",	"o" : "57.076"},
+	{	"p" : "analysis_direction",	"o" : "positive"},
+	{	"p" : "signal_direction",	"o" : "gain"},
+	{	"p" : "key_positive_control",	"o" : "Isoproterenol;Fenoterol"},
+	{	"p" : "assay_function_type",	"o" : "binding"}]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/8AAE696E083C542C5CE1E76F052195B2562F3E17":{
+
+	"type":"Feature",
+	"title":"percent activity [pathway] [pathway-specified] [nuclear receptor] [non-steroidal] [positive] [gain] [GW1929] [binding]",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#PROTEIN_STABILIZATION",
+	"isModelPredictionFeature":false,
+	"creator":"OT_PPARg_PPARgSRC1_1440 is an assay readout measuring reporter gene via protein stabilization and designed using binding reporter (protein fragment complementation) detected with Protein-fragment Complementation.",
+	"order":1008,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "intended_target_type",	"o" : "pathway"},
+	{	"p" : "intended_target_type_sub",	"o" : "pathway-specified"},
+	{	"p" : "intended_target_family",	"o" : "nuclear receptor"},
+	{	"p" : "intended_target_family_sub",	"o" : "non-steroidal"},
+	{	"p" : "concentration",	"o" : "2"},
+	{	"p" : "baseline",	"o" : "9.2445"},
+	{	"p" : "analysis_direction",	"o" : "positive"},
+	{	"p" : "signal_direction",	"o" : "gain"},
+	{	"p" : "key_positive_control",	"o" : "GW1929"},
+	{	"p" : "assay_function_type",	"o" : "binding"}]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/15F4C3F333808A5DBF5B50A793A4B98C49F8B7F4":{
+
+	"type":"Feature",
+	"title":"percent activity [pathway] [pathway-specified] [nuclear receptor] [non-steroidal] [positive] [gain] [GW4064] [binding]",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#PROTEIN_STABILIZATION",
+	"isModelPredictionFeature":false,
+	"creator":"OT_FXR_FXRSRC1_0480 is an assay readout measuring reporter gene via protein stabilization and designed using binding reporter (protein fragment complementation) detected with Protein-fragment Complementation.",
+	"order":1009,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "intended_target_type",	"o" : "pathway"},
+	{	"p" : "intended_target_type_sub",	"o" : "pathway-specified"},
+	{	"p" : "intended_target_family",	"o" : "nuclear receptor"},
+	{	"p" : "intended_target_family_sub",	"o" : "non-steroidal"},
+	{	"p" : "concentration",	"o" : "2"},
+	{	"p" : "baseline",	"o" : "58.445"},
+	{	"p" : "analysis_direction",	"o" : "positive"},
+	{	"p" : "signal_direction",	"o" : "gain"},
+	{	"p" : "key_positive_control",	"o" : "GW4064"},
+	{	"p" : "assay_function_type",	"o" : "binding"}]
+
+},
+"http://apps.ideaconsult.net:8080/opentox/property/TOX/PROTEIN_STABILIZATION/percent+activity/4BA616BFB713FB7F1F5D5ECCE9F3C75B66B07EEE":{
+
+	"type":"Feature",
+	"title":"percent activity [pathway] [pathway-specified] [nuclear receptor] [steroidal] [positive] [gain] [4,5-alpha-Dihydrotestosterone] [binding]",
+	"units":"",
+	"isNominal":"false",
+	"isNumeric":"true",
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#PROTEIN_STABILIZATION",
+	"isModelPredictionFeature":false,
+	"creator":"OT_AR_ARSRC1_0960 is an assay readout measuring reporter gene via protein stabilization and designed using binding reporter (protein fragment complementation) detected with Protein-fragment Complementation.",
+	"order":1010,
+	"source":{
+		"URI":"http://apps.ideaconsult.net:8080/opentox/dataset/percent+activity",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "intended_target_type",	"o" : "pathway"},
+	{	"p" : "intended_target_type_sub",	"o" : "pathway-specified"},
+	{	"p" : "intended_target_family",	"o" : "nuclear receptor"},
+	{	"p" : "intended_target_family_sub",	"o" : "steroidal"},
+	{	"p" : "concentration",	"o" : "2"},
+	{	"p" : "baseline",	"o" : "0.754"},
+	{	"p" : "analysis_direction",	"o" : "positive"},
+	{	"p" : "signal_direction",	"o" : "gain"},
+	{	"p" : "key_positive_control",	"o" : "4,5-alpha-Dihydrotestosterone"},
+	{	"p" : "assay_function_type",	"o" : "binding"}]
+
+}}
+}
+````
