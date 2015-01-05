@@ -889,7 +889,27 @@ Example:
 }
 ````
 
-Multivalued features
+####Multivalued features
+
+The feature has attribute
+
+````json
+isMultiValue : true
+````
+and the value is an array of items, each item has at least one of loValue or upValue (optional loQualifier / upQualifier)
+
+````json
+        [ 
+        {
+            "loQualifier": ">",
+            "loValue": 38,
+            "upQualifier": "<=",
+            "upValue": 7200
+        }
+        ]
+````
+
+#####Example:
 
 ````json
     "http://localhost:8080/ambit2/property/ECOTOX/EC_FISHTOX_SECTION/LC50/C41308FA2D27C9F34E5B3C2DA86074C524DA8F3D": [
