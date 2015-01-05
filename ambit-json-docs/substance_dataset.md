@@ -888,3 +888,55 @@ Example:
 }}
 }
 ````
+
+Multivalued features
+
+````json
+    "http://localhost:8080/ambit2/property/ECOTOX/EC_FISHTOX_SECTION/LC50/C41308FA2D27C9F34E5B3C2DA86074C524DA8F3D": [
+        {
+            "loValue": 173
+        },
+        {
+            "loQualifier": ">",
+            "loValue": 34.2
+        },
+        {
+            "loQualifier": ">",
+            "loValue": 38,
+            "upQualifier": "<=",
+            "upValue": 7200
+        },
+        {
+            "loValue": 440,
+            "upValue": 618
+        },
+        {
+            "upQualifier": "<",
+            "loValue": 260.6
+        }
+    ]
+
+...
+
+"feature" : {
+"http://localhost:8080/ambit2/property/ECOTOX/EC_FISHTOX_SECTION/LC50/C41308FA2D27C9F34E5B3C2DA86074C524DA8F3D/edeaaaa7-61c3-3ed7-9664-92ab14e6f0e1":{
+	"type":"Feature",
+	"title":"LC50",
+	"units":"mg/L",
+	"isNominal":false,
+	"isNumeric":false,
+	"isMultiValue":true,
+	"sameAs":"http://www.opentox.org/echaEndpoints.owl#EC_FISHTOX",
+	"isModelPredictionFeature":false,
+	"creator":"Method: other: acute toxicity test",
+	"order":1005,
+	"source":{
+		"URI":"http://localhost:8080/ambit2/dataset/Method%3A+other%3A+acute+toxicity+test",
+		"type":"Dataset"
+	},
+	"annotation":[
+	{	"p" : "Exposure",	"o" : "96 h"}]
+
+}
+}
+````
