@@ -891,7 +891,7 @@ Example:
 
 ####Multivalued features
 
-The feature has attribute
+The multivalue feature has attribute isMultiValue = true
 
 ````json
 isMultiValue : true
