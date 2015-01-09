@@ -1390,19 +1390,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showOpenToxDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://apps.ideaconsult.net:8080/opentox/api-docs"
+        url: "https://apps.ideaconsult.net/opentox/api-docs"
       });
     };
     
     HeaderView.prototype.showAmbitDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://apps.ideaconsult.net:8080/data/api-docs"
+        url: "https://apps.ideaconsult.net/data/api-docs"
       });
     };
 
     HeaderView.prototype.showEnanoMapperDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "http://apps.ideaconsult.net:8080/enmtest/api-docs"
+        url: "https://apps.ideaconsult.net/enmtest/api-docs"
       });
     };
 
