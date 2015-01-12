@@ -31,4 +31,68 @@ A Bundle resource provides means to define collections of [Substance](substance.
 21. Delete local study copy in a bundle  /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteMatrixFromBundle)]
 22. Update study in the local copy /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]
 23. Read the local copy of studies (same format as /bundle/{idbundle}/dataset ) [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleMatrix)]
-
+24. Update local copy of studies  [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]
+````JSON
+{
+    "study": [
+        {
+            "uuid": "IUC5-69f39568-46e4-45ba-94f6-f00765525422",
+            "owner": {
+                "substance": {
+                    "uuid": "IUC4-efdb21bb-e79f-3286-a988-b6f6944d3734"
+                },
+                "company": {
+                    "uuid": "TEST-e535bebb-e59f-3906-f988-554478ad3734",
+                    "name": "Morgoth"
+                }
+            },
+            "protocol": {
+                "topcategory": "TOX",
+                "category": {
+                    "code": "TO_ACUTE_ORAL_SECTION"
+                },
+                "endpoint": "Acute toxicity: oral.001",
+                "guidance": [
+                    "OECD Guideline 401 (Acute Oral Toxicity)"
+                ]
+            },
+            "parameters": {
+                "Year": "1999",
+                "Reference": "ano",
+                "Species": "rat",
+                "Sex": "male/female"
+            },
+            "interpretation": {
+                "result": "not classified",
+                "criteria": "EU"
+            },
+            "effects": [
+                {
+                    "endpoint": "LD50",
+                    "conditions": {
+                        "Sex": "male"
+                    },
+                    "result": {
+                        "unit": "mg/kg bw",
+                        "loQualifier": ">",
+                        "loValue": 5000
+                    }
+                },
+                {
+                    "endpoint": "LD50",
+                    "conditions": {
+                        "Sex": "female"
+                    },
+                    "result": {
+                        "unit": "mg/kg bw",
+                        "loQualifier": ">",
+                        "loValue": 2000,
+                        "upQualifier": "<",
+                        "upValue": 5000
+                    }
+                }
+            ]
+        }
+    ]
+}
+````
