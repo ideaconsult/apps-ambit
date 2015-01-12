@@ -30,5 +30,5 @@ A Bundle resource provides means to define collections of [Substance](substance.
 20. Copy selected study entries (determined by selected substances and endpoint) into local copy in a bundle /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/createMatrixFromBundle)]
 21. Delete local study copy in a bundle  /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteMatrixFromBundle)]
 22. Update study in the local copy /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]
-
+23. Read the local copy of studies (same format as /bundle/{idbundle}/dataset ) [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleMatrix)]
 
