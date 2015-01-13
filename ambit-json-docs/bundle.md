@@ -32,6 +32,151 @@ A Bundle resource provides means to define collections of [Substance](substance.
 22. Read the local copy of studies (same format as /bundle/{idbundle}/dataset ) [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleMatrix)]
 23. Update local copy of studies  /bundle/{idbundle}/matrix . Does not add substances! Content-type should be either application/json or multipart/form-data with *.json file attached [json schema](https://github.com/ideaconsult/api/blob/master/apidocs/study-schema.json). The study.owner.substance.uuid should be an existing Substance UUID.  [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]. 
 study JSON example :
+
+Example 1
+````json
+{
+    "study": [
+        {
+            "owner": {
+                "substance": {
+                    "uuid": "IUC4-efdb21bb-e79f-3286-a988-b6f6944d3734"
+                }
+            },
+            "protocol": {
+                "topcategory": "TOX",
+                "category": {
+                    "code": "TO_ACUTE_ORAL_SECTION"
+                },
+                "endpoint": "Acute toxicity: oral.001",
+                "guideline": [
+                    "OECD Guideline 401 (Acute Oral Toxicity)"
+                ]
+            },
+            "citation": {
+                "title": "Study reference",
+                "year": "2015",
+                "owner": "My company"
+            },
+            "parameters": {
+                "Species": "rat",
+                "Sex": "male/female"
+            },
+            "interpretation": {
+                "result": "not classified",
+                "criteria": "EU"
+            },
+            "effects": [
+                {
+                    "endpoint": "LD50",
+                    "conditions": {
+                        "Sex": "male"
+                    },
+                    "result": {
+                        "unit": "mg/kg bw",
+                        "loQualifier": ">",
+                        "loValue": 5000
+                    }
+                },
+                {
+                    "endpoint": "LD50",
+                    "conditions": {
+                        "Sex": "female"
+                    },
+                    "result": {
+                        "unit": "mg/kg bw",
+                        "loQualifier": ">",
+                        "loValue": 2000,
+                        "upQualifier": "<",
+                        "upValue": 5000
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": null,
+            "owner": {
+                "substance": {
+                    "uuid": "IUC4-efdb21bb-e79f-3286-a988-b6f6944d3734"
+                },
+                "company": {
+                    "uuid": "TEST-e535bebb-e59f-3906-f988-554478ad3734",
+                    "name": "Morgoth"
+                }
+            },
+            "citation": {
+                "title": "Study reference 123",
+                "year": "2014",
+                "owner": "Your company"
+            },            
+            "protocol": {
+                "topcategory": "ENV FATE",
+                "category": {
+                    "code": "TO_BIODEG_WATER_SCREEN_SECTION"
+                },
+                "endpoint": "Biodegradation in water: screening tests.001",
+                "guideline": [
+                    "OECD Guideline 301 D (Ready Biodegradability: Closed Bottle Test)"
+                ]
+            },
+            "parameters": {
+                "TEST TYPE": "aerobic"
+            },
+            "interpretation": {
+                "result": "readily biodegradable"
+            },
+            "effects": [
+                {
+                    "endpoint": "% Degradation",
+                    "conditions": {
+                        "Time point": "3 h"
+                    },
+                    "result": {
+                        "unit": "%",
+                        "loQualifier": "",
+                        "loValue": 0
+                    }
+                },
+                {
+                    "endpoint": "% Degradation",
+                    "conditions": {
+                        "Time point": "7 d"
+                    },
+                    "result": {
+                        "unit": "%",
+                        "loQualifier": "",
+                        "loValue": 20
+                    }
+                },
+                {
+                    "endpoint": "% Degradation",
+                    "conditions": {
+                        "Time point": "14 d"
+                    },
+                    "result": {
+                        "unit": "%",
+                        "loQualifier": "",
+                        "loValue": 50
+                    }
+                },
+                {
+                    "endpoint": "% Degradation",
+                    "conditions": {
+                        "Time point": "28 d"
+                    },
+                    "result": {
+                        "unit": "%",
+                        "loQualifier": "",
+                        "loValue": 85
+                    }
+                }
+            ]
+        }
+    ]
+}
+````
+
+Example 2
 ````JSON
 {
     "study": [
