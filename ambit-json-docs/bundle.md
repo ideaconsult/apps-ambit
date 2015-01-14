@@ -66,6 +66,14 @@ Example 1
                 "result": "not classified",
                 "criteria": "EU"
             },
+            "reliability": {
+                "r_isRobustStudy": "false",
+                "r_isUsedforClassification": "false",
+                "r_isUsedforMSDS": "false",
+                "r_purposeFlag": "",
+                "r_studyResultType": "",
+                "r_value": "3 (not reliable)"
+            },
             "effects": [
                 {
                     "endpoint": "LD50",
@@ -108,7 +116,7 @@ Example 1
                 "title": "Study reference 123",
                 "year": "2014",
                 "owner": "Your company"
-            },            
+            },
             "protocol": {
                 "topcategory": "ENV FATE",
                 "category": {
@@ -122,8 +130,17 @@ Example 1
             "parameters": {
                 "TEST TYPE": "aerobic"
             },
+            "reliability": {
+                "r_isRobustStudy": "false",
+                "r_isUsedforClassification": "false",
+                "r_isUsedforMSDS": "false",
+                "r_purposeFlag": "",
+                "r_studyResultType": "",
+                "r_value": "3 (not reliable)"
+            },
             "interpretation": {
-                "result": "readily biodegradable"
+                "result": "readily biodegradable",
+                "criteria": ""
             },
             "effects": [
                 {
@@ -206,6 +223,14 @@ Example 2
                 "Reference": "ano",
                 "Species": "rat",
                 "Sex": "male/female"
+            },
+            "reliability": {
+                "r_isRobustStudy": "false",
+                "r_isUsedforClassification": "false",
+                "r_isUsedforMSDS": "false",
+                "r_purposeFlag": "",
+                "r_studyResultType": "",
+                "r_value": "3 (not reliable)"
             },
             "interpretation": {
                 "result": "not classified",
