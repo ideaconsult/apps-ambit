@@ -30,7 +30,8 @@ A Bundle resource provides means to define collections of [Substance](substance.
 20. Copy selected study entries (determined by selected substances and endpoint) into local copy in a bundle /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/createMatrixFromBundle)]
 21. Delete local study copy in a bundle  /bundle/{idbundle}/matrix [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/deleteMatrixFromBundle)]
 22. Read the local copy of studies (same format as /bundle/{idbundle}/dataset ) [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/getBundleMatrix)]
-23. Update local copy of studies  /bundle/{idbundle}/matrix . Does not add substances! Content-type should be either application/json or multipart/form-data with *.json file attached [json schema](https://github.com/ideaconsult/api/blob/master/apidocs/study-schema.json). The study.owner.substance.uuid should be an existing Substance UUID.  [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]. 
+23. Mark values in the local copy of studues as deleted PUT /bundle/{idbundle}/matrix/deleted. [JSON format expected](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-core/src/test/resources/ambit2/core/data/json/effects_delete.json)
+24. Update local copy of studies  /bundle/{idbundle}/matrix . Does not add substances! Content-type should be either application/json or multipart/form-data with *.json file attached [json schema](https://github.com/ideaconsult/api/blob/master/apidocs/study-schema.json). The study.owner.substance.uuid should be an existing Substance UUID.  [[api-docs](http://ideaconsult.github.io/examples-ambit/apidocs/#!/bundle/uploadBundleStudy)]. 
 study JSON example :
 
 Example 1
