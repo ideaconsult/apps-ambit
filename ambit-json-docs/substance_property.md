@@ -22,7 +22,7 @@ Example URI: https://apps.ideaconsult.net/enanomapper/property/P-CHEM/ZETA_POTEN
 The API supports two modes of creating properties - via web form and Feature RDF  (JSON will follow shortly).
 The Feature RDF must contain owl:sameAs , ot:hasSource, dc:title, ot:units  . 
 
-  ([Example RDF](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-apps/ambit2-www/src/test/resources/feature.rdf)
+(For RDF example see [feature.rdf](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-apps/ambit2-www/src/test/resources/feature.rdf))
 
 ````RDF
  <ot:hasSource rdf:resource="http://localhost:8080/ambit2/dataset/Method%3A+other%3A+Am.+Soc.+Test.+Mater.+%281980%29+and+U.S.+EPA+%281975%29"/>
