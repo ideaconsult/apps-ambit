@@ -31,7 +31,7 @@ The Feature RDF must contain owl:sameAs , ot:hasSource, dc:title, ot:units  .
  <dc:title>EC10</dc:title>
 ````
 
-To create a feature for e.g. modelling algorithm, ot:hasSource should point to the model URI; dc:title should be the title of the endpoint being predicted; owl:sameAs should reflect the endpoint category (see the [endpoint category drop down box](http://ideaconsult.github.io/examples-ambit/apidocs/#!/property/createProperty) for supported categories). The units should be rep[resented by ot:units (if relevant). These should match the data file, othwerwise the gereated property URI may differ.
+To create a feature for e.g. modelling algorithm, ot:hasSource should point to the model URI; dc:title should be the title of the endpoint being predicted; owl:sameAs should reflect the endpoint category (see the [endpoint category drop down box](http://ideaconsult.github.io/examples-ambit/apidocs/#!/property/createProperty) for supported categories). The units should be rep[resented by ot:units (if relevant). These should match the data file, otherwise the generated property URI may differ.
 
 
 ###Examples:
