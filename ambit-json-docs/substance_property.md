@@ -2,11 +2,11 @@
 Substance properties are "virtual" entities, generated from the data and NOT stored in database tables. 
 The substance properties are generated from the study records by using the following entries: 
 
-* Protocol category --> Feature.sameAs  (http://www.opentox.org/echaEndpoints.owl#CATEGORY)
-* Protocol guidance --> Feature.source.URI (if URI it is taken as it is, if string is converted to URI using the {base_uri}/dataset/+URLENCODED(String) . 
-* Effect endpoint --> Feature.title 
-* Effect units --> Feature.units
-* Effect conditions --> 
+* Protocol category :  Feature.sameAs  (http://www.opentox.org/echaEndpoints.owl#CATEGORY)
+* Protocol guidance : Feature.source.URI (if URI it is taken as it is, if string is converted to URI using the {base_uri}/dataset/+URLENCODED(String) . 
+* Effect endpoint : Feature.title 
+* Effect units : Feature.units
+* Effect conditions : part of the SHA2 hash 
 
 The Feature.URI is generated as follows:
 Example URI: https://apps.ideaconsult.net/enanomapper/property/P-CHEM/ZETA_POTENTIAL_SECTION/ZETA+POTENTIAL/7F8B3FB82019B1CCF8A8C3FD2B5A2DACBDDDB832/3ed642f9-1b42-387a-9966-dea5b91e5f8a
