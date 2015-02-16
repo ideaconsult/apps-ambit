@@ -5,7 +5,7 @@ Substance properties are "virtual" entities, generated from the data and NOT sto
 The substance properties are generated from the study records by using the following entries: 
 
 * Protocol category :  Feature.sameAs  (http://www.opentox.org/echaEndpoints.owl#CATEGORY) 
-* Protocol guidance : Feature.source.URI (if URI it is taken as it is, if string is converted to URI using the {base_uri}/dataset/+URLENCODED(String) . 
+* Protocol guidance : Feature.source.URI (if the content is an URI, it is taken as it is, if the content is a string, it is converted to URI using the {base_uri}/dataset/URLENCODED(String) . 
 * Effect endpoint : Feature.title 
 * Effect units : Feature.units
 * Effect conditions : part of the SHA2 hash 
