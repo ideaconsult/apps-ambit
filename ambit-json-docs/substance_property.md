@@ -1,8 +1,10 @@
 
+Supporting information for [createProperty API](http://ideaconsult.github.io/examples-ambit/apidocs/#!/property/createProperty)
+
 Substance properties are "virtual" entities, generated from the data and NOT stored in database tables. 
 The substance properties are generated from the study records by using the following entries: 
 
-* Protocol category :  Feature.sameAs  (http://www.opentox.org/echaEndpoints.owl#CATEGORY)
+* Protocol category :  Feature.sameAs  (http://www.opentox.org/echaEndpoints.owl#CATEGORY) 
 * Protocol guidance : Feature.source.URI (if URI it is taken as it is, if string is converted to URI using the {base_uri}/dataset/+URLENCODED(String) . 
 * Effect endpoint : Feature.title 
 * Effect units : Feature.units
@@ -17,7 +19,21 @@ Example URI: https://apps.ideaconsult.net/enanomapper/property/P-CHEM/ZETA_POTEN
 * /7F8B3FB82019B1CCF8A8C3FD2B5A2DACBDDDB832 : SHA2 hash generated from Feature.title, Feature.units, Effect conditions 
 * /3ed642f9-1b42-387a-9966-dea5b91e5f8a : UUID generated from Feature.source.URI 
 
+The API supports two modes of creating properties - via web form and Feature RDF  (JSON will follow shortly).
+The Feature RDF must contain owl:sameAs , ot:hasSource, dc:title, ot:units  . ([Example RDF](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-apps/ambit2-www/src/test/resources/feature.rdf)
 
+````RDF
+ <ot:hasSource rdf:resource="http://localhost:8080/ambit2/dataset/Method%3A+other%3A+Am.+Soc.+Test.+Mater.+%281980%29+and+U.S.+EPA+%281975%29"/>
+ <owl:sameAs>http://www.opentox.org/echaEndpoints.owl#EC_DAPHNIATOX</owl:sameAs>
+ <ot:units>mg/L</ot:units>
+ <dc:title>EC10</dc:title>
+````
+
+To create a feature for e.g. modelling algorithm, ot:hasSource should point to the model URI; dc:title should be the title of the endpoint being predicted; owl:sameAs should reflect the endpoint category (see the [endpoint category drop down box](http://ideaconsult.github.io/examples-ambit/apidocs/#!/property/createProperty) for supported categories). The units should be rep[resented by ot:units (if relevant). These should match the data file, othwerwise the gereated property URI may differ.
+
+
+###Examples:
+#### Study record
 ````json
 {
     "uuid": "FCSV-b42b9514-9693-3b87-b40e-6920a55ffb8e",
@@ -97,7 +113,7 @@ Example URI: https://apps.ideaconsult.net/enanomapper/property/P-CHEM/ZETA_POTEN
 }
 ````
 
-Study records serialized as [datasets](https://apps.ideaconsult.net/enanomapper/substanceowner/FCSV-319611C6-E7DA-3977-A5AC-EB74D49A4319/dataset?max=1&media=application/json) :
+####Study records serialized as [datasets](https://apps.ideaconsult.net/enanomapper/substanceowner/FCSV-319611C6-E7DA-3977-A5AC-EB74D49A4319/dataset?max=1&media=application/json) :
 
 ````json
 {
