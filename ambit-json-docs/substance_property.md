@@ -20,7 +20,9 @@ Example URI: https://apps.ideaconsult.net/enanomapper/property/P-CHEM/ZETA_POTEN
 * /3ed642f9-1b42-387a-9966-dea5b91e5f8a : UUID generated from Feature.source.URI 
 
 The API supports two modes of creating properties - via web form and Feature RDF  (JSON will follow shortly).
-The Feature RDF must contain owl:sameAs , ot:hasSource, dc:title, ot:units  . ([Example RDF](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-apps/ambit2-www/src/test/resources/feature.rdf)
+The Feature RDF must contain owl:sameAs , ot:hasSource, dc:title, ot:units  . 
+
+  ([Example RDF](https://svn.code.sf.net/p/ambit/code/trunk/ambit2-all/ambit2-apps/ambit2-www/src/test/resources/feature.rdf)
 
 ````RDF
  <ot:hasSource rdf:resource="http://localhost:8080/ambit2/dataset/Method%3A+other%3A+Am.+Soc.+Test.+Mater.+%281980%29+and+U.S.+EPA+%281975%29"/>
