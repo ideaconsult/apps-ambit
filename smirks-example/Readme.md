@@ -34,7 +34,7 @@ The transformations can be applied on various sites of the target molecule in se
     <dependency>
       <groupId>ambit</groupId>
       <artifactId>ambit2-smarts</artifactId>
-      <version>2.7.13</version>
+      <version>2.7.3</version>
     </dependency>
     <repository>
         <id>ambit-plovdiv-releases</id>
