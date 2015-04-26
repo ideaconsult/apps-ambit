@@ -34,7 +34,7 @@ The transformations can be applied on various sites of the target molecule in se
     <dependency>
       <groupId>ambit</groupId>
       <artifactId>ambit2-smarts</artifactId>
-      <version>2.5.1</version>
+      <version>2.7.13</version>
     </dependency>
     <repository>
         <id>ambit-plovdiv-releases</id>
@@ -42,13 +42,13 @@ The transformations can be applied on various sites of the target molecule in se
     </repository> 
 ````
 
-* Depends on [The CDK](http://cdk.sf.net) 1.5.3 
+* Depends on [The CDK](http://cdk.sf.net) 1.5.10
 
 ````
     <dependency>
       <groupId>ambit</groupId>
       <artifactId>ambit2-smarts</artifactId>
-      <version>2.6.0-SNAPSHOT</version>
+      <version>3.0.0-SNAPSHOT</version>
     </dependency>
     <repository>
         <id>ambit-plovdiv-snapshots</id>
