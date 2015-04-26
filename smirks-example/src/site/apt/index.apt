@@ -1,0 +1,43 @@
+ -----
+ CDK examples
+ -----
+ Background
+ -----
+ April 2015
+
+Examples AMBIT-SMIRKS
+~~~~~~~  
+  
+   This is a simple example how to use {{{http://ambit.sf.net}AMBIT}} SMIRKS package via Apache {{{http://maven.apache.org} Apache Maven}} dependencies. It reads an SDF file, generates reaction products and writes the original content plus both reaction products into a new SDF file.
+   
+   Demonstration how to use Maven profiles to switch between AMBIT versions.	 
+  
+   * Fork it.
+   
+   * Get {{{http://maven.apache.org} Apache Maven}}
+      
+   * Build. Don't worry about downloading jars and setting classpath dependencies. Maven does it for you.
+   
+--------------------
+
+   mvn clean install
+   
+--------------------   
+   
+   * Run 
+   
+--------------------   
+   
+      java -jar target/examples-smirks-0.0.1-SNAPSHOT.jar -f file_name.sdf
+   
+--------------------      
+   
+   * Build with specific AMBIT version 
+   
+--------------------    
+    
+    mvn clean install -P ambit-3.0.0-SNAPSHOT
+   
+--------------------   
+
+   * More examples with {{{https://github.com/ideaconsult/examples-ambit} Examples AMBIT}}

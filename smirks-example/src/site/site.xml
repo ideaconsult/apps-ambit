@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="CDK mavenized examples">
+
+  <bannerLeft>
+    <name>examples-cdk</name>
+    <src>./images/ideaconsult_80.png</src>
+    <href>http://www.ideaconsult.net</href>
+  </bannerLeft>
+  <bannerRight>
+    <src></src>
+  </bannerRight>
+ 
+  <body>
+  <head>
+        <!-- Google Analytics - Start -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32347361-1']);
+  _gaq.push(['_setDomainName', 'github.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+      <!-- Google Analytics - End -->    
+  </head>
+      <links>
+
+      <item name="examples-opentox" href="http://ideaconsult.github.com/examples-opentox"/>
+      <item name="examples-ambit" href="http://ideaconsult.github.com/examples-ambit"/>
+      <item name="examples-cdk" href="http://ideaconsult.github.com/examples-cdk"/>
+      <item name="examples-toxtree" href="http://ideaconsult.github.com/examples-toxtree"/>
+      <item name="examples-maven" href="http://ideaconsult.github.com/examples-maven"/>
+
+    </links>
+  <menu name="CDK Maven example">
+      <item name="Home" href="/index.html"/>
+    </menu>
+
+    <menu ref="reports"/>
+
+  </body>
+  <poweredBy>
+  
+  </poweredBy>    
+  <publishDate position="navigation-bottom" format="MM-dd-yy"/>
+
+   <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.2.1</version>
+    </skin>  
+    
+     <custom>
+    <fluidoSkin>
+      <searchEnabled>true</searchEnabled>
+      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+      <topBarEnabled>false</topBarEnabled>
+      <topBarIcon>
+      <name>examples-cdk</name>
+      <alt>examples-cdk</alt>
+      <src>./images/ideaconsult_80.png</src>
+      <href>./index.html</href>
+      </topBarIcon>
+
+	  <googleSearch>
+        <sitesearch>http://ideaconsult.github.com/examples-ambit</sitesearch>
+      </googleSearch>
+
+      <sideBarEnabled>true</sideBarEnabled>
+
+       <gitHub>
+        <projectId>ideaconsult/examples-ambit</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>black</ribbonColor>
+      </gitHub>
+       
+    </fluidoSkin>
+ 
+  </custom>
+
+</project>

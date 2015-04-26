@@ -1,0 +1,12 @@
+Manifest-version: 1.0
+Package-Title: net.idea.examples.ambit.smirks
+Main-Class: net.idea.examples.ambit.smirks.MainApp
+Specification-Title: Example of a AMBIT-SMIRKS
+Specification-Vendor: IdeaConsult Ltd.
+Specification-Version: 2015
+Package-Version: ${project.version}
+Package-Vendor: IdeaConsult Ltd.
+Implementation-Title: Example of AMBIT-SMIRKS
+Implementation-Version: ${project.version}
+Implementation-Vendor: IdeaConsult Ltd
+cdk.version: ${cdk.version}
