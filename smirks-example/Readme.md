@@ -24,7 +24,7 @@ The transformations can be applied on various sites of the target molecule in se
 * non-homomorphic or
 * externally specified list of sites
 
-##### Test online at http://tinyurl.com/testreaction
+##### [Test online](https://apps.ideaconsult.net/data/depict/reaction?search=c1ccccc1&smirks=%5Bc%3A1%5D%5BH%3A2%5D%3E%3E%5Bc%3A1%5D%5BO%5D%5BH%3A2%5D)
 
 #### Maven artifacts
 
