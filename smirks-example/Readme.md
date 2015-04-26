@@ -1,6 +1,6 @@
 #Ambit-SMIRKS
 
-Ambit-SMIRKS is an extension of the [Ambit-SMARTS](http://onlinelibrary.wiley.com/doi/10.1002/minf.201100028/abstract) Java library, both part of the [AMBIT project](http://ambit.sf.net)
+Ambit-SMIRKS is an extension of the [AMBIT-SMARTS](http://ambit.sourceforge.net/download_ambitlibs.html) Java library, both part of the [AMBIT project](http://ambit.sf.net)
 
 The SMIRKS module is used to enable metabolite predictions in [Toxtree](http://toxtree.sourceforge.net),
 once that site of metabolisms are predicted by [SMARTCyp](http://www.farma.ku.dk/smartcyp/)
@@ -85,6 +85,15 @@ You could [download the application](http://toxtree.sourceforge.net/download.htm
 
 ---
 
-Best poster award at [OpenTox Euro 2013](http://www.opentox.org/meet/opentoxeu2013/opentoxeuro13awards) |
-[This page](http://tinyurl.com/ambitsmirks) | [Ambit at Google+](https://plus.google.com/b/116849658963631645389/116849658963631645389/posts) |
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="10705013" data-related="10705013" data-count="none" data-hashtags="ambit,smirks,metabolism,oteu13,opentox">Tweet</a>
+### Publications 
+
+ * Best poster award at [OpenTox Euro 2013](http://www.opentox.org/meet/opentoxeu2013/opentoxeuro13awards) 
+ 
+ * AMBIT SMARTS Publication [N. Jeliazkova and N. Kochev, “AMBIT-SMARTS: Efficient Searching of Chemical Structures and Fragments,” Mol. Inform., vol. 30, no. 8, pp. 707–720, 2011.](http://onlinelibrary.wiley.com/doi/10.1002/minf.201100028/abstract) 
+ 
+### Social
+ * [Ambit at Google+](https://plus.google.com/b/116849658963631645389/116849658963631645389/posts) | <a href="https://twitter.com/share" class="twitter-share-button" data-via="10705013" data-related="10705013" data-count="none" data-hashtags="ambit,smirks,metabolism,oteu13,opentox">Tweet</a>
+ 
+ * [This page](http://tinyurl.com/ambitsmirks) 
+
+
