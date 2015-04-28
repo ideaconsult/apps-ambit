@@ -19,7 +19,6 @@ import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
-import ambit2.core.helper.CDKHueckelAromaticityDetector;
 import ambit2.smarts.SMIRKSManager;
 import ambit2.smarts.SMIRKSReaction;
 
@@ -33,8 +32,42 @@ public class ChemWizard {
 	private final static Logger LOGGER = Logger.getLogger(ChemWizard.class
 			.getName());
 	protected File file;
+	private SmilesGenerator smilesGenerator = new SmilesGenerator();
+
+	private static final String[][] smirks = {
+			{ "Aliphatic hydroxylation", "[C;X4:1][H:2]>>[C:1][O][H:2]" },
+			{ "Aromatic hydroxylation", "[c:1][H:2]>>[c:1][O][H:2]" },
+			{ "O-dealkylation", "[O:1][C:2]([H])>>[O:1][H].[C:2]=[O]" },
+			{ "Dioxolane demethylation",
+					"[C:3]([#8:1])[#8:2]>>[#8:1].[#8:2].[C:3]=[O]" },
+			{ "N-dealkylation", "[#7:1][C:2]([H])>>[#7:1][H].[C:2]=[O]" },
+			{ "S-oxydation", "[#16:1] >> [#16:1](=[O])" },
+			{ "Thioesther cleavage", "[#16:1][C;X3:2] >>[#16:1][H].[C;X3:2][O]" },
+			{ "N-oxydation", "[#7:1][#6:2]>>[#7+:1]([O-])[#6:2]" },
+			{ "Amine hydroxylation",
+					"[N:1]([H:3])[#6:2]>>[N:1]([O][H:3])[#6:2]" },
+			{ "Aldehyde oxidation", "[C;H1:1]=[O:2]>>[C:1](O)=[O:2]" },
+			{ "Alcohol oxidation", "[C:1]([H])[O:2][H]>>[C:1]=[O:2]" },
+			{ "Dihydropyrrole aromatization]",
+					"[N:1]1[C:2][C:3]=[C:4][C:5]1>>[N:1]1[C:2]=[C:3][C:4]=[C:5]1" },
+			{
+					"Aromatization of dihydropyridines",
+					"[N;X3:1]1([H])[#6:2]=[#6:3][#6;X4:4]([H])[#6:5]=[#6:6]1>>[n;H0:1]1=[#6:2][#6:3]=[#6:4][#6:5]=[#6:6]1" },
+			{ "Thioester bond breaking",
+					"[S:1][C:2]=[O:3]>>[S:1][H].[C:2](O)=[O:3]" },
+			{ "Desulphurization of phosphor",
+					"[*:1][P:2](=S)([*:3])[*:4]>>[*:1][P:2](=O)([*:3])[*:4]" },
+			{ "Epoxidation", "[C:1]=[C:2]>>[C:1]1[C:2][O]1" }
+
+	};
+	private static final SMIRKSReaction[] reactions = new SMIRKSReaction[smirks.length];
+	private final SMIRKSManager smrkMan;
 
 	public ChemWizard() {
+		smrkMan = new SMIRKSManager(SilentChemObjectBuilder.getInstance());
+		smrkMan.setFlagProcessResultStructures(true);
+		smrkMan.setFlagAddImplicitHAtomsOnResultProcess(true);
+
 		LOGGER.setLevel(Level.FINEST);
 	}
 
@@ -164,10 +197,10 @@ public class ChemWizard {
 							try {
 								assignSMILES(reactant);
 							} catch (Exception x) {
-								reactant.setProperty(FIELD.SMILES_Kekule,
-										x.getMessage());
+								LOGGER.log(Level.WARNING, x.getMessage());
 							}
 							writer.write(reactant);
+							
 						}
 
 					}
@@ -183,7 +216,6 @@ public class ChemWizard {
 
 			}
 		} catch (Exception x) {
-			x.printStackTrace();
 			LOGGER.log(
 					Level.SEVERE,
 					String.format("[Record %d] Error %s\n", records_read,
@@ -204,46 +236,19 @@ public class ChemWizard {
 		return records_read;
 	}
 
-	private SmilesGenerator smilesGenerator = new SmilesGenerator();
-
-	private static final String[][] smirks = {
-			{ "Aliphatic hydroxylation", "[C;X4:1][H:2]>>[C:1][O][H:2]" },
-			{ "Aromatic hydroxylation", "[c:1][H:2]>>[c:1][O][H:2]" },
-			{ "O-dealkylation", "[O:1][C:2]([H])>>[O:1][H].[C:2]=[O]" },
-			{ "Dioxolane demethylation",
-					"[C:3]([#8:1])[#8:2]>>[#8:1].[#8:2].[C:3]=[O]" },
-			{ "N-dealkylation", "[#7:1][C:2]([H])>>[#7:1][H].[C:2]=[O]" },
-			{ "S-oxydation", "[#16:1] >> [#16:1](=[O])" },
-			{ "Thioesther cleavage", "[#16:1][C;X3:2] >>[#16:1][H].[C;X3:2][O]" },
-			{ "N-oxydation", "[#7:1][#6:2]>>[#7+:1]([O-])[#6:2]" },
-			{ "Amine hydroxylation",
-					"[N:1]([H:3])[#6:2]>>[N:1]([O][H:3])[#6:2]" },
-			{ "Aldehyde oxidation", "[C;H1:1]=[O:2]>>[C:1](O)=[O:2]" },
-			{ "Alcohol oxidation", "[C:1]([H])[O:2][H]>>[C:1]=[O:2]" },
-			{ "Dihydropyrrole aromatization]",
-					"[N:1]1[C:2][C:3]=[C:4][C:5]1>>[N:1]1[C:2]=[C:3][C:4]=[C:5]1" },
-			{
-					"Aromatization of dihydropyridines",
-					"[N;X3:1]1([H])[#6:2]=[#6:3][#6;X4:4]([H])[#6:5]=[#6:6]1>>[n;H0:1]1=[#6:2][#6:3]=[#6:4][#6:5]=[#6:6]1" },
-			{ "Thioester bond breaking",
-					"[S:1][C:2]=[O:3]>>[S:1][H].[C:2](O)=[O:3]" },
-			{ "Desulphurization of phosphor",
-					"[*:1][P:2](=S)([*:3])[*:4]>>[*:1][P:2](=O)([*:3])[*:4]" },
-			{ "Epoxidation", "[C:1]=[C:2]>>[C:1]1[C:2][O]1" }
-
-	};
-	private static final SMIRKSReaction[] reactions = new SMIRKSReaction[smirks.length];
-	private final SMIRKSManager smrkMan = new SMIRKSManager(
-			SilentChemObjectBuilder.getInstance());
-
-	// SMIRKSReaction smr = smrkMan.parse(reaction.getSMIRKS());
-
 	protected void assignSMILES(IAtomContainer molecule) throws Exception {
-
-		molecule.setProperty(FIELD.SMILES_Kekule.name(), SmilesGenerator
-				.unique().create(molecule));
-		molecule.setProperty(FIELD.SMILES_Aromatic.name(), smilesGenerator
-				.aromatic().create(molecule));
+		try {
+			molecule.setProperty(FIELD.SMILES_Kekule.name(), SmilesGenerator
+					.unique().create(molecule));
+		} catch (Exception x) {
+			molecule.setProperty(FIELD.SMILES_Kekule, x.getMessage());
+		}
+		try {
+			molecule.setProperty(FIELD.SMILES_Aromatic.name(), smilesGenerator
+					.aromatic().create(molecule));
+		} catch (Exception x) {
+			molecule.setProperty(FIELD.SMILES_Aromatic, x.getMessage());
+		}
 
 	}
 
