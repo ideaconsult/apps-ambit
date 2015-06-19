@@ -1,7 +1,9 @@
-#### Query
+#### Query to retrieve all substances related to a compound , including study summaries:
 
-https://apps.ideaconsult.net/toxcast/substance?type=related&compound_uri=https%3A%2F%2Fapps.ideaconsult.net%2Ftoxcast%2Fcompound%2F3&media=application%2Fjson&studysummary=true
+   https://apps.ideaconsult.net/toxcast/substance?type=related&compound_uri=https%3A%2F%2Fapps.ideaconsult.net%2Ftoxcast%2Fcompound%2F3&media=application%2Fjson&studysummary=true
 
+* Note there are 5 different entries (the `substance` array), related to the Acetaminophen. In the context of the example (ToxCast Phase II) these are 5 different samples. The `composition` array defines what the substance is composed of.
+ 
 Result:
 
 ````
