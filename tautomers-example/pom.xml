@@ -67,7 +67,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>2.7.2-SNAPSHOT</ambit.version>
+    <ambit.version>3.0.0-SNAPSHOT</ambit.version>
   </properties>
   <issueManagement>
     <system>GitHub</system>
@@ -123,8 +123,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3.1</version>
           <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
+            <source>1.7</source>
+            <target>1.7</target>
           </configuration>
         </plugin>
         <plugin>

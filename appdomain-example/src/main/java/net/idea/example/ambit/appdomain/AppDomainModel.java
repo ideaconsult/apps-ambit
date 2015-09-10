@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 import net.idea.example.ambit.appdomain.MainApp._option;
 
 import org.apache.commons.lang3.StringUtils;
-import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.fingerprint.Fingerprinter;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -32,6 +31,7 @@ import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import Jama.Matrix;
 import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.data.model.ModelWrapper;
+import ambit2.core.helper.CDKHueckelAromaticityDetector;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;

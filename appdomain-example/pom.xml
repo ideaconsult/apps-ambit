@@ -4,7 +4,7 @@
   <groupId>net.idea.examples.ambit</groupId>
   <artifactId>ambit-appdomain-example</artifactId>
   <name>ambit-appdomain-example</name>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <description>Ambit Applicability domain Example</description>
   <distributionManagement>
     <snapshotRepository>
@@ -74,7 +74,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>2.5.9</ambit.version>
+    <ambit.version>3.0.0-SNAPSHOT</ambit.version>
   </properties>
   <build>
     <finalName>example-ambit-appdomain</finalName>
@@ -116,8 +116,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3.1</version>
           <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
+            <source>1.7</source>
+            <target>1.7</target>
           </configuration>
         </plugin>
         <plugin>

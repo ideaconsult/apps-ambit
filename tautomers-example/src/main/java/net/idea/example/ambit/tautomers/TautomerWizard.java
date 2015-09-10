@@ -17,12 +17,10 @@ import net.idea.example.ambit.tautomers.MainApp._option;
 import net.idea.example.ambit.writers.RDFTautomersWriter;
 
 import org.openscience.cdk.CDKConstants;
-import org.openscience.cdk.aromaticity.CDKHueckelAromaticityDetector;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.inchi.InChIGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.io.IChemObjectReader.Mode;
 import org.openscience.cdk.io.IChemObjectReaderErrorHandler;
 import org.openscience.cdk.io.IChemObjectWriter;
@@ -35,6 +33,7 @@ import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ambit2.base.exceptions.AmbitIOException;
 import ambit2.core.filter.MoleculeFilter;
+import ambit2.core.helper.CDKHueckelAromaticityDetector;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
@@ -534,7 +533,7 @@ public class TautomerWizard {
 						boolean aromatic = false;
 						for (IBond bond : molecule.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) {aromatic = true; break;}
 						if (aromatic)
-							molecule = kekulizer.kekuliseAromaticRings((IMolecule)molecule);
+							molecule = kekulizer.kekuliseAromaticRings((IAtomContainer)molecule);
 					} catch (Exception x) {
 						LOGGER.log(Level.WARNING, String.format("[Record %d] Error %s\t%s", records_read, file.getAbsoluteFile(), x.getMessage()));
 					}
@@ -743,7 +742,7 @@ public class TautomerWizard {
 				for (IBond bond : tautomer.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) {aromatic = true; break;}
 				IAtomContainer kekulized = tautomer;
 				if (aromatic) {
-					kekulized = kekulizer.kekuliseAromaticRings((IMolecule)tautomer);
+					kekulized = kekulizer.kekuliseAromaticRings((IAtomContainer)tautomer);
 					for (IBond bond : kekulized.bonds()) if (bond.getFlag(CDKConstants.ISAROMATIC)) 
 						bond.setFlag(CDKConstants.ISAROMATIC,false);
 				}
