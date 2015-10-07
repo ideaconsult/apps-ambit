@@ -387,7 +387,7 @@ public class TautomerWizard {
 				throw new InvalidArgumentException(argument,
 						_option.isomorphismcheck);
 			}
-			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = flag;
+			tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckIsomorphism(flag);
 			break;
 		}
 		case inchicheck: {
@@ -399,7 +399,7 @@ public class TautomerWizard {
 			} catch (Exception x) {
 				throw new InvalidArgumentException(argument, _option.inchicheck);
 			}
-			tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI = flag;
+			tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckInChI(flag);
 			break;
 		}
 
@@ -410,8 +410,8 @@ public class TautomerWizard {
 							.getValue()) {
 						setAll(false);
 						generateInchi = true;
-						tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism = false;
-						tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI = true;
+						tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckIsomorphism(false);
+						tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckInChI(true);
 						setUse13Rules(true);
 						setUse15Rules(true);
 						setUse17Rules(false);
@@ -497,11 +497,11 @@ public class TautomerWizard {
 		}
 		case isomorphismcheck: {
 			return Boolean
-					.toString(tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism);
+					.toString(tautomerManager.tautomerFilter.isFlagApplyDuplicationCheckIsomorphism());
 		}
 		case inchicheck: {
 			return Boolean
-					.toString(tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI);
+					.toString(tautomerManager.tautomerFilter.isFlagApplyDuplicationCheckInChI());
 		}
 
 		case standardize: {
