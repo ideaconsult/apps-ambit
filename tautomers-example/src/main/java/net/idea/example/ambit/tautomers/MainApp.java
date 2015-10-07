@@ -147,7 +147,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Benchmarking tautomer generation time for each molecule. Benchmark info is outputted to the specified file";
+				return "Benchmarking tautomer generation time for each molecule. Benchmark info is written to the specified file";
 			}
 			@Override
 			public String getShortName() {
@@ -181,7 +181,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of backtracks performed by the incremental algorithms-DFSA (default value 5000)";
+				return "Maximum number <n> of backtracks performed by the incremental algorithms-DFSA (default value 5000)";
 			}
 			@Override
 			public String getShortName() {
@@ -197,7 +197,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of tautomer registrations by the combinatorial and incremental algorithms (default value 1000)";
+				return "Maximum number <n> of tautomer registrations by the combinatorial and incremental algorithms (default value 1000)";
 			}
 			@Override
 			public String getShortName() {
@@ -213,7 +213,7 @@ public class MainApp {
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal number <n> of subcombinations for the improved combinatorial algorithm (default value 10000)";
+				return "Maximum number <n> of subcombinations for the improved combinatorial algorithm (default value 10000)";
 			}
 			@Override
 			public String getShortName() {
@@ -272,7 +272,7 @@ public class MainApp {
 		rule1_3 {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
@@ -288,7 +288,7 @@ public class MainApp {
 		rule1_5 {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
@@ -304,7 +304,7 @@ public class MainApp {
 		rule1_7 {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
@@ -320,7 +320,7 @@ public class MainApp {
 		inchi {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
@@ -370,11 +370,11 @@ public class MainApp {
 		isomorphismcheck {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
-				return "The result isomorphic tautomers are filtered (default 'on')";
+				return "The result isomorphic tautomers are filtered (default 'off')";
 			}
 			@Override
 			public String getShortName() {
@@ -385,15 +385,30 @@ public class MainApp {
 		inchicheck {
 			@Override
 			public String getArgName() {
-				return "on/off";
+				return "on|off";
 			}
 			@Override
 			public String getDescription() {
-				return "The result tautomers are checked for duplicates by comparing InChI keys (default 'off')";
+				return "The result tautomers are checked for duplicates by comparing InChI keys (default 'on')";
 			}
 			@Override
 			public String getShortName() {
 				return "n";
+			}
+		},
+		
+		standardize {
+			@Override
+			public String getArgName() {
+				return "on|off";
+			}
+			@Override
+			public String getDescription() {
+				return "Sets default options (single tautomer, InChI generation). Overrides other related options.";
+			}
+			@Override
+			public String getShortName() {
+				return "d";
 			}
 		},
 		
