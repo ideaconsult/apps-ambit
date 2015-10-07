@@ -2,7 +2,7 @@
 
 ###2.0.0-SNAPSHOT
 
-* Ambit dependency updated to 3.0.0-SNAPSHOT
+* Ambit dependency updated to 3.0.0-SNAPSHOT. This version uses CDK 1.5.10 !
  
 ###1.0.1-SNAPSHOT
 
