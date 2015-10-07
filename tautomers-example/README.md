@@ -94,13 +94,13 @@ usage: net.idea.example.ambit.tautomers.MainApp
  -m,--maxbacktracks <n>            Maximal number <n> of backtracks
                                    performed by the incremental algorithms-DFSA (default value 5000)
  -n,--inchicheck <on/off>          The result tautomers are checked for
-                                   duplicatin comparing InChI keys (default 'off')
+                                   duplicates by comparing InChI keys (default 'off')
  -o,--output <output>              Output file name ( .sdf | .txt  | .csv
                                    | .cml | .n3 ) - recognised by extension!
- -p,--inputfilter <filter>         Filters the inputed molecules as
-                                   defined by the <filter> string containing conditions in the form: PROP=a
-                                   or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval.
-                                   Posible properties: #Mol - molecule record number, NA - number of atoms,
+ -p,--inputfilter <filter>         Filters the input molecules as defined
+                                   by the <filter> string containing conditions in the form: PROP=a or
+                                   PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval.
+                                   Podsible properties: #Mol - molecule record number, NA - number of atoms,
                                    NB - number of bonds, CYCLOMATIC - cyclomatic numberUse symbol ';' as
                                    logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]
  -r,--maxregistrations <n>         Maximal number <n> of tautomer
@@ -109,19 +109,18 @@ usage: net.idea.example.ambit.tautomers.MainApp
  -s,--ruleselection <mode>         Rule selection mode: all, random
  -t,--tautomers <set>              all: Write all tautomers; best: Write
                                    only the best tautomer
- -x,--exclude <file>               Excludes from the output file and
-                                   benchmarking the structures for which the incremental algorithm is
+ -x,--exclude <file>               Excludes from the output and the
+                                   benchmarking file the structures for which the incremental algorithm is
                                    switched to combinatorial one (i.e. rule number limit is reached). The
-                                   info for excluded structures is stored in <file>
+                                   info about the excluded structures is stored in <file>
  -z,--isomorphismcheck <on/off>    The result isomorphic tautomers are
-                                   filtrated (default 'on')
+                                   filtered (default 'on')
 Examples:
-Read file and write all tautomers to the standard out :
-java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf
+Read file and write all tautomers to the standard out : 
+java -jar example-ambit-tautomers-jar-with-dependencies.jar	-f filename.sdf
 
-Read file and write only the best tautomers to an SDF file :
-java -jar example-ambit-tautomers-jar-with-dependencies.jar     -f filename.sdf -o tautomers.sdf -t best
-
+Read file and write only the best tautomers to an SDF file : 
+java -jar example-ambit-tautomers-jar-with-dependencies.jar	-f filename.sdf -o tautomers.sdf -t best
 ````
 
 Download Release
