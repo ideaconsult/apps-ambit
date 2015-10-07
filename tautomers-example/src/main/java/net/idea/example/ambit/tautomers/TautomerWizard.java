@@ -41,6 +41,8 @@ import ambit2.core.io.FileOutputState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerConst;
+import ambit2.tautomers.TautomerConst.GAT;
+import ambit2.tautomers.TautomerConst.RSM;
 import ambit2.tautomers.TautomerManager;
 import ambit2.tautomers.TautomerUtils;
 
@@ -75,7 +77,7 @@ public class TautomerWizard {
 	protected File resultFile;
 	protected boolean all = true;
 	protected InchiProcessor inchiProcessor;
-	protected int algorithm = TautomerConst.GAT_Incremental;
+	protected GAT algorithm = GAT.Incremental;
 	protected boolean benchmark = false;
 	protected String benchmarkOutFile = "benchmark.csv";
 	protected boolean exclude = false;
@@ -111,11 +113,11 @@ public class TautomerWizard {
 		this.benchmarkOutFile = benchmarkOutFile;
 	}
 
-	public int getAlgorithm() {
+	public GAT getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(int algorithm) {
+	public void setAlgorithm(GAT algorithm) {
 		this.algorithm = algorithm;
 	}
 
@@ -244,11 +246,11 @@ public class TautomerWizard {
 				throw new InvalidArgumentException(argument, _option.algorithm);
 			argument = argument.toLowerCase().trim();
 			if (argument.equals("comb"))
-				setAlgorithm(TautomerConst.GAT_Comb_Pure);
+				setAlgorithm(GAT.Comb_Pure);
 			else if (argument.equals("icomb"))
-				setAlgorithm(TautomerConst.GAT_Comb_Improved);
+				setAlgorithm(GAT.Comb_Improved);
 			else if (argument.equals("incr"))
-				setAlgorithm(TautomerConst.GAT_Incremental);
+				setAlgorithm(GAT.Incremental);
 			else
 				throw new InvalidArgumentException(argument, _option.algorithm);
 			break;
@@ -288,17 +290,14 @@ public class TautomerWizard {
 			break;
 		}
 		case ruleselection: {
-			argument = argument == null ? null : argument.toLowerCase().trim();
-			if ("all".equals(argument))
+			argument = argument == null ? null : argument.toUpperCase().trim();
+			try {
 				tautomerManager.getRuleSelector().setSelectionMode(
-						TautomerConst.RSM_ALL);
-			else if (argument.equals("random"))
-				tautomerManager.getRuleSelector().setSelectionMode(
-						TautomerConst.RSM_RANDOM);
-			else
+						RSM.valueOf(argument));
+			} catch (Exception x) {
 				throw new InvalidArgumentException(argument,
 						_option.ruleselection);
-
+			}
 			break;
 		}
 		case rulenumberlimit: {
@@ -416,6 +415,8 @@ public class TautomerWizard {
 						setUse13Rules(true);
 						setUse15Rules(true);
 						setUse17Rules(false);
+						estimateTautomersFile = null;
+						benchmark = false;
 					}
 
 			} catch (Exception x) {
@@ -426,6 +427,99 @@ public class TautomerWizard {
 		}
 		default:
 		}
+	}
+
+	/**
+	 * 
+	 * @param option
+	 * @param argument
+	 * @throws Exception
+	 */
+	public String getOption(_option option) throws Exception {
+		switch (option) {
+		case file: {
+			return file == null ? null : file.getAbsolutePath();
+		}
+		case output: {
+			return getResultFile() == null ? null : getResultFile()
+					.getAbsolutePath();
+		}
+		case tautomers: {
+			return all ? "all" : "best";
+		}
+		case benchmark: {
+			return benchmark ? "on" : "of";
+		}
+		case algorithm: {
+			return getAlgorithm().toString();
+		}
+		case maxbacktracks: {
+			return Integer.toString(getMaxBackTracks());
+		}
+		case maxregistrations: {
+			return Integer.toString(getMaxNumOfRegistrations());
+		}
+		case maxsubcombinations: {
+			return Integer.toString(getMaxNumOfSubCombinations());
+
+		}
+		case estimate: {
+			return estimateTautomersFile;
+		}
+		case ruleselection: {
+			return tautomerManager.getRuleSelector().getSelectionMode().getShortName();
+		}
+		case rulenumberlimit: {
+			return Integer.toString(tautomerManager.getRuleSelector()
+					.getRuleNumberLimit());
+		}
+		case rule1_3: {
+			return getUse13Rules() ? "on" : "off";
+		}
+		case rule1_5: {
+			return getUse15Rules() ? "on" : "off";
+		}
+		case rule1_7: {
+			return getUse17Rules() ? "on" : "off";
+		}
+		case inchi: {
+			return generateInchi ? "on" : "off";
+		}
+		case exclude: {
+			return String
+					.format("Exclude:%s excludeOutFile:%s FlagStopGenerationOnReachingRuleSelectorLimit:%s",
+							exclude,
+							excludeOutFile,
+							tautomerManager.FlagStopGenerationOnReachingRuleSelectorLimit);
+		}
+		case inputfilter: {
+			return molecularFilter == null ? "" : molecularFilter.toString();
+		}
+		case isomorphismcheck: {
+			return Boolean
+					.toString(tautomerManager.tautomerFilter.FlagApplyDuplicationCheckIsomorphism);
+		}
+		case inchicheck: {
+			return Boolean
+					.toString(tautomerManager.tautomerFilter.FlagApplyDuplicationCheckInChI);
+		}
+
+		case standardize: {
+			StringBuilder b = new StringBuilder();
+			_option[] oo = new _option[] { _option.inchi,
+					_option.isomorphismcheck, _option.inchicheck,
+					_option.rule1_3, _option.rule1_5, _option.rule1_7 };
+			for (_option o : oo) {
+				b.append(o.getShortName());
+				b.append(" ");
+				b.append(getOption(o));
+				b.append(" ");
+			}
+			return b.toString();
+		}
+		default:
+		}
+		return "";
 	}
 
 	protected IIteratingChemObjectReader<IAtomContainer> getReader(
@@ -499,8 +593,7 @@ public class TautomerWizard {
 		// tautomerManager.getRuleSelector().setSelectionOrder(TautomerConst.RULE_ORDER_NONE);
 		// tautomerManager.getRuleSelector().setRuleNumberLimit(5);
 
-		if (algorithm == TautomerConst.GAT_Comb_Pure
-				|| algorithm == TautomerConst.GAT_Comb_Improved) {
+		if (algorithm == GAT.Comb_Pure || algorithm == GAT.Comb_Improved) {
 			tautomerManager.FlagCalculateCACTVSEnergyRank = true;
 			RANK = "CACTVS_ENERGY_RANK";
 		}
@@ -867,15 +960,15 @@ public class TautomerWizard {
 			tautomerManager.setStructure(molecule);
 
 			switch (algorithm) {
-			case TautomerConst.GAT_Comb_Pure:
+			case Comb_Pure:
 				res = tautomerManager.generateTautomers();
 				break;
 
-			case TautomerConst.GAT_Comb_Improved:
+			case Comb_Improved:
 				res = tautomerManager.generateTautomers_ImprovedCombApproach();
 				break;
 
-			case TautomerConst.GAT_Incremental:
+			case Incremental:
 				res = tautomerManager.generateTautomersIncrementaly();
 				break;
 			}
