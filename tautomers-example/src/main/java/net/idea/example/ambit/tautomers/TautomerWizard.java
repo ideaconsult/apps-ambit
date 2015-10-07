@@ -92,6 +92,7 @@ public class TautomerWizard {
 	protected MoleculeFilter molecularFilter = null;
 
 	protected boolean generateInchi = true;
+	protected boolean writeOriginalStructure = true;
 
 	protected TautomerManager tautomerManager = new TautomerManager();
 	protected Aromaticity aromaticity = new Aromaticity(ElectronDonation.cdk(),
@@ -387,7 +388,8 @@ public class TautomerWizard {
 				throw new InvalidArgumentException(argument,
 						_option.isomorphismcheck);
 			}
-			tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckIsomorphism(flag);
+			tautomerManager.tautomerFilter
+					.setFlagApplyDuplicationCheckIsomorphism(flag);
 			break;
 		}
 		case inchicheck: {
@@ -399,7 +401,8 @@ public class TautomerWizard {
 			} catch (Exception x) {
 				throw new InvalidArgumentException(argument, _option.inchicheck);
 			}
-			tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckInChI(flag);
+			tautomerManager.tautomerFilter
+					.setFlagApplyDuplicationCheckInChI(flag);
 			break;
 		}
 
@@ -410,13 +413,16 @@ public class TautomerWizard {
 							.getValue()) {
 						setAll(false);
 						generateInchi = true;
-						tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckIsomorphism(false);
-						tautomerManager.tautomerFilter.setFlagApplyDuplicationCheckInChI(true);
+						tautomerManager.tautomerFilter
+								.setFlagApplyDuplicationCheckIsomorphism(false);
+						tautomerManager.tautomerFilter
+								.setFlagApplyDuplicationCheckInChI(true);
 						setUse13Rules(true);
 						setUse15Rules(true);
 						setUse17Rules(false);
 						estimateTautomersFile = null;
 						benchmark = false;
+						writeOriginalStructure = false;
 					}
 
 			} catch (Exception x) {
@@ -467,7 +473,8 @@ public class TautomerWizard {
 			return estimateTautomersFile;
 		}
 		case ruleselection: {
-			return tautomerManager.getRuleSelector().getSelectionMode().getShortName();
+			return tautomerManager.getRuleSelector().getSelectionMode()
+					.getShortName();
 		}
 		case rulenumberlimit: {
 			return Integer.toString(tautomerManager.getRuleSelector()
@@ -496,12 +503,12 @@ public class TautomerWizard {
 			return molecularFilter == null ? "" : molecularFilter.toString();
 		}
 		case isomorphismcheck: {
-			return Boolean
-					.toString(tautomerManager.tautomerFilter.isFlagApplyDuplicationCheckIsomorphism());
+			return Boolean.toString(tautomerManager.tautomerFilter
+					.isFlagApplyDuplicationCheckIsomorphism());
 		}
 		case inchicheck: {
-			return Boolean
-					.toString(tautomerManager.tautomerFilter.isFlagApplyDuplicationCheckInChI());
+			return Boolean.toString(tautomerManager.tautomerFilter
+					.isFlagApplyDuplicationCheckInChI());
 		}
 
 		case standardize: {
@@ -748,7 +755,7 @@ public class TautomerWizard {
 						estimateOut.write("\n");
 						if (records_read % 100 == 0) {
 							estimateOut.flush();
-							LOGGER.info(String.format("[Record %d] %s",
+							LOGGER.fine(String.format("[Record %d] %s",
 									records_read, info));
 						}
 						continue;
@@ -790,16 +797,19 @@ public class TautomerWizard {
 						}
 					}
 
-					/**
-					 * Write the original structure
-					 */
-					molecule.setProperty("MOLECULE_NO", records_read);
-					molecule.setProperty("TAUTOMER_RANK", "Original structure");
-					molecule.setProperty("TAUTOMER_OF_MOLECULE_NO", "");
-					molecule.setProperty("InChIKey", "");
-					molecule.setProperty("InChI.status", "");
-					molecule.setProperty("InChI.msg", "");
-					writeResult(writer, null, molecule);
+					if (writeOriginalStructure) {
+						/**
+						 * Write the original structure
+						 */
+						molecule.setProperty("MOLECULE_NO", records_read);
+						molecule.setProperty("TAUTOMER_RANK",
+								"Original structure");
+						molecule.setProperty("TAUTOMER_OF_MOLECULE_NO", "");
+						molecule.setProperty("InChIKey", "");
+						molecule.setProperty("InChI.status", "");
+						molecule.setProperty("InChI.msg", "");
+						writeResult(writer, null, molecule);
+					}
 
 					/**
 					 * Write results
@@ -813,7 +823,7 @@ public class TautomerWizard {
 										.getProperty(RANK);
 								if (rank_property == null)
 									LOGGER.log(
-											Level.INFO,
+											Level.FINE,
 											String.format(
 													"[Record %d] No tautomer rank, probably this is the original structure",
 													records_read));
@@ -868,7 +878,7 @@ public class TautomerWizard {
 						benchmarkOut.write("\n");
 						if (records_read % 100 == 0) {
 							benchmarkOut.flush();
-							LOGGER.info(String.format("[Record %d] %s",
+							LOGGER.fine(String.format("[Record %d] %s",
 									records_read, info));
 						}
 					}
