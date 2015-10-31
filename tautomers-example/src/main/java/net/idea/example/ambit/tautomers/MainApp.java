@@ -357,7 +357,7 @@ public class MainApp {
 			@Override
 			public String getDescription() {
 				return "Filters the input molecules as defined by the <filter> string containing conditions in the form: "
-						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Podsible properties: "
+						+ "PROP=a or PROP=[a,b] or PROP=[,b] or PROP=[a,] to define a value or interval. Possible properties: "
 						+ "#Mol - molecule record number, NA - number of atoms, NB - number of bonds, CYCLOMATIC - cyclomatic number"
 						+ "Use symbol ';' as logical AND to combine several conditions e.g. NA=[30,50];#Mol=[450,1000]";
 			}

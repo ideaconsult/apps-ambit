@@ -87,7 +87,7 @@ public class TautomerWizard {
 	protected long globalBeginTime = 0;
 	protected long globalEndTime = 0;
 	protected double globalCalcTime = 0;
-	protected String RANK = "TAUTOMER_RANK";
+	protected String RANK = TautomerConst.TAUTOMER_RANK;
 	protected String estimateTautomersFile = null;
 	protected MoleculeFilter molecularFilter = null;
 
@@ -535,7 +535,7 @@ public class TautomerWizard {
 		FileInputState instate = new FileInputState();
 		IIteratingChemObjectReader<IAtomContainer> reader;
 		if (extension
-				.endsWith(FileInputState.extensions[FileInputState.SDF_INDEX])) {
+				.endsWith(FileInputState._FILE_INPUT.SDF_INDEX.getExtension())) {
 			reader = new InteractiveIteratingMDLReader(in,
 					SilentChemObjectBuilder.getInstance());
 			((InteractiveIteratingMDLReader) reader).setSkip(true);
@@ -802,7 +802,7 @@ public class TautomerWizard {
 						 * Write the original structure
 						 */
 						molecule.setProperty("MOLECULE_NO", records_read);
-						molecule.setProperty("TAUTOMER_RANK",
+						molecule.setProperty(TautomerConst.TAUTOMER_RANK,
 								"Original structure");
 						molecule.setProperty("TAUTOMER_OF_MOLECULE_NO", "");
 						molecule.setProperty("InChIKey", "");
@@ -1048,6 +1048,7 @@ public class TautomerWizard {
 		}
 		// if (writer instanceof SDFWriter) ((SDFWriter)writer).
 		writer.write(tautomer);
+
 	}
 }
 
