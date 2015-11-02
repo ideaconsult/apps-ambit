@@ -15,19 +15,22 @@ java -jar target/benchmarks-ambit-3.0.0-SNAPSHOT.jar
 
 ##Results
 
-### ambit-3.0.0-SNAPSHOT
+### ambit-2.7.4
 
+````
 Result "generateTautomers":
-  503.631 ±(99.9%) 90.675 ms/op [Average]
-  (min, avg, max) = (464.590, 503.631, 654.827), stdev = 59.976
-  CI (99.9%): [412.956, 594.306] (assumes normal distribution)
+  55.449 ±(99.9%) 10.161 ms/op [Average]
+  (min, avg, max) = (48.999, 55.449, 70.299), stdev = 6.721
+  CI (99.9%): [45.288, 65.610] (assumes normal distribution)
 
 
-# Run complete. Total time: 00:00:28
+# Run complete. Total time: 00:00:21
 
-Benchmark                             Mode  Cnt    Score    Error  Units
-TautomersBenchmark.generateTautomers  avgt   10  503.631 ± 90.675  ms/op
+Benchmark                             Mode  Cnt   Score    Error  Units
+TautomersBenchmark.generateTautomers  avgt   10  55.449 ± 10.161  ms/op
 
 ````
 
-
+### ambit-3.0.0-SNAPSHOT
+````
+````

@@ -32,6 +32,7 @@
 package net.idea.benchmark;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -51,11 +52,16 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.io.MDLReader;
-import org.openscience.cdk.silent.AtomContainer;
+import org.openscience.cdk.silent.SilentChemObjectBuilder;
+import org.openscience.cdk.smiles.SmilesParser;
+import org.openscience.cdk.tools.CDKHydrogenAdder;
+import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
+import ambit2.base.interfaces.IStructureRecord;
+import ambit2.core.data.MoleculeTools;
+import ambit2.core.io.IRawReader;
+import ambit2.core.io.RawIteratingSDFReader;
 import ambit2.tautomers.TautomerManager;
 
 import com.google.common.base.Verify;
@@ -83,24 +89,29 @@ public class TautomersBenchmark {
 	}
 
 	@State(Scope.Benchmark)
-	public static class Molecule {
+	public static class MoleculeSDFFactory {
 		IAtomContainer instance = null;
 
 		@Setup(Level.Trial)
 		public void initialize() {
-			MDLReader reader = null;
+			IRawReader<IStructureRecord> reader = null;
 			try {
-				IAtomContainer mol = null;
 				InputStream in = getClass().getClassLoader()
 						.getResourceAsStream(
 								"net/idea/benchmark/CHEMBL2373570.sdf");
 				Verify.verifyNotNull(in);
-				reader = new MDLReader(in);
-				mol = reader.read(new AtomContainer());
-				instance = mol;
+
+				reader = new RawIteratingSDFReader(new InputStreamReader(in));
+				while (reader.hasNext()) {
+					IStructureRecord record = reader.nextRecord();
+					instance = MoleculeTools.readMolfile(record.getContent());
+					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(instance);
+					CDKHydrogenAdder.getInstance(SilentChemObjectBuilder.getInstance()).addImplicitHydrogens(instance);
+					break;
+				}
 				Verify.verifyNotNull(instance);
 				Verify.verify(instance.getAtomCount() == 581);
-			} catch (CDKException x) {
+			} catch (Exception x) {
 				x.printStackTrace();
 
 			} finally {
@@ -113,10 +124,31 @@ public class TautomersBenchmark {
 
 		}
 	}
+	
+	@State(Scope.Benchmark)
+	public static class MoleculeSMILESFactory {
+		IAtomContainer instance = null;
+
+		@Setup(Level.Trial)
+		public void initialize() {
+			try {
+				SmilesParser parser = new SmilesParser(SilentChemObjectBuilder.getInstance());
+				IAtomContainer mol = parser.parseSmiles("CC(=O)CC(C1=CC=CC=C1)C2=C(C3=CC=CC=C3OC2=O)O");
+				AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+				CDKHydrogenAdder.getInstance(SilentChemObjectBuilder.getInstance()).addImplicitHydrogens(mol);
+				instance = mol;
+			} catch (Exception x) {
+				x.printStackTrace();
+
+			} finally {
+			}
+
+		}
+	}
 
 	@Benchmark
 	public List<IAtomContainer> generateTautomers(
-			TautomerManagerFactory tautomerManager, Molecule molecule)
+			TautomerManagerFactory tautomerManager, MoleculeSMILESFactory molecule)
 
 	throws Exception {
 		tautomerManager.instance.setStructure(molecule.instance);
