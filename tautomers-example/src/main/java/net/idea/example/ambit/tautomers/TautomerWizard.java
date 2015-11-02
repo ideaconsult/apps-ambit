@@ -57,8 +57,7 @@ public class TautomerWizard {
 	protected NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
 
 	enum on_off {
-		on {
-			@Override
+		on {			@Override
 			public boolean getValue() {
 				return true;
 			}
