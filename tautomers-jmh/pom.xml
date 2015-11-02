@@ -75,6 +75,11 @@
 			<artifactId>ambit2-tautomers</artifactId>
 			<version>${ambit.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>17.0</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
@@ -190,5 +195,32 @@
 				<ambit.version>2.7.4</ambit.version>
 			</properties>
 		</profile>
+		<profile>
+			<id>2.7.2</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>2.7.2</ambit.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>2.5.4</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>2.5.4</ambit.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>2.4.11</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>2.4.11</ambit.version>
+			</properties>
+		</profile>		
 	</profiles>
 </project>

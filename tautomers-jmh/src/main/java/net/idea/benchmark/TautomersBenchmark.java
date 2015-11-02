@@ -80,6 +80,32 @@ public class TautomersBenchmark {
 		@Setup(Level.Trial)
 		public void initialize() {
 			instance = new TautomerManager();
+			/*
+			instance.FlagCalculateCACTVSEnergyRank = true;
+
+			instance.tautomerFilter.FlagApplyDuplicationCheckIsomorphism =false;
+			.setFlagApplyDuplicationCheckIsomorphism(false);
+			instance.tautomerFilter.setFlagApplyDuplicationCheckInChI(true);
+			
+			instance.FlagRegisterOnlyBestRankTautomers = true;
+			instance.FlagSetStereoElementsOnTautomerProcess = true;
+			*/
+			/*
+			System.out.println(String.format("%s %s %s %s %s %s %s %s %s %s %s",
+			instance.FlagApplySimpleAromaticityRankCorrection,
+			instance.FlagCalculateCACTVSEnergyRank,
+			instance.FlagCheckDuplicationOnRegistering,
+			instance.FlagCheckNumOfRegistrationsForIncrementalAlgorithm,
+			instance.FlagCheckValencyOnRegistering,
+			instance.FlagEnergyRankingMethod,
+			instance.FlagExcludeWarnFiltersOnRegistering,
+			instance.FlagNewRuleInstanceSearchOnEnergyRanking,
+			instance.FlagPrintExtendedRuleInstances,
+			instance.FlagStopGenerationOnReachingRuleSelectorLimit,
+			instance.FlagSwitchToCombinatorialOnReachingRuleLimit));
+			*/
+			
+
 		}
 
 		@TearDown(Level.Trial)
