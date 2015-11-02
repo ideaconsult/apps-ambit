@@ -38,6 +38,7 @@ import ambit2.core.filter.MoleculeFilter;
 import ambit2.core.io.DelimitedFileFormat;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
+import ambit2.core.io.FileState._FILE_TYPE;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.tautomers.TautomerConst;
@@ -535,7 +536,7 @@ public class TautomerWizard {
 		FileInputState instate = new FileInputState();
 		IIteratingChemObjectReader<IAtomContainer> reader;
 		if (extension
-				.endsWith(FileInputState._FILE_INPUT.SDF_INDEX.getExtension())) {
+				.endsWith(FileInputState._FILE_TYPE.SDF_INDEX.getExtension())) {
 			reader = new InteractiveIteratingMDLReader(in,
 					SilentChemObjectBuilder.getInstance());
 			((InteractiveIteratingMDLReader) reader).setSkip(true);
@@ -992,9 +993,7 @@ public class TautomerWizard {
 	}
 
 	protected IChemObjectWriter createWriter() throws Exception {
-		if ((resultFile == null)
-				|| resultFile.getName().endsWith(
-						FileOutputState.extensions[FileOutputState.SDF_INDEX]))
+		if (_FILE_TYPE.SDF_INDEX.hasExtension(resultFile))
 			return new SDFWriter(new OutputStreamWriter(
 					resultFile == null ? System.out : new FileOutputStream(
 							resultFile)));
