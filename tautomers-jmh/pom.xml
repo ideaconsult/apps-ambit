@@ -178,14 +178,23 @@
 	</build>
 	<profiles>
 		<profile>
-			<id>3.0.0-SNAPSHOT</id>
+			<id>3.0.1-SNAPSHOT</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<ambit.version>3.0.0-SNAPSHOT</ambit.version>
+				<ambit.version>3.0.1-SNAPSHOT</ambit.version>
 			</properties>
 		</profile>
+		<profile>
+			<id>3.0.0</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>3.0.0</ambit.version>
+			</properties>
+		</profile>		
 		<profile>
 			<id>2.7.4</id>
 			<activation>

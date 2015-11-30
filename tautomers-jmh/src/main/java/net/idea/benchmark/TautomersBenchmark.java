@@ -32,7 +32,6 @@
 package net.idea.benchmark;
 
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -52,16 +51,15 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.io.MDLReader;
+import org.openscience.cdk.silent.AtomContainer;
 import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.tools.CDKHydrogenAdder;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
-import ambit2.base.interfaces.IStructureRecord;
-import ambit2.core.data.MoleculeTools;
-import ambit2.core.io.IRawReader;
-import ambit2.core.io.RawIteratingSDFReader;
 import ambit2.tautomers.TautomerManager;
 
 import com.google.common.base.Verify;
@@ -81,30 +79,29 @@ public class TautomersBenchmark {
 		public void initialize() {
 			instance = new TautomerManager();
 			/*
-			instance.FlagCalculateCACTVSEnergyRank = true;
-
-			instance.tautomerFilter.FlagApplyDuplicationCheckIsomorphism =false;
-			.setFlagApplyDuplicationCheckIsomorphism(false);
-			instance.tautomerFilter.setFlagApplyDuplicationCheckInChI(true);
-			
-			instance.FlagRegisterOnlyBestRankTautomers = true;
-			instance.FlagSetStereoElementsOnTautomerProcess = true;
-			*/
+			 * instance.FlagCalculateCACTVSEnergyRank = true;
+			 * 
+			 * instance.tautomerFilter.FlagApplyDuplicationCheckIsomorphism
+			 * =false; .setFlagApplyDuplicationCheckIsomorphism(false);
+			 * instance.tautomerFilter.setFlagApplyDuplicationCheckInChI(true);
+			 * 
+			 * instance.FlagRegisterOnlyBestRankTautomers = true;
+			 * instance.FlagSetStereoElementsOnTautomerProcess = true;
+			 */
 			/*
-			System.out.println(String.format("%s %s %s %s %s %s %s %s %s %s %s",
-			instance.FlagApplySimpleAromaticityRankCorrection,
-			instance.FlagCalculateCACTVSEnergyRank,
-			instance.FlagCheckDuplicationOnRegistering,
-			instance.FlagCheckNumOfRegistrationsForIncrementalAlgorithm,
-			instance.FlagCheckValencyOnRegistering,
-			instance.FlagEnergyRankingMethod,
-			instance.FlagExcludeWarnFiltersOnRegistering,
-			instance.FlagNewRuleInstanceSearchOnEnergyRanking,
-			instance.FlagPrintExtendedRuleInstances,
-			instance.FlagStopGenerationOnReachingRuleSelectorLimit,
-			instance.FlagSwitchToCombinatorialOnReachingRuleLimit));
-			*/
-			
+			 * System.out.println(String.format("%s %s %s %s %s %s %s %s %s %s %s"
+			 * , instance.FlagApplySimpleAromaticityRankCorrection,
+			 * instance.FlagCalculateCACTVSEnergyRank,
+			 * instance.FlagCheckDuplicationOnRegistering,
+			 * instance.FlagCheckNumOfRegistrationsForIncrementalAlgorithm,
+			 * instance.FlagCheckValencyOnRegistering,
+			 * instance.FlagEnergyRankingMethod,
+			 * instance.FlagExcludeWarnFiltersOnRegistering,
+			 * instance.FlagNewRuleInstanceSearchOnEnergyRanking,
+			 * instance.FlagPrintExtendedRuleInstances,
+			 * instance.FlagStopGenerationOnReachingRuleSelectorLimit,
+			 * instance.FlagSwitchToCombinatorialOnReachingRuleLimit));
+			 */
 
 		}
 
@@ -120,24 +117,21 @@ public class TautomersBenchmark {
 
 		@Setup(Level.Trial)
 		public void initialize() {
-			IRawReader<IStructureRecord> reader = null;
+			MDLReader reader = null;
 			try {
+				IAtomContainer mol = null;
 				InputStream in = getClass().getClassLoader()
 						.getResourceAsStream(
-								"net/idea/benchmark/CHEMBL2373570.sdf");
+								"net/idea/benchmark/warfarin.mol");
 				Verify.verifyNotNull(in);
-
-				reader = new RawIteratingSDFReader(new InputStreamReader(in));
-				while (reader.hasNext()) {
-					IStructureRecord record = reader.nextRecord();
-					instance = MoleculeTools.readMolfile(record.getContent());
-					AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(instance);
-					CDKHydrogenAdder.getInstance(SilentChemObjectBuilder.getInstance()).addImplicitHydrogens(instance);
-					break;
-				}
+				reader = new MDLReader(in);
+				mol = reader.read(new AtomContainer());
+				AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+				CDKHydrogenAdder.getInstance(mol.getBuilder()).addImplicitHydrogens(mol);
+				instance = mol;
 				Verify.verifyNotNull(instance);
 				Verify.verify(instance.getAtomCount() == 581);
-			} catch (Exception x) {
+			} catch (CDKException x) {
 				x.printStackTrace();
 
 			} finally {
@@ -150,7 +144,7 @@ public class TautomersBenchmark {
 
 		}
 	}
-	
+
 	@State(Scope.Benchmark)
 	public static class MoleculeSMILESFactory {
 		IAtomContainer instance = null;
@@ -158,10 +152,15 @@ public class TautomersBenchmark {
 		@Setup(Level.Trial)
 		public void initialize() {
 			try {
-				SmilesParser parser = new SmilesParser(SilentChemObjectBuilder.getInstance());
-				IAtomContainer mol = parser.parseSmiles("CC(=O)CC(C1=CC=CC=C1)C2=C(C3=CC=CC=C3OC2=O)O");
-				AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
-				CDKHydrogenAdder.getInstance(SilentChemObjectBuilder.getInstance()).addImplicitHydrogens(mol);
+				SmilesParser parser = new SmilesParser(
+						SilentChemObjectBuilder.getInstance());
+				IAtomContainer mol = parser
+						.parseSmiles("N[C@H](C(=O)N1[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)N2[C@H](C(=O)N[C@H](C(=O)N[C@H](C(=O)O)CS)CC3=CC=CC=C3)CCC2)CC(C)C)CC(C)C)CC4=CN=CN4)CC5=CNC6=C5C=CC=C6)CCC1)CS");
+				AtomContainerManipulator
+						.percieveAtomTypesAndConfigureAtoms(mol);
+				CDKHydrogenAdder.getInstance(
+						SilentChemObjectBuilder.getInstance())
+						.addImplicitHydrogens(mol);
 				instance = mol;
 			} catch (Exception x) {
 				x.printStackTrace();
@@ -174,7 +173,20 @@ public class TautomersBenchmark {
 
 	@Benchmark
 	public List<IAtomContainer> generateTautomers(
-			TautomerManagerFactory tautomerManager, MoleculeSMILESFactory molecule)
+			TautomerManagerFactory tautomerManager,
+			MoleculeSMILESFactory molecule)
+
+	throws Exception {
+		tautomerManager.instance.setStructure(molecule.instance);
+		List<IAtomContainer> res = tautomerManager.instance
+				.generateTautomersIncrementaly();
+
+		return res;
+	}
+	
+	@Benchmark
+	public List<IAtomContainer> generateTautomers_warfarin(
+			TautomerManagerFactory tautomerManager, MoleculeSDFFactory molecule)
 
 	throws Exception {
 		tautomerManager.instance.setStructure(molecule.instance);
