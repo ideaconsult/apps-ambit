@@ -1379,6 +1379,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.events = {
       'click #show-opentox-dev-icon': 'showOpenToxDev',
+      'click #show-toxcast-icon': 'showToxCAST',
       'click #show-ambit-dev-icon': 'showAmbitDev',
       'click #show-enanomapper-dev-icon': 'showEnanoMapperDev',
       'click #explore': 'showCustom',
@@ -1390,10 +1391,16 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showOpenToxDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "https://apps.ideaconsult.net/opentox/api-docs"
+        url: "https://apps.ideaconsult.net/ambit3/api-docs"
       });
     };
     
+    HeaderView.prototype.showToxCAST = function(e) {
+      return this.trigger('update-swagger-ui', {
+        url: "https://apps.ideaconsult.net/toxcast/api-docs"
+      });
+    };
+
     HeaderView.prototype.showAmbitDev = function(e) {
       return this.trigger('update-swagger-ui', {
         url: "https://apps.ideaconsult.net/data/api-docs"
