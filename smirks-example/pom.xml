@@ -313,13 +313,31 @@
         </plugins>
       </build>
     </profile>
-    <profile>
-    	<id>ambit-3.0.0-SNAPSHOT</id>
+		<profile>
+    	<id>ambit-3.0.2-SNAPSHOT</id>
     	<activation>
     		<activeByDefault>true</activeByDefault>
     	</activation>
     	<properties>
-    		<ambit.version>3.0.0-SNAPSHOT</ambit.version>
+    		<ambit.version>3.0.2-SNAPSHOT</ambit.version>
+    	</properties>
+    </profile>    
+    <profile>
+    	<id>ambit-3.0.1</id>
+    	<activation>
+    		<activeByDefault>false</activeByDefault>
+    	</activation>
+    	<properties>
+    		<ambit.version>3.0.1</ambit.version>
+    	</properties>
+    </profile>    
+    <profile>
+    	<id>ambit-3.0.0</id>
+    	<activation>
+    		<activeByDefault>false</activeByDefault>
+    	</activation>
+    	<properties>
+    		<ambit.version>3.0.0</ambit.version>
     	</properties>
     </profile>
     <profile>
