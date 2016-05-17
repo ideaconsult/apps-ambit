@@ -1,5 +1,6 @@
 package net.idea.examples.ml;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -22,7 +23,7 @@ import org.apache.spark.storage.StorageLevel;
 
 import scala.reflect.ClassTag;
 
-public class ClusteringApp {
+public class ClusteringApp implements Serializable  {
 
 	public void run(String inputPath, String outputPath, final int dim)
 			throws Exception {

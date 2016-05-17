@@ -97,8 +97,9 @@
 						<configuration>
 							<mainClass>net.idea.examples.ml.ClusteringApp</mainClass>
 							<arguments>
-								<argument>-f</argument>
-								<argument>src\main\resources\net\idea\examples\test.sdf</argument>
+								<argument>file:///d:/spark/toy</argument>
+								<argument>file:///d:/spark/result</argument>
+								<argument>200000</argument>
 							</arguments>
 						</configuration>
 					</execution>
