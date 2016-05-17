@@ -1,0 +1,13 @@
+Manifest-version: 1.0
+Package: net.idea.examples.ml
+Main-Class: net.idea.examples.ml.ClusteringApp
+Name: net/idea/examples/ml
+Specification-Title: MLIB
+Specification-Version: ${project.version}
+Specification-Vendor: Ideaconsult LTD
+Implementation-Title: net.idea.examples.ml
+Implementation-Version: ${project.version}-${buildNumber}-${timestamp}
+Implementation-Vendor: Ideaconsult Ltd.
+Package-Title: net.idea.examples.ml
+Package-Version: ${project.version}
+Package-Vendor: Ideaconsult Ltd.
