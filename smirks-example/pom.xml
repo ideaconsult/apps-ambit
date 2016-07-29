@@ -47,16 +47,16 @@
   <repositories>
   	
     <repository>
-        <id>ambit-plovdiv</id>
-        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/thirdparty</url>
+        <id>nexus-idea</id>
+        <url>https://nexus.ideaconsult.net/content/repositories/thirdparty</url>
     </repository>
    <repository>
-        <id>ambit-plovdiv-releases</id>
-        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+        <id>nexus-idea-releases</id>
+        <url>https://nexus.ideaconsult.net/content/repositories/releases</url>
     </repository>
   <repository>
-        <id>ambit-plovdiv-snapshots</id>
-        <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+        <id>nexus-idea-snapshots</id>
+        <url>https://nexus.ideaconsult.net/content/repositories/snapshots</url>
     </repository>
   </repositories>
   <organization>
@@ -181,14 +181,14 @@
   <distributionManagement>
     <!-- The destination of mvn:deploy for snapshots -->
     <snapshotRepository>
-      <id>ambit-plovdiv-snapshots</id>
-      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+      <id>nexus-idea-snapshots</id>
+      <url>https://nexus.ideaconsult.net/content/repositories/snapshots</url>
       <uniqueVersion>false</uniqueVersion>
     </snapshotRepository>
     <!-- The destination of mvn:deploy for releases -->
     <repository>
-      <id>ambit-plovdiv-releases</id>
-      <url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+      <id>nexus-idea-releases</id>
+      <url>https://nexus.ideaconsult.net/content/repositories/releases</url>
     </repository>
   </distributionManagement>
   <inceptionYear>2015</inceptionYear>
