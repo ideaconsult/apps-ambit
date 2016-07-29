@@ -36,22 +36,22 @@
 	<repositories>
 
 		<repository>
-			<id>ambit-plovdiv</id>
-			<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/thirdparty</url>
+			<id>nexus-idea</id>
+			<url>https://nexus.ideaconsult.net/content/repositories/thirdparty</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
-			<id>ambit-plovdiv-releases</id>
-			<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/releases</url>
+			<id>nexus-idea-releases</id>
+			<url>https://nexus.ideaconsult.net/content/repositories/releases</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
 		<repository>
-			<id>ambit-plovdiv-snapshots</id>
-			<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/snapshots</url>
+			<id>nexus-idea-snapshots</id>
+			<url>https://nexus.ideaconsult.net/content/repositories/snapshots</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
