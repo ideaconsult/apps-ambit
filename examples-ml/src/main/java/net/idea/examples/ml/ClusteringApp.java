@@ -57,6 +57,9 @@ public class ClusteringApp implements Serializable {
 		ClassTag<Double> ed = scala.reflect.ClassTag$.MODULE$.apply(Double.class);
 		Graph<String, Double> graph = Graph.fromEdges(data.rdd(), "node", StorageLevel.MEMORY_ONLY(),
 				StorageLevel.MEMORY_ONLY(), vd, ed);
+		
+		System.out.println(String.format("Elapsed %s ms threshold %s\tvertices %s edges %s",(System.currentTimeMillis() - now ),threshold,graph.vertices().count(),graph.edges().count()));		
+
 		Graph<Object, Double> cc = ConnectedComponents.run(graph, vd, ed);
 
 		UUID uuid = UUID.randomUUID();
@@ -64,9 +67,10 @@ public class ClusteringApp implements Serializable {
 		cc.triplets().saveAsTextFile(path);
 		path = String.format("file:///%s/results%s/%s-%s.vertices", outputPath, threshold, uuid, threshold);
 		cc.vertices().saveAsTextFile(path);
-
+		
+		System.out.println(String.format("Elapsed %s ms threshold %s\tvertices %s edges %s",(System.currentTimeMillis() - now ),threshold,cc.vertices().count(),cc.edges().count()));
 		jsc.close();
-		System.out.println(System.currentTimeMillis() - now);
+		
 	}
 
 	protected JavaRDD<Edge<Double>> getMatrixAsRDD(JavaSparkContext jsc, String inputhpath, final double threshold) {
