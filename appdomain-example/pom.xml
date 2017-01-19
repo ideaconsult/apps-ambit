@@ -74,7 +74,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.8.1</junit.version>
-    <ambit.version>3.0.0-SNAPSHOT</ambit.version>
+    <ambit.version>3.0.3-SNAPSHOT</ambit.version>
   </properties>
   <build>
     <finalName>example-ambit-appdomain</finalName>
