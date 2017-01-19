@@ -13,8 +13,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import net.idea.example.ambit.appdomain.MainApp._option;
-
 import org.apache.commons.lang3.StringUtils;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.fingerprint.Fingerprinter;
@@ -34,12 +32,14 @@ import ambit2.core.data.model.ModelWrapper;
 import ambit2.core.helper.CDKHueckelAromaticityDetector;
 import ambit2.core.io.FileInputState;
 import ambit2.core.io.FileOutputState;
+import ambit2.core.io.FileState._FILE_TYPE;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.FingerprintGenerator;
 import ambit2.model.numeric.ADomainMethodType;
 import ambit2.model.numeric.DataCoverage;
 import ambit2.model.numeric.DataCoverageDescriptors;
 import ambit2.model.structure.DataCoverageFingerprintsTanimoto;
+import net.idea.example.ambit.appdomain.MainApp._option;
 
 /**
  * Applicability domain
@@ -268,7 +268,8 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	 * @throws Exception
 	 */
 	protected IChemObjectWriter createWriter() throws Exception {
-		if ((resultFile==null) || resultFile.getName().toLowerCase().endsWith(FileOutputState.extensions[FileOutputState.SDF_INDEX]))
+		
+		if ((resultFile==null) || _FILE_TYPE.SDF_INDEX.hasExtension(resultFile))
 			return new SDFWriter(new OutputStreamWriter(resultFile==null?System.out:new FileOutputStream(resultFile)));
 		else
 			return FileOutputState.getWriter(new FileOutputStream(resultFile),resultFile.getName());
@@ -285,7 +286,7 @@ public class AppDomainModel<DATA> extends ModelWrapper<File, File, File, DataCov
 	protected IIteratingChemObjectReader<IAtomContainer> getReader(InputStream in, String extension) throws CDKException, AmbitIOException {
 		FileInputState instate = new FileInputState();
 		IIteratingChemObjectReader<IAtomContainer> reader ;
-		if (extension.toLowerCase().endsWith(FileInputState.extensions[FileInputState.SDF_INDEX])) {
+		if (_FILE_TYPE.SDF_INDEX.hasExtension(extension)) {
 			reader = new InteractiveIteratingMDLReader(in,SilentChemObjectBuilder.getInstance());
 			((InteractiveIteratingMDLReader) reader).setSkip(true);
 		} else reader = instate.getReader(in,extension);
