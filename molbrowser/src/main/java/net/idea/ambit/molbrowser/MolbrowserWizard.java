@@ -34,6 +34,7 @@ import ambit2.base.exceptions.AmbitIOException;
 import ambit2.base.json.JSONUtils;
 import ambit2.core.data.IStructureDiagramHighlights;
 import ambit2.core.io.FileInputState;
+import ambit2.core.io.FileState;
 import ambit2.core.io.InteractiveIteratingMDLReader;
 import ambit2.core.processors.structure.InchiProcessor;
 import ambit2.rendering.CompoundImageTools;
@@ -106,7 +107,7 @@ public class MolbrowserWizard {
 	protected IIteratingChemObjectReader<IAtomContainer> getReader(InputStream in, String extension) throws CDKException, AmbitIOException {
 		FileInputState instate = new FileInputState();
 		IIteratingChemObjectReader<IAtomContainer> reader ;
-		if (extension.endsWith(FileInputState.extensions[FileInputState.SDF_INDEX])) {
+		if (FileState._FILE_TYPE.SDF_INDEX.hasExtension(extension)) {
 			reader = new InteractiveIteratingMDLReader(in,SilentChemObjectBuilder.getInstance());
 			((InteractiveIteratingMDLReader) reader).setSkip(true);
 		} else reader = instate.getReader(in,extension);
