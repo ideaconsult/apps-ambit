@@ -14,7 +14,7 @@ AMBIT Web REST services
   
   * Download http://ambit.sourceforge.net/download_ambitrest.html 
    
-  * ambit2-www.war at [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick%7Eambit2-www)
+  * ambit2-www.war at [Maven repository](https://nexus.ideaconsult.net/index.html#nexus-search;quick~ambit2-www)
   
   * OpenTox API [examples](http://ambit.sourceforge.net/api.html)
   
@@ -33,7 +33,7 @@ SMARTS (and SMIRKS)
   
   * Ambit2-SMARTS examples at http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-smarts/index.html
   
-  * ambit2-smarts.jar at [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick%7Eambit2-smarts)
+  * ambit2-smarts.jar at [Maven repository](https://nexus.ideaconsult.net/index.html#nexus-search;quick%7Eambit2-smarts)
 
 Tautomers generation
 ---
@@ -46,7 +46,7 @@ Tautomers generation
    
   * ambit2-tautomer.jar [download](https://sourceforge.net/projects/ambit/files/Ambit2/AMBIT_modules/2.4.11/)
 
-  * ambit2-tautomer.jar at [Maven repository](http://ambit.uni-plovdiv.bg:8083/nexus/index.html#nexus-search;quick%7Eambit2-tautomer)
+  * ambit2-tautomer.jar at [Maven repository](https://nexus.ideaconsult.net/index.html#nexus-search;quick%7Eambit2-tautomer)
 
 Applicability domain command line appliction
 ---
