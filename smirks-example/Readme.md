@@ -74,7 +74,7 @@ The transformations can be applied on various sites of the target molecule in se
     //products returned in a separate atom sontainer set
 ```
 
-##Application in metabolite generation
+## Application in metabolite generation
 
 [Toxtree](http://toxtree.sf.net) is an open-source application that predicts various kinds of toxic effects, mostly by applying structural alerts, arranged in a decision tree fashion.
 You could [download the application](http://toxtree.sourceforge.net/download.html) or test [Toxtree online](http://toxtree.sourceforge.net/predict?search=omeprazole)
