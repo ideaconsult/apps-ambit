@@ -314,9 +314,18 @@
       </build>
     </profile>
 		<profile>
-    	<id>ambit-3.0.2-SNAPSHOT</id>
+    	<id>ambit-3.1.0-SNAPSHOT</id>
     	<activation>
     		<activeByDefault>true</activeByDefault>
+    	</activation>
+    	<properties>
+    		<ambit.version>3.1.0-SNAPSHOT</ambit.version>
+    	</properties>
+    </profile>     
+		<profile>
+    	<id>ambit-3.0.2-SNAPSHOT</id>
+    	<activation>
+    		<activeByDefault>false</activeByDefault>
     	</activation>
     	<properties>
     		<ambit.version>3.0.2-SNAPSHOT</ambit.version>
