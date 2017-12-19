@@ -1,7 +1,7 @@
 AMBIT-TAUTOMER
 ==============
 
-[Ambit-Tautomer](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html) is a new open source software tool for automatic generation of all the tautomeric forms of a given
+[Ambit-Tautomer](http://ambit.sourceforge.net/AMBIT2-LIBS/ambit2-tautomers/index.html) is an open source software tool for automatic generation of all the tautomeric forms of a given
 organic compound. Tautomerization is important in a number of chemoinformatics routines such as structure
 representation, chemical database searching, molecular descriptor calculation, estimation of physicochemical
 properties, QSAR modelling, virtual screening and more. Ambit-Tautomer is part of the [Ambit2](http://ambit.sf.net),
