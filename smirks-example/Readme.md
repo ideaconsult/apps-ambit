@@ -87,7 +87,7 @@ You could [download the application](http://toxtree.sourceforge.net/download.htm
 
 ### Publications 
 
- * Best poster award at [OpenTox Euro 2013](http://www.opentox.org/meet/opentoxeu2013/opentoxeuro13awards) 
+ * Best poster award at [OpenTox Euro 2013](https://www.slideshare.net/jeliazkova_nina/bx37-ambit-smirksmainzseptember2013) 
  
  * AMBIT SMARTS Publication [N. Jeliazkova and N. Kochev, “AMBIT-SMARTS: Efficient Searching of Chemical Structures and Fragments,” Mol. Inform., vol. 30, no. 8, pp. 707–720, 2011.](http://onlinelibrary.wiley.com/doi/10.1002/minf.201100028/abstract) 
  
