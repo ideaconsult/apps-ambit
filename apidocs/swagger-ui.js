@@ -1391,7 +1391,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showOpenToxDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "https://apps.ideaconsult.net/ambit2/api-docs"
+        url: "https://ambitlri.ideaconsult.net/tool2/api-docs"
       });
     };
     
