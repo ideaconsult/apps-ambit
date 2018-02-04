@@ -85,7 +85,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jmh.version>1.11.2</jmh.version>
-		<javac.target>1.6</javac.target>
+		<javac.target>1.7</javac.target>
 		<uberjar.name>benchmarks-ambit-${ambit.version}</uberjar.name>
 	</properties>
 
@@ -178,12 +178,30 @@
 	</build>
 	<profiles>
 		<profile>
-			<id>3.0.1-SNAPSHOT</id>
+			<id>3.3.0-SNAPSHOT</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>3.3.0-SNAPSHOT</ambit.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>3.2.0-SNAPSHOT</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<ambit.version>3.0.1-SNAPSHOT</ambit.version>
+				<ambit.version>3.2.0-SNAPSHOT</ambit.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>3.1.0</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>3.1.0</ambit.version>
 			</properties>
 		</profile>
 		<profile>
@@ -194,7 +212,7 @@
 			<properties>
 				<ambit.version>3.0.0</ambit.version>
 			</properties>
-		</profile>		
+		</profile>
 		<profile>
 			<id>2.7.4</id>
 			<activation>
@@ -230,6 +248,6 @@
 			<properties>
 				<ambit.version>2.4.11</ambit.version>
 			</properties>
-		</profile>		
+		</profile>
 	</profiles>
 </project>
