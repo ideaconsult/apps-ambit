@@ -1,15 +1,12 @@
-##OpenTox REST API: Algorithm
+## OpenTox REST API: Algorithm
 
-Provides access to OpenTox algorithms. 
-
-
+*Provides access to OpenTox algorithms.*
 
 * There are multiple kinds of algorithms (descriptor calculation, machine learning procedures or various data preprocessing). 
 * Generally, a machine learning algorithm takes a [dataset](dataset.md) URI as input and generate a [model](model.md), also identified with an URI.
 * The Algorithm types ontology provides a hierarchical classification of [Algorithm types](http://opentox.org/data/documents/development/RDF%20files/AlgorithmTypes).
 * Documentation (wiki) http://opentox.org/dev/apis/api-1.2/Algorithm
 * Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/algorithm
-
 
 ### JSON
 
@@ -22,7 +19,6 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 * The JSON or JSONP representation could be retrieved via HTTP Accept headers **"application/json"** or **"application/x-javascript"** respectively.
 * As a workaround for web browsers restriction, the URI parameter **?media=application/json** or **?media=application/x-javascript** could be used.
-
 
 ````json
 {
@@ -88,27 +84,27 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 Retrieve the list of [Descriptor calculation](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation) algorithms
 ````
-    curl -H "Accept:application/x-javascript" "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation"
+curl -H "Accept:application/x-javascript" "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation"
 ````
 
 Retrieve the list of [Classification](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification) algorithms
 ````
-    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification&media=application/json"
+curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification&media=application/json"
 ````
 
 Retrieve the list of [Regression](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression) algorithms
 ````
-    curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression
+curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression
 ````
 
 Retrieve the list of algorithms based on [Expert rules](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules) 
 ````
-    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules&media=application/x-javascript" 
+curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules&media=application/x-javascript" 
 ````
 
 Retrieve the list of [Applicability domain](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain) algorithms
 ````
-    curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain&media=application/x-javascript"
+curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain&media=application/x-javascript"
 ````
 
 ### <a id="ONTOLOGY_ENTRY">The ontology entries</a>
@@ -117,10 +113,4 @@ Retrieve the list of [Applicability domain](http://apps.ideaconsult.net:8080/amb
 * The BlueObelisk ontology provides details of the algorithm itself, e.g. publication reference.
 * The BlueObelisk ontology can be queried via Ontology service [SPARQL](http://apps.ideaconsult.net:8080/ontology/query/BODO).
 
-* An algorithm resource may contain an "endpoint" field, linking to the [endpoints ontology](http://www.opentox.org/echaEndpoints.owl) , e.g. http://www.opentox.org/echaEndpoints.owl#Carcinogenicity. 
-
-
- 
-
-
-
+* An algorithm resource may contain an "endpoint" field, linking to the [endpoints ontology](http://www.opentox.org/echaEndpoints.owl) , e.g. http://www.opentox.org/echaEndpoints.owl#Carcinogenicity.
