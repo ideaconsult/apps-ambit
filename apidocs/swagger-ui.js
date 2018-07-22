@@ -1382,6 +1382,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       'click #show-toxcast-icon': 'showToxCAST',
       'click #show-ambit-dev-icon': 'showAmbitDev',
       'click #show-enanomapper-dev-icon': 'showEnanoMapperDev',
+      'click #show-excape-icon': 'showExcapeDB',
       'click #explore': 'showCustom',
       'keyup #input_baseUrl': 'showCustomOnKeyup',
       'keyup #input_apiKey': 'showCustomOnKeyup'
@@ -1413,6 +1414,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       });
     };
 
+    HeaderView.prototype.showExcapeDB = function(e) {
+      return this.trigger('update-swagger-ui', {
+        url: "https://apps.ideaconsult.net/excape/api-docs"
+      });
+    };
+    
     HeaderView.prototype.showCustomOnKeyup = function(e) {
       if (e.keyCode === 13) {
         return this.showCustom();
