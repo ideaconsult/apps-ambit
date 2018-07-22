@@ -1161,7 +1161,8 @@
   cursor: pointer;
 }
 .swagger-section #header {
-  background-color: #89bf04;
+  background-color: white;
+  border-bottom: 4px solid #547f00;
   padding: 14px;
 }
 .swagger-section #header a#logo {
