@@ -1,4 +1,4 @@
-##Searching chemical compounds
+## Searching chemical compounds
 
 * Documentation (runnable) [Chemical structure search](http://ideaconsult.github.io/examples-ambit/apidocs/#!/compound_0)
 
