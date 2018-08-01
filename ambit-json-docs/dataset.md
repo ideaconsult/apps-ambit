@@ -1,4 +1,4 @@
-##OpenTox REST API: Dataset
+## OpenTox REST API: Dataset
 
 Provides access to chemical compounds and their features (e.g. structural, physical-chemical, biological, toxicological properties).
 
