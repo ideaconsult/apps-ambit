@@ -1,13 +1,13 @@
-##Substance
+## Substance
 
 * Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance
 
-###Existing chemical [Composition](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
+### Existing chemical [Composition](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
 
-###Nanomaterial [Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
+### Nanomaterial [Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
 
 
-####<a name="upload"></a>Substance and study upload 
+#### <a name="upload"></a>Substance and study upload 
 
  [example web form ](http://apps.ideaconsult.net:8080/enanomapper/ui/uploadsubstance1)
 
@@ -23,7 +23,7 @@ or to keep previous info
   curl -H "subjectid:OPENSSO_TOKEN" --form files[]=@predicted.csv --form http://apps.ideaconsult.net:8080/enanomapper/substance -iv
 ````
 
-####<a name="study"></a>Study  
+#### <a name="study"></a>Study  
 
 [Demo link](http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
 
