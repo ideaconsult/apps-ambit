@@ -1,4 +1,4 @@
-##OpenTox REST API: Models
+## OpenTox REST API: Models
 
 Provides different representations for QSAR/toxicology models. 
 
