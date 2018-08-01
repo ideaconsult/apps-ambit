@@ -39,7 +39,7 @@ The tautomer generation is also available as OpenTox [algorithm](http://apps.ide
 Download development verison
 ---
 
-###Command line application
+### Command line application
 
    * Download  [ambit-tautomers-2.0.0-SNAPSHOT](http://sourceforge.net/projects/ambit/files/Ambit2/AMBIT%20applications/tautomers/ambit-tautomers-2.0.0-SNAPSHOT.jar/download)
    
@@ -48,7 +48,7 @@ Download development verison
    ##### [Change log](ChangeLog.md#2.0.0-SNAPSHOT)
    
 
-###Maven artifact
+### Maven artifact
 
     <dependency>
         <groupId>net.idea.examples.ambit</groupId>
