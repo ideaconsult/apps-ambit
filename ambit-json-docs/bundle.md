@@ -1,4 +1,4 @@
-##AMBIT REST API: Bundle resource
+## AMBIT REST API: Bundle resource
 
 > bundle: a collection of things, or a quantity of material, tied or wrapped up together. 
 
