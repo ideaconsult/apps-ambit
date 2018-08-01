@@ -1,4 +1,4 @@
-##OpenTox REST API: Feature
+## OpenTox REST API: Feature
 
 A Feature is a resource, representing any kind of a property or identifier, assigned to a Compound. 
 
