@@ -47,6 +47,11 @@ Tautomers generation
   * ambit2-tautomer.jar [download](https://sourceforge.net/projects/ambit/files/Ambit2/AMBIT_modules/2.4.11/)
 
   * ambit2-tautomer.jar at [Maven repository](https://nexus.ideaconsult.net/index.html#nexus-search;quick%7Eambit2-tautomer)
+  
+Chemical structure standardization
+---
+
+  * Code example : Jupyter notebook [standardize/ambit_standardize_demo.ipynb](standardize/ambit_standardize_demo.ipynb)
 
 Applicability domain command line appliction
 ---
