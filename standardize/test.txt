@@ -1,0 +1,3 @@
+SMILES
+CC(=O)CC(C1=CC=CC=C1)C2=C(C3=CC=CC=C3OC2=O)O
+c1cc(oc1/C=C/[N+](=O)[O-])[N+](=O)[O-]
