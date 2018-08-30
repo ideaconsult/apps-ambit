@@ -1,6 +1,6 @@
 ## Substance
 
-* Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance
+* Documentation (runnable) http://ideaconsult.github.io/apps-ambit/apidocs/#!/substance
 
 ### Existing chemical [Composition](https://apps.ideaconsult.net/data/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](https://apps.ideaconsult.net/data/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
 
