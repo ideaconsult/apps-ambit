@@ -2,14 +2,14 @@
 
 * Documentation (runnable) http://ideaconsult.github.io/examples-ambit/apidocs/#!/substance
 
-### Existing chemical [Composition](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](http://apps.ideaconsult.net:8080/biodeg/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
+### Existing chemical [Composition](https://apps.ideaconsult.net/data/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/composition), [Study](https://apps.ideaconsult.net/data/substance/IUC4-bd8b36ce-3d42-357d-b968-09144269488a/study) 
 
 ### Nanomaterial [Composition](#composition), [Study](#study), [Summary](#summary), [Substance dataset](substance_dataset.md)
 
 
 #### <a name="upload"></a>Substance and study upload 
 
- [example web form ](http://apps.ideaconsult.net:8080/enanomapper/ui/uploadsubstance1)
+ [example web form ](http://data.enanomapper.net/ui/uploadsubstance1)
 
 ````
   curl -H "subjectid:OPENSSO_TOKEN" --form files[]=@predicted.csv --form clearMeasurements=yes --form clearComposition=no --form qaenabled=no http://apps.ideaconsult.net:8080/enanomapper/substance -iv     
@@ -20,12 +20,12 @@
 or to keep previous info 
 
 ````
-  curl -H "subjectid:OPENSSO_TOKEN" --form files[]=@predicted.csv --form http://apps.ideaconsult.net:8080/enanomapper/substance -iv
+  curl -H "subjectid:OPENSSO_TOKEN" --form files[]=@predicted.csv --form https://data.enanomapper.net/substance -iv
 ````
 
 #### <a name="study"></a>Study  
 
-[Demo link](http://apps.ideaconsult.net:8080/enanomapper/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
+[Demo link](https://data.enanomapper.net/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
 
 ````json
 {
