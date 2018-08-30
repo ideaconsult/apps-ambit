@@ -373,7 +373,7 @@ or to keep previous info
 }
 ````
 
-####<a name='composition'></a>Composition
+#### <a name='composition'></a>Composition
 ````json
 {
     "composition": [
