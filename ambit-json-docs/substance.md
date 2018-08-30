@@ -25,7 +25,7 @@ or to keep previous info
 
 #### <a name="study"></a>Study  
 
-[Demo link](https://data.enanomapper.net/substance/PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
+[Demo link](https://data.enanomapper.net/substance/FCSV-bc77c03d-4e75-3fab-bb3d-17b983663819/study)
 
 ````json
 {
