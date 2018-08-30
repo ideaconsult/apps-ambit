@@ -376,162 +376,198 @@ or to keep previous info
 #### <a name='composition'></a>Composition
 ````json
 {
-    "composition": [
-        {
-            "substance": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/substance/1"
-            },
-            "component": {
-                "compound": {
-                    "URI": "http://apps.ideaconsult.net:8080/enanomapper/compound/1/conformer/1",
-                    "structype": "NA",
-                    "metric": null,
-                    "name": "",
-                    "cas": "",
-                    "einecs": ""
-                },
-                "values": {
-                    "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "[Au]"
-                },
-                "facets": []
-            },
-            "compositionUUID": "PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
-            "relation": "HAS_CORE",
-            "proportion": {
-                "typical": {
-                    "precision": null,
-                    "value": 0,
-                    "unit": null
-                },
-                "real": {
-                    "lowerPrecision": null,
-                    "lowerValue": 0,
-                    "upperPrecision": null,
-                    "upperValue": 0,
-                    "unit": null
-                },
-                "function_as_additive": null
-            }
-        },
-        {
-            "substance": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/substance/1"
-            },
-            "component": {
-                "compound": {
-                    "URI": "http://apps.ideaconsult.net:8080/enanomapper/compound/2/conformer/2",
-                    "structype": "NA",
-                    "metric": null,
-                    "name": "",
-                    "cas": "",
-                    "einecs": ""
-                },
-                "values": {
-                    "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "AC"
-                },
-                "facets": []
-            },
-            "compositionUUID": "PRCR-bc77c03d-4e75-3fab-bb3d-17b983663819",
-            "relation": "HAS_COATING",
-            "proportion": {
-                "typical": {
-                    "precision": null,
-                    "value": 0,
-                    "unit": null
-                },
-                "real": {
-                    "lowerPrecision": null,
-                    "lowerValue": 0,
-                    "upperPrecision": null,
-                    "upperValue": 0,
-                    "unit": null
-                },
-                "function_as_additive": null
-            }
-        }
-    ],
-    "feature": {
-        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23IUPACNameDefault": {
-            "type": "Feature",
-            "title": "IUPAC name",
-            "units": "",
-            "isNominal": "false",
-            "isNumeric": "false",
-            "sameAs": "http://www.opentox.org/api/1.1#IUPACName",
-            "isModelPredictionFeature": false,
-            "creator": "http://ambit.sourceforge.net",
-            "order": 1,
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
-                "type": "Dataset"
-            },
-            "annotation": []
-        },
-        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": {
-            "type": "Feature",
-            "title": "Names",
-            "units": "",
-            "isNominal": "false",
-            "isNumeric": "false",
-            "sameAs": "http://www.opentox.org/api/1.1#ChemicalName",
-            "isModelPredictionFeature": false,
-            "creator": "http://ambit.sourceforge.net",
-            "order": 2,
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
-                "type": "Dataset"
-            },
-            "annotation": []
-        },
-        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23CASRNDefault": {
-            "type": "Feature",
-            "title": "CasRN",
-            "units": "",
-            "isNominal": "false",
-            "isNumeric": "false",
-            "sameAs": "http://www.opentox.org/api/1.1#CASRN",
-            "isModelPredictionFeature": false,
-            "creator": "http://ambit.sourceforge.net",
-            "order": 3,
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
-                "type": "Dataset"
-            },
-            "annotation": []
-        },
-        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23EINECSDefault": {
-            "type": "Feature",
-            "title": "EC number",
-            "units": "",
-            "isNominal": "false",
-            "isNumeric": "false",
-            "sameAs": "http://www.opentox.org/api/1.1#EINECS",
-            "isModelPredictionFeature": false,
-            "creator": "http://ambit.sourceforge.net",
-            "order": 4,
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
-                "type": "Dataset"
-            },
-            "annotation": []
-        },
-        "http://apps.ideaconsult.net:8080/enanomapper/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23TradeNameDefault": {
-            "type": "Feature",
-            "title": "Trade Name",
-            "units": "",
-            "isNominal": "false",
-            "isNumeric": "false",
-            "sameAs": "http://www.opentox.org/api/1.1#TradeName",
-            "isModelPredictionFeature": false,
-            "creator": "http://ambit.sourceforge.net",
-            "order": 5,
-            "source": {
-                "URI": "http://apps.ideaconsult.net:8080/enanomapper/dataset/Default",
-                "type": "Dataset"
-            },
-            "annotation": []
-        }
-    }
+	"composition": [{
+			"substance": {
+				"URI": "https://data.enanomapper.net/substance/3"
+			},
+			"component": {
+				"compound": {
+					"URI": "https://data.enanomapper.net/compound/7/conformer/7",
+					"structype": "NA",
+					"metric": null,
+					"name": "",
+					"cas": "",
+					"einecs": ""
+
+				},
+				"values": {
+					"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "Au",
+					"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23CASRNDefault": " 7440-57-5"
+				},
+				"facets": [
+
+				],
+				"bundles": {
+
+				}
+			},
+			"compositionUUID": "FCSV-bc77c03d-4e75-3fab-bb3d-17b983663819",
+			"compositionName": null,
+			"relation": "HAS_CORE",
+			"proportion": {
+
+				"typical": {
+					"precision": null,
+					"value": 0.000E00,
+					"unit": null
+				},
+				"real": {
+					"lowerPrecision": null,
+					"lowerValue": 0.000E00,
+					"upperPrecision": null,
+					"upperValue": 0.000E00,
+					"unit": null
+				},
+				"function_as_additive": null
+			},
+			"hidden": false
+		},
+		{
+			"substance": {
+				"URI": "https://data.enanomapper.net/substance/3"
+			},
+			"component": {
+				"compound": {
+					"URI": "https://data.enanomapper.net/compound/8/conformer/8",
+					"structype": "NA",
+					"metric": null,
+					"name": "",
+					"cas": "",
+					"einecs": ""
+
+				},
+				"values": {
+					"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23IUPACNameDefault": "(2R)-2-acetamido-3-sulfanyl-propanoic acid|PWKSKIMOESPYIA-BYPYZUCNSA-N|InChI=1S/C5H9NO3S/c1-3(7)6-4(2-10)5(8)9/h4,10H,2H2,1H3,(H,6,7)(H,8,9)/t4-/m0/s1|(2R)-2-acetamido-3-sulfanylpropanoic acid|(2R)-2-acetamido-3-mercapto-propionic acid|(2R)-2-acetamido-3-mercaptopropanoic acid",
+					"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": "N-Acetyl-L-cysteine"
+				},
+				"facets": [
+
+				],
+				"bundles": {
+
+				}
+			},
+			"compositionUUID": "FCSV-bc77c03d-4e75-3fab-bb3d-17b983663819",
+			"compositionName": null,
+			"relation": "HAS_COATING",
+			"proportion": {
+
+				"typical": {
+					"precision": null,
+					"value": 0.000E00,
+					"unit": null
+				},
+				"real": {
+					"lowerPrecision": null,
+					"lowerValue": 0.000E00,
+					"upperPrecision": null,
+					"upperValue": 0.000E00,
+					"unit": null
+				},
+				"function_as_additive": null
+			},
+			"hidden": false
+		}
+	],
+	"feature": {
+
+		"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23IUPACNameDefault": {
+
+			"type": "Feature",
+			"title": "IUPAC name",
+			"units": "",
+			"isNominal": false,
+			"isNumeric": false,
+			"isMultiValue": false,
+			"sameAs": "http://www.opentox.org/api/1.1#IUPACName",
+			"isModelPredictionFeature": false,
+			"creator": "http://ambit.sourceforge.net",
+			"order": 1,
+			"source": {
+				"URI": "https://data.enanomapper.net/dataset/Default",
+				"type": "Dataset"
+			},
+			"annotation": []
+
+		},
+		"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23ChemicalNameDefault": {
+
+			"type": "Feature",
+			"title": "Names",
+			"units": "",
+			"isNominal": false,
+			"isNumeric": false,
+			"isMultiValue": false,
+			"sameAs": "http://www.opentox.org/api/1.1#ChemicalName",
+			"isModelPredictionFeature": false,
+			"creator": "http://ambit.sourceforge.net",
+			"order": 2,
+			"source": {
+				"URI": "https://data.enanomapper.net/dataset/Default",
+				"type": "Dataset"
+			},
+			"annotation": []
+
+		},
+		"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23CASRNDefault": {
+
+			"type": "Feature",
+			"title": "CasRN",
+			"units": "",
+			"isNominal": false,
+			"isNumeric": false,
+			"isMultiValue": false,
+			"sameAs": "http://www.opentox.org/api/1.1#CASRN",
+			"isModelPredictionFeature": false,
+			"creator": "http://ambit.sourceforge.net",
+			"order": 3,
+			"source": {
+				"URI": "https://data.enanomapper.net/dataset/Default",
+				"type": "Dataset"
+			},
+			"annotation": []
+
+		},
+		"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23EINECSDefault": {
+
+			"type": "Feature",
+			"title": "EC number",
+			"units": "",
+			"isNominal": false,
+			"isNumeric": false,
+			"isMultiValue": false,
+			"sameAs": "http://www.opentox.org/api/1.1#EINECS",
+			"isModelPredictionFeature": false,
+			"creator": "http://ambit.sourceforge.net",
+			"order": 4,
+			"source": {
+				"URI": "https://data.enanomapper.net/dataset/Default",
+				"type": "Dataset"
+			},
+			"annotation": []
+
+		},
+		"https://data.enanomapper.net/feature/http%3A%2F%2Fwww.opentox.org%2Fapi%2F1.1%23TradeNameDefault": {
+
+			"type": "Feature",
+			"title": "Trade Name",
+			"units": "",
+			"isNominal": false,
+			"isNumeric": false,
+			"isMultiValue": false,
+			"sameAs": "http://www.opentox.org/api/1.1#TradeName",
+			"isModelPredictionFeature": false,
+			"creator": "http://ambit.sourceforge.net",
+			"order": 5,
+			"source": {
+				"URI": "https://data.enanomapper.net/dataset/Default",
+				"type": "Dataset"
+			},
+			"annotation": []
+
+		}
+	}
+
 }
 ````
 
