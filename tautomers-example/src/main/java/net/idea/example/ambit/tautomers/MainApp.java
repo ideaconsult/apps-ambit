@@ -14,7 +14,7 @@ import org.apache.commons.cli.PosixParser;
  *
  */
 public class MainApp {
-	private static final String title = "Tautomer generation by ambit-tautomers package";
+	private static final String title = "Tautomer generation by ambit-tautomers package ";
 	/**
 	 * Main 
 	 * @param args
