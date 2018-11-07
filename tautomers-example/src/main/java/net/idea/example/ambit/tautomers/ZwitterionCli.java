@@ -13,7 +13,7 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ambit2.smarts.SmartsHelper;
-//import ambit2.tautomers.zwitterion.ZwitterionManager;
+import ambit2.tautomers.zwitterion.ZwitterionManager;
 
 public class ZwitterionCli 
 {
@@ -226,11 +226,11 @@ public class ZwitterionCli
 
 			System.out.println("Input molecule: " + inputSmiles);
 
-			//ZwitterionManager zwittMan = new ZwitterionManager();
-			//zwittMan.setStructure(mol);
+			ZwitterionManager zwittMan = new ZwitterionManager();
+			zwittMan.setStructure(mol);
 
 			try {
-				List<IAtomContainer> zwList = null; //zwittMan.generateZwitterions();
+				List<IAtomContainer> zwList = zwittMan.generateZwitterions();
 
 				if (zwList.isEmpty())
 					System.out.println("No zwitterions");
