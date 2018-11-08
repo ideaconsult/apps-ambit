@@ -36,6 +36,10 @@ public class ZwitterionCli
 	public String outputFileName = null;
 	public String inputSmiles = null;
 	public boolean countOnly = false;
+	public boolean verboseConsoleOut = false;
+	public int maxNumOfRegisteredZwitterions = -1;
+	public int maxNumOfZwitterionPairs = -1;
+	
 	
 	FileWriter outWriter = null;	
 	ZwitterionManager zwittMan = null;
@@ -109,6 +113,36 @@ public class ZwitterionCli
 			}
 		},
 		
+		max_zwitterions {
+			@Override
+			public String getArgName() {
+				return "max";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal namber of registered zwitterions";
+			}
+			@Override
+			public String getShortName() {
+				return "m";
+			}
+		},
+		
+		max_pairs {
+			@Override
+			public String getArgName() {
+				return "max";
+			}
+			@Override
+			public String getDescription() {
+				return "Maximal namber of zwitterion pairs";
+			}
+			@Override
+			public String getShortName() {
+				return "p";
+			}
+		},
+		
 		count {
 			@Override
 			public String getArgName() {
@@ -116,11 +150,37 @@ public class ZwitterionCli
 			}
 			@Override
 			public String getDescription() {
-				return "CountOutput file name (*.csv)";
+				return "Output count statistics only";
 			}
 			@Override
 			public String getShortName() {
 				return "c";
+			}
+			
+			@Override
+			public String getDefaultValue() {
+				return null;
+			}
+			public Option createOption() {
+				Option option   = OptionBuilder.withLongOpt(name())
+						.withDescription(getDescription())
+						.create(getShortName());
+				return option;
+			}
+		},
+		
+		verbose {
+			@Override
+			public String getArgName() {
+				return null;
+			}
+			@Override
+			public String getDescription() {
+				return "Verbose console output";
+			}
+			@Override
+			public String getShortName() {
+				return "v";
 			}
 			
 			@Override
@@ -200,11 +260,37 @@ public class ZwitterionCli
 				return;
 			outputFileName = argument;
 			break;
+		}		
+		case max_pairs: {
+			if ((argument == null) || "".equals(argument.trim()))
+				return;
+			try	{
+				Integer i = Integer.parseInt(argument);
+				maxNumOfZwitterionPairs = i;
+			}
+			catch (Exception x) {
+				System.out.println("Incorrect option max_pairs: " + x.getMessage());
+			}
+			break;
+		}
+		case max_zwitterions: {
+			if ((argument == null) || "".equals(argument.trim()))
+				return;
+			try	{
+				Integer i = Integer.parseInt(argument);
+				maxNumOfRegisteredZwitterions = i;
+			}
+			catch (Exception x) {
+				System.out.println("Incorrect option max_zwitterions: " + x.getMessage());
+			}
+			break;
 		}
 		case count :
 			countOnly = true;
 			break;
-
+		case verbose :
+			verboseConsoleOut = true;
+			break;	
 		}
 	}
 
@@ -252,8 +338,23 @@ public class ZwitterionCli
 			System.out.println("Use option '-h' for help.");
 			return -1;
 		}
-
-		if (inputSmiles != null)
+		
+		//Setup ZwitterionManager();
+		zwittMan = new ZwitterionManager();
+		
+		if (maxNumOfRegisteredZwitterions > 0)
+		{
+			zwittMan.MaxNumberOfRegisteredZwitterions = maxNumOfRegisteredZwitterions;
+			System.out.println("MaxNumberOfRegisteredZwitterions = " + zwittMan.MaxNumberOfRegisteredZwitterions);
+		}	
+		
+		if (maxNumOfZwitterionPairs > 0)
+		{
+			zwittMan.MaxNumberOfZwitterionicPairs = maxNumOfZwitterionPairs;
+			System.out.println("MaxNumberOfZwitterionicPairs = " + zwittMan.MaxNumberOfZwitterionicPairs);
+		}
+		
+		if (inputSmiles != null)			
 		{
 			IAtomContainer mol = null;
 			try {
@@ -273,7 +374,6 @@ public class ZwitterionCli
 
 			System.out.println("Input molecule: " + inputSmiles);
 
-			zwittMan = new ZwitterionManager();
 			zwittMan.setStructure(mol);
 
 			try {
@@ -310,8 +410,7 @@ public class ZwitterionCli
 			}
 		}
 		
-		//Iterate input file and generate zwitterions 
-		zwittMan = new ZwitterionManager();		
+		//Iterate input file and generate zwitterions
 		File file = new File (inputFileName);
 		try {
 			iterateInputFile(file);
@@ -337,7 +436,7 @@ public class ZwitterionCli
 	void processMolecule(IAtomContainer mol, int recordNum) throws Exception
 	{	
 		zwittMan.setStructure(mol);
-		List<IAtomContainer> zwList = zwittMan.generateZwitterions();
+		List<IAtomContainer> zwList = zwittMan.generateZwitterions();		
 		
 		if (countOnly)
 		{
@@ -399,14 +498,21 @@ public class ZwitterionCli
 			
 			reader = getReader(in,file.getName());
 			while (reader.hasNext()) 
-			{
+			{	
 				IAtomContainer molecule  = reader.next();
 				records_read++;
+				
 				if (molecule==null) {
 					records_error++;
 					System.out.println("Unable to read molecule from record #" + records_read);
 					continue;
 				}
+				
+				if (verboseConsoleOut)
+					System.out.println("#rec = " + records_read + " NA = " + molecule.getAtomCount());
+				
+				//System.out.println("#rec = " + records_read + " heapSize = " + Runtime.getRuntime().totalMemory() + 
+				//		" heapFreeSize = " + Math.log10(Runtime.getRuntime().freeMemory()+1) );
 				
 				try
 				{	
