@@ -35,6 +35,7 @@ public class ZwitterionCli
 	public String inputFileName = null;
 	public String outputFileName = null;
 	public String inputSmiles = null;
+	public boolean countOnly = false;
 	
 	FileWriter outWriter = null;	
 	ZwitterionManager zwittMan = null;
@@ -107,6 +108,32 @@ public class ZwitterionCli
 				return "o";
 			}
 		},
+		
+		count {
+			@Override
+			public String getArgName() {
+				return null;
+			}
+			@Override
+			public String getDescription() {
+				return "CountOutput file name (*.csv)";
+			}
+			@Override
+			public String getShortName() {
+				return "c";
+			}
+			
+			@Override
+			public String getDefaultValue() {
+				return null;
+			}
+			public Option createOption() {
+				Option option   = OptionBuilder.withLongOpt(name())
+						.withDescription(getDescription())
+						.create(getShortName());
+				return option;
+			}
+		},
 
 		help {
 			@Override
@@ -174,6 +201,9 @@ public class ZwitterionCli
 			outputFileName = argument;
 			break;
 		}
+		case count :
+			countOnly = true;
+			break;
 
 		}
 	}
@@ -309,6 +339,19 @@ public class ZwitterionCli
 		zwittMan.setStructure(mol);
 		List<IAtomContainer> zwList = zwittMan.generateZwitterions();
 		
+		if (countOnly)
+		{
+			String out_s = ""+ recordNum + "," + SmartsHelper.moleculeToSMILES(mol, true) + "," + zwList.size();
+			for (int i = 1; i <= 10; i++)
+			{
+				Integer count = zwittMan.zwitterionCounts.get(i);
+				if (count == null)
+					count = 0;
+				out_s = out_s + ("," + count);
+			}
+			outputLine(out_s);
+			return;
+		}
 		String out_s = ""+ recordNum + "," + SmartsHelper.moleculeToSMILES(mol, true);
 		outputLine(out_s);
 		
@@ -346,7 +389,12 @@ public class ZwitterionCli
 		{
 			System.out.println("Generating zwitterions for: " + file.getPath());
 			
-			String out_s = "Mol#,Zwitterion";
+			
+			String out_s;
+			if (countOnly)
+				out_s = "Mol#,SMILES,ZwittCount,Z1,Z2,Z3,Z4,Z5,Z6,Z7,Z8,Z9,Z10";
+			else
+				out_s = "Mol#,Zwitterion";
 			outputLine(out_s);
 			
 			reader = getReader(in,file.getName());
