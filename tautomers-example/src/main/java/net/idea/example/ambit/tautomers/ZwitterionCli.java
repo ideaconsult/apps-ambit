@@ -368,6 +368,7 @@ public class ZwitterionCli
 				catch (Exception x)
 				{
 					System.out.println("Error on record #" + records_read + " " + x.getMessage());
+					records_error++;
 				}
 			}
 			
