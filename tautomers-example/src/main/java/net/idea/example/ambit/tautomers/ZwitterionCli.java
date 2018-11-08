@@ -37,6 +37,7 @@ public class ZwitterionCli
 	public String inputSmiles = null;
 	public boolean countOnly = false;
 	public boolean verboseConsoleOut = false;
+	public boolean filterDuplicates = false;
 	public int maxNumOfRegisteredZwitterions = -1;
 	public int maxNumOfZwitterionPairs = -1;
 	
@@ -194,6 +195,32 @@ public class ZwitterionCli
 				return option;
 			}
 		},
+		
+		filter {
+			@Override
+			public String getArgName() {
+				return null;
+			}
+			@Override
+			public String getDescription() {
+				return "Filter duplicated zwitterions (InChI based)";
+			}
+			@Override
+			public String getShortName() {
+				return "f";
+			}
+			
+			@Override
+			public String getDefaultValue() {
+				return null;
+			}
+			public Option createOption() {
+				Option option   = OptionBuilder.withLongOpt(name())
+						.withDescription(getDescription())
+						.create(getShortName());
+				return option;
+			}
+		},
 
 		help {
 			@Override
@@ -290,6 +317,9 @@ public class ZwitterionCli
 			break;
 		case verbose :
 			verboseConsoleOut = true;
+			break;
+		case filter :
+			filterDuplicates = true;
 			break;	
 		}
 	}
@@ -341,6 +371,7 @@ public class ZwitterionCli
 		
 		//Setup ZwitterionManager();
 		zwittMan = new ZwitterionManager();
+		zwittMan.FlagFilterDuplicates = filterDuplicates;
 		
 		if (maxNumOfRegisteredZwitterions > 0)
 		{
