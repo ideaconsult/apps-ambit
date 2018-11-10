@@ -91,7 +91,7 @@ public class ZwitterionCli
 			}
 			@Override
 			public String getDescription() {
-				return "Input molecule file (*.smi, *.sdf)";
+				return "Input molecule file (*.smi, *.sdf, *.csv)";
 			}
 			@Override
 			public String getShortName() {
@@ -121,7 +121,7 @@ public class ZwitterionCli
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal namber of registered zwitterions";
+				return "Maximal number of registered zwitterions";
 			}
 			@Override
 			public String getShortName() {
@@ -136,7 +136,7 @@ public class ZwitterionCli
 			}
 			@Override
 			public String getDescription() {
-				return "Maximal namber of zwitterion pairs";
+				return "Maximal number of zwitterion pairs";
 			}
 			@Override
 			public String getShortName() {
