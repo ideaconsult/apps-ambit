@@ -178,6 +178,15 @@
 	</build>
 	<profiles>
 		<profile>
+			<id>4.0.0-SNAPSHOT</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<ambit.version>4.0.0-SNAPSHOT</ambit.version>
+			</properties>
+		</profile>
+		<profile>
 			<id>3.3.0-SNAPSHOT</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
@@ -189,7 +198,7 @@
 		<profile>
 			<id>3.2.0-SNAPSHOT</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<ambit.version>3.2.0-SNAPSHOT</ambit.version>

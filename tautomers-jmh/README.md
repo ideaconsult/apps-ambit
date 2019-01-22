@@ -15,29 +15,16 @@ mvn package -P 3.2.0-SNAPSHOT
 ## Run
 Run with (check the AMBIT version):
 ````
-java -jar target/benchmarks-ambit-3.2.0-SNAPSHOT.jar
+java -jar target/benchmarks-ambit-4.0.0-SNAPSHOT.jar
 ````
 
 ## Results
 
 Note the results are generated with default settings, which might differ across versions!
 
-### ambit-3.3.0-SNAPSHOT 
+### ambit-4.0.0-SNAPSHOT 
 (with CDK 2.1.1)
 
-```
-tbd
-```
-
-### ambit-3.2.0-SNAPSHOT 
-(with CDK 1.5.13)
-
-```
-tbd
-```
-
-### ambit-3.1.0
-(with CDK 1.5.13)
 ```
 tbd
 ```
