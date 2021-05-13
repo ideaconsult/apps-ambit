@@ -35,7 +35,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
             ]
         },
         {
-            "uri": "http://host:port:8080/ambit2/algorithm/J48",
+            "uri": "http://host:port/ambit2/algorithm/J48",
             "id": "J48",
             "name": "Classification: Decision tree J48",
             "type": [
@@ -82,35 +82,35 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 #### [cURL](http://curl.haxx.se/) examples:
 
-Retrieve the list of [Descriptor calculation](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation) algorithms
+Retrieve the list of [Descriptor calculation](https://apps.ideaconsult.net/ambit2/algorithm?type=DescriptorCalculation) algorithms
 ````
-curl -H "Accept:application/x-javascript" "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=DescriptorCalculation"
-````
-
-Retrieve the list of [Classification](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification) algorithms
-````
-curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Classification&media=application/json"
+curl -H "Accept:application/x-javascript" "https://apps.ideaconsult.net/ambit2/algorithm?type=DescriptorCalculation"
 ````
 
-Retrieve the list of [Regression](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression) algorithms
+Retrieve the list of [Classification](https://apps.ideaconsult.net/ambit2/algorithm?type=Classification) algorithms
 ````
-curl -H "Accept:application/json" http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Regression
-````
-
-Retrieve the list of algorithms based on [Expert rules](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules) 
-````
-curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=Rules&media=application/x-javascript" 
+curl "https://apps.ideaconsult.net/ambit2/algorithm?type=Classification&media=application/json"
 ````
 
-Retrieve the list of [Applicability domain](http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain) algorithms
+Retrieve the list of [Regression](https://apps.ideaconsult.net/ambit2/algorithm?type=Regression) algorithms
 ````
-curl "http://apps.ideaconsult.net:8080/ambit2/algorithm?type=AppDomain&media=application/x-javascript"
+curl -H "Accept:application/json" https://apps.ideaconsult.net/ambit2/algorithm?type=Regression
+````
+
+Retrieve the list of algorithms based on [Expert rules](https://apps.ideaconsult.net/ambit2/algorithm?type=Rules) 
+````
+curl "https://apps.ideaconsult.net/ambit2/algorithm?type=Rules&media=application/x-javascript" 
+````
+
+Retrieve the list of [Applicability domain](https://apps.ideaconsult.net/ambit2/algorithm?type=AppDomain) algorithms
+````
+curl "https://apps.ideaconsult.net/ambit2/algorithm?type=AppDomain&media=application/x-javascript"
 ````
 
 ### <a id="ONTOLOGY_ENTRY">The ontology entries</a>
 
 * An algorithm resource may contain an "implementationOf" field, linking to the BlueObelisk ontology , e.g. http://www.blueobelisk.org/ontologies/chemoinformatics-algorithms/#xlogP. 
 * The BlueObelisk ontology provides details of the algorithm itself, e.g. publication reference.
-* The BlueObelisk ontology can be queried via Ontology service [SPARQL](http://apps.ideaconsult.net:8080/ontology/query/BODO).
+* The BlueObelisk ontology can be queried via Ontology service [SPARQL](https://apps.ideaconsult.net/ontology/query/BODO).
 
 * An algorithm resource may contain an "endpoint" field, linking to the [endpoints ontology](http://www.opentox.org/echaEndpoints.owl) , e.g. http://www.opentox.org/echaEndpoints.owl#Carcinogenicity.
