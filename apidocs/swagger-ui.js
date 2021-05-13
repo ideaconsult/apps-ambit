@@ -1379,7 +1379,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.events = {
       'click #show-opentox-dev-icon': 'showOpenToxDev',
-      'click #show-toxcast-icon': 'showToxCAST',
+      'click #show-toxcast-icon': 'showAmbitTool3',
       'click #show-ambit-dev-icon': 'showAmbitDev',
       'click #show-enanomapper-dev-icon': 'showEnanoMapperDev',
       'click #show-excape-icon': 'showExcapeDB',
@@ -1396,9 +1396,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       });
     };
     
-    HeaderView.prototype.showToxCAST = function(e) {
+    HeaderView.prototype.showAmbitTool3 = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "https://apps.ideaconsult.net/toxcast/api-docs"
+        url: "https://apps-dev.ideaconsult.net/tool3/api-docs"
       });
     };
 
@@ -1410,7 +1410,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     HeaderView.prototype.showEnanoMapperDev = function(e) {
       return this.trigger('update-swagger-ui', {
-        url: "https://apps.ideaconsult.net/enmtest/api-docs"
+        url: "https://apps.ideaconsult.net/nanoreg1/api-docs"
       });
     };
 
