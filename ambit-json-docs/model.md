@@ -28,7 +28,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 Example: 
 ````
-    curl -H "Accept:application/json" "http://apps.ideaconsult.net:8080/ambit2/model?page=0&pagesize=10"
+    curl -H "Accept:application/json" "https://apps.ideaconsult.net/ambit2/model?page=0&pagesize=10"
 ````
 
 ````json
