@@ -37,7 +37,7 @@ The JSON representation is a new development, implemented in AMBIT web services 
     "dataEntry": [
         {
             "compound": {
-                "URI": "http://apps.ideaconsult.net:8080/ambit2/compound/{id}/conformer/{id}"
+                "URI": "http://apps.ideaconsult.net/ambit2/compound/{id}/conformer/{id}"
             },
             "values": {
                 "key1": "value1",
@@ -106,15 +106,15 @@ The JSON representation is a new development, implemented in AMBIT web services 
 
 #### [cURL](http://curl.haxx.se/) examples:
 
-[Search](http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1) for compound with name *caffeine*
+[Search](https://apps.ideaconsult.net/ambit2/query/compound/search/all?search=caffeine&media=application/json&page=0&pagesize=1) for compound with name *caffeine*
 ````
     curl -H "Accept:application/json" \
-        "http://apps.ideaconsult.net:8080/ambit2/query/compound/search/all?search=caffeine&page=0&pagesize=1" 
+        "https://apps.ideaconsult.net/ambit2/query/compound/search/all?search=caffeine&page=0&pagesize=1" 
 ````
 
-Retrieve the first 10 record of [dataset/1](http://apps.ideaconsult.net:8080/ambit2/dataset/12?page=0&pagesize=10)
+Retrieve the first 10 record of [dataset/1](https://apps.ideaconsult.net/ambit2/dataset/12?page=0&pagesize=10)
 ````
-    http://apps.ideaconsult.net:8080/ambit2/dataset/12?media=application/json&page=0&pagesize=10
+    https://apps.ideaconsult.net/ambit2/dataset/12?media=application/json&page=0&pagesize=10
 ```` 
 
 
@@ -135,7 +135,7 @@ The following ontology entries are used to denote:
 * [InChI](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChI_std"
 * [InChIKey](http://en.wikipedia.org/wiki/Inchi) : "http://www.opentox.org/api/1.1#InChIKey_std"
  
-#### Toxicological endpoints [echaEndpoints.owl](http://www.opentox.org/echaEndpoints.owl), [SPARQL](http://apps.ideaconsult.net:8080/ontology/query/Endpoints) 
+#### Toxicological endpoints [echaEndpoints.owl](http://www.opentox.org/echaEndpoints.owl), [SPARQL](http://apps.ideaconsult.net/ontology/query/Endpoints) 
 
 Examples:
 
