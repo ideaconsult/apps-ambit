@@ -159,10 +159,9 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.1</version>
+          <version>3.8.1</version>
           <configuration>
-            <source>1.7</source>
-            <target>1.7</target>
+
           </configuration>
         </plugin>
         <!-- JUnit tests -->
@@ -313,10 +312,19 @@
         </plugins>
       </build>
     </profile>
+      <profile>
+    	<id>ambit-4.1.0-SNAPSHOT</id>
+    	<activation>
+    		<activeByDefault>true</activeByDefault>
+    	</activation>
+    	<properties>
+    		<ambit.version>4.1.0-SNAPSHOT</ambit.version>
+    	</properties>
+    </profile>	  
      <profile>
     	<id>ambit-4.0.0-SNAPSHOT</id>
     	<activation>
-    		<activeByDefault>true</activeByDefault>
+    		<activeByDefault>false</activeByDefault>
     	</activation>
     	<properties>
     		<ambit.version>4.0.0-SNAPSHOT</ambit.version>
